@@ -1,0 +1,19 @@
+32bits-Inst
+
+--------------------------------
+
+[31...........................0]
+
+[31-31] : Imm bit, 1 for imm mode, 0 for reg mode
+[30-26] : Opcode
+[25-21] : Reg1
+[20-16] : Reg2
+[15-11] : Reg3
+[15-0]  : Imm16
+
+Opcode Table:
+
+0            RET
+1            ADD
+2            SUB
+3            MUL

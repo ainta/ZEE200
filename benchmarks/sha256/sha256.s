@@ -1,0 +1,17719 @@
+	.text
+	.file	"ld-temp.o"
+	.type	_nettle_write_be32,@function ; -- Begin function _nettle_write_be32
+_nettle_write_be32 NOP                  ; @_nettle_write_be32
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%GR1, 40(%FP)
+	STORE	%GR2, 36(%FP)
+	STORE	%GR1, 32(%FP)
+	STORE	%GR2, 28(%FP)
+	STORE	%GR3, 24(%FP)
+	LOAD	%GR6, 32(%FP)
+	SRLI	%GR6, %GR6, 2
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 32(%FP)
+	ANDI	%GR6, %GR6, 3
+	STORE	%GR6, 12(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB0_1
+.LBB0_1 NOP                             ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 20(%FP)
+	LOAD	%GR1, 16(%FP)
+	ULTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB0_6
+	JUMP	.LBB0_2
+.LBB0_2 NOP                             ;   in Loop: Header=BB0_1 Depth=1
+	JUMP	.LBB0_3
+.LBB0_3 NOP                             ;   in Loop: Header=BB0_1 Depth=1
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 20(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 3
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	STOREB	%GR6, 0(%GR1)
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 20(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 2
+	ULOADH	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	ADDI	%GR1, %GR1, 1
+	STOREB	%GR6, 0(%GR1)
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 20(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR6, 0(%GR6)
+	SRLI	%GR6, %GR6, 8
+	LOAD	%GR1, 28(%FP)
+	ADDI	%GR1, %GR1, 2
+	STOREB	%GR6, 0(%GR1)
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 20(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	ADDI	%GR1, %GR1, 3
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB0_4
+.LBB0_4 NOP                             ;   in Loop: Header=BB0_1 Depth=1
+	JUMP	.LBB0_5
+.LBB0_5 NOP                             ;   in Loop: Header=BB0_1 Depth=1
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 28(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB0_1
+.LBB0_6 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB0_15
+	JUMP	.LBB0_7
+.LBB0_7 NOP 
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 20(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 1
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB0_13
+	JUMP	.LBB0_8
+.LBB0_8 NOP 
+	COPYI	%GR1, 2
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB0_12
+	JUMP	.LBB0_9
+.LBB0_9 NOP 
+	COPYI	%GR1, 3
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB0_11
+	JUMP	.LBB0_10
+.LBB0_10 NOP 
+	CALL	abort
+.LBB0_11 NOP 
+	LOAD	%GR6, 8(%FP)
+	SRLI	%GR6, %GR6, 8
+	LOAD	%GR1, 28(%FP)
+	LOAD	%GR2, 4(%FP)
+	ADDI	%GR2, %GR2, -1
+	STORE	%GR2, 4(%FP)
+	ADD	%GR1, %GR1, %GR2
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB0_12
+.LBB0_12 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 2
+	ULOADH	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	LOAD	%GR2, 4(%FP)
+	ADDI	%GR2, %GR2, -1
+	STORE	%GR2, 4(%FP)
+	ADD	%GR1, %GR1, %GR2
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB0_13
+.LBB0_13 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 3
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	LOAD	%GR2, 4(%FP)
+	ADDI	%GR2, %GR2, -1
+	STORE	%GR2, 4(%FP)
+	ADD	%GR1, %GR1, %GR2
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB0_14
+.LBB0_14 NOP 
+	JUMP	.LBB0_15
+.LBB0_15 NOP 
+	LOAD	%GR2, 36(%FP)
+	LOAD	%GR1, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end0 NOP 
+	.size	_nettle_write_be32, .Lfunc_end0-_nettle_write_be32
+                                        ; -- End function
+	.type	_nettle_sha256_compress,@function ; -- Begin function _nettle_sha256_compress
+_nettle_sha256_compress NOP             ; @_nettle_sha256_compress
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 200
+	COPYR	%FP, %SP
+	STORE	%GR1, 192(%FP)
+	STORE	%GR2, 188(%FP)
+	STORE	%GR3, 184(%FP)
+	STORE	%GR4, 180(%FP)
+	STORE	%GR5, 176(%FP)
+	STORE	%GR1, 172(%FP)
+	STORE	%GR2, 168(%FP)
+	COPYG	%GR6, K
+	STORE	%GR6, 164(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 64(%FP)
+	JUMP	.LBB1_1
+.LBB1_1 NOP                             ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 64(%FP)
+	COPYI	%GR1, 15
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB1_4
+	JUMP	.LBB1_2
+.LBB1_2 NOP                             ;   in Loop: Header=BB1_1 Depth=1
+	LOAD	%GR6, 168(%FP)
+	ULOADB	%GR1, 0(%GR6)
+	SHLI	%GR1, %GR1, 24
+	ADDI	%GR2, %GR6, 1
+	ULOADB	%GR2, 0(%GR2)
+	SHLI	%GR2, %GR2, 16
+	OR	%GR1, %GR1, %GR2
+	ADDI	%GR2, %GR6, 2
+	ULOADB	%GR2, 0(%GR2)
+	SHLI	%GR2, %GR2, 8
+	OR	%GR1, %GR1, %GR2
+	ADDI	%GR6, %GR6, 3
+	ULOADB	%GR6, 0(%GR6)
+	OR	%GR6, %GR1, %GR6
+	LOAD	%GR1, 64(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADDI	%GR2, %FP, 100
+	ADD	%GR1, %GR2, %GR1
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB1_3
+.LBB1_3 NOP                             ;   in Loop: Header=BB1_1 Depth=1
+	LOAD	%GR6, 64(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 64(%FP)
+	LOAD	%GR6, 168(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR6, 168(%FP)
+	JUMP	.LBB1_1
+.LBB1_4 NOP 
+	LOAD	%GR6, 172(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 96(%FP)
+	LOAD	%GR6, 172(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR6, 172(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 172(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 84(%FP)
+	LOAD	%GR6, 172(%FP)
+	ADDI	%GR6, %GR6, 16
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 80(%FP)
+	LOAD	%GR6, 172(%FP)
+	ADDI	%GR6, %GR6, 20
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 76(%FP)
+	LOAD	%GR6, 172(%FP)
+	ADDI	%GR6, %GR6, 24
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 72(%FP)
+	LOAD	%GR6, 172(%FP)
+	ADDI	%GR6, %GR6, 28
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 68(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 64(%FP)
+	ADDI	%GR6, %FP, 100
+	STORE	%GR6, 60(%FP)
+	JUMP	.LBB1_5
+.LBB1_5 NOP                             ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 64(%FP)
+	COPYI	%GR1, 15
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB1_24
+	JUMP	.LBB1_6
+.LBB1_6 NOP                             ;   in Loop: Header=BB1_5 Depth=1
+	JUMP	.LBB1_7
+.LBB1_7 NOP                             ;   in Loop: Header=BB1_5 Depth=1
+	LOAD	%GR6, 80(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 72(%FP)
+	LOAD	%GR3, 76(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 60(%FP)
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 68(%FP)
+	LOAD	%GR6, 68(%FP)
+	LOAD	%GR1, 84(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 84(%FP)
+	LOAD	%GR6, 96(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 92(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 88(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 68(%FP)
+	JUMP	.LBB1_8
+.LBB1_8 NOP                             ;   in Loop: Header=BB1_5 Depth=1
+	JUMP	.LBB1_9
+.LBB1_9 NOP                             ;   in Loop: Header=BB1_5 Depth=1
+	LOAD	%GR6, 84(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 76(%FP)
+	LOAD	%GR3, 80(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 60(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 72(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 72(%FP)
+	LOAD	%GR6, 72(%FP)
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 68(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 96(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 92(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 72(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 72(%FP)
+	JUMP	.LBB1_10
+.LBB1_10 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	JUMP	.LBB1_11
+.LBB1_11 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	LOAD	%GR6, 88(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 80(%FP)
+	LOAD	%GR3, 84(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 8
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 60(%FP)
+	ADDI	%GR1, %GR1, 8
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 76(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 76(%FP)
+	LOAD	%GR6, 76(%FP)
+	LOAD	%GR1, 92(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR6, 72(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 68(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 96(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 76(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 76(%FP)
+	JUMP	.LBB1_12
+.LBB1_12 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	JUMP	.LBB1_13
+.LBB1_13 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	LOAD	%GR6, 92(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 84(%FP)
+	LOAD	%GR3, 88(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 12
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 60(%FP)
+	ADDI	%GR1, %GR1, 12
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 80(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 80(%FP)
+	LOAD	%GR6, 80(%FP)
+	LOAD	%GR1, 96(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 96(%FP)
+	LOAD	%GR6, 76(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 72(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 68(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 80(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 80(%FP)
+	JUMP	.LBB1_14
+.LBB1_14 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	JUMP	.LBB1_15
+.LBB1_15 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	LOAD	%GR6, 96(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 88(%FP)
+	LOAD	%GR3, 92(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 16
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 60(%FP)
+	ADDI	%GR1, %GR1, 16
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 84(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 84(%FP)
+	LOAD	%GR6, 84(%FP)
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 68(%FP)
+	LOAD	%GR6, 80(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 76(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 72(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 84(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 84(%FP)
+	JUMP	.LBB1_16
+.LBB1_16 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	JUMP	.LBB1_17
+.LBB1_17 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	LOAD	%GR6, 68(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 92(%FP)
+	LOAD	%GR3, 96(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 20
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 60(%FP)
+	ADDI	%GR1, %GR1, 20
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 88(%FP)
+	LOAD	%GR1, 72(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 72(%FP)
+	LOAD	%GR6, 84(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 80(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 76(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	JUMP	.LBB1_18
+.LBB1_18 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	JUMP	.LBB1_19
+.LBB1_19 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	LOAD	%GR6, 72(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 96(%FP)
+	LOAD	%GR3, 68(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 24
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 60(%FP)
+	ADDI	%GR1, %GR1, 24
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 92(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR6, 92(%FP)
+	LOAD	%GR1, 76(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 76(%FP)
+	LOAD	%GR6, 88(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 84(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 80(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 92(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 92(%FP)
+	JUMP	.LBB1_20
+.LBB1_20 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	JUMP	.LBB1_21
+.LBB1_21 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	LOAD	%GR6, 76(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 68(%FP)
+	LOAD	%GR3, 72(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 28
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 60(%FP)
+	ADDI	%GR1, %GR1, 28
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 96(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 96(%FP)
+	LOAD	%GR6, 96(%FP)
+	LOAD	%GR1, 80(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 80(%FP)
+	LOAD	%GR6, 92(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 88(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 84(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 96(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 96(%FP)
+	JUMP	.LBB1_22
+.LBB1_22 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	JUMP	.LBB1_23
+.LBB1_23 NOP                            ;   in Loop: Header=BB1_5 Depth=1
+	LOAD	%GR6, 64(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 64(%FP)
+	LOAD	%GR6, 164(%FP)
+	ADDI	%GR6, %GR6, 32
+	STORE	%GR6, 164(%FP)
+	LOAD	%GR6, 60(%FP)
+	ADDI	%GR6, %GR6, 32
+	STORE	%GR6, 60(%FP)
+	JUMP	.LBB1_5
+.LBB1_24 NOP 
+	JUMP	.LBB1_25
+.LBB1_25 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 64(%FP)
+	COPYI	%GR1, 63
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB1_60
+	JUMP	.LBB1_26
+.LBB1_26 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_27
+.LBB1_27 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 80(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 72(%FP)
+	LOAD	%GR3, 76(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 56
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 36
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	SHLI	%GR3, %GR1, 25
+	SRLI	%GR4, %GR1, 7
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR1, 14
+	SRLI	%GR5, %GR1, 18
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR1, %GR1, 3
+	XOR	%GR1, %GR3, %GR1
+	ADD	%GR1, %GR2, %GR1
+	LOAD	%GR2, 100(%FP)
+	ADD	%GR1, %GR2, %GR1
+	STORE	%GR1, 100(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 68(%FP)
+	LOAD	%GR6, 68(%FP)
+	LOAD	%GR1, 84(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 84(%FP)
+	LOAD	%GR6, 96(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 92(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 88(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 68(%FP)
+	JUMP	.LBB1_28
+.LBB1_28 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_29
+.LBB1_29 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 84(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 76(%FP)
+	LOAD	%GR3, 80(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 56(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 60
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 40
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 8
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 56(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 72(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 72(%FP)
+	LOAD	%GR6, 72(%FP)
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 68(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 96(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 92(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 72(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 72(%FP)
+	JUMP	.LBB1_30
+.LBB1_30 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_31
+.LBB1_31 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 88(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 80(%FP)
+	LOAD	%GR3, 84(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 8
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR1, 100(%FP)
+	SHLI	%GR2, %GR1, 15
+	SRLI	%GR3, %GR1, 17
+	OR	%GR2, %GR2, %GR3
+	SHLI	%GR3, %GR1, 13
+	SRLI	%GR4, %GR1, 19
+	OR	%GR3, %GR3, %GR4
+	XOR	%GR2, %GR2, %GR3
+	SRLI	%GR1, %GR1, 10
+	XOR	%GR2, %GR2, %GR1
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR3, %GR1, 44
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 12
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 8
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 8(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 76(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 76(%FP)
+	LOAD	%GR6, 76(%FP)
+	LOAD	%GR1, 92(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR6, 72(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 68(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 96(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 76(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 76(%FP)
+	JUMP	.LBB1_32
+.LBB1_32 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_33
+.LBB1_33 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 92(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 84(%FP)
+	LOAD	%GR3, 88(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 12
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 52(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 4
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 48
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 16
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 12
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 52(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 80(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 80(%FP)
+	LOAD	%GR6, 80(%FP)
+	LOAD	%GR1, 96(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 96(%FP)
+	LOAD	%GR6, 76(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 72(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 68(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 80(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 80(%FP)
+	JUMP	.LBB1_34
+.LBB1_34 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_35
+.LBB1_35 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 96(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 88(%FP)
+	LOAD	%GR3, 92(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 16
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 48(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 8
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 52
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 20
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 16
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 48(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 84(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 84(%FP)
+	LOAD	%GR6, 84(%FP)
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 68(%FP)
+	LOAD	%GR6, 80(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 76(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 72(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 84(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 84(%FP)
+	JUMP	.LBB1_36
+.LBB1_36 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_37
+.LBB1_37 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 68(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 92(%FP)
+	LOAD	%GR3, 96(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 20
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 44(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 12
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 56
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 24
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 20
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 44(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 88(%FP)
+	LOAD	%GR1, 72(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 72(%FP)
+	LOAD	%GR6, 84(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 80(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 76(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	JUMP	.LBB1_38
+.LBB1_38 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_39
+.LBB1_39 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 72(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 96(%FP)
+	LOAD	%GR3, 68(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 24
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 40(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 16
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 60
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 28
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 24
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 40(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 92(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR6, 92(%FP)
+	LOAD	%GR1, 76(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 76(%FP)
+	LOAD	%GR6, 88(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 84(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 80(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 92(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 92(%FP)
+	JUMP	.LBB1_40
+.LBB1_40 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_41
+.LBB1_41 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 76(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 68(%FP)
+	LOAD	%GR3, 72(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 28
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 4(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 20
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	LOAD	%GR3, 100(%FP)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 32
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 28
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 4(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 96(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 96(%FP)
+	LOAD	%GR6, 96(%FP)
+	LOAD	%GR1, 80(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 80(%FP)
+	LOAD	%GR6, 92(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 88(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 84(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 96(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 96(%FP)
+	JUMP	.LBB1_42
+.LBB1_42 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_43
+.LBB1_43 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 80(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 72(%FP)
+	LOAD	%GR3, 76(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 32
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 36(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 24
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 4
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 36
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 32
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 36(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 68(%FP)
+	LOAD	%GR6, 68(%FP)
+	LOAD	%GR1, 84(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 84(%FP)
+	LOAD	%GR6, 96(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 92(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 88(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 68(%FP)
+	JUMP	.LBB1_44
+.LBB1_44 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_45
+.LBB1_45 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 84(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 76(%FP)
+	LOAD	%GR3, 80(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 36
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 32(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 28
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 8
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 40
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 36
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 32(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 72(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 72(%FP)
+	LOAD	%GR6, 72(%FP)
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 68(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 96(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 92(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 72(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 72(%FP)
+	JUMP	.LBB1_46
+.LBB1_46 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_47
+.LBB1_47 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 88(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 80(%FP)
+	LOAD	%GR3, 84(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 40
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 28(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 32
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 12
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 44
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 40
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 28(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 76(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 76(%FP)
+	LOAD	%GR6, 76(%FP)
+	LOAD	%GR1, 92(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR6, 72(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 68(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 96(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 76(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 76(%FP)
+	JUMP	.LBB1_48
+.LBB1_48 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_49
+.LBB1_49 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 92(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 84(%FP)
+	LOAD	%GR3, 88(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 44
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 24(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 36
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 16
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 48
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 44
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 24(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 80(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 80(%FP)
+	LOAD	%GR6, 80(%FP)
+	LOAD	%GR1, 96(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 96(%FP)
+	LOAD	%GR6, 76(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 72(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 68(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 80(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 80(%FP)
+	JUMP	.LBB1_50
+.LBB1_50 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_51
+.LBB1_51 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 96(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 88(%FP)
+	LOAD	%GR3, 92(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 48
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 20(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 40
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 20
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 52
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 48
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 20(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 84(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 84(%FP)
+	LOAD	%GR6, 84(%FP)
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 68(%FP)
+	LOAD	%GR6, 80(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 76(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 72(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 84(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 84(%FP)
+	JUMP	.LBB1_52
+.LBB1_52 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_53
+.LBB1_53 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 68(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 92(%FP)
+	LOAD	%GR3, 96(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 52
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 16(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 44
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 24
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 56
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 52
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 16(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 88(%FP)
+	LOAD	%GR1, 72(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 72(%FP)
+	LOAD	%GR6, 84(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 80(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 76(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	JUMP	.LBB1_54
+.LBB1_54 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_55
+.LBB1_55 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 72(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 96(%FP)
+	LOAD	%GR3, 68(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 56
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 12(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 48
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 28
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	ADDI	%GR3, %GR1, 60
+	LOAD	%GR3, 0(%GR3)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 56
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 12(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 92(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR6, 92(%FP)
+	LOAD	%GR1, 76(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 76(%FP)
+	LOAD	%GR6, 88(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 84(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 80(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 92(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 92(%FP)
+	JUMP	.LBB1_56
+.LBB1_56 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_57
+.LBB1_57 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 76(%FP)
+	SHLI	%GR1, %GR6, 26
+	SRLI	%GR2, %GR6, 6
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 21
+	SRLI	%GR3, %GR6, 11
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 7
+	SRLI	%GR3, %GR6, 25
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 68(%FP)
+	LOAD	%GR3, 72(%FP)
+	XOR	%GR3, %GR3, %GR2
+	AND	%GR6, %GR6, %GR3
+	XOR	%GR6, %GR2, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 164(%FP)
+	ADDI	%GR1, %GR1, 60
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 0(%FP)
+	ADDI	%GR1, %FP, 100
+	ADDI	%GR2, %GR1, 52
+	LOAD	%GR2, 0(%GR2)
+	SHLI	%GR3, %GR2, 15
+	SRLI	%GR4, %GR2, 17
+	OR	%GR3, %GR3, %GR4
+	SHLI	%GR4, %GR2, 13
+	SRLI	%GR5, %GR2, 19
+	OR	%GR4, %GR4, %GR5
+	XOR	%GR3, %GR3, %GR4
+	SRLI	%GR2, %GR2, 10
+	XOR	%GR2, %GR3, %GR2
+	ADDI	%GR3, %GR1, 32
+	LOAD	%GR3, 0(%GR3)
+	ADD	%GR2, %GR2, %GR3
+	LOAD	%GR3, 100(%FP)
+	SHLI	%GR4, %GR3, 25
+	SRLI	%GR5, %GR3, 7
+	OR	%GR4, %GR4, %GR5
+	SHLI	%GR5, %GR3, 14
+	SRLI	%GR6, %GR3, 18
+	OR	%GR6, %GR5, %GR6
+	XOR	%GR6, %GR4, %GR6
+	SRLI	%GR3, %GR3, 3
+	XOR	%GR6, %GR6, %GR3
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR1, %GR1, 60
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 0(%FP)
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 96(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 96(%FP)
+	LOAD	%GR6, 96(%FP)
+	LOAD	%GR1, 80(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 80(%FP)
+	LOAD	%GR6, 92(%FP)
+	SHLI	%GR1, %GR6, 30
+	SRLI	%GR2, %GR6, 2
+	OR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 19
+	SRLI	%GR3, %GR6, 13
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	SHLI	%GR2, %GR6, 10
+	SRLI	%GR3, %GR6, 22
+	OR	%GR2, %GR2, %GR3
+	XOR	%GR1, %GR1, %GR2
+	LOAD	%GR2, 88(%FP)
+	AND	%GR3, %GR6, %GR2
+	LOAD	%GR4, 84(%FP)
+	XOR	%GR6, %GR6, %GR2
+	AND	%GR6, %GR4, %GR6
+	XOR	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR1, %GR6
+	LOAD	%GR1, 96(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 96(%FP)
+	JUMP	.LBB1_58
+.LBB1_58 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	JUMP	.LBB1_59
+.LBB1_59 NOP                            ;   in Loop: Header=BB1_25 Depth=1
+	LOAD	%GR6, 64(%FP)
+	ADDI	%GR6, %GR6, 16
+	STORE	%GR6, 64(%FP)
+	LOAD	%GR6, 164(%FP)
+	ADDI	%GR6, %GR6, 64
+	STORE	%GR6, 164(%FP)
+	JUMP	.LBB1_25
+.LBB1_60 NOP 
+	LOAD	%GR6, 96(%FP)
+	LOAD	%GR1, 172(%FP)
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 92(%FP)
+	LOAD	%GR1, 172(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 88(%FP)
+	LOAD	%GR1, 172(%FP)
+	ADDI	%GR1, %GR1, 8
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 84(%FP)
+	LOAD	%GR1, 172(%FP)
+	ADDI	%GR1, %GR1, 12
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 80(%FP)
+	LOAD	%GR1, 172(%FP)
+	ADDI	%GR1, %GR1, 16
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 76(%FP)
+	LOAD	%GR1, 172(%FP)
+	ADDI	%GR1, %GR1, 20
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 72(%FP)
+	LOAD	%GR1, 172(%FP)
+	ADDI	%GR1, %GR1, 24
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 68(%FP)
+	LOAD	%GR1, 172(%FP)
+	ADDI	%GR1, %GR1, 28
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR5, 176(%FP)
+	LOAD	%GR4, 180(%FP)
+	LOAD	%GR3, 184(%FP)
+	LOAD	%GR2, 188(%FP)
+	LOAD	%GR1, 192(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 200
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end1 NOP 
+	.size	_nettle_sha256_compress, .Lfunc_end1-_nettle_sha256_compress
+                                        ; -- End function
+	.type	sha256_init,@function   ; -- Begin function sha256_init
+sha256_init NOP                         ; @sha256_init
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR1, 8(%FP)
+	COPYG	%GR2, sha256_init.H0
+	COPYI	%GR3, 32
+	CALL	memcpy
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 32
+	ADDI	%GR6, %GR6, 36
+	COPYI	%GR2, 0
+	STORE	%GR2, 0(%GR6)
+	STORE	%GR2, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 104
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end2 NOP 
+	.size	sha256_init, .Lfunc_end2-sha256_init
+                                        ; -- End function
+	.type	sha256_update,@function ; -- Begin function sha256_update
+sha256_update NOP                       ; @sha256_update
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	COPYI	%GR6, 56
+	STORE	%GR6, 16(%FP)
+	COPYG	%GR6, msg
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB3_1
+.LBB3_1 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 104
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB3_6
+	JUMP	.LBB3_2
+.LBB3_2 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 104
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 64
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 8(%FP)
+	ULTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB3_4
+	JUMP	.LBB3_3
+.LBB3_3 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 104
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR1, %GR6, 40
+	LOAD	%GR2, 12(%FP)
+	LOAD	%GR3, 16(%FP)
+	CALL	memcpy
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	ADDI	%GR1, %GR1, 104
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB3_10
+.LBB3_4 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 104
+	LOAD	%GR1, 0(%GR1)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR1, %GR6, 40
+	LOAD	%GR2, 12(%FP)
+	LOAD	%GR3, 8(%FP)
+	CALL	memcpy
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR1, 20(%FP)
+	ADDI	%GR2, %GR1, 40
+	CALL	_nettle_sha256_compress
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 32
+	ADDI	%GR6, %GR6, 36
+	LOAD	%GR2, 0(%GR6)
+	LOAD	%GR3, 0(%GR1)
+	ADDI	%GR4, %GR3, 1
+	ULT	%GR3, %GR4, %GR3
+	ADD	%GR2, %GR2, %GR3
+	STORE	%GR4, 0(%GR1)
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 16(%FP)
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB3_5
+.LBB3_5 NOP 
+	JUMP	.LBB3_6
+.LBB3_6 NOP 
+	JUMP	.LBB3_7
+.LBB3_7 NOP                             ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 64
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB3_9
+	JUMP	.LBB3_8
+.LBB3_8 NOP                             ;   in Loop: Header=BB3_7 Depth=1
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR2, 12(%FP)
+	CALL	_nettle_sha256_compress
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 32
+	ADDI	%GR6, %GR6, 36
+	LOAD	%GR2, 0(%GR6)
+	LOAD	%GR3, 0(%GR1)
+	ADDI	%GR4, %GR3, 1
+	ULT	%GR3, %GR4, %GR3
+	ADD	%GR2, %GR2, %GR3
+	STORE	%GR4, 0(%GR1)
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 64
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, -64
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB3_7
+.LBB3_9 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 40
+	LOAD	%GR2, 12(%FP)
+	LOAD	%GR3, 16(%FP)
+	CALL	memcpy
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	ADDI	%GR1, %GR1, 104
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB3_10
+.LBB3_10 NOP 
+	JUMP	.LBB3_11
+.LBB3_11 NOP 
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end3 NOP 
+	.size	sha256_update, .Lfunc_end3-sha256_update
+                                        ; -- End function
+	.type	sha256_digest,@function ; -- Begin function sha256_digest
+sha256_digest NOP                       ; @sha256_digest
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR1, 8(%FP)
+	COPYI	%GR6, 32
+	STORE	%GR6, 4(%FP)
+	COPYG	%GR6, buffer
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR1, 8(%FP)
+	LOAD	%GR2, 4(%FP)
+	LOAD	%GR3, 0(%FP)
+	CALL	sha256_write_digest
+	LOAD	%GR1, 8(%FP)
+	CALL	sha256_init
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end4 NOP 
+	.size	sha256_digest, .Lfunc_end4-sha256_digest
+                                        ; -- End function
+	.type	sha256_write_digest,@function ; -- Begin function sha256_write_digest
+sha256_write_digest NOP                 ; @sha256_write_digest
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 64
+	COPYR	%FP, %SP
+	STORE	%RA, 56(%FP)
+	STORE	%GR1, 52(%FP)
+	STORE	%GR2, 48(%FP)
+	STORE	%GR3, 44(%FP)
+	STORE	%GR4, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	LOAD	%GR6, 32(%FP)
+	COPYI	%GR1, 33
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB5_2
+	JUMP	.LBB5_1
+.LBB5_1 NOP 
+	COPYI	%GR1, 1
+	CALL	exit
+.LBB5_2 NOP 
+	JUMP	.LBB5_3
+.LBB5_3 NOP 
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 104
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 64
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB5_5
+	JUMP	.LBB5_4
+.LBB5_4 NOP 
+	COPYI	%GR1, 1
+	CALL	exit
+.LBB5_5 NOP 
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR1, 12(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 12(%FP)
+	ADDI	%GR6, %GR6, 40
+	COPYI	%GR1, 128
+	STOREB	%GR1, 0(%GR6)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 57
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB5_7
+	JUMP	.LBB5_6
+.LBB5_6 NOP 
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR2, 12(%FP)
+	ADD	%GR6, %GR6, %GR2
+	ADDI	%GR1, %GR6, 40
+	COPYI	%GR6, 64
+	SUB	%GR3, %GR6, %GR2
+	COPYI	%GR4, 0
+	COPYR	%GR2, %GR4
+	CALL	memset
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR1, 36(%FP)
+	ADDI	%GR2, %GR1, 40
+	CALL	_nettle_sha256_compress
+	STORE	%GR4, 12(%FP)
+	JUMP	.LBB5_7
+.LBB5_7 NOP 
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR2, 12(%FP)
+	ADD	%GR6, %GR6, %GR2
+	ADDI	%GR1, %GR6, 40
+	COPYI	%GR6, 56
+	SUB	%GR3, %GR6, %GR2
+	COPYI	%GR2, 0
+	CALL	memset
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB5_8
+.LBB5_8 NOP 
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR1, %GR6, 32
+	ADDI	%GR2, %GR6, 36
+	LOAD	%GR2, 0(%GR2)
+	LOAD	%GR1, 0(%GR1)
+	SRLI	%GR3, %GR1, 23
+	SHLI	%GR2, %GR2, 9
+	OR	%GR2, %GR2, %GR3
+	SHLI	%GR1, %GR1, 9
+	ADDI	%GR6, %GR6, 104
+	LOAD	%GR6, 0(%GR6)
+	SHLI	%GR6, %GR6, 3
+	OR	%GR6, %GR1, %GR6
+	ADDI	%GR1, %FP, 16
+	ORI	%GR1, %GR1, 4
+	STORE	%GR2, 0(%GR1)
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB5_9
+.LBB5_9 NOP 
+	ADDI	%GR6, %FP, 16
+	ORI	%GR1, %GR6, 7
+	ULOADB	%GR1, 0(%GR1)
+	LOAD	%GR2, 36(%FP)
+	ADDI	%GR2, %GR2, 96
+	STOREB	%GR1, 0(%GR2)
+	ORI	%GR1, %GR6, 6
+	ULOADB	%GR1, 0(%GR1)
+	LOAD	%GR2, 36(%FP)
+	ADDI	%GR2, %GR2, 97
+	STOREB	%GR1, 0(%GR2)
+	ORI	%GR1, %GR6, 5
+	ULOADB	%GR1, 0(%GR1)
+	LOAD	%GR2, 36(%FP)
+	ADDI	%GR2, %GR2, 98
+	STOREB	%GR1, 0(%GR2)
+	ORI	%GR1, %GR6, 4
+	ULOADB	%GR1, 0(%GR1)
+	LOAD	%GR2, 36(%FP)
+	ADDI	%GR2, %GR2, 99
+	STOREB	%GR1, 0(%GR2)
+	ORI	%GR1, %GR6, 3
+	ULOADB	%GR1, 0(%GR1)
+	LOAD	%GR2, 36(%FP)
+	ADDI	%GR2, %GR2, 100
+	STOREB	%GR1, 0(%GR2)
+	ORI	%GR1, %GR6, 2
+	ULOADB	%GR1, 0(%GR1)
+	LOAD	%GR2, 36(%FP)
+	ADDI	%GR2, %GR2, 101
+	STOREB	%GR1, 0(%GR2)
+	ORI	%GR6, %GR6, 1
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 36(%FP)
+	ADDI	%GR1, %GR1, 102
+	STOREB	%GR6, 0(%GR1)
+	ULOADB	%GR6, 16(%FP)
+	LOAD	%GR1, 36(%FP)
+	ADDI	%GR1, %GR1, 103
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB5_10
+.LBB5_10 NOP 
+	LOAD	%GR1, 36(%FP)
+	ADDI	%GR2, %GR1, 40
+	CALL	_nettle_sha256_compress
+	LOAD	%GR1, 32(%FP)
+	LOAD	%GR2, 28(%FP)
+	LOAD	%GR3, 36(%FP)
+	CALL	_nettle_write_be32
+	LOAD	%GR4, 40(%FP)
+	LOAD	%GR3, 44(%FP)
+	LOAD	%GR2, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	LOAD	%RA, 56(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 64
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end5 NOP 
+	.size	sha256_write_digest, .Lfunc_end5-sha256_write_digest
+                                        ; -- End function
+	.globl	main                    ; -- Begin function main
+	.type	main,@function
+main NOP                                ; @main
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 160
+	COPYR	%FP, %SP
+	STORE	%RA, 152(%FP)
+	STORE	%GR1, 148(%FP)
+	STORE	%GR2, 144(%FP)
+	STORE	%GR3, 140(%FP)
+	ADDI	%GR6, %SP, 4
+	ADDI	%GR1, %FP, 136
+	STORE	%GR1, 0(%GR6)
+	COPYG	%GR6, .L.str
+	STORE	%GR6, 0(%SP)
+	CALL	scanf
+                                        ; kill: def $gr6 killed $rt0
+	COPYI	%GR6, 0
+	STORE	%GR6, 132(%FP)
+	JUMP	.LBB6_1
+.LBB6_1 NOP                             ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 132(%FP)
+	LOAD	%GR1, 136(%FP)
+	LTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB6_4
+	JUMP	.LBB6_2
+.LBB6_2 NOP                             ;   in Loop: Header=BB6_1 Depth=1
+	COPYG	%GR1, buffer
+	COPYI	%GR2, 0
+	COPYI	%GR3, 32
+	CALL	memset
+                                        ; kill: def $gr6 killed $rt0
+	ADDI	%GR1, %FP, 24
+	CALL	sha256_init
+	CALL	sha256_update
+	CALL	sha256_digest
+	JUMP	.LBB6_3
+.LBB6_3 NOP                             ;   in Loop: Header=BB6_1 Depth=1
+	LOAD	%GR6, 132(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 132(%FP)
+	JUMP	.LBB6_1
+.LBB6_4 NOP 
+	COPYI	%GR6, 1
+	STORE	%GR6, 20(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB6_5
+.LBB6_5 NOP                             ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 7
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB6_10
+	JUMP	.LBB6_6
+.LBB6_6 NOP                             ;   in Loop: Header=BB6_5 Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYG	%GR1, expected_hash
+	ADD	%GR1, %GR6, %GR1
+	ULOADB	%GR1, 0(%GR1)
+	COPYG	%GR2, buffer
+	ADD	%GR6, %GR6, %GR2
+	ULOADB	%GR6, 0(%GR6)
+	EQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB6_8
+	JUMP	.LBB6_7
+.LBB6_7 NOP                             ;   in Loop: Header=BB6_5 Depth=1
+	COPYI	%GR6, 0
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB6_8
+.LBB6_8 NOP                             ;   in Loop: Header=BB6_5 Depth=1
+	JUMP	.LBB6_9
+.LBB6_9 NOP                             ;   in Loop: Header=BB6_5 Depth=1
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB6_5
+.LBB6_10 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB6_12
+	JUMP	.LBB6_11
+.LBB6_11 NOP 
+	;APP
+	CALL Proof
+	;NO_APP
+	JUMP	.LBB6_13
+.LBB6_12 NOP 
+	;APP
+	CALL Cheat
+	;NO_APP
+	JUMP	.LBB6_13
+.LBB6_13 NOP 
+	COPYI	%GR6, 0
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 140(%FP)
+	LOAD	%GR2, 144(%FP)
+	LOAD	%GR1, 148(%FP)
+	LOAD	%RA, 152(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 160
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end6 NOP 
+	.size	main, .Lfunc_end6-main
+                                        ; -- End function
+	.globl	SFUDIV                  ; -- Begin function SFUDIV
+	.type	SFUDIV,@function
+SFUDIV NOP                              ; @SFUDIV
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%GR1, 24(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB7_2
+	JUMP	.LBB7_1
+.LBB7_1 NOP 
+	COPYI	%GR1, -1
+	CALL	exit
+.LBB7_2 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB7_4
+	JUMP	.LBB7_3
+.LBB7_3 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB7_8
+.LBB7_4 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB7_5
+.LBB7_5 NOP                             ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 12(%FP)
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB7_7
+	JUMP	.LBB7_6
+.LBB7_6 NOP                             ;   in Loop: Header=BB7_5 Depth=1
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 16(%FP)
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB7_5
+.LBB7_7 NOP 
+	LOAD	%GR6, 8(%FP)
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB7_8
+.LBB7_8 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end7 NOP 
+	.size	SFUDIV, .Lfunc_end7-SFUDIV
+                                        ; -- End function
+	.globl	SFUREM                  ; -- Begin function SFUREM
+	.type	SFUREM,@function
+SFUREM NOP                              ; @SFUREM
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%GR1, 24(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB8_2
+	JUMP	.LBB8_1
+.LBB8_1 NOP 
+	COPYI	%GR1, -1
+	CALL	exit
+.LBB8_2 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB8_4
+	JUMP	.LBB8_3
+.LBB8_3 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB8_8
+.LBB8_4 NOP 
+	JUMP	.LBB8_5
+.LBB8_5 NOP                             ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 12(%FP)
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB8_7
+	JUMP	.LBB8_6
+.LBB8_6 NOP                             ;   in Loop: Header=BB8_5 Depth=1
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 16(%FP)
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB8_5
+.LBB8_7 NOP 
+	LOAD	%GR6, 16(%FP)
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB8_8
+.LBB8_8 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end8 NOP 
+	.size	SFUREM, .Lfunc_end8-SFUREM
+                                        ; -- End function
+	.globl	SFSDIV                  ; -- Begin function SFSDIV
+	.type	SFSDIV,@function
+SFSDIV NOP                              ; @SFSDIV
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%GR1, 24(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB9_2
+	JUMP	.LBB9_1
+.LBB9_1 NOP 
+	COPYI	%GR1, -1
+	CALL	exit
+.LBB9_2 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB9_4
+	JUMP	.LBB9_3
+.LBB9_3 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB9_22
+.LBB9_4 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB9_6
+	JUMP	.LBB9_5
+.LBB9_5 NOP 
+	LOAD	%GR6, 16(%FP)
+	JUMP	.LBB9_7
+.LBB9_6 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	SUB	%GR6, %GR1, %GR6
+	JUMP	.LBB9_7
+.LBB9_7 NOP 
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB9_9
+	JUMP	.LBB9_8
+.LBB9_8 NOP 
+	LOAD	%GR6, 12(%FP)
+	JUMP	.LBB9_10
+.LBB9_9 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	SUB	%GR6, %GR1, %GR6
+	JUMP	.LBB9_10
+.LBB9_10 NOP 
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 4(%FP)
+	UDIV	%GR6, %GR6, %GR1
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB9_13
+	JUMP	.LBB9_11
+.LBB9_11 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB9_13
+	JUMP	.LBB9_12
+.LBB9_12 NOP 
+	LOAD	%GR6, 0(%FP)
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB9_22
+.LBB9_13 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB9_16
+	JUMP	.LBB9_14
+.LBB9_14 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB9_16
+	JUMP	.LBB9_15
+.LBB9_15 NOP 
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 0
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB9_22
+.LBB9_16 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB9_19
+	JUMP	.LBB9_17
+.LBB9_17 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB9_19
+	JUMP	.LBB9_18
+.LBB9_18 NOP 
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 0
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB9_22
+.LBB9_19 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB9_22
+	JUMP	.LBB9_20
+.LBB9_20 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB9_22
+	JUMP	.LBB9_21
+.LBB9_21 NOP 
+	LOAD	%GR6, 0(%FP)
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB9_22
+.LBB9_22 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end9 NOP 
+	.size	SFSDIV, .Lfunc_end9-SFSDIV
+                                        ; -- End function
+	.globl	SFSREM                  ; -- Begin function SFSREM
+	.type	SFSREM,@function
+SFSREM NOP                              ; @SFSREM
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%GR1, 24(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB10_2
+	JUMP	.LBB10_1
+.LBB10_1 NOP 
+	COPYI	%GR1, -1
+	CALL	exit
+.LBB10_2 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB10_4
+	JUMP	.LBB10_3
+.LBB10_3 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB10_22
+.LBB10_4 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB10_6
+	JUMP	.LBB10_5
+.LBB10_5 NOP 
+	LOAD	%GR6, 16(%FP)
+	JUMP	.LBB10_7
+.LBB10_6 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	SUB	%GR6, %GR1, %GR6
+	JUMP	.LBB10_7
+.LBB10_7 NOP 
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB10_9
+	JUMP	.LBB10_8
+.LBB10_8 NOP 
+	LOAD	%GR6, 12(%FP)
+	JUMP	.LBB10_10
+.LBB10_9 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	SUB	%GR6, %GR1, %GR6
+	JUMP	.LBB10_10
+.LBB10_10 NOP 
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 4(%FP)
+	UREM	%GR6, %GR6, %GR1
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB10_13
+	JUMP	.LBB10_11
+.LBB10_11 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB10_13
+	JUMP	.LBB10_12
+.LBB10_12 NOP 
+	LOAD	%GR6, 0(%FP)
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB10_22
+.LBB10_13 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB10_16
+	JUMP	.LBB10_14
+.LBB10_14 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB10_16
+	JUMP	.LBB10_15
+.LBB10_15 NOP 
+	LOAD	%GR6, 0(%FP)
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB10_22
+.LBB10_16 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB10_19
+	JUMP	.LBB10_17
+.LBB10_17 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB10_19
+	JUMP	.LBB10_18
+.LBB10_18 NOP 
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 0
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB10_22
+.LBB10_19 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB10_22
+	JUMP	.LBB10_20
+.LBB10_20 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB10_22
+	JUMP	.LBB10_21
+.LBB10_21 NOP 
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 0
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB10_22
+.LBB10_22 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end10 NOP 
+	.size	SFSREM, .Lfunc_end10-SFSREM
+                                        ; -- End function
+	.globl	SF64UDIV                ; -- Begin function SF64UDIV
+	.type	SF64UDIV,@function
+SF64UDIV NOP                            ; @SF64UDIV
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 80
+	COPYR	%FP, %SP
+	STORE	%GR1, 72(%FP)
+	STORE	%GR2, 68(%FP)
+	STORE	%GR3, 64(%FP)
+	STORE	%GR4, 60(%FP)
+	STORE	%GR5, 56(%FP)
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	STORE	%GR2, 0(%GR6)
+	STORE	%GR1, 40(%FP)
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	STORE	%GR4, 0(%GR6)
+	STORE	%GR3, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	OR	%GR6, %GR1, %GR6
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB11_2
+	JUMP	.LBB11_1
+.LBB11_1 NOP 
+	COPYI	%GR1, -1
+	CALL	exit
+.LBB11_2 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	OR	%GR6, %GR1, %GR6
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB11_4
+	JUMP	.LBB11_3
+.LBB11_3 NOP 
+	ADDI	%GR6, %FP, 48
+	ADDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR1, 48(%FP)
+	JUMP	.LBB11_16
+.LBB11_4 NOP 
+	ADDI	%GR6, %FP, 24
+	ORI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR1, 24(%FP)
+	ADDI	%GR6, %FP, 16
+	ORI	%GR6, %GR6, 4
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, 1
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB11_5
+.LBB11_5 NOP                            ; =>This Inner Loop Header: Depth=1
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	ADDI	%GR2, %FP, 40
+	ORI	%GR2, %GR2, 4
+	LOAD	%GR2, 0(%GR2)
+	LOAD	%GR3, 40(%FP)
+	ULTE	%GR1, %GR1, %GR3
+	ULTE	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB11_7
+	JUMP	.LBB11_6
+.LBB11_6 NOP 
+	JUMP	.LBB11_10
+.LBB11_7 NOP                            ;   in Loop: Header=BB11_5 Depth=1
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR2, %FP, 32
+	ORI	%GR2, %GR2, 4
+	LOAD	%GR3, 0(%GR2)
+	LOAD	%GR4, 32(%FP)
+	ULT	%GR5, %GR1, %GR4
+	SUB	%GR6, %GR6, %GR3
+	SUB	%GR6, %GR6, %GR5
+	SUB	%GR1, %GR1, %GR4
+	ADDI	%GR3, %FP, 8
+	ORI	%GR3, %GR3, 4
+	STORE	%GR6, 0(%GR3)
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR6, 0(%GR2)
+	LOAD	%GR1, 32(%FP)
+	LOAD	%GR2, 0(%GR3)
+	LOAD	%GR3, 8(%FP)
+	ULTE	%GR4, %GR6, %GR2
+	ULTE	%GR1, %GR1, %GR3
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR4, %GR6, %GR1
+	BNEQZ	%GR4, .LBB11_9
+	JUMP	.LBB11_8
+.LBB11_8 NOP 
+	JUMP	.LBB11_10
+.LBB11_9 NOP                            ;   in Loop: Header=BB11_5 Depth=1
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 32(%FP)
+	SRLI	%GR3, %GR2, 31
+	SHLI	%GR1, %GR1, 1
+	OR	%GR1, %GR1, %GR3
+	SHLI	%GR2, %GR2, 1
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR2, 32(%FP)
+	ADDI	%GR6, %FP, 16
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 16(%FP)
+	SRLI	%GR3, %GR2, 31
+	SHLI	%GR1, %GR1, 1
+	OR	%GR1, %GR1, %GR3
+	SHLI	%GR2, %GR2, 1
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR2, 16(%FP)
+	JUMP	.LBB11_5
+.LBB11_10 NOP 
+	JUMP	.LBB11_11
+.LBB11_11 NOP                           ; =>This Inner Loop Header: Depth=1
+	ADDI	%GR6, %FP, 16
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	OR	%GR6, %GR1, %GR6
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB11_15
+	JUMP	.LBB11_12
+.LBB11_12 NOP                           ;   in Loop: Header=BB11_11 Depth=1
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR2, %FP, 32
+	ORI	%GR2, %GR2, 4
+	LOAD	%GR2, 0(%GR2)
+	LOAD	%GR3, 32(%FP)
+	ULT	%GR1, %GR1, %GR3
+	ULT	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB11_14
+	JUMP	.LBB11_13
+.LBB11_13 NOP                           ;   in Loop: Header=BB11_11 Depth=1
+	ADDI	%GR6, %FP, 16
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %FP, 24
+	ORI	%GR2, %GR2, 4
+	LOAD	%GR3, 0(%GR2)
+	LOAD	%GR4, 24(%FP)
+	ADD	%GR1, %GR4, %GR1
+	ULT	%GR4, %GR1, %GR4
+	ADD	%GR6, %GR3, %GR6
+	ADD	%GR6, %GR6, %GR4
+	STORE	%GR6, 0(%GR2)
+	STORE	%GR1, 24(%FP)
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	ADDI	%GR2, %FP, 40
+	ORI	%GR2, %GR2, 4
+	LOAD	%GR3, 0(%GR2)
+	LOAD	%GR4, 40(%FP)
+	ULT	%GR5, %GR4, %GR1
+	SUB	%GR6, %GR3, %GR6
+	SUB	%GR6, %GR6, %GR5
+	SUB	%GR1, %GR4, %GR1
+	STORE	%GR6, 0(%GR2)
+	STORE	%GR1, 40(%FP)
+	JUMP	.LBB11_14
+.LBB11_14 NOP                           ;   in Loop: Header=BB11_11 Depth=1
+	ADDI	%GR6, %FP, 16
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 16(%FP)
+	SRLI	%GR2, %GR2, 1
+	SHLI	%GR3, %GR1, 31
+	OR	%GR2, %GR2, %GR3
+	SRLI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR2, 16(%FP)
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 32(%FP)
+	SHLI	%GR3, %GR1, 31
+	SRLI	%GR2, %GR2, 1
+	OR	%GR2, %GR2, %GR3
+	SRLI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR2, 32(%FP)
+	JUMP	.LBB11_11
+.LBB11_15 NOP 
+	ADDI	%GR6, %FP, 24
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 24(%FP)
+	ADDI	%GR2, %FP, 48
+	ADDI	%GR2, %GR2, 4
+	STORE	%GR6, 0(%GR2)
+	STORE	%GR1, 48(%FP)
+	JUMP	.LBB11_16
+.LBB11_16 NOP 
+	ADDI	%GR6, %FP, 48
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 48(%FP)
+	COPYR	%RT0, %GR1
+	COPYR	%RT1, %GR6
+	LOAD	%GR5, 56(%FP)
+	LOAD	%GR4, 60(%FP)
+	LOAD	%GR3, 64(%FP)
+	LOAD	%GR2, 68(%FP)
+	LOAD	%GR1, 72(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 80
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end11 NOP 
+	.size	SF64UDIV, .Lfunc_end11-SF64UDIV
+                                        ; -- End function
+	.globl	SF64UREM                ; -- Begin function SF64UREM
+	.type	SF64UREM,@function
+SF64UREM NOP                            ; @SF64UREM
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 64
+	COPYR	%FP, %SP
+	STORE	%GR1, 56(%FP)
+	STORE	%GR2, 52(%FP)
+	STORE	%GR3, 48(%FP)
+	STORE	%GR4, 44(%FP)
+	STORE	%GR5, 40(%FP)
+	ADDI	%GR6, %FP, 24
+	ORI	%GR6, %GR6, 4
+	STORE	%GR2, 0(%GR6)
+	STORE	%GR1, 24(%FP)
+	ADDI	%GR6, %FP, 16
+	ORI	%GR6, %GR6, 4
+	STORE	%GR4, 0(%GR6)
+	STORE	%GR3, 16(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	OR	%GR6, %GR1, %GR6
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB12_2
+	JUMP	.LBB12_1
+.LBB12_1 NOP 
+	COPYI	%GR1, -1
+	CALL	exit
+.LBB12_2 NOP 
+	ADDI	%GR6, %FP, 24
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 24(%FP)
+	OR	%GR6, %GR1, %GR6
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB12_4
+	JUMP	.LBB12_3
+.LBB12_3 NOP 
+	ADDI	%GR6, %FP, 32
+	ADDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR1, 32(%FP)
+	JUMP	.LBB12_16
+.LBB12_4 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, 1
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB12_5
+.LBB12_5 NOP                            ; =>This Inner Loop Header: Depth=1
+	ADDI	%GR6, %FP, 16
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %FP, 24
+	ORI	%GR2, %GR2, 4
+	LOAD	%GR2, 0(%GR2)
+	LOAD	%GR3, 24(%FP)
+	ULTE	%GR1, %GR1, %GR3
+	ULTE	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB12_7
+	JUMP	.LBB12_6
+.LBB12_6 NOP 
+	JUMP	.LBB12_10
+.LBB12_7 NOP                            ;   in Loop: Header=BB12_5 Depth=1
+	ADDI	%GR6, %FP, 24
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 24(%FP)
+	ADDI	%GR2, %FP, 16
+	ORI	%GR2, %GR2, 4
+	LOAD	%GR3, 0(%GR2)
+	LOAD	%GR4, 16(%FP)
+	ULT	%GR5, %GR1, %GR4
+	SUB	%GR6, %GR6, %GR3
+	SUB	%GR6, %GR6, %GR5
+	SUB	%GR1, %GR1, %GR4
+	ADDI	%GR3, %FP, 0
+	ORI	%GR3, %GR3, 4
+	STORE	%GR6, 0(%GR3)
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR2)
+	LOAD	%GR1, 16(%FP)
+	LOAD	%GR2, 0(%GR3)
+	LOAD	%GR3, 0(%FP)
+	ULTE	%GR4, %GR6, %GR2
+	ULTE	%GR1, %GR1, %GR3
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR4, %GR6, %GR1
+	BNEQZ	%GR4, .LBB12_9
+	JUMP	.LBB12_8
+.LBB12_8 NOP 
+	JUMP	.LBB12_10
+.LBB12_9 NOP                            ;   in Loop: Header=BB12_5 Depth=1
+	ADDI	%GR6, %FP, 16
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 16(%FP)
+	SRLI	%GR3, %GR2, 31
+	SHLI	%GR1, %GR1, 1
+	OR	%GR1, %GR1, %GR3
+	SHLI	%GR2, %GR2, 1
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR2, 16(%FP)
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 8(%FP)
+	SRLI	%GR3, %GR2, 31
+	SHLI	%GR1, %GR1, 1
+	OR	%GR1, %GR1, %GR3
+	SHLI	%GR2, %GR2, 1
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR2, 8(%FP)
+	JUMP	.LBB12_5
+.LBB12_10 NOP 
+	JUMP	.LBB12_11
+.LBB12_11 NOP                           ; =>This Inner Loop Header: Depth=1
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	OR	%GR6, %GR1, %GR6
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB12_15
+	JUMP	.LBB12_12
+.LBB12_12 NOP                           ;   in Loop: Header=BB12_11 Depth=1
+	ADDI	%GR6, %FP, 24
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 24(%FP)
+	ADDI	%GR2, %FP, 16
+	ORI	%GR2, %GR2, 4
+	LOAD	%GR2, 0(%GR2)
+	LOAD	%GR3, 16(%FP)
+	ULT	%GR1, %GR1, %GR3
+	ULT	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB12_14
+	JUMP	.LBB12_13
+.LBB12_13 NOP                           ;   in Loop: Header=BB12_11 Depth=1
+	ADDI	%GR6, %FP, 16
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %FP, 24
+	ORI	%GR2, %GR2, 4
+	LOAD	%GR3, 0(%GR2)
+	LOAD	%GR4, 24(%FP)
+	ULT	%GR5, %GR4, %GR1
+	SUB	%GR6, %GR3, %GR6
+	SUB	%GR6, %GR6, %GR5
+	SUB	%GR1, %GR4, %GR1
+	STORE	%GR6, 0(%GR2)
+	STORE	%GR1, 24(%FP)
+	JUMP	.LBB12_14
+.LBB12_14 NOP                           ;   in Loop: Header=BB12_11 Depth=1
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 8(%FP)
+	SRLI	%GR2, %GR2, 1
+	SHLI	%GR3, %GR1, 31
+	OR	%GR2, %GR2, %GR3
+	SRLI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR2, 8(%FP)
+	ADDI	%GR6, %FP, 16
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 16(%FP)
+	SHLI	%GR3, %GR1, 31
+	SRLI	%GR2, %GR2, 1
+	OR	%GR2, %GR2, %GR3
+	SRLI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR2, 16(%FP)
+	JUMP	.LBB12_11
+.LBB12_15 NOP 
+	ADDI	%GR6, %FP, 24
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 24(%FP)
+	ADDI	%GR2, %FP, 32
+	ADDI	%GR2, %GR2, 4
+	STORE	%GR6, 0(%GR2)
+	STORE	%GR1, 32(%FP)
+	JUMP	.LBB12_16
+.LBB12_16 NOP 
+	ADDI	%GR6, %FP, 32
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	COPYR	%RT0, %GR1
+	COPYR	%RT1, %GR6
+	LOAD	%GR5, 40(%FP)
+	LOAD	%GR4, 44(%FP)
+	LOAD	%GR3, 48(%FP)
+	LOAD	%GR2, 52(%FP)
+	LOAD	%GR1, 56(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 64
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end12 NOP 
+	.size	SF64UREM, .Lfunc_end12-SF64UREM
+                                        ; -- End function
+	.globl	SF64SDIV                ; -- Begin function SF64SDIV
+	.type	SF64SDIV,@function
+SF64SDIV NOP                            ; @SF64SDIV
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 80
+	COPYR	%FP, %SP
+	STORE	%RA, 72(%FP)
+	STORE	%GR1, 68(%FP)
+	STORE	%GR2, 64(%FP)
+	STORE	%GR3, 60(%FP)
+	STORE	%GR4, 56(%FP)
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	STORE	%GR2, 0(%GR6)
+	STORE	%GR1, 40(%FP)
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	STORE	%GR4, 0(%GR6)
+	STORE	%GR3, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	OR	%GR6, %GR1, %GR6
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB13_2
+	JUMP	.LBB13_1
+.LBB13_1 NOP 
+	COPYI	%GR1, -1
+	CALL	exit
+.LBB13_2 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	OR	%GR6, %GR1, %GR6
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB13_4
+	JUMP	.LBB13_3
+.LBB13_3 NOP 
+	ADDI	%GR6, %FP, 48
+	ADDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR1, 48(%FP)
+	JUMP	.LBB13_22
+.LBB13_4 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	COPYI	%GR2, 0
+	EQ	%GR1, %GR1, %GR2
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB13_6
+	JUMP	.LBB13_5
+.LBB13_5 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR6, 40(%FP)
+	JUMP	.LBB13_7
+.LBB13_6 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 40(%FP)
+	COPYI	%GR3, 0
+	SUB	%GR6, %GR3, %GR2
+	NEQ	%GR2, %GR2, %GR3
+	ADD	%GR1, %GR1, %GR2
+	SUB	%GR1, %GR3, %GR1
+	JUMP	.LBB13_7
+.LBB13_7 NOP 
+	ADDI	%GR2, %FP, 24
+	ORI	%GR2, %GR2, 4
+	STORE	%GR1, 0(%GR2)
+	STORE	%GR6, 24(%FP)
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	COPYI	%GR2, 0
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR1, %GR1, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB13_9
+	JUMP	.LBB13_8
+.LBB13_8 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR6, 32(%FP)
+	JUMP	.LBB13_10
+.LBB13_9 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 32(%FP)
+	COPYI	%GR3, 0
+	SUB	%GR6, %GR3, %GR2
+	NEQ	%GR2, %GR2, %GR3
+	ADD	%GR1, %GR1, %GR2
+	SUB	%GR1, %GR3, %GR1
+	JUMP	.LBB13_10
+.LBB13_10 NOP 
+	ADDI	%GR2, %FP, 16
+	ORI	%GR3, %GR2, 4
+	STORE	%GR1, 0(%GR3)
+	STORE	%GR6, 16(%FP)
+	ADDI	%GR6, %FP, 24
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR2, 0(%GR6)
+	LOAD	%GR1, 24(%FP)
+	LOAD	%GR4, 0(%GR3)
+	LOAD	%GR3, 16(%FP)
+	CALL	SF64UDIV
+	COPYR	%GR6, %RT0
+	COPYR	%GR1, %RT1
+	ADDI	%GR2, %FP, 8
+	ORI	%GR2, %GR2, 4
+	STORE	%GR1, 0(%GR2)
+	STORE	%GR6, 8(%FP)
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	COPYI	%GR2, 0
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR1, %GR1, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB13_13
+	JUMP	.LBB13_11
+.LBB13_11 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	COPYI	%GR2, 0
+	EQ	%GR1, %GR1, %GR2
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB13_13
+	JUMP	.LBB13_12
+.LBB13_12 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR2, %FP, 48
+	ADDI	%GR2, %GR2, 4
+	STORE	%GR6, 0(%GR2)
+	STORE	%GR1, 48(%FP)
+	JUMP	.LBB13_22
+.LBB13_13 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	COPYI	%GR2, 0
+	EQ	%GR1, %GR1, %GR2
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB13_16
+	JUMP	.LBB13_14
+.LBB13_14 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB13_16
+	JUMP	.LBB13_15
+.LBB13_15 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	COPYI	%GR2, 0
+	SUB	%GR3, %GR2, %GR1
+	NEQ	%GR1, %GR1, %GR2
+	ADD	%GR6, %GR6, %GR1
+	SUB	%GR6, %GR2, %GR6
+	ADDI	%GR1, %FP, 48
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	STORE	%GR3, 48(%FP)
+	JUMP	.LBB13_22
+.LBB13_16 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB13_19
+	JUMP	.LBB13_17
+.LBB13_17 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	COPYI	%GR2, 0
+	EQ	%GR1, %GR1, %GR2
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB13_19
+	JUMP	.LBB13_18
+.LBB13_18 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	COPYI	%GR2, 0
+	SUB	%GR3, %GR2, %GR1
+	NEQ	%GR1, %GR1, %GR2
+	ADD	%GR6, %GR6, %GR1
+	SUB	%GR6, %GR2, %GR6
+	ADDI	%GR1, %FP, 48
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	STORE	%GR3, 48(%FP)
+	JUMP	.LBB13_22
+.LBB13_19 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB13_22
+	JUMP	.LBB13_20
+.LBB13_20 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB13_22
+	JUMP	.LBB13_21
+.LBB13_21 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR2, %FP, 48
+	ADDI	%GR2, %GR2, 4
+	STORE	%GR6, 0(%GR2)
+	STORE	%GR1, 48(%FP)
+	JUMP	.LBB13_22
+.LBB13_22 NOP 
+	ADDI	%GR6, %FP, 48
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 48(%FP)
+	COPYR	%RT0, %GR1
+	COPYR	%RT1, %GR6
+	LOAD	%GR4, 56(%FP)
+	LOAD	%GR3, 60(%FP)
+	LOAD	%GR2, 64(%FP)
+	LOAD	%GR1, 68(%FP)
+	LOAD	%RA, 72(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 80
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end13 NOP 
+	.size	SF64SDIV, .Lfunc_end13-SF64SDIV
+                                        ; -- End function
+	.globl	SF64SREM                ; -- Begin function SF64SREM
+	.type	SF64SREM,@function
+SF64SREM NOP                            ; @SF64SREM
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 80
+	COPYR	%FP, %SP
+	STORE	%RA, 72(%FP)
+	STORE	%GR1, 68(%FP)
+	STORE	%GR2, 64(%FP)
+	STORE	%GR3, 60(%FP)
+	STORE	%GR4, 56(%FP)
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	STORE	%GR2, 0(%GR6)
+	STORE	%GR1, 40(%FP)
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	STORE	%GR4, 0(%GR6)
+	STORE	%GR3, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	OR	%GR6, %GR1, %GR6
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB14_2
+	JUMP	.LBB14_1
+.LBB14_1 NOP 
+	COPYI	%GR1, -1
+	CALL	exit
+.LBB14_2 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	OR	%GR6, %GR1, %GR6
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB14_4
+	JUMP	.LBB14_3
+.LBB14_3 NOP 
+	ADDI	%GR6, %FP, 48
+	ADDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	STORE	%GR1, 48(%FP)
+	JUMP	.LBB14_22
+.LBB14_4 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	COPYI	%GR2, 0
+	EQ	%GR1, %GR1, %GR2
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB14_6
+	JUMP	.LBB14_5
+.LBB14_5 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR6, 40(%FP)
+	JUMP	.LBB14_7
+.LBB14_6 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 40(%FP)
+	COPYI	%GR3, 0
+	SUB	%GR6, %GR3, %GR2
+	NEQ	%GR2, %GR2, %GR3
+	ADD	%GR1, %GR1, %GR2
+	SUB	%GR1, %GR3, %GR1
+	JUMP	.LBB14_7
+.LBB14_7 NOP 
+	ADDI	%GR2, %FP, 24
+	ORI	%GR2, %GR2, 4
+	STORE	%GR1, 0(%GR2)
+	STORE	%GR6, 24(%FP)
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	COPYI	%GR2, 0
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR1, %GR1, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB14_9
+	JUMP	.LBB14_8
+.LBB14_8 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR6, 32(%FP)
+	JUMP	.LBB14_10
+.LBB14_9 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	LOAD	%GR2, 32(%FP)
+	COPYI	%GR3, 0
+	SUB	%GR6, %GR3, %GR2
+	NEQ	%GR2, %GR2, %GR3
+	ADD	%GR1, %GR1, %GR2
+	SUB	%GR1, %GR3, %GR1
+	JUMP	.LBB14_10
+.LBB14_10 NOP 
+	ADDI	%GR2, %FP, 16
+	ORI	%GR3, %GR2, 4
+	STORE	%GR1, 0(%GR3)
+	STORE	%GR6, 16(%FP)
+	ADDI	%GR6, %FP, 24
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR2, 0(%GR6)
+	LOAD	%GR1, 24(%FP)
+	LOAD	%GR4, 0(%GR3)
+	LOAD	%GR3, 16(%FP)
+	CALL	SF64UREM
+	COPYR	%GR6, %RT0
+	COPYR	%GR1, %RT1
+	ADDI	%GR2, %FP, 8
+	ORI	%GR2, %GR2, 4
+	STORE	%GR1, 0(%GR2)
+	STORE	%GR6, 8(%FP)
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	COPYI	%GR2, 0
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR1, %GR1, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB14_13
+	JUMP	.LBB14_11
+.LBB14_11 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	COPYI	%GR2, 0
+	EQ	%GR1, %GR1, %GR2
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB14_13
+	JUMP	.LBB14_12
+.LBB14_12 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR2, %FP, 48
+	ADDI	%GR2, %GR2, 4
+	STORE	%GR6, 0(%GR2)
+	STORE	%GR1, 48(%FP)
+	JUMP	.LBB14_22
+.LBB14_13 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	COPYI	%GR2, 0
+	EQ	%GR1, %GR1, %GR2
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB14_16
+	JUMP	.LBB14_14
+.LBB14_14 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB14_16
+	JUMP	.LBB14_15
+.LBB14_15 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR2, %FP, 48
+	ADDI	%GR2, %GR2, 4
+	STORE	%GR6, 0(%GR2)
+	STORE	%GR1, 48(%FP)
+	JUMP	.LBB14_22
+.LBB14_16 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB14_19
+	JUMP	.LBB14_17
+.LBB14_17 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	COPYI	%GR2, 0
+	EQ	%GR1, %GR1, %GR2
+	LT	%GR3, %GR6, %GR2
+	EQ	%GR6, %GR6, %GR2
+	CMOV	%GR3, %GR6, %GR1
+	BNEQZ	%GR3, .LBB14_19
+	JUMP	.LBB14_18
+.LBB14_18 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	COPYI	%GR2, 0
+	SUB	%GR3, %GR2, %GR1
+	NEQ	%GR1, %GR1, %GR2
+	ADD	%GR6, %GR6, %GR1
+	SUB	%GR6, %GR2, %GR6
+	ADDI	%GR1, %FP, 48
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	STORE	%GR3, 48(%FP)
+	JUMP	.LBB14_22
+.LBB14_19 NOP 
+	ADDI	%GR6, %FP, 40
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB14_22
+	JUMP	.LBB14_20
+.LBB14_20 NOP 
+	ADDI	%GR6, %FP, 32
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB14_22
+	JUMP	.LBB14_21
+.LBB14_21 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	COPYI	%GR2, 0
+	SUB	%GR3, %GR2, %GR1
+	NEQ	%GR1, %GR1, %GR2
+	ADD	%GR6, %GR6, %GR1
+	SUB	%GR6, %GR2, %GR6
+	ADDI	%GR1, %FP, 48
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	STORE	%GR3, 48(%FP)
+	JUMP	.LBB14_22
+.LBB14_22 NOP 
+	ADDI	%GR6, %FP, 48
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 48(%FP)
+	COPYR	%RT0, %GR1
+	COPYR	%RT1, %GR6
+	LOAD	%GR4, 56(%FP)
+	LOAD	%GR3, 60(%FP)
+	LOAD	%GR2, 64(%FP)
+	LOAD	%GR1, 68(%FP)
+	LOAD	%RA, 72(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 80
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end14 NOP 
+	.size	SF64SREM, .Lfunc_end14-SF64SREM
+                                        ; -- End function
+	.globl	start                   ; -- Begin function start
+	.type	start,@function
+start NOP                               ; @start
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 448
+	COPYR	%FP, %SP
+	STORE	%RA, 440(%FP)
+	STORE	%GR1, 436(%FP)
+	STORE	%GR2, 432(%FP)
+	STORE	%GR3, 428(%FP)
+	COPYI	%GR6, 20
+	STORE	%GR6, 424(%FP)
+	LOAD	%GR1, 424(%FP)
+	COPYI	%GR2, 4
+	CALL	calloc
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 420(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB15_1
+.LBB15_1 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 424(%FP)
+	LTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB15_4
+	JUMP	.LBB15_2
+.LBB15_2 NOP                            ;   in Loop: Header=BB15_1 Depth=1
+	LOAD	%GR6, 16(%FP)
+	MULI	%GR6, %GR6, 20
+	ADDI	%GR1, %FP, 20
+	ADD	%GR1, %GR1, %GR6
+	COPYG	%GR2, .L.str.67
+	CALL	strcpy
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB15_3
+.LBB15_3 NOP                            ;   in Loop: Header=BB15_1 Depth=1
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB15_1
+.LBB15_4 NOP 
+	;APP
+		VMCALL	4
+	;NO_APP
+	COPYI	%GR6, 0
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB15_5
+.LBB15_5 NOP                            ; =>This Loop Header: Depth=1
+                                        ;     Child Loop BB15_7 Depth 2
+                                        ;     Child Loop BB15_11 Depth 2
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 424(%FP)
+	LTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB15_20
+	JUMP	.LBB15_6
+.LBB15_6 NOP                            ;   in Loop: Header=BB15_5 Depth=1
+	JUMP	.LBB15_7
+.LBB15_7 NOP                            ;   Parent Loop BB15_5 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	STOREB	%GR6, 8(%FP)
+	LOADB	%GR6, 8(%FP)
+	COPYI	%GR1, 32
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB15_9
+	JUMP	.LBB15_8
+.LBB15_8 NOP                            ;   in Loop: Header=BB15_7 Depth=2
+	JUMP	.LBB15_7
+.LBB15_9 NOP                            ;   in Loop: Header=BB15_5 Depth=1
+	JUMP	.LBB15_10
+.LBB15_10 NOP                           ;   in Loop: Header=BB15_5 Depth=1
+	JUMP	.LBB15_11
+.LBB15_11 NOP                           ;   Parent Loop BB15_5 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 12(%FP)
+	MULI	%GR6, %GR6, 20
+	ADDI	%GR1, %FP, 20
+	ADD	%GR1, %GR1, %GR6
+	ADDI	%GR2, %FP, 8
+	COPYI	%GR3, 1
+	CALL	strncat
+                                        ; kill: def $gr6 killed $rt0
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	STOREB	%GR6, 8(%FP)
+	LOADB	%GR6, 8(%FP)
+	COPYI	%GR1, 32
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB15_13
+	JUMP	.LBB15_12
+.LBB15_12 NOP                           ;   in Loop: Header=BB15_5 Depth=1
+	JUMP	.LBB15_16
+.LBB15_13 NOP                           ;   in Loop: Header=BB15_11 Depth=2
+	LOADB	%GR6, 8(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB15_15
+	JUMP	.LBB15_14
+.LBB15_14 NOP                           ;   in Loop: Header=BB15_5 Depth=1
+	JUMP	.LBB15_16
+.LBB15_15 NOP                           ;   in Loop: Header=BB15_11 Depth=2
+	JUMP	.LBB15_11
+.LBB15_16 NOP                           ;   in Loop: Header=BB15_5 Depth=1
+	LOADB	%GR6, 8(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB15_18
+	JUMP	.LBB15_17
+.LBB15_17 NOP 
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB15_21
+.LBB15_18 NOP                           ;   in Loop: Header=BB15_5 Depth=1
+	JUMP	.LBB15_19
+.LBB15_19 NOP                           ;   in Loop: Header=BB15_5 Depth=1
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB15_5
+.LBB15_20 NOP                           ; %.loopexit
+	JUMP	.LBB15_21
+.LBB15_21 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB15_22
+.LBB15_22 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR1, 12(%FP)
+	LTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB15_25
+	JUMP	.LBB15_23
+.LBB15_23 NOP                           ;   in Loop: Header=BB15_22 Depth=1
+	LOAD	%GR6, 4(%FP)
+	MULI	%GR1, %GR6, 20
+	ADDI	%GR2, %FP, 20
+	ADD	%GR1, %GR2, %GR1
+	LOAD	%GR2, 420(%FP)
+	SHLI	%GR6, %GR6, 2
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB15_24
+.LBB15_24 NOP                           ;   in Loop: Header=BB15_22 Depth=1
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB15_22
+.LBB15_25 NOP 
+	LOAD	%GR1, 12(%FP)
+	LOAD	%GR2, 420(%FP)
+	CALL	main
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR1, 0(%FP)
+	CALL	exit
+.Lfunc_end15 NOP 
+	.size	start, .Lfunc_end15-start
+                                        ; -- End function
+	.globl	abort                   ; -- Begin function abort
+	.type	abort,@function
+abort NOP                               ; @abort
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%RA, 8(%FP)
+	STORE	%GR1, 4(%FP)
+	JUMP	.LBB16_1
+.LBB16_1 NOP 
+	COPYI	%GR1, 6
+	CALL	raise
+                                        ; kill: def $gr6 killed $rt0
+	COPYI	%GR1, 1
+	CALL	_exit
+.Lfunc_end16 NOP 
+	.size	abort, .Lfunc_end16-abort
+                                        ; -- End function
+	.globl	calloc                  ; -- Begin function calloc
+	.type	calloc,@function
+calloc NOP                              ; @calloc
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR1, 12(%FP)
+	STORE	%GR2, 8(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR1, 12(%FP)
+	LOAD	%GR2, 8(%FP)
+	CALL	_calloc_r
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end17 NOP 
+	.size	calloc, .Lfunc_end17-calloc
+                                        ; -- End function
+	.type	_calloc_r,@function     ; -- Begin function _calloc_r
+_calloc_r NOP                           ; @_calloc_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 64
+	COPYR	%FP, %SP
+	STORE	%RA, 56(%FP)
+	STORE	%GR1, 52(%FP)
+	STORE	%GR2, 48(%FP)
+	STORE	%GR3, 44(%FP)
+	COPYG	%GR6, impure_data
+	STORE	%GR6, 36(%FP)
+	STORE	%GR1, 32(%FP)
+	STORE	%GR2, 28(%FP)
+	LOAD	%GR6, 32(%FP)
+	LOAD	%GR1, 28(%FP)
+	MUL	%GR6, %GR6, %GR1
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%GR2, 16(%FP)
+	CALL	_malloc_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB18_2
+	JUMP	.LBB18_1
+.LBB18_1 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 40(%FP)
+	JUMP	.LBB18_14
+.LBB18_2 NOP 
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, -8
+	STORE	%GR6, 24(%FP)
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB18_3
+.LBB18_3 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, -4
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 36
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB18_11
+	JUMP	.LBB18_4
+.LBB18_4 NOP 
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 20
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB18_10
+	JUMP	.LBB18_5
+.LBB18_5 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 4(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR2, %GR6, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 28
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB18_9
+	JUMP	.LBB18_6
+.LBB18_6 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 4(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR2, %GR6, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 36
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB18_8
+	JUMP	.LBB18_7
+.LBB18_7 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 4(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR2, %GR6, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB18_8
+.LBB18_8 NOP 
+	JUMP	.LBB18_9
+.LBB18_9 NOP 
+	JUMP	.LBB18_10
+.LBB18_10 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 4(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR2, %GR6, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 4(%FP)
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB18_12
+.LBB18_11 NOP 
+	LOAD	%GR1, 12(%FP)
+	LOAD	%GR3, 8(%FP)
+	COPYI	%GR2, 0
+	CALL	memset
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB18_12
+.LBB18_12 NOP 
+	JUMP	.LBB18_13
+.LBB18_13 NOP 
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 40(%FP)
+	JUMP	.LBB18_14
+.LBB18_14 NOP 
+	LOAD	%GR6, 40(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 44(%FP)
+	LOAD	%GR2, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	LOAD	%RA, 56(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 64
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end18 NOP 
+	.size	_calloc_r, .Lfunc_end18-_calloc_r
+                                        ; -- End function
+	.globl	exit                    ; -- Begin function exit
+	.type	exit,@function
+exit NOP                                ; @exit
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%RA, 8(%FP)
+	STORE	%GR1, 4(%FP)
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR1, 0(%FP)
+	CALL	__call_exitprocs
+	COPYG	%GR6, impure_data+60
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB19_2
+	JUMP	.LBB19_1
+.LBB19_1 NOP 
+	COPYG	%GR6, impure_data+60
+	LOAD	%GR6, 0(%GR6)
+	COPYG	%GR1, impure_data
+	CALLR	%GR6
+	JUMP	.LBB19_2
+.LBB19_2 NOP 
+	LOAD	%GR1, 0(%FP)
+	CALL	_exit
+.Lfunc_end19 NOP 
+	.size	exit, .Lfunc_end19-exit
+                                        ; -- End function
+	.type	__getreent,@function    ; -- Begin function __getreent
+__getreent NOP                          ; @__getreent
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	COPYG	%GR6, impure_data
+	COPYR	%RT0, %GR6
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 4
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end20 NOP 
+	.size	__getreent, .Lfunc_end20-__getreent
+                                        ; -- End function
+	.type	_malloc_r,@function     ; -- Begin function _malloc_r
+_malloc_r NOP                           ; @_malloc_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 80
+	COPYR	%FP, %SP
+	STORE	%RA, 72(%FP)
+	STORE	%GR1, 68(%FP)
+	STORE	%GR2, 64(%FP)
+	STORE	%GR1, 56(%FP)
+	STORE	%GR2, 52(%FP)
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 11
+	COPYI	%GR1, 22
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_2
+	JUMP	.LBB21_1
+.LBB21_1 NOP 
+	COPYI	%GR6, 16
+	JUMP	.LBB21_3
+.LBB21_2 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 11
+	ANDI	%GR6, %GR6, -8
+	JUMP	.LBB21_3
+.LBB21_3 NOP 
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_5
+	JUMP	.LBB21_4
+.LBB21_4 NOP 
+	LOAD	%GR6, 0(%FP)
+	LOAD	%GR1, 52(%FP)
+	ULTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_6
+	JUMP	.LBB21_5
+.LBB21_5 NOP 
+	LOAD	%GR6, 56(%FP)
+	COPYI	%GR1, 12
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, 0
+	STORE	%GR6, 60(%FP)
+	JUMP	.LBB21_117
+.LBB21_6 NOP 
+	LOAD	%GR1, 56(%FP)
+	CALL	__malloc_lock
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 503
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_12
+	JUMP	.LBB21_7
+.LBB21_7 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 3
+	STORE	%GR6, 40(%FP)
+	LOAD	%GR6, 40(%FP)
+	SHLI	%GR6, %GR6, 3
+	COPYG	%GR1, __malloc_av_
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 48(%FP)
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 4(%FP)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_9
+	JUMP	.LBB21_8
+.LBB21_8 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB21_9
+.LBB21_9 NOP 
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 4(%FP)
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_11
+	JUMP	.LBB21_10
+.LBB21_10 NOP 
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 44(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 56(%FP)
+	CALL	__malloc_unlock
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 60(%FP)
+	JUMP	.LBB21_117
+.LBB21_11 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 2
+	STORE	%GR6, 40(%FP)
+	JUMP	.LBB21_41
+.LBB21_12 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_14
+	JUMP	.LBB21_13
+.LBB21_13 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 3
+	JUMP	.LBB21_30
+.LBB21_14 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 4
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_16
+	JUMP	.LBB21_15
+.LBB21_15 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 6
+	ADDI	%GR6, %GR6, 56
+	JUMP	.LBB21_29
+.LBB21_16 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 20
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_18
+	JUMP	.LBB21_17
+.LBB21_17 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 9
+	ADDI	%GR6, %GR6, 91
+	JUMP	.LBB21_28
+.LBB21_18 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 84
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_20
+	JUMP	.LBB21_19
+.LBB21_19 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 12
+	ADDI	%GR6, %GR6, 110
+	JUMP	.LBB21_27
+.LBB21_20 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 340
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_22
+	JUMP	.LBB21_21
+.LBB21_21 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 15
+	ADDI	%GR6, %GR6, 119
+	JUMP	.LBB21_26
+.LBB21_22 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 1364
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_24
+	JUMP	.LBB21_23
+.LBB21_23 NOP 
+	LOAD	%GR6, 0(%FP)
+	SRLI	%GR6, %GR6, 18
+	ADDI	%GR6, %GR6, 124
+	JUMP	.LBB21_25
+.LBB21_24 NOP 
+	COPYI	%GR6, 126
+	JUMP	.LBB21_25
+.LBB21_25 NOP 
+	JUMP	.LBB21_26
+.LBB21_26 NOP 
+	JUMP	.LBB21_27
+.LBB21_27 NOP 
+	JUMP	.LBB21_28
+.LBB21_28 NOP 
+	JUMP	.LBB21_29
+.LBB21_29 NOP 
+	JUMP	.LBB21_30
+.LBB21_30 NOP 
+	STORE	%GR6, 40(%FP)
+	LOAD	%GR6, 40(%FP)
+	SHLI	%GR6, %GR6, 3
+	COPYG	%GR1, __malloc_av_
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 36(%FP)
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB21_31
+.LBB21_31 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 36(%FP)
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_39
+	JUMP	.LBB21_32
+.LBB21_32 NOP                           ;   in Loop: Header=BB21_31 Depth=1
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR1, 0(%FP)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 16
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_34
+	JUMP	.LBB21_33
+.LBB21_33 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 40(%FP)
+	JUMP	.LBB21_40
+.LBB21_34 NOP                           ;   in Loop: Header=BB21_31 Depth=1
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_36
+	JUMP	.LBB21_35
+.LBB21_35 NOP 
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 44(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 56(%FP)
+	CALL	__malloc_unlock
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 60(%FP)
+	JUMP	.LBB21_117
+.LBB21_36 NOP                           ;   in Loop: Header=BB21_31 Depth=1
+	JUMP	.LBB21_37
+.LBB21_37 NOP                           ;   in Loop: Header=BB21_31 Depth=1
+	JUMP	.LBB21_38
+.LBB21_38 NOP                           ;   in Loop: Header=BB21_31 Depth=1
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB21_31
+.LBB21_39 NOP                           ; %.loopexit1
+	JUMP	.LBB21_40
+.LBB21_40 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 40(%FP)
+	JUMP	.LBB21_41
+.LBB21_41 NOP 
+	COPYG	%GR6, __malloc_av_+16
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 48(%FP)
+	COPYG	%GR1, __malloc_av_+8
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_76
+	JUMP	.LBB21_42
+.LBB21_42 NOP 
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR1, 0(%FP)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 16
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_44
+	JUMP	.LBB21_43
+.LBB21_43 NOP 
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 0(%FP)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 32(%FP)
+	LOAD	%GR6, 0(%FP)
+	ORI	%GR6, %GR6, 1
+	LOAD	%GR1, 48(%FP)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 32(%FP)
+	COPYG	%GR1, __malloc_av_+20
+	STORE	%GR6, 0(%GR1)
+	COPYG	%GR1, __malloc_av_+16
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 12
+	COPYG	%GR1, __malloc_av_+8
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 28(%FP)
+	ORI	%GR6, %GR6, 1
+	LOAD	%GR1, 32(%FP)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 32(%FP)
+	ADD	%GR1, %GR1, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 56(%FP)
+	CALL	__malloc_unlock
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 60(%FP)
+	JUMP	.LBB21_117
+.LBB21_44 NOP 
+	COPYG	%GR6, __malloc_av_+20
+	COPYG	%GR1, __malloc_av_+8
+	STORE	%GR1, 0(%GR6)
+	COPYG	%GR6, __malloc_av_+16
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_46
+	JUMP	.LBB21_45
+.LBB21_45 NOP 
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 44(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 56(%FP)
+	CALL	__malloc_unlock
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 60(%FP)
+	JUMP	.LBB21_117
+.LBB21_46 NOP 
+	LOAD	%GR6, 44(%FP)
+	COPYI	%GR1, 511
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_48
+	JUMP	.LBB21_47
+.LBB21_47 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 3
+	STORE	%GR6, 24(%FP)
+	LOAD	%GR6, 24(%FP)
+	SRAI	%GR1, %GR6, 31
+	SRLI	%GR1, %GR1, 30
+	ADD	%GR6, %GR6, %GR1
+	SRAI	%GR6, %GR6, 2
+	COPYI	%GR1, 1
+	SHL	%GR6, %GR1, %GR6
+	COPYG	%GR1, __malloc_av_+4
+	LOAD	%GR2, 0(%GR1)
+	OR	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 24(%FP)
+	SHLI	%GR6, %GR6, 3
+	COPYG	%GR1, __malloc_av_
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 48(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 48(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB21_75
+.LBB21_48 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_50
+	JUMP	.LBB21_49
+.LBB21_49 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 3
+	JUMP	.LBB21_66
+.LBB21_50 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 4
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_52
+	JUMP	.LBB21_51
+.LBB21_51 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 6
+	ADDI	%GR6, %GR6, 56
+	JUMP	.LBB21_65
+.LBB21_52 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 20
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_54
+	JUMP	.LBB21_53
+.LBB21_53 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 9
+	ADDI	%GR6, %GR6, 91
+	JUMP	.LBB21_64
+.LBB21_54 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 84
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_56
+	JUMP	.LBB21_55
+.LBB21_55 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 12
+	ADDI	%GR6, %GR6, 110
+	JUMP	.LBB21_63
+.LBB21_56 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 340
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_58
+	JUMP	.LBB21_57
+.LBB21_57 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 15
+	ADDI	%GR6, %GR6, 119
+	JUMP	.LBB21_62
+.LBB21_58 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 1364
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_60
+	JUMP	.LBB21_59
+.LBB21_59 NOP 
+	LOAD	%GR6, 44(%FP)
+	SRLI	%GR6, %GR6, 18
+	ADDI	%GR6, %GR6, 124
+	JUMP	.LBB21_61
+.LBB21_60 NOP 
+	COPYI	%GR6, 126
+	JUMP	.LBB21_61
+.LBB21_61 NOP 
+	JUMP	.LBB21_62
+.LBB21_62 NOP 
+	JUMP	.LBB21_63
+.LBB21_63 NOP 
+	JUMP	.LBB21_64
+.LBB21_64 NOP 
+	JUMP	.LBB21_65
+.LBB21_65 NOP 
+	JUMP	.LBB21_66
+.LBB21_66 NOP 
+	STORE	%GR6, 24(%FP)
+	LOAD	%GR6, 24(%FP)
+	SHLI	%GR6, %GR6, 3
+	COPYG	%GR1, __malloc_av_
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 8(%FP)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_68
+	JUMP	.LBB21_67
+.LBB21_67 NOP 
+	LOAD	%GR6, 24(%FP)
+	SRAI	%GR1, %GR6, 31
+	SRLI	%GR1, %GR1, 30
+	ADD	%GR6, %GR6, %GR1
+	SRAI	%GR6, %GR6, 2
+	COPYI	%GR1, 1
+	SHL	%GR6, %GR1, %GR6
+	COPYG	%GR1, __malloc_av_+4
+	LOAD	%GR2, 0(%GR1)
+	OR	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB21_74
+.LBB21_68 NOP 
+	JUMP	.LBB21_69
+.LBB21_69 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 8(%FP)
+	EQ	%GR1, %GR6, %GR1
+	COPYI	%GR6, 0
+	BNEQZ	%GR1, .LBB21_71
+	JUMP	.LBB21_70
+.LBB21_70 NOP                           ;   in Loop: Header=BB21_69 Depth=1
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	ANDI	%GR1, %GR1, -4
+	ULT	%GR6, %GR6, %GR1
+	JUMP	.LBB21_71
+.LBB21_71 NOP                           ;   in Loop: Header=BB21_69 Depth=1
+	ANDI	%GR6, %GR6, 1
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_73
+	JUMP	.LBB21_72
+.LBB21_72 NOP                           ;   in Loop: Header=BB21_69 Depth=1
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB21_69
+.LBB21_73 NOP 
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB21_74
+.LBB21_74 NOP 
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 48(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 48(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB21_75
+.LBB21_75 NOP 
+	JUMP	.LBB21_76
+.LBB21_76 NOP 
+	LOAD	%GR6, 40(%FP)
+	SRAI	%GR1, %GR6, 31
+	SRLI	%GR1, %GR1, 30
+	ADD	%GR6, %GR6, %GR1
+	SRAI	%GR6, %GR6, 2
+	COPYI	%GR1, 1
+	SHL	%GR6, %GR1, %GR6
+	STORE	%GR6, 20(%FP)
+	COPYG	%GR1, __malloc_av_+4
+	LOAD	%GR1, 0(%GR1)
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_110
+	JUMP	.LBB21_77
+.LBB21_77 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYG	%GR1, __malloc_av_+4
+	LOAD	%GR1, 0(%GR1)
+	AND	%GR6, %GR6, %GR1
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_82
+	JUMP	.LBB21_78
+.LBB21_78 NOP 
+	LOAD	%GR6, 40(%FP)
+	ANDI	%GR6, %GR6, -4
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR6, 40(%FP)
+	LOAD	%GR6, 20(%FP)
+	SHLI	%GR6, %GR6, 1
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB21_79
+.LBB21_79 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 20(%FP)
+	COPYG	%GR1, __malloc_av_+4
+	LOAD	%GR1, 0(%GR1)
+	AND	%GR6, %GR6, %GR1
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_81
+	JUMP	.LBB21_80
+.LBB21_80 NOP                           ;   in Loop: Header=BB21_79 Depth=1
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR6, 40(%FP)
+	LOAD	%GR6, 20(%FP)
+	SHLI	%GR6, %GR6, 1
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB21_79
+.LBB21_81 NOP 
+	JUMP	.LBB21_82
+.LBB21_82 NOP 
+	JUMP	.LBB21_83
+.LBB21_83 NOP                           ; =>This Loop Header: Depth=1
+                                        ;     Child Loop BB21_84 Depth 2
+                                        ;       Child Loop BB21_85 Depth 3
+                                        ;     Child Loop BB21_96 Depth 2
+                                        ;     Child Loop BB21_104 Depth 2
+	LOAD	%GR6, 40(%FP)
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 40(%FP)
+	SHLI	%GR6, %GR6, 3
+	COPYG	%GR1, __malloc_av_
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 36(%FP)
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB21_84
+.LBB21_84 NOP                           ;   Parent Loop BB21_83 Depth=1
+                                        ; =>  This Loop Header: Depth=2
+                                        ;       Child Loop BB21_85 Depth 3
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB21_85
+.LBB21_85 NOP                           ;   Parent Loop BB21_83 Depth=1
+                                        ;     Parent Loop BB21_84 Depth=2
+                                        ; =>    This Inner Loop Header: Depth=3
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 36(%FP)
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_93
+	JUMP	.LBB21_86
+.LBB21_86 NOP                           ;   in Loop: Header=BB21_85 Depth=3
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR1, 0(%FP)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 16
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_88
+	JUMP	.LBB21_87
+.LBB21_87 NOP 
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 0(%FP)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 32(%FP)
+	LOAD	%GR6, 0(%FP)
+	ORI	%GR6, %GR6, 1
+	LOAD	%GR1, 48(%FP)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 32(%FP)
+	COPYG	%GR1, __malloc_av_+20
+	STORE	%GR6, 0(%GR1)
+	COPYG	%GR1, __malloc_av_+16
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 12
+	COPYG	%GR1, __malloc_av_+8
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 28(%FP)
+	ORI	%GR6, %GR6, 1
+	LOAD	%GR1, 32(%FP)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 32(%FP)
+	ADD	%GR1, %GR1, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 56(%FP)
+	CALL	__malloc_unlock
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 60(%FP)
+	JUMP	.LBB21_117
+.LBB21_88 NOP                           ;   in Loop: Header=BB21_85 Depth=3
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_90
+	JUMP	.LBB21_89
+.LBB21_89 NOP 
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 44(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 56(%FP)
+	CALL	__malloc_unlock
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 60(%FP)
+	JUMP	.LBB21_117
+.LBB21_90 NOP                           ;   in Loop: Header=BB21_85 Depth=3
+	JUMP	.LBB21_91
+.LBB21_91 NOP                           ;   in Loop: Header=BB21_85 Depth=3
+	JUMP	.LBB21_92
+.LBB21_92 NOP                           ;   in Loop: Header=BB21_85 Depth=3
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB21_85
+.LBB21_93 NOP                           ;   in Loop: Header=BB21_84 Depth=2
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 36(%FP)
+	JUMP	.LBB21_94
+.LBB21_94 NOP                           ;   in Loop: Header=BB21_84 Depth=2
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 40(%FP)
+	ANDI	%GR6, %GR6, 3
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_84
+	JUMP	.LBB21_95
+.LBB21_95 NOP                           ;   in Loop: Header=BB21_83 Depth=1
+	JUMP	.LBB21_96
+.LBB21_96 NOP                           ;   Parent Loop BB21_83 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	ULOADB	%GR6, 16(%FP)
+	ANDI	%GR6, %GR6, 3
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_98
+	JUMP	.LBB21_97
+.LBB21_97 NOP                           ;   in Loop: Header=BB21_83 Depth=1
+	LOAD	%GR6, 20(%FP)
+	XORI	%GR6, %GR6, -1
+	COPYG	%GR1, __malloc_av_+4
+	LOAD	%GR2, 0(%GR1)
+	AND	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB21_101
+.LBB21_98 NOP                           ;   in Loop: Header=BB21_96 Depth=2
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, -8
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB21_99
+.LBB21_99 NOP                           ;   in Loop: Header=BB21_96 Depth=2
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR1, %GR6, 8
+	LOAD	%GR1, 0(%GR1)
+	EQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_96
+	JUMP	.LBB21_100
+.LBB21_100 NOP                          ; %.loopexit
+                                        ;   in Loop: Header=BB21_83 Depth=1
+	JUMP	.LBB21_101
+.LBB21_101 NOP                          ;   in Loop: Header=BB21_83 Depth=1
+	LOAD	%GR6, 20(%FP)
+	SHLI	%GR6, %GR6, 1
+	STORE	%GR6, 20(%FP)
+	COPYG	%GR1, __malloc_av_+4
+	LOAD	%GR1, 0(%GR1)
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_107
+	JUMP	.LBB21_102
+.LBB21_102 NOP                          ;   in Loop: Header=BB21_83 Depth=1
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_107
+	JUMP	.LBB21_103
+.LBB21_103 NOP                          ;   in Loop: Header=BB21_83 Depth=1
+	JUMP	.LBB21_104
+.LBB21_104 NOP                          ;   Parent Loop BB21_83 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 20(%FP)
+	COPYG	%GR1, __malloc_av_+4
+	LOAD	%GR1, 0(%GR1)
+	AND	%GR6, %GR6, %GR1
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_106
+	JUMP	.LBB21_105
+.LBB21_105 NOP                          ;   in Loop: Header=BB21_104 Depth=2
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR6, 40(%FP)
+	LOAD	%GR6, 20(%FP)
+	SHLI	%GR6, %GR6, 1
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB21_104
+.LBB21_106 NOP                          ;   in Loop: Header=BB21_83 Depth=1
+	JUMP	.LBB21_108
+.LBB21_107 NOP 
+	JUMP	.LBB21_109
+.LBB21_108 NOP                          ;   in Loop: Header=BB21_83 Depth=1
+	JUMP	.LBB21_83
+.LBB21_109 NOP 
+	JUMP	.LBB21_110
+.LBB21_110 NOP 
+	COPYG	%GR6, __malloc_av_+8
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	ANDI	%GR1, %GR1, -4
+	LOAD	%GR2, 0(%FP)
+	SUB	%GR1, %GR1, %GR2
+	STORE	%GR1, 28(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	LOAD	%GR1, 0(%FP)
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_112
+	JUMP	.LBB21_111
+.LBB21_111 NOP 
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 15
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_116
+	JUMP	.LBB21_112
+.LBB21_112 NOP 
+	LOAD	%GR1, 56(%FP)
+	LOAD	%GR2, 0(%FP)
+	CALL	malloc_extend_top
+	COPYG	%GR6, __malloc_av_+8
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	ANDI	%GR1, %GR1, -4
+	LOAD	%GR2, 0(%FP)
+	SUB	%GR1, %GR1, %GR2
+	STORE	%GR1, 28(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	LOAD	%GR1, 0(%FP)
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB21_114
+	JUMP	.LBB21_113
+.LBB21_113 NOP 
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 15
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB21_115
+	JUMP	.LBB21_114
+.LBB21_114 NOP 
+	LOAD	%GR1, 56(%FP)
+	CALL	__malloc_unlock
+	COPYI	%GR6, 0
+	STORE	%GR6, 60(%FP)
+	JUMP	.LBB21_117
+.LBB21_115 NOP 
+	JUMP	.LBB21_116
+.LBB21_116 NOP 
+	COPYG	%GR6, __malloc_av_+8
+	LOAD	%GR1, 0(%GR6)
+	STORE	%GR1, 48(%FP)
+	LOAD	%GR1, 0(%FP)
+	ORI	%GR1, %GR1, 1
+	LOAD	%GR2, 48(%FP)
+	ADDI	%GR2, %GR2, 4
+	STORE	%GR1, 0(%GR2)
+	LOAD	%GR1, 48(%FP)
+	LOAD	%GR2, 0(%FP)
+	ADD	%GR1, %GR1, %GR2
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	ORI	%GR1, %GR1, 1
+	LOAD	%GR6, 0(%GR6)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 56(%FP)
+	CALL	__malloc_unlock
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 60(%FP)
+	JUMP	.LBB21_117
+.LBB21_117 NOP 
+	LOAD	%GR6, 60(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 64(%FP)
+	LOAD	%GR1, 68(%FP)
+	LOAD	%RA, 72(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 80
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end21 NOP 
+	.size	_malloc_r, .Lfunc_end21-_malloc_r
+                                        ; -- End function
+	.type	malloc_extend_top,@function ; -- Begin function malloc_extend_top
+malloc_extend_top NOP                   ; @malloc_extend_top
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 80
+	COPYR	%FP, %SP
+	STORE	%RA, 72(%FP)
+	STORE	%GR1, 68(%FP)
+	STORE	%GR2, 64(%FP)
+	STORE	%GR3, 60(%FP)
+	STORE	%GR1, 56(%FP)
+	STORE	%GR2, 52(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 36(%FP)
+	COPYG	%GR6, __malloc_av_+8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 24(%FP)
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 20(%FP)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 16
+	STORE	%GR6, 12(%FP)
+	COPYI	%GR6, 4096
+	STORE	%GR6, 8(%FP)
+	COPYG	%GR6, __malloc_sbrk_base
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB22_2
+	JUMP	.LBB22_1
+.LBB22_1 NOP 
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADD	%GR6, %GR1, %GR6
+	ADDI	%GR6, %GR6, -1
+	COPYI	%GR2, 0
+	SUB	%GR1, %GR2, %GR1
+	AND	%GR6, %GR6, %GR1
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB22_2
+.LBB22_2 NOP 
+	LOAD	%GR1, 56(%FP)
+	LOAD	%GR2, 12(%FP)
+	CALL	_sbrk_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 48(%FP)
+	LOAD	%GR6, 48(%FP)
+	COPYI	%GR1, -1
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB22_5
+	JUMP	.LBB22_3
+.LBB22_3 NOP 
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 16(%FP)
+	ULTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB22_6
+	JUMP	.LBB22_4
+.LBB22_4 NOP 
+	LOAD	%GR6, 24(%FP)
+	COPYG	%GR1, __malloc_av_
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB22_6
+	JUMP	.LBB22_5
+.LBB22_5 NOP 
+	JUMP	.LBB22_30
+.LBB22_6 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYG	%GR1, __malloc_current_mallinfo.0
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 16(%FP)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB22_9
+	JUMP	.LBB22_7
+.LBB22_7 NOP 
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, -1
+	AND	%GR6, %GR6, %GR1
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB22_9
+	JUMP	.LBB22_8
+.LBB22_8 NOP 
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 20(%FP)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR6, 28(%FP)
+	ORI	%GR6, %GR6, 1
+	COPYG	%GR1, __malloc_av_+8
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB22_26
+.LBB22_9 NOP 
+	COPYG	%GR6, __malloc_sbrk_base
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB22_11
+	JUMP	.LBB22_10
+.LBB22_10 NOP 
+	LOAD	%GR6, 48(%FP)
+	COPYG	%GR1, __malloc_sbrk_base
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB22_12
+.LBB22_11 NOP 
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 16(%FP)
+	SUB	%GR6, %GR6, %GR1
+	COPYG	%GR1, __malloc_current_mallinfo.0
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB22_12
+.LBB22_12 NOP 
+	LOAD	%GR6, 48(%FP)
+	ADDI	%GR6, %GR6, 8
+	ANDI	%GR6, %GR6, 7
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 44(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB22_14
+	JUMP	.LBB22_13
+.LBB22_13 NOP 
+	LOAD	%GR6, 44(%FP)
+	COPYI	%GR1, 8
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 40(%FP)
+	LOAD	%GR6, 40(%FP)
+	LOAD	%GR1, 48(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB22_15
+.LBB22_14 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 40(%FP)
+	JUMP	.LBB22_15
+.LBB22_15 NOP 
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 48(%FP)
+	LOAD	%GR2, 12(%FP)
+	ADD	%GR1, %GR1, %GR2
+	ADDI	%GR2, %GR6, -1
+	AND	%GR1, %GR1, %GR2
+	SUB	%GR6, %GR6, %GR1
+	LOAD	%GR1, 40(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 40(%FP)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, -1
+	LOAD	%GR1, 40(%FP)
+	AND	%GR6, %GR1, %GR6
+	STORE	%GR6, 40(%FP)
+	LOAD	%GR1, 56(%FP)
+	LOAD	%GR2, 40(%FP)
+	CALL	_sbrk_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 32(%FP)
+	LOAD	%GR6, 32(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB22_19
+	JUMP	.LBB22_16
+.LBB22_16 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 40(%FP)
+	COPYI	%GR1, 1
+	STORE	%GR1, 36(%FP)
+	LOAD	%GR1, 48(%FP)
+	LOAD	%GR2, 12(%FP)
+	ADD	%GR1, %GR1, %GR2
+	STORE	%GR1, 32(%FP)
+	LOAD	%GR1, 44(%FP)
+	EQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB22_18
+	JUMP	.LBB22_17
+.LBB22_17 NOP 
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR1, 32(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, -8
+	STORE	%GR6, 32(%FP)
+	JUMP	.LBB22_18
+.LBB22_18 NOP 
+	JUMP	.LBB22_19
+.LBB22_19 NOP 
+	LOAD	%GR6, 40(%FP)
+	COPYG	%GR1, __malloc_current_mallinfo.0
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 48(%FP)
+	COPYG	%GR1, __malloc_av_+8
+	STORE	%GR6, 0(%GR1)
+	COPYG	%GR6, __malloc_av_
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR3, 48(%FP)
+	SUB	%GR2, %GR2, %GR3
+	LOAD	%GR3, 40(%FP)
+	ADD	%GR2, %GR2, %GR3
+	STORE	%GR2, 28(%FP)
+	LOAD	%GR2, 28(%FP)
+	ORI	%GR2, %GR2, 1
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR2, 0(%GR1)
+	LOAD	%GR1, 24(%FP)
+	EQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB22_25
+	JUMP	.LBB22_20
+.LBB22_20 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 15
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB22_22
+	JUMP	.LBB22_21
+.LBB22_21 NOP 
+	COPYG	%GR6, __malloc_av_+8
+	LOAD	%GR6, 0(%GR6)
+	ADDI	%GR6, %GR6, 4
+	COPYI	%GR1, 1
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB22_30
+.LBB22_22 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, -12
+	ANDI	%GR6, %GR6, -8
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 1
+	LOAD	%GR2, 20(%FP)
+	OR	%GR1, %GR1, %GR2
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 20(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 4
+	COPYI	%GR1, 5
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR2, 20(%FP)
+	ADD	%GR6, %GR2, %GR6
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 16
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB22_24
+	JUMP	.LBB22_23
+.LBB22_23 NOP 
+	LOAD	%GR1, 56(%FP)
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR2, %GR6, 8
+	CALL	_free_r
+	JUMP	.LBB22_24
+.LBB22_24 NOP 
+	JUMP	.LBB22_25
+.LBB22_25 NOP 
+	JUMP	.LBB22_26
+.LBB22_26 NOP 
+	COPYG	%GR6, __malloc_current_mallinfo.0
+	LOAD	%GR6, 0(%GR6)
+	COPYG	%GR1, __malloc_max_sbrked_mem
+	LOAD	%GR1, 0(%GR1)
+	ULTE	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB22_28
+	JUMP	.LBB22_27
+.LBB22_27 NOP 
+	COPYG	%GR6, __malloc_current_mallinfo.0
+	LOAD	%GR6, 0(%GR6)
+	COPYG	%GR1, __malloc_max_sbrked_mem
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB22_28
+.LBB22_28 NOP 
+	COPYG	%GR6, __malloc_current_mallinfo.0
+	LOAD	%GR6, 0(%GR6)
+	COPYG	%GR1, __malloc_max_total_mem
+	LOAD	%GR1, 0(%GR1)
+	ULTE	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB22_30
+	JUMP	.LBB22_29
+.LBB22_29 NOP 
+	COPYG	%GR6, __malloc_current_mallinfo.0
+	LOAD	%GR6, 0(%GR6)
+	COPYG	%GR1, __malloc_max_total_mem
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB22_30
+.LBB22_30 NOP 
+	LOAD	%GR3, 60(%FP)
+	LOAD	%GR2, 64(%FP)
+	LOAD	%GR1, 68(%FP)
+	LOAD	%RA, 72(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 80
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end22 NOP 
+	.size	malloc_extend_top, .Lfunc_end22-malloc_extend_top
+                                        ; -- End function
+	.globl	memcpy                  ; -- Begin function memcpy
+	.type	memcpy,@function
+memcpy NOP                              ; @memcpy
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 40
+	COPYR	%FP, %SP
+	STORE	%GR1, 32(%FP)
+	STORE	%GR2, 28(%FP)
+	STORE	%GR1, 24(%FP)
+	STORE	%GR2, 20(%FP)
+	STORE	%GR3, 16(%FP)
+	LOAD	%GR6, 24(%FP)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 20(%FP)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 16
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB23_9
+	JUMP	.LBB23_1
+.LBB23_1 NOP 
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	OR	%GR6, %GR6, %GR1
+	ANDI	%GR6, %GR6, 3
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB23_9
+	JUMP	.LBB23_2
+.LBB23_2 NOP 
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB23_3
+.LBB23_3 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 16
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB23_5
+	JUMP	.LBB23_4
+.LBB23_4 NOP                            ;   in Loop: Header=BB23_3 Depth=1
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, -16
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB23_3
+.LBB23_5 NOP 
+	JUMP	.LBB23_6
+.LBB23_6 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 4
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB23_8
+	JUMP	.LBB23_7
+.LBB23_7 NOP                            ;   in Loop: Header=BB23_6 Depth=1
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, -4
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB23_6
+.LBB23_8 NOP 
+	LOAD	%GR6, 4(%FP)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 0(%FP)
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB23_9
+.LBB23_9 NOP 
+	JUMP	.LBB23_10
+.LBB23_10 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, -1
+	STORE	%GR1, 16(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB23_12
+	JUMP	.LBB23_11
+.LBB23_11 NOP                           ;   in Loop: Header=BB23_10 Depth=1
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 8(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 12(%FP)
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB23_10
+.LBB23_12 NOP 
+	LOAD	%GR6, 24(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 28(%FP)
+	LOAD	%GR1, 32(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 40
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end23 NOP 
+	.size	memcpy, .Lfunc_end23-memcpy
+                                        ; -- End function
+	.globl	memset                  ; -- Begin function memset
+	.type	memset,@function
+memset NOP                              ; @memset
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%GR1, 40(%FP)
+	STORE	%GR2, 36(%FP)
+	STORE	%GR1, 28(%FP)
+	STORE	%GR2, 24(%FP)
+	STORE	%GR3, 20(%FP)
+	LOAD	%GR6, 28(%FP)
+	STORE	%GR6, 16(%FP)
+	ULOADB	%GR6, 24(%FP)
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB24_1
+.LBB24_1 NOP                            ; =>This Inner Loop Header: Depth=1
+	ULOADB	%GR6, 16(%FP)
+	ANDI	%GR6, %GR6, 3
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB24_6
+	JUMP	.LBB24_2
+.LBB24_2 NOP                            ;   in Loop: Header=BB24_1 Depth=1
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, -1
+	STORE	%GR1, 20(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB24_4
+	JUMP	.LBB24_3
+.LBB24_3 NOP                            ;   in Loop: Header=BB24_1 Depth=1
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 16(%FP)
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB24_5
+.LBB24_4 NOP 
+	LOAD	%GR6, 28(%FP)
+	STORE	%GR6, 32(%FP)
+	JUMP	.LBB24_22
+.LBB24_5 NOP                            ;   in Loop: Header=BB24_1 Depth=1
+	JUMP	.LBB24_1
+.LBB24_6 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 4
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB24_18
+	JUMP	.LBB24_7
+.LBB24_7 NOP 
+	LOAD	%GR6, 16(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 0(%FP)
+	SHLI	%GR1, %GR6, 8
+	OR	%GR6, %GR1, %GR6
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	SHLI	%GR1, %GR6, 16
+	OR	%GR6, %GR6, %GR1
+	STORE	%GR6, 8(%FP)
+	COPYI	%GR6, 32
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB24_8
+.LBB24_8 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 31
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB24_11
+	JUMP	.LBB24_9
+.LBB24_9 NOP                            ;   in Loop: Header=BB24_8 Depth=1
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	SHL	%GR1, %GR6, %GR1
+	OR	%GR6, %GR1, %GR6
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB24_10
+.LBB24_10 NOP                           ;   in Loop: Header=BB24_8 Depth=1
+	LOAD	%GR6, 12(%FP)
+	SHLI	%GR6, %GR6, 1
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB24_8
+.LBB24_11 NOP 
+	JUMP	.LBB24_12
+.LBB24_12 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 16
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB24_14
+	JUMP	.LBB24_13
+.LBB24_13 NOP                           ;   in Loop: Header=BB24_12 Depth=1
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, -16
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB24_12
+.LBB24_14 NOP 
+	JUMP	.LBB24_15
+.LBB24_15 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 4
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB24_17
+	JUMP	.LBB24_16
+.LBB24_16 NOP                           ;   in Loop: Header=BB24_15 Depth=1
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, -4
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB24_15
+.LBB24_17 NOP 
+	LOAD	%GR6, 4(%FP)
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB24_18
+.LBB24_18 NOP 
+	JUMP	.LBB24_19
+.LBB24_19 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, -1
+	STORE	%GR1, 20(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB24_21
+	JUMP	.LBB24_20
+.LBB24_20 NOP                           ;   in Loop: Header=BB24_19 Depth=1
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 16(%FP)
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB24_19
+.LBB24_21 NOP 
+	LOAD	%GR6, 28(%FP)
+	STORE	%GR6, 32(%FP)
+	JUMP	.LBB24_22
+.LBB24_22 NOP 
+	LOAD	%GR6, 32(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 36(%FP)
+	LOAD	%GR1, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end24 NOP 
+	.size	memset, .Lfunc_end24-memset
+                                        ; -- End function
+	.type	__malloc_lock,@function ; -- Begin function __malloc_lock
+__malloc_lock NOP                       ; @__malloc_lock
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 8
+	COPYR	%FP, %SP
+	STORE	%GR1, 0(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 8
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end25 NOP 
+	.size	__malloc_lock, .Lfunc_end25-__malloc_lock
+                                        ; -- End function
+	.type	__malloc_unlock,@function ; -- Begin function __malloc_unlock
+__malloc_unlock NOP                     ; @__malloc_unlock
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 8
+	COPYR	%FP, %SP
+	STORE	%GR1, 0(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 8
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end26 NOP 
+	.size	__malloc_unlock, .Lfunc_end26-__malloc_unlock
+                                        ; -- End function
+	.type	_sbrk_r,@function       ; -- Begin function _sbrk_r
+_sbrk_r NOP                             ; @_sbrk_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	COPYG	%GR6, errno
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 12(%FP)
+	CALL	_sbrk
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB27_3
+	JUMP	.LBB27_1
+.LBB27_1 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB27_3
+	JUMP	.LBB27_2
+.LBB27_2 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB27_3
+.LBB27_3 NOP 
+	LOAD	%GR6, 8(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end27 NOP 
+	.size	_sbrk_r, .Lfunc_end27-_sbrk_r
+                                        ; -- End function
+	.globl	scanf                   ; -- Begin function scanf
+	.type	scanf,@function
+scanf NOP                               ; @scanf
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	LOAD	%GR6, 48(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	COPYG	%GR6, impure_data
+	STORE	%GR6, 12(%FP)
+	ADDI	%GR6, %FP, 52
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR6, %GR1, 4
+	LOAD	%GR2, 0(%GR6)
+	LOAD	%GR3, 48(%FP)
+	LOAD	%GR4, 16(%FP)
+	CALL	_vfscanf_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 20(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end28 NOP 
+	.size	scanf, .Lfunc_end28-scanf
+                                        ; -- End function
+	.type	_init_signal_r,@function ; -- Begin function _init_signal_r
+_init_signal_r NOP                      ; @_init_signal_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 732
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB29_8
+	JUMP	.LBB29_1
+.LBB29_1 NOP 
+	LOAD	%GR1, 8(%FP)
+	COPYI	%GR2, 128
+	CALL	_malloc_r
+	COPYR	%GR6, %RT0
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 732
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 732
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB29_3
+	JUMP	.LBB29_2
+.LBB29_2 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB29_9
+.LBB29_3 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB29_4
+.LBB29_4 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, 31
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB29_7
+	JUMP	.LBB29_5
+.LBB29_5 NOP                            ;   in Loop: Header=BB29_4 Depth=1
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 732
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB29_6
+.LBB29_6 NOP                            ;   in Loop: Header=BB29_4 Depth=1
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB29_4
+.LBB29_7 NOP 
+	JUMP	.LBB29_8
+.LBB29_8 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB29_9
+.LBB29_9 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end29 NOP 
+	.size	_init_signal_r, .Lfunc_end29-_init_signal_r
+                                        ; -- End function
+	.type	_signal_r,@function     ; -- Begin function _signal_r
+_signal_r NOP                           ; @_signal_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	COPYG	%GR6, impure_data
+	STORE	%GR6, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB30_2
+	JUMP	.LBB30_1
+.LBB30_1 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 32
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB30_3
+	JUMP	.LBB30_2
+.LBB30_2 NOP 
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 22
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, -1
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB30_7
+.LBB30_3 NOP 
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 732
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB30_6
+	JUMP	.LBB30_4
+.LBB30_4 NOP 
+	LOAD	%GR1, 24(%FP)
+	CALL	_init_signal_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB30_6
+	JUMP	.LBB30_5
+.LBB30_5 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB30_7
+.LBB30_6 NOP 
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 732
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 20(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 24(%FP)
+	ADDI	%GR1, %GR1, 732
+	LOAD	%GR1, 0(%GR1)
+	LOAD	%GR2, 20(%FP)
+	SHLI	%GR2, %GR2, 2
+	ADD	%GR1, %GR1, %GR2
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB30_7
+.LBB30_7 NOP 
+	LOAD	%GR6, 28(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end30 NOP 
+	.size	_signal_r, .Lfunc_end30-_signal_r
+                                        ; -- End function
+	.type	_raise_r,@function      ; -- Begin function _raise_r
+_raise_r NOP                            ; @_raise_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	COPYG	%GR6, impure_data
+	STORE	%GR6, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB31_2
+	JUMP	.LBB31_1
+.LBB31_1 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 32
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB31_3
+	JUMP	.LBB31_2
+.LBB31_2 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 22
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, -1
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB31_13
+.LBB31_3 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 732
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB31_5
+	JUMP	.LBB31_4
+.LBB31_4 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB31_6
+.LBB31_5 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 732
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB31_6
+.LBB31_6 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB31_8
+	JUMP	.LBB31_7
+.LBB31_7 NOP 
+	LOAD	%GR1, 20(%FP)
+	CALL	_getpid_r
+	COPYR	%GR2, %RT0
+	LOAD	%GR3, 16(%FP)
+	CALL	_kill_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB31_13
+.LBB31_8 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB31_10
+	JUMP	.LBB31_9
+.LBB31_9 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB31_13
+.LBB31_10 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB31_12
+	JUMP	.LBB31_11
+.LBB31_11 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 22
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, 1
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB31_13
+.LBB31_12 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 732
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	COPYI	%GR2, 0
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 16(%FP)
+	CALLR	%GR6
+	STORE	%GR2, 24(%FP)
+	JUMP	.LBB31_13
+.LBB31_13 NOP 
+	LOAD	%GR6, 24(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end31 NOP 
+	.size	_raise_r, .Lfunc_end31-_raise_r
+                                        ; -- End function
+	.globl	raise                   ; -- Begin function raise
+	.type	raise,@function
+raise NOP                               ; @raise
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%RA, 8(%FP)
+	STORE	%GR1, 4(%FP)
+	STORE	%GR1, 0(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR1, 0(%FP)
+	CALL	_raise_r
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 4(%FP)
+	LOAD	%RA, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end32 NOP 
+	.size	raise, .Lfunc_end32-raise
+                                        ; -- End function
+	.globl	signal                  ; -- Begin function signal
+	.type	signal,@function
+signal NOP                              ; @signal
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR1, 12(%FP)
+	STORE	%GR2, 8(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR1, 12(%FP)
+	LOAD	%GR2, 8(%FP)
+	CALL	_signal_r
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end33 NOP 
+	.size	signal, .Lfunc_end33-signal
+                                        ; -- End function
+	.type	_kill_r,@function       ; -- Begin function _kill_r
+_kill_r NOP                             ; @_kill_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	STORE	%GR3, 8(%FP)
+	COPYG	%GR6, errno
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	CALL	_kill
+	COPYI	%GR6, -1
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB34_1
+.LBB34_1 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB34_3
+	JUMP	.LBB34_2
+.LBB34_2 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB34_3
+.LBB34_3 NOP 
+	LOAD	%GR6, 4(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end34 NOP 
+	.size	_kill_r, .Lfunc_end34-_kill_r
+                                        ; -- End function
+	.type	_getpid_r,@function     ; -- Begin function _getpid_r
+_getpid_r NOP                           ; @_getpid_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 12
+	COPYR	%FP, %SP
+	STORE	%GR1, 4(%FP)
+	COPYI	%GR6, 1
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR6, 0(%FP)
+	COPYR	%RT0, %GR6
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 12
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end35 NOP 
+	.size	_getpid_r, .Lfunc_end35-_getpid_r
+                                        ; -- End function
+	.globl	strcpy                  ; -- Begin function strcpy
+	.type	strcpy,@function
+strcpy NOP                              ; @strcpy
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 36
+	COPYR	%FP, %SP
+	STORE	%GR1, 28(%FP)
+	STORE	%GR2, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	LOAD	%GR6, 20(%FP)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 16(%FP)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	OR	%GR6, %GR6, %GR1
+	ANDI	%GR6, %GR6, 3
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB36_5
+	JUMP	.LBB36_1
+.LBB36_1 NOP 
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB36_2
+.LBB36_2 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ADDI	%GR1, %GR6, -16843009
+	XORI	%GR6, %GR6, -1
+	AND	%GR6, %GR1, %GR6
+	ANDI	%GR6, %GR6, -2139062144
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB36_4
+	JUMP	.LBB36_3
+.LBB36_3 NOP                            ;   in Loop: Header=BB36_2 Depth=1
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB36_2
+.LBB36_4 NOP 
+	LOAD	%GR6, 4(%FP)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 0(%FP)
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB36_5
+.LBB36_5 NOP 
+	JUMP	.LBB36_6
+.LBB36_6 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 8(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 12(%FP)
+	STOREB	%GR6, 0(%GR1)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB36_8
+	JUMP	.LBB36_7
+.LBB36_7 NOP                            ;   in Loop: Header=BB36_6 Depth=1
+	JUMP	.LBB36_6
+.LBB36_8 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 24(%FP)
+	LOAD	%GR1, 28(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 36
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end36 NOP 
+	.size	strcpy, .Lfunc_end36-strcpy
+                                        ; -- End function
+	.globl	strncat                 ; -- Begin function strncat
+	.type	strncat,@function
+strncat NOP                             ; @strncat
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%GR1, 24(%FP)
+	STORE	%GR2, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	STORE	%GR3, 8(%FP)
+	LOAD	%GR6, 16(%FP)
+	STORE	%GR6, 4(%FP)
+	ULOADB	%GR6, 16(%FP)
+	ANDI	%GR6, %GR6, 3
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB37_5
+	JUMP	.LBB37_1
+.LBB37_1 NOP 
+	LOAD	%GR6, 16(%FP)
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB37_2
+.LBB37_2 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ADDI	%GR1, %GR6, -16843009
+	XORI	%GR6, %GR6, -1
+	AND	%GR6, %GR1, %GR6
+	ANDI	%GR6, %GR6, -2139062144
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB37_4
+	JUMP	.LBB37_3
+.LBB37_3 NOP                            ;   in Loop: Header=BB37_2 Depth=1
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB37_2
+.LBB37_4 NOP 
+	LOAD	%GR6, 0(%FP)
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB37_5
+.LBB37_5 NOP 
+	JUMP	.LBB37_6
+.LBB37_6 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB37_8
+	JUMP	.LBB37_7
+.LBB37_7 NOP                            ;   in Loop: Header=BB37_6 Depth=1
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB37_6
+.LBB37_8 NOP 
+	JUMP	.LBB37_9
+.LBB37_9 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR6, %GR1, -1
+	STORE	%GR6, 8(%FP)
+	COPYI	%GR6, 0
+	EQ	%GR1, %GR1, %GR6
+	BNEQZ	%GR1, .LBB37_11
+	JUMP	.LBB37_10
+.LBB37_10 NOP                           ;   in Loop: Header=BB37_9 Depth=1
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 12(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 16(%FP)
+	STOREB	%GR6, 0(%GR1)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	JUMP	.LBB37_11
+.LBB37_11 NOP                           ;   in Loop: Header=BB37_9 Depth=1
+	ANDI	%GR6, %GR6, 1
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB37_15
+	JUMP	.LBB37_12
+.LBB37_12 NOP                           ;   in Loop: Header=BB37_9 Depth=1
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB37_14
+	JUMP	.LBB37_13
+.LBB37_13 NOP                           ;   in Loop: Header=BB37_9 Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	STOREB	%GR1, 0(%GR6)
+	JUMP	.LBB37_14
+.LBB37_14 NOP                           ;   in Loop: Header=BB37_9 Depth=1
+	JUMP	.LBB37_9
+.LBB37_15 NOP 
+	LOAD	%GR6, 4(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 20(%FP)
+	LOAD	%GR1, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end37 NOP 
+	.size	strncat, .Lfunc_end37-strncat
+                                        ; -- End function
+	.globl	vfscanf                 ; -- Begin function vfscanf
+	.type	vfscanf,@function
+vfscanf NOP                             ; @vfscanf
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	COPYG	%GR6, impure_data
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB38_1
+.LBB38_1 NOP 
+	LOAD	%GR6, 8(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB38_4
+	JUMP	.LBB38_2
+.LBB38_2 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 56
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB38_4
+	JUMP	.LBB38_3
+.LBB38_3 NOP 
+	LOAD	%GR1, 4(%FP)
+	CALL	__sinit
+	JUMP	.LBB38_4
+.LBB38_4 NOP 
+	JUMP	.LBB38_5
+.LBB38_5 NOP 
+	LOAD	%GR1, 8(%FP)
+	LOAD	%GR2, 20(%FP)
+	LOAD	%GR3, 16(%FP)
+	LOAD	%GR4, 12(%FP)
+	CALL	__svfscanf_r
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end38 NOP 
+	.size	vfscanf, .Lfunc_end38-vfscanf
+                                        ; -- End function
+	.type	__svfscanf_r,@function  ; -- Begin function __svfscanf_r
+__svfscanf_r NOP                        ; @__svfscanf_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 480
+	COPYR	%FP, %SP
+	STORE	%RA, 472(%FP)
+	STORE	%GR1, 468(%FP)
+	STORE	%GR2, 464(%FP)
+	STORE	%GR3, 460(%FP)
+	STORE	%GR4, 456(%FP)
+	STORE	%GR5, 452(%FP)
+	STORE	%GR1, 448(%FP)
+	STORE	%GR2, 444(%FP)
+	STORE	%GR3, 440(%FP)
+	STORE	%GR4, 436(%FP)
+	LOAD	%GR6, 440(%FP)
+	STORE	%GR6, 432(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 396(%FP)
+	COPYI	%GR1, 1
+	STORE	%GR1, 392(%FP)
+	STORE	%GR6, 380(%FP)
+	STORE	%GR6, 376(%FP)
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB39_5
+	JUMP	.LBB39_1
+.LBB39_1 NOP 
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_3
+	JUMP	.LBB39_2
+.LBB39_2 NOP 
+	JUMP	.LBB39_4
+.LBB39_3 NOP 
+	JUMP	.LBB39_4
+.LBB39_4 NOP 
+	JUMP	.LBB39_5
+.LBB39_5 NOP 
+	JUMP	.LBB39_6
+.LBB39_6 NOP 
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8192
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_8
+	JUMP	.LBB39_7
+.LBB39_7 NOP 
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 8192
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 100
+	LOAD	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, -8193
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB39_8
+.LBB39_8 NOP 
+	JUMP	.LBB39_9
+.LBB39_9 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 404(%FP)
+	STORE	%GR6, 400(%FP)
+	JUMP	.LBB39_10
+.LBB39_10 NOP                           ; =>This Loop Header: Depth=1
+                                        ;     Child Loop BB39_25 Depth 2
+                                        ;     Child Loop BB39_100 Depth 2
+                                        ;     Child Loop BB39_300 Depth 2
+                                        ;     Child Loop BB39_286 Depth 2
+                                        ;     Child Loop BB39_276 Depth 2
+                                        ;     Child Loop BB39_240 Depth 2
+                                        ;     Child Loop BB39_255 Depth 2
+                                        ;     Child Loop BB39_218 Depth 2
+                                        ;     Child Loop BB39_204 Depth 2
+                                        ;     Child Loop BB39_170 Depth 2
+                                        ;     Child Loop BB39_183 Depth 2
+                                        ;     Child Loop BB39_149 Depth 2
+                                        ;     Child Loop BB39_119 Depth 2
+                                        ;     Child Loop BB39_46 Depth 2
+                                        ;     Child Loop BB39_15 Depth 2
+	LOAD	%GR6, 432(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 388(%FP)
+	LOAD	%GR6, 392(%FP)
+	LOAD	%GR1, 432(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 432(%FP)
+	LOAD	%GR6, 388(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_12
+	JUMP	.LBB39_11
+.LBB39_11 NOP 
+	JUMP	.LBB39_368
+.LBB39_12 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 392(%FP)
+	COPYI	%GR1, 1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_22
+	JUMP	.LBB39_13
+.LBB39_13 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 388(%FP)
+	COPYG	%GR1, _ctype_+1
+	ADD	%GR6, %GR6, %GR1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_22
+	JUMP	.LBB39_14
+.LBB39_14 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_15
+.LBB39_15 NOP                           ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_17
+	JUMP	.LBB39_16
+.LBB39_16 NOP                           ;   in Loop: Header=BB39_15 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_18
+	JUMP	.LBB39_17
+.LBB39_17 NOP                           ;   in Loop: Header=BB39_15 Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	COPYG	%GR1, _ctype_+1
+	ADD	%GR6, %GR6, %GR1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_19
+	JUMP	.LBB39_18
+.LBB39_18 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_20
+.LBB39_19 NOP                           ;   in Loop: Header=BB39_15 Depth=2
+	LOAD	%GR6, 400(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 400(%FP)
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB39_15
+.LBB39_20 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_21
+.LBB39_21 NOP                           ; %.backedge11
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_10
+.LBB39_22 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 388(%FP)
+	COPYI	%GR1, 37
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_24
+	JUMP	.LBB39_23
+.LBB39_23 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_45
+.LBB39_24 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 0
+	STORE	%GR6, 424(%FP)
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_25
+.LBB39_25 NOP                           ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 432(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 432(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 428(%FP)
+	LOAD	%GR6, 428(%FP)
+	COPYI	%GR1, 37
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_44
+	JUMP	.LBB39_26
+.LBB39_26 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	COPYI	%GR1, 42
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_55
+	JUMP	.LBB39_27
+.LBB39_27 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	ADDI	%GR1, %GR6, -48
+	COPYI	%GR2, 10
+	ULT	%GR1, %GR1, %GR2
+	BNEQZ	%GR1, .LBB39_69
+	JUMP	.LBB39_28
+.LBB39_28 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	COPYI	%GR1, 68
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_72
+	JUMP	.LBB39_29
+.LBB39_29 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	COPYI	%GR1, 76
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_63
+	JUMP	.LBB39_30
+.LBB39_30 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	COPYI	%GR1, 79
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_76
+	JUMP	.LBB39_31
+.LBB39_31 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	COPYI	%GR1, 88
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_80
+	JUMP	.LBB39_32
+.LBB39_32 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	COPYI	%GR1, 91
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_82
+	JUMP	.LBB39_33
+.LBB39_33 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	COPYI	%GR1, 99
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_83
+	JUMP	.LBB39_34
+.LBB39_34 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	COPYI	%GR1, 100
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_73
+	JUMP	.LBB39_35
+.LBB39_35 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	COPYI	%GR1, 104
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_66
+	JUMP	.LBB39_36
+.LBB39_36 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	COPYI	%GR1, 105
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_75
+	JUMP	.LBB39_37
+.LBB39_37 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	COPYI	%GR1, 108
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_60
+	JUMP	.LBB39_38
+.LBB39_38 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR1, 110
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_85
+	JUMP	.LBB39_39
+.LBB39_39 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR1, 111
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_77
+	JUMP	.LBB39_40
+.LBB39_40 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR1, 112
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_84
+	JUMP	.LBB39_41
+.LBB39_41 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR1, 115
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_81
+	JUMP	.LBB39_42
+.LBB39_42 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR1, 117
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_79
+	JUMP	.LBB39_43
+.LBB39_43 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR1, 120
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_80
+	JUMP	.LBB39_94
+.LBB39_44 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_45
+.LBB39_45 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 432(%FP)
+	LOAD	%GR1, 392(%FP)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 76(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 416(%FP)
+	JUMP	.LBB39_46
+.LBB39_46 NOP                           ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 416(%FP)
+	LOAD	%GR1, 392(%FP)
+	LTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_54
+	JUMP	.LBB39_47
+.LBB39_47 NOP                           ;   in Loop: Header=BB39_46 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_50
+	JUMP	.LBB39_48
+.LBB39_48 NOP                           ;   in Loop: Header=BB39_46 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_50
+	JUMP	.LBB39_49
+.LBB39_49 NOP 
+	JUMP	.LBB39_362
+.LBB39_50 NOP                           ;   in Loop: Header=BB39_46 Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 76(%FP)
+	ULOADB	%GR1, 0(%GR1)
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_52
+	JUMP	.LBB39_51
+.LBB39_51 NOP 
+	JUMP	.LBB39_367
+.LBB39_52 NOP                           ;   in Loop: Header=BB39_46 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 400(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 400(%FP)
+	LOAD	%GR6, 76(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 76(%FP)
+	JUMP	.LBB39_53
+.LBB39_53 NOP                           ;   in Loop: Header=BB39_46 Depth=2
+	LOAD	%GR6, 416(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 416(%FP)
+	JUMP	.LBB39_46
+.LBB39_54 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_21
+.LBB39_55 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 159
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_57
+	JUMP	.LBB39_56
+.LBB39_56 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	LOAD	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_58
+	JUMP	.LBB39_57
+.LBB39_57 NOP 
+	JUMP	.LBB39_367
+.LBB39_58 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 16
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_59
+.LBB39_59 NOP                           ; %.backedge
+                                        ;   in Loop: Header=BB39_25 Depth=2
+	JUMP	.LBB39_25
+.LBB39_60 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 15
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_62
+	JUMP	.LBB39_61
+.LBB39_61 NOP 
+	JUMP	.LBB39_367
+.LBB39_62 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 1
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_59
+.LBB39_63 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 15
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_65
+	JUMP	.LBB39_64
+.LBB39_64 NOP 
+	JUMP	.LBB39_367
+.LBB39_65 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 2
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_59
+.LBB39_66 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 15
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_68
+	JUMP	.LBB39_67
+.LBB39_67 NOP 
+	JUMP	.LBB39_367
+.LBB39_68 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 4
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_59
+.LBB39_69 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 143
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_71
+	JUMP	.LBB39_70
+.LBB39_70 NOP 
+	JUMP	.LBB39_367
+.LBB39_71 NOP                           ;   in Loop: Header=BB39_25 Depth=2
+	LOAD	%GR6, 424(%FP)
+	MULI	%GR6, %GR6, 10
+	LOAD	%GR1, 428(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, -48
+	STORE	%GR6, 424(%FP)
+	JUMP	.LBB39_59
+.LBB39_72 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 1
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_74
+.LBB39_73 NOP                           ; %.loopexit9
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_74
+.LBB39_74 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 3
+	STORE	%GR6, 428(%FP)
+	COPYG	%GR6, _strtol_r
+	STORE	%GR6, 376(%FP)
+	COPYI	%GR6, 10
+	STORE	%GR6, 396(%FP)
+	JUMP	.LBB39_95
+.LBB39_75 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 3
+	STORE	%GR6, 428(%FP)
+	COPYG	%GR6, _strtol_r
+	STORE	%GR6, 376(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 396(%FP)
+	JUMP	.LBB39_95
+.LBB39_76 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 1
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_78
+.LBB39_77 NOP                           ; %.loopexit10
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_78
+.LBB39_78 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 3
+	STORE	%GR6, 428(%FP)
+	COPYG	%GR6, _strtoul_r
+	STORE	%GR6, 376(%FP)
+	COPYI	%GR6, 8
+	STORE	%GR6, 396(%FP)
+	JUMP	.LBB39_95
+.LBB39_79 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 3
+	STORE	%GR6, 428(%FP)
+	COPYG	%GR6, _strtoul_r
+	STORE	%GR6, 376(%FP)
+	COPYI	%GR6, 10
+	STORE	%GR6, 396(%FP)
+	JUMP	.LBB39_95
+.LBB39_80 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 512
+	STORE	%GR6, 412(%FP)
+	COPYI	%GR6, 3
+	STORE	%GR6, 428(%FP)
+	COPYG	%GR6, _strtoul_r
+	STORE	%GR6, 376(%FP)
+	COPYI	%GR6, 16
+	STORE	%GR6, 396(%FP)
+	JUMP	.LBB39_95
+.LBB39_81 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 2
+	STORE	%GR6, 428(%FP)
+	JUMP	.LBB39_95
+.LBB39_82 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR2, 432(%FP)
+	ADDI	%GR1, %FP, 120
+	CALL	__sccl
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 432(%FP)
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 64
+	STORE	%GR6, 412(%FP)
+	COPYI	%GR6, 1
+	STORE	%GR6, 428(%FP)
+	JUMP	.LBB39_95
+.LBB39_83 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 64
+	STORE	%GR6, 412(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 428(%FP)
+	JUMP	.LBB39_95
+.LBB39_84 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 544
+	STORE	%GR6, 412(%FP)
+	COPYI	%GR6, 3
+	STORE	%GR6, 428(%FP)
+	COPYG	%GR6, _strtoul_r
+	STORE	%GR6, 376(%FP)
+	COPYI	%GR6, 16
+	STORE	%GR6, 396(%FP)
+	JUMP	.LBB39_95
+.LBB39_85 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_87
+	JUMP	.LBB39_86
+.LBB39_86 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_21
+.LBB39_87 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_89
+	JUMP	.LBB39_88
+.LBB39_88 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 68(%FP)
+	LOAD	%GR6, 400(%FP)
+	LOAD	%GR1, 68(%FP)
+	STOREH	%GR6, 0(%GR1)
+	JUMP	.LBB39_93
+.LBB39_89 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 1
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_91
+	JUMP	.LBB39_90
+.LBB39_90 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 60(%FP)
+	LOAD	%GR6, 400(%FP)
+	LOAD	%GR1, 60(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB39_92
+.LBB39_91 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 64(%FP)
+	LOAD	%GR6, 400(%FP)
+	LOAD	%GR1, 64(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB39_92
+.LBB39_92 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_93
+.LBB39_93 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_21
+.LBB39_94 NOP 
+	JUMP	.LBB39_367
+.LBB39_95 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_98
+	JUMP	.LBB39_96
+.LBB39_96 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_98
+	JUMP	.LBB39_97
+.LBB39_97 NOP 
+	JUMP	.LBB39_362
+.LBB39_98 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 64
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_108
+	JUMP	.LBB39_99
+.LBB39_99 NOP                           ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_100
+.LBB39_100 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	COPYG	%GR1, _ctype_+1
+	ADD	%GR6, %GR6, %GR1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_107
+	JUMP	.LBB39_101
+.LBB39_101 NOP                          ;   in Loop: Header=BB39_100 Depth=2
+	LOAD	%GR6, 400(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 400(%FP)
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, 1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_103
+	JUMP	.LBB39_102
+.LBB39_102 NOP                          ;   in Loop: Header=BB39_100 Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB39_106
+.LBB39_103 NOP                          ;   in Loop: Header=BB39_100 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_105
+	JUMP	.LBB39_104
+.LBB39_104 NOP 
+	JUMP	.LBB39_362
+.LBB39_105 NOP                          ;   in Loop: Header=BB39_100 Depth=2
+	JUMP	.LBB39_106
+.LBB39_106 NOP                          ;   in Loop: Header=BB39_100 Depth=2
+	JUMP	.LBB39_100
+.LBB39_107 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_108
+.LBB39_108 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 428(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_112
+	JUMP	.LBB39_109
+.LBB39_109 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR1, 1
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_163
+	JUMP	.LBB39_110
+.LBB39_110 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR1, 2
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_233
+	JUMP	.LBB39_111
+.LBB39_111 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR1, 3
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_297
+	JUMP	.LBB39_361
+.LBB39_112 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_114
+	JUMP	.LBB39_113
+.LBB39_113 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 1
+	STORE	%GR6, 424(%FP)
+	JUMP	.LBB39_114
+.LBB39_114 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 1
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_147
+	JUMP	.LBB39_115
+.LBB39_115 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_117
+	JUMP	.LBB39_116
+.LBB39_116 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 0
+	STORE	%GR6, 384(%FP)
+	JUMP	.LBB39_118
+.LBB39_117 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 384(%FP)
+	JUMP	.LBB39_118
+.LBB39_118 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 0
+	STORE	%GR6, 416(%FP)
+	JUMP	.LBB39_119
+.LBB39_119 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_143
+	JUMP	.LBB39_120
+.LBB39_120 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR1, 416(%FP)
+	CALL	__locale_mb_cur_max
+	COPYR	%GR6, %RT0
+	NEQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_122
+	JUMP	.LBB39_121
+.LBB39_121 NOP 
+	JUMP	.LBB39_362
+.LBB39_122 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 416(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 416(%FP)
+	ADDI	%GR2, %FP, 80
+	ADD	%GR1, %GR2, %GR1
+	STOREB	%GR6, 0(%GR1)
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, 3
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_124
+	JUMP	.LBB39_123
+.LBB39_123 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR6, 48(%FP)
+	COPYI	%GR1, 4
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_125
+	JUMP	.LBB39_124
+.LBB39_124 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	ADDI	%GR1, %FP, 48
+	COPYI	%GR2, 0
+	COPYI	%GR3, 8
+	CALL	memset
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB39_125
+.LBB39_125 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 384(%FP)
+	LOAD	%GR4, 416(%FP)
+	ADDI	%GR3, %FP, 80
+	ADDI	%GR5, %FP, 48
+	CALL	_mbrtowc_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 380(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_127
+	JUMP	.LBB39_126
+.LBB39_126 NOP 
+	JUMP	.LBB39_362
+.LBB39_127 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_130
+	JUMP	.LBB39_128
+.LBB39_128 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_130
+	JUMP	.LBB39_129
+.LBB39_129 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR6, 384(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB39_130
+.LBB39_130 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, -2
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_137
+	JUMP	.LBB39_131
+.LBB39_131 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR6, 416(%FP)
+	LOAD	%GR1, 400(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 400(%FP)
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, 3
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_133
+	JUMP	.LBB39_132
+.LBB39_132 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR6, 48(%FP)
+	COPYI	%GR1, 4
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_134
+	JUMP	.LBB39_133
+.LBB39_133 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR6, 424(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 424(%FP)
+	JUMP	.LBB39_134
+.LBB39_134 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_136
+	JUMP	.LBB39_135
+.LBB39_135 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR6, 384(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR6, 384(%FP)
+	JUMP	.LBB39_136
+.LBB39_136 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	COPYI	%GR6, 0
+	STORE	%GR6, 416(%FP)
+	JUMP	.LBB39_137
+.LBB39_137 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_142
+	JUMP	.LBB39_138
+.LBB39_138 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_142
+	JUMP	.LBB39_139
+.LBB39_139 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 416(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_141
+	JUMP	.LBB39_140
+.LBB39_140 NOP 
+	JUMP	.LBB39_362
+.LBB39_141 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_144
+.LBB39_142 NOP                          ;   in Loop: Header=BB39_119 Depth=2
+	JUMP	.LBB39_119
+.LBB39_143 NOP                          ; %.loopexit
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_144
+.LBB39_144 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_146
+	JUMP	.LBB39_145
+.LBB39_145 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 404(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 404(%FP)
+	JUMP	.LBB39_146
+.LBB39_146 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_162
+.LBB39_147 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_158
+	JUMP	.LBB39_148
+.LBB39_148 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 0
+	STORE	%GR6, 44(%FP)
+	JUMP	.LBB39_149
+.LBB39_149 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 416(%FP)
+	LOAD	%GR1, 424(%FP)
+	LTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_155
+	JUMP	.LBB39_150
+.LBB39_150 NOP                          ;   in Loop: Header=BB39_149 Depth=2
+	LOAD	%GR6, 416(%FP)
+	LOAD	%GR1, 44(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 416(%FP)
+	LOAD	%GR1, 424(%FP)
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 424(%FP)
+	LOAD	%GR6, 416(%FP)
+	LOAD	%GR1, 444(%FP)
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_154
+	JUMP	.LBB39_151
+.LBB39_151 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 44(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_153
+	JUMP	.LBB39_152
+.LBB39_152 NOP 
+	JUMP	.LBB39_362
+.LBB39_153 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_157
+.LBB39_154 NOP                          ;   in Loop: Header=BB39_149 Depth=2
+	JUMP	.LBB39_156
+.LBB39_155 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 424(%FP)
+	LOAD	%GR1, 44(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 424(%FP)
+	LOAD	%GR1, 444(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR2, 0(%GR1)
+	SUB	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 424(%FP)
+	LOAD	%GR1, 444(%FP)
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB39_157
+.LBB39_156 NOP                          ;   in Loop: Header=BB39_149 Depth=2
+	JUMP	.LBB39_149
+.LBB39_157 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR1, 400(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 400(%FP)
+	JUMP	.LBB39_161
+.LBB39_158 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 420(%FP)
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 420(%FP)
+	LOAD	%GR4, 424(%FP)
+	LOAD	%GR5, 444(%FP)
+	COPYI	%GR3, 1
+	CALL	_fread_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 40(%FP)
+	LOAD	%GR6, 40(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_160
+	JUMP	.LBB39_159
+.LBB39_159 NOP 
+	JUMP	.LBB39_362
+.LBB39_160 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 40(%FP)
+	LOAD	%GR1, 400(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 400(%FP)
+	LOAD	%GR6, 404(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 404(%FP)
+	JUMP	.LBB39_161
+.LBB39_161 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_162
+.LBB39_162 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_361
+.LBB39_163 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_165
+	JUMP	.LBB39_164
+.LBB39_164 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, -1
+	STORE	%GR6, 424(%FP)
+	JUMP	.LBB39_165
+.LBB39_165 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 1
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_202
+	JUMP	.LBB39_166
+.LBB39_166 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_168
+	JUMP	.LBB39_167
+.LBB39_167 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ADDI	%GR6, %FP, 388
+	STORE	%GR6, 384(%FP)
+	JUMP	.LBB39_169
+.LBB39_168 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 384(%FP)
+	JUMP	.LBB39_169
+.LBB39_169 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 0
+	STORE	%GR6, 416(%FP)
+	JUMP	.LBB39_170
+.LBB39_170 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_198
+	JUMP	.LBB39_171
+.LBB39_171 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR1, 416(%FP)
+	CALL	__locale_mb_cur_max
+	COPYR	%GR6, %RT0
+	NEQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_173
+	JUMP	.LBB39_172
+.LBB39_172 NOP 
+	JUMP	.LBB39_362
+.LBB39_173 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 416(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 416(%FP)
+	ADDI	%GR2, %FP, 80
+	ADD	%GR1, %GR2, %GR1
+	STOREB	%GR6, 0(%GR1)
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, 3
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_175
+	JUMP	.LBB39_174
+.LBB39_174 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR6, 32(%FP)
+	COPYI	%GR1, 4
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_176
+	JUMP	.LBB39_175
+.LBB39_175 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	ADDI	%GR1, %FP, 32
+	COPYI	%GR2, 0
+	COPYI	%GR3, 8
+	CALL	memset
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB39_176
+.LBB39_176 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 384(%FP)
+	LOAD	%GR4, 416(%FP)
+	ADDI	%GR3, %FP, 80
+	ADDI	%GR5, %FP, 32
+	CALL	_mbrtowc_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 380(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_178
+	JUMP	.LBB39_177
+.LBB39_177 NOP 
+	JUMP	.LBB39_362
+.LBB39_178 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_180
+	JUMP	.LBB39_179
+.LBB39_179 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR6, 384(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB39_180
+.LBB39_180 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, -2
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_192
+	JUMP	.LBB39_181
+.LBB39_181 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR6, 384(%FP)
+	LOAD	%GR2, 0(%GR6)
+	CALL	__wctob
+	COPYR	%GR6, %RT0
+	ADDI	%GR1, %FP, 120
+	ADD	%GR6, %GR1, %GR6
+	ULOADB	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_186
+	JUMP	.LBB39_182
+.LBB39_182 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_183
+.LBB39_183 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 416(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_185
+	JUMP	.LBB39_184
+.LBB39_184 NOP                          ;   in Loop: Header=BB39_183 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR6, 416(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 416(%FP)
+	ADDI	%GR2, %FP, 80
+	ADD	%GR6, %GR2, %GR6
+	ULOADB	%GR2, 0(%GR6)
+	LOAD	%GR3, 444(%FP)
+	CALL	_ungetc_r
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB39_183
+.LBB39_185 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_199
+.LBB39_186 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR6, 416(%FP)
+	LOAD	%GR1, 400(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 400(%FP)
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, 3
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_188
+	JUMP	.LBB39_187
+.LBB39_187 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR6, 32(%FP)
+	COPYI	%GR1, 4
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_189
+	JUMP	.LBB39_188
+.LBB39_188 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR6, 424(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 424(%FP)
+	JUMP	.LBB39_189
+.LBB39_189 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_191
+	JUMP	.LBB39_190
+.LBB39_190 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR6, 384(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR6, 384(%FP)
+	JUMP	.LBB39_191
+.LBB39_191 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	COPYI	%GR6, 0
+	STORE	%GR6, 416(%FP)
+	JUMP	.LBB39_192
+.LBB39_192 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_197
+	JUMP	.LBB39_193
+.LBB39_193 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_197
+	JUMP	.LBB39_194
+.LBB39_194 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 416(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_196
+	JUMP	.LBB39_195
+.LBB39_195 NOP 
+	JUMP	.LBB39_362
+.LBB39_196 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_199
+.LBB39_197 NOP                          ;   in Loop: Header=BB39_170 Depth=2
+	JUMP	.LBB39_170
+.LBB39_198 NOP                          ; %.loopexit1
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_199
+.LBB39_199 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_201
+	JUMP	.LBB39_200
+.LBB39_200 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 384(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 404(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 404(%FP)
+	JUMP	.LBB39_201
+.LBB39_201 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_232
+.LBB39_202 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_217
+	JUMP	.LBB39_203
+.LBB39_203 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 0
+	STORE	%GR6, 416(%FP)
+	JUMP	.LBB39_204
+.LBB39_204 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	ADDI	%GR1, %FP, 120
+	ADD	%GR6, %GR1, %GR6
+	ULOADB	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_213
+	JUMP	.LBB39_205
+.LBB39_205 NOP                          ;   in Loop: Header=BB39_204 Depth=2
+	LOAD	%GR6, 416(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 416(%FP)
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 424(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_207
+	JUMP	.LBB39_206
+.LBB39_206 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_214
+.LBB39_207 NOP                          ;   in Loop: Header=BB39_204 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_212
+	JUMP	.LBB39_208
+.LBB39_208 NOP                          ;   in Loop: Header=BB39_204 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_212
+	JUMP	.LBB39_209
+.LBB39_209 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 416(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_211
+	JUMP	.LBB39_210
+.LBB39_210 NOP 
+	JUMP	.LBB39_362
+.LBB39_211 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_214
+.LBB39_212 NOP                          ;   in Loop: Header=BB39_204 Depth=2
+	JUMP	.LBB39_204
+.LBB39_213 NOP                          ; %.loopexit2
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_214
+.LBB39_214 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 416(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_216
+	JUMP	.LBB39_215
+.LBB39_215 NOP 
+	JUMP	.LBB39_367
+.LBB39_216 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 416(%FP)
+	LOAD	%GR1, 400(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 400(%FP)
+	JUMP	.LBB39_231
+.LBB39_217 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 420(%FP)
+	STORE	%GR6, 408(%FP)
+	JUMP	.LBB39_218
+.LBB39_218 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	ADDI	%GR1, %FP, 120
+	ADD	%GR6, %GR1, %GR6
+	ULOADB	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_227
+	JUMP	.LBB39_219
+.LBB39_219 NOP                          ;   in Loop: Header=BB39_218 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 0(%GR6)
+	ULOADB	%GR6, 0(%GR1)
+	LOAD	%GR1, 420(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 420(%FP)
+	STOREB	%GR6, 0(%GR1)
+	LOAD	%GR6, 424(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_221
+	JUMP	.LBB39_220
+.LBB39_220 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_228
+.LBB39_221 NOP                          ;   in Loop: Header=BB39_218 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_226
+	JUMP	.LBB39_222
+.LBB39_222 NOP                          ;   in Loop: Header=BB39_218 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_226
+	JUMP	.LBB39_223
+.LBB39_223 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 420(%FP)
+	LOAD	%GR1, 408(%FP)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_225
+	JUMP	.LBB39_224
+.LBB39_224 NOP 
+	JUMP	.LBB39_362
+.LBB39_225 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_228
+.LBB39_226 NOP                          ;   in Loop: Header=BB39_218 Depth=2
+	JUMP	.LBB39_218
+.LBB39_227 NOP                          ; %.loopexit3
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_228
+.LBB39_228 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 420(%FP)
+	LOAD	%GR1, 408(%FP)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 416(%FP)
+	LOAD	%GR6, 416(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_230
+	JUMP	.LBB39_229
+.LBB39_229 NOP 
+	JUMP	.LBB39_367
+.LBB39_230 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 420(%FP)
+	COPYI	%GR1, 0
+	STOREB	%GR1, 0(%GR6)
+	LOAD	%GR6, 404(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 404(%FP)
+	LOAD	%GR6, 416(%FP)
+	LOAD	%GR1, 400(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 400(%FP)
+	JUMP	.LBB39_231
+.LBB39_231 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_232
+.LBB39_232 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_361
+.LBB39_233 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_235
+	JUMP	.LBB39_234
+.LBB39_234 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, -1
+	STORE	%GR6, 424(%FP)
+	JUMP	.LBB39_235
+.LBB39_235 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 1
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_274
+	JUMP	.LBB39_236
+.LBB39_236 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_238
+	JUMP	.LBB39_237
+.LBB39_237 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ADDI	%GR6, %FP, 388
+	STORE	%GR6, 384(%FP)
+	JUMP	.LBB39_239
+.LBB39_238 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 384(%FP)
+	JUMP	.LBB39_239
+.LBB39_239 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 0
+	STORE	%GR6, 416(%FP)
+	JUMP	.LBB39_240
+.LBB39_240 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	COPYG	%GR1, _ctype_+1
+	ADD	%GR6, %GR6, %GR1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR1, %GR6, 8
+	COPYI	%GR6, 0
+	NEQ	%GR1, %GR1, %GR6
+	BNEQZ	%GR1, .LBB39_242
+	JUMP	.LBB39_241
+.LBB39_241 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	JUMP	.LBB39_242
+.LBB39_242 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	ANDI	%GR6, %GR6, 1
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_270
+	JUMP	.LBB39_243
+.LBB39_243 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR1, 416(%FP)
+	CALL	__locale_mb_cur_max
+	COPYR	%GR6, %RT0
+	NEQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_245
+	JUMP	.LBB39_244
+.LBB39_244 NOP 
+	JUMP	.LBB39_362
+.LBB39_245 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 416(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 416(%FP)
+	ADDI	%GR2, %FP, 80
+	ADD	%GR1, %GR2, %GR1
+	STOREB	%GR6, 0(%GR1)
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, 3
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_247
+	JUMP	.LBB39_246
+.LBB39_246 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 4
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_248
+	JUMP	.LBB39_247
+.LBB39_247 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	ADDI	%GR1, %FP, 24
+	COPYI	%GR2, 0
+	COPYI	%GR3, 8
+	CALL	memset
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB39_248
+.LBB39_248 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 384(%FP)
+	LOAD	%GR4, 416(%FP)
+	ADDI	%GR3, %FP, 80
+	ADDI	%GR5, %FP, 24
+	CALL	_mbrtowc_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 380(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_250
+	JUMP	.LBB39_249
+.LBB39_249 NOP 
+	JUMP	.LBB39_362
+.LBB39_250 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_252
+	JUMP	.LBB39_251
+.LBB39_251 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 384(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB39_252
+.LBB39_252 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, -2
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_264
+	JUMP	.LBB39_253
+.LBB39_253 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 384(%FP)
+	LOAD	%GR1, 0(%GR6)
+	CALL	iswspace
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_258
+	JUMP	.LBB39_254
+.LBB39_254 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_255
+.LBB39_255 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 416(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_257
+	JUMP	.LBB39_256
+.LBB39_256 NOP                          ;   in Loop: Header=BB39_255 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR6, 416(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 416(%FP)
+	ADDI	%GR2, %FP, 80
+	ADD	%GR6, %GR2, %GR6
+	ULOADB	%GR2, 0(%GR6)
+	LOAD	%GR3, 444(%FP)
+	CALL	_ungetc_r
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB39_255
+.LBB39_257 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_271
+.LBB39_258 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 416(%FP)
+	LOAD	%GR1, 400(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 400(%FP)
+	LOAD	%GR6, 380(%FP)
+	COPYI	%GR1, 3
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_260
+	JUMP	.LBB39_259
+.LBB39_259 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 4
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_261
+	JUMP	.LBB39_260
+.LBB39_260 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 424(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 424(%FP)
+	JUMP	.LBB39_261
+.LBB39_261 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_263
+	JUMP	.LBB39_262
+.LBB39_262 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 384(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR6, 384(%FP)
+	JUMP	.LBB39_263
+.LBB39_263 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	COPYI	%GR6, 0
+	STORE	%GR6, 416(%FP)
+	JUMP	.LBB39_264
+.LBB39_264 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_269
+	JUMP	.LBB39_265
+.LBB39_265 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_269
+	JUMP	.LBB39_266
+.LBB39_266 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 416(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_268
+	JUMP	.LBB39_267
+.LBB39_267 NOP 
+	JUMP	.LBB39_362
+.LBB39_268 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_271
+.LBB39_269 NOP                          ;   in Loop: Header=BB39_240 Depth=2
+	JUMP	.LBB39_240
+.LBB39_270 NOP                          ; %.loopexit4
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_271
+.LBB39_271 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_273
+	JUMP	.LBB39_272
+.LBB39_272 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 384(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 404(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 404(%FP)
+	JUMP	.LBB39_273
+.LBB39_273 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_296
+.LBB39_274 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_285
+	JUMP	.LBB39_275
+.LBB39_275 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 0
+	STORE	%GR6, 416(%FP)
+	JUMP	.LBB39_276
+.LBB39_276 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	COPYG	%GR1, _ctype_+1
+	ADD	%GR6, %GR6, %GR1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_283
+	JUMP	.LBB39_277
+.LBB39_277 NOP                          ;   in Loop: Header=BB39_276 Depth=2
+	LOAD	%GR6, 416(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 416(%FP)
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 424(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_279
+	JUMP	.LBB39_278
+.LBB39_278 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_284
+.LBB39_279 NOP                          ;   in Loop: Header=BB39_276 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_282
+	JUMP	.LBB39_280
+.LBB39_280 NOP                          ;   in Loop: Header=BB39_276 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_282
+	JUMP	.LBB39_281
+.LBB39_281 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_284
+.LBB39_282 NOP                          ;   in Loop: Header=BB39_276 Depth=2
+	JUMP	.LBB39_276
+.LBB39_283 NOP                          ; %.loopexit5
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_284
+.LBB39_284 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 416(%FP)
+	LOAD	%GR1, 400(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 400(%FP)
+	JUMP	.LBB39_295
+.LBB39_285 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 408(%FP)
+	LOAD	%GR6, 408(%FP)
+	STORE	%GR6, 420(%FP)
+	JUMP	.LBB39_286
+.LBB39_286 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	COPYG	%GR1, _ctype_+1
+	ADD	%GR6, %GR6, %GR1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_293
+	JUMP	.LBB39_287
+.LBB39_287 NOP                          ;   in Loop: Header=BB39_286 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 0(%GR6)
+	ULOADB	%GR6, 0(%GR1)
+	LOAD	%GR1, 420(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 420(%FP)
+	STOREB	%GR6, 0(%GR1)
+	LOAD	%GR6, 424(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_289
+	JUMP	.LBB39_288
+.LBB39_288 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_294
+.LBB39_289 NOP                          ;   in Loop: Header=BB39_286 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_292
+	JUMP	.LBB39_290
+.LBB39_290 NOP                          ;   in Loop: Header=BB39_286 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_292
+	JUMP	.LBB39_291
+.LBB39_291 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_294
+.LBB39_292 NOP                          ;   in Loop: Header=BB39_286 Depth=2
+	JUMP	.LBB39_286
+.LBB39_293 NOP                          ; %.loopexit6
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_294
+.LBB39_294 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 420(%FP)
+	COPYI	%GR1, 0
+	STOREB	%GR1, 0(%GR6)
+	LOAD	%GR6, 420(%FP)
+	LOAD	%GR1, 408(%FP)
+	SUB	%GR6, %GR6, %GR1
+	LOAD	%GR1, 400(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 400(%FP)
+	LOAD	%GR6, 404(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 404(%FP)
+	JUMP	.LBB39_295
+.LBB39_295 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_296
+.LBB39_296 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_21
+.LBB39_297 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	COPYI	%GR6, 0
+	STORE	%GR6, 20(%FP)
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 424(%FP)
+	ADDI	%GR6, %GR6, -1
+	COPYI	%GR1, 39
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_299
+	JUMP	.LBB39_298
+.LBB39_298 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 424(%FP)
+	ADDI	%GR6, %GR6, -39
+	STORE	%GR6, 20(%FP)
+	COPYI	%GR6, 39
+	STORE	%GR6, 424(%FP)
+	JUMP	.LBB39_299
+.LBB39_299 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 3456
+	STORE	%GR6, 412(%FP)
+	ADDI	%GR6, %FP, 80
+	STORE	%GR6, 420(%FP)
+	JUMP	.LBB39_300
+.LBB39_300 NOP                          ;   Parent Loop BB39_10 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 424(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_342
+	JUMP	.LBB39_301
+.LBB39_301 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 428(%FP)
+	LOAD	%GR6, 428(%FP)
+	COPYI	%GR1, 43
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_326
+	JUMP	.LBB39_302
+.LBB39_302 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	COPYI	%GR1, 45
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_326
+	JUMP	.LBB39_303
+.LBB39_303 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	COPYI	%GR1, 48
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_310
+	JUMP	.LBB39_304
+.LBB39_304 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	ADDI	%GR1, %GR6, -49
+	COPYI	%GR2, 7
+	ULT	%GR1, %GR1, %GR2
+	BNEQZ	%GR1, .LBB39_319
+	JUMP	.LBB39_305
+.LBB39_305 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	ADDI	%GR1, %GR6, -56
+	COPYI	%GR2, 2
+	ULT	%GR1, %GR1, %GR2
+	BNEQZ	%GR1, .LBB39_320
+	JUMP	.LBB39_306
+.LBB39_306 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	ADDI	%GR1, %GR6, -65
+	COPYI	%GR2, 6
+	ULT	%GR1, %GR1, %GR2
+	BNEQZ	%GR1, .LBB39_323
+	JUMP	.LBB39_307
+.LBB39_307 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	COPYI	%GR1, 88
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB39_329
+	JUMP	.LBB39_308
+.LBB39_308 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	ADDI	%GR1, %GR6, -97
+	COPYI	%GR2, 6
+	ULT	%GR1, %GR1, %GR2
+	BNEQZ	%GR1, .LBB39_323
+	JUMP	.LBB39_309
+.LBB39_309 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	COPYI	%GR1, 120
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_329
+	JUMP	.LBB39_332
+.LBB39_310 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	ADDI	%GR6, %FP, 412
+	ORI	%GR6, %GR6, 1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_312
+	JUMP	.LBB39_311
+.LBB39_311 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	JUMP	.LBB39_334
+.LBB39_312 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 396(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_314
+	JUMP	.LBB39_313
+.LBB39_313 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	COPYI	%GR6, 8
+	STORE	%GR6, 396(%FP)
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 512
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_314
+.LBB39_314 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	ADDI	%GR6, %FP, 412
+	ORI	%GR6, %GR6, 1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_316
+	JUMP	.LBB39_315
+.LBB39_315 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, -1409
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_334
+.LBB39_316 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, -897
+	STORE	%GR6, 412(%FP)
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_318
+	JUMP	.LBB39_317
+.LBB39_317 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 424(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 424(%FP)
+	JUMP	.LBB39_318
+.LBB39_318 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB39_335
+.LBB39_319 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 396(%FP)
+	SHLI	%GR6, %GR6, 1
+	COPYG	%GR1, __svfscanf_r.basefix
+	ADD	%GR6, %GR6, %GR1
+	LOADH	%GR6, 0(%GR6)
+	STORE	%GR6, 396(%FP)
+	LOAD	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, -2945
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_334
+.LBB39_320 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 396(%FP)
+	SHLI	%GR6, %GR6, 1
+	COPYG	%GR1, __svfscanf_r.basefix
+	ADD	%GR6, %GR6, %GR1
+	LOADH	%GR6, 0(%GR6)
+	STORE	%GR6, 396(%FP)
+	LOAD	%GR6, 396(%FP)
+	COPYI	%GR1, 8
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_322
+	JUMP	.LBB39_321
+.LBB39_321 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_333
+.LBB39_322 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, -2945
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_334
+.LBB39_323 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 396(%FP)
+	COPYI	%GR1, 10
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_325
+	JUMP	.LBB39_324
+.LBB39_324 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_333
+.LBB39_325 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, -2945
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_334
+.LBB39_326 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 128
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_328
+	JUMP	.LBB39_327
+.LBB39_327 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, -129
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_334
+.LBB39_328 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_333
+.LBB39_329 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 1536
+	COPYI	%GR1, 512
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_331
+	JUMP	.LBB39_330
+.LBB39_330 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	COPYI	%GR6, 16
+	STORE	%GR6, 396(%FP)
+	LOAD	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, -513
+	STORE	%GR6, 412(%FP)
+	LOAD	%GR6, 412(%FP)
+	ORI	%GR6, %GR6, 1280
+	STORE	%GR6, 412(%FP)
+	JUMP	.LBB39_334
+.LBB39_331 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_333
+.LBB39_332 NOP                          ; %.loopexit8
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_333
+.LBB39_333 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_343
+.LBB39_334 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 428(%FP)
+	LOAD	%GR1, 420(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 420(%FP)
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB39_335
+.LBB39_335 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, 1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB39_337
+	JUMP	.LBB39_336
+.LBB39_336 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 444(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB39_340
+.LBB39_337 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR2, 444(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_339
+	JUMP	.LBB39_338
+.LBB39_338 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_343
+.LBB39_339 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	JUMP	.LBB39_340
+.LBB39_340 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	JUMP	.LBB39_341
+.LBB39_341 NOP                          ;   in Loop: Header=BB39_300 Depth=2
+	LOAD	%GR6, 424(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 424(%FP)
+	JUMP	.LBB39_300
+.LBB39_342 NOP                          ; %.loopexit7
+                                        ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_343
+.LBB39_343 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ADDI	%GR6, %FP, 412
+	ORI	%GR6, %GR6, 1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_349
+	JUMP	.LBB39_344
+.LBB39_344 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 420(%FP)
+	ADDI	%GR1, %FP, 80
+	ULTE	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_346
+	JUMP	.LBB39_345
+.LBB39_345 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR6, 420(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 420(%FP)
+	LOADB	%GR2, 0(%GR6)
+	LOAD	%GR3, 444(%FP)
+	CALL	_ungetc_r
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB39_346
+.LBB39_346 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 420(%FP)
+	ADDI	%GR1, %FP, 80
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_348
+	JUMP	.LBB39_347
+.LBB39_347 NOP 
+	JUMP	.LBB39_367
+.LBB39_348 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_349
+.LBB39_349 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_360
+	JUMP	.LBB39_350
+.LBB39_350 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 420(%FP)
+	COPYI	%GR3, 0
+	STOREB	%GR3, 0(%GR6)
+	LOAD	%GR6, 376(%FP)
+	LOAD	%GR1, 448(%FP)
+	LOAD	%GR4, 396(%FP)
+	ADDI	%GR2, %FP, 80
+	CALLR	%GR6
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 12(%FP)
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 32
+	EQ	%GR6, %GR6, %GR3
+	BNEQZ	%GR6, .LBB39_352
+	JUMP	.LBB39_351
+.LBB39_351 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 8(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB39_359
+.LBB39_352 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_354
+	JUMP	.LBB39_353
+.LBB39_353 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 68(%FP)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 68(%FP)
+	STOREH	%GR6, 0(%GR1)
+	JUMP	.LBB39_358
+.LBB39_354 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	ULOADB	%GR6, 412(%FP)
+	ANDI	%GR6, %GR6, 1
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_356
+	JUMP	.LBB39_355
+.LBB39_355 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 60(%FP)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 60(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB39_357
+.LBB39_356 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 436(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 436(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 64(%FP)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 64(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB39_357
+.LBB39_357 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_358
+.LBB39_358 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_359
+.LBB39_359 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 404(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 404(%FP)
+	JUMP	.LBB39_360
+.LBB39_360 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	LOAD	%GR6, 420(%FP)
+	ADDI	%GR1, %FP, 80
+	SUB	%GR6, %GR6, %GR1
+	LOAD	%GR1, 16(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 400(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 400(%FP)
+	JUMP	.LBB39_361
+.LBB39_361 NOP                          ;   in Loop: Header=BB39_10 Depth=1
+	JUMP	.LBB39_21
+.LBB39_362 NOP 
+	LOAD	%GR6, 404(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_365
+	JUMP	.LBB39_363
+.LBB39_363 NOP 
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 64
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_365
+	JUMP	.LBB39_364
+.LBB39_364 NOP 
+	LOAD	%GR6, 404(%FP)
+	JUMP	.LBB39_366
+.LBB39_365 NOP 
+	COPYI	%GR6, -1
+	JUMP	.LBB39_366
+.LBB39_366 NOP 
+	STORE	%GR6, 404(%FP)
+	JUMP	.LBB39_367
+.LBB39_367 NOP 
+	JUMP	.LBB39_368
+.LBB39_368 NOP 
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB39_373
+	JUMP	.LBB39_369
+.LBB39_369 NOP 
+	LOAD	%GR6, 444(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB39_371
+	JUMP	.LBB39_370
+.LBB39_370 NOP 
+	JUMP	.LBB39_372
+.LBB39_371 NOP 
+	JUMP	.LBB39_372
+.LBB39_372 NOP 
+	JUMP	.LBB39_373
+.LBB39_373 NOP 
+	LOAD	%GR6, 404(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 452(%FP)
+	LOAD	%GR4, 456(%FP)
+	LOAD	%GR3, 460(%FP)
+	LOAD	%GR2, 464(%FP)
+	LOAD	%GR1, 468(%FP)
+	LOAD	%RA, 472(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 480
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end39 NOP 
+	.size	__svfscanf_r, .Lfunc_end39-__svfscanf_r
+                                        ; -- End function
+	.type	__wctob,@function       ; -- Begin function __wctob
+__wctob NOP                             ; @__wctob
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 64
+	COPYR	%FP, %SP
+	STORE	%RA, 56(%FP)
+	STORE	%GR1, 52(%FP)
+	STORE	%GR2, 48(%FP)
+	STORE	%GR3, 44(%FP)
+	STORE	%GR4, 40(%FP)
+	STORE	%GR1, 32(%FP)
+	STORE	%GR2, 28(%FP)
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB40_2
+	JUMP	.LBB40_1
+.LBB40_1 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 36(%FP)
+	JUMP	.LBB40_6
+.LBB40_2 NOP 
+	ADDI	%GR4, %FP, 16
+	COPYI	%GR2, 0
+	COPYI	%GR3, 8
+	COPYR	%GR1, %GR4
+	CALL	memset
+                                        ; kill: def $gr6 killed $rt0
+	CALL	__get_current_locale
+	COPYG	%GR6, __global_locale+224
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	LOAD	%GR3, 28(%FP)
+	ADDI	%GR2, %FP, 12
+	CALLR	%GR6
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB40_4
+	JUMP	.LBB40_3
+.LBB40_3 NOP 
+	ULOADB	%GR6, 12(%FP)
+	JUMP	.LBB40_5
+.LBB40_4 NOP 
+	COPYI	%GR6, 0
+	JUMP	.LBB40_5
+.LBB40_5 NOP 
+	STORE	%GR6, 36(%FP)
+	JUMP	.LBB40_6
+.LBB40_6 NOP 
+	LOAD	%GR6, 36(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR4, 40(%FP)
+	LOAD	%GR3, 44(%FP)
+	LOAD	%GR2, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	LOAD	%RA, 56(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 64
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end40 NOP 
+	.size	__wctob, .Lfunc_end40-__wctob
+                                        ; -- End function
+	.type	__get_current_locale,@function ; -- Begin function __get_current_locale
+__get_current_locale NOP                ; @__get_current_locale
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%RA, 8(%FP)
+	CALL	__get_global_locale
+	LOAD	%RA, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end41 NOP 
+	.size	__get_current_locale, .Lfunc_end41-__get_current_locale
+                                        ; -- End function
+	.type	__get_global_locale,@function ; -- Begin function __get_global_locale
+__get_global_locale NOP                 ; @__get_global_locale
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 4
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end42 NOP 
+	.size	__get_global_locale, .Lfunc_end42-__get_global_locale
+                                        ; -- End function
+	.type	_vfscanf_r,@function    ; -- Begin function _vfscanf_r
+_vfscanf_r NOP                          ; @_vfscanf_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR4, 8(%FP)
+	JUMP	.LBB43_1
+.LBB43_1 NOP 
+	LOAD	%GR6, 20(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB43_4
+	JUMP	.LBB43_2
+.LBB43_2 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 56
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB43_4
+	JUMP	.LBB43_3
+.LBB43_3 NOP 
+	LOAD	%GR1, 4(%FP)
+	CALL	__sinit
+	JUMP	.LBB43_4
+.LBB43_4 NOP 
+	JUMP	.LBB43_5
+.LBB43_5 NOP 
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR4, 8(%FP)
+	CALL	__svfscanf_r
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end43 NOP 
+	.size	_vfscanf_r, .Lfunc_end43-_vfscanf_r
+                                        ; -- End function
+	.type	__call_exitprocs,@function ; -- Begin function __call_exitprocs
+__call_exitprocs NOP                    ; @__call_exitprocs
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 64
+	COPYR	%FP, %SP
+	STORE	%RA, 56(%FP)
+	STORE	%GR1, 52(%FP)
+	STORE	%GR2, 48(%FP)
+	STORE	%GR3, 44(%FP)
+	STORE	%GR1, 40(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 36(%FP)
+	JUMP	.LBB44_1
+.LBB44_1 NOP                            ; =>This Loop Header: Depth=1
+                                        ;     Child Loop BB44_4 Depth 2
+	COPYG	%GR6, impure_data+328
+	LOAD	%GR1, 0(%GR6)
+	STORE	%GR1, 32(%FP)
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB44_2
+.LBB44_2 NOP                            ;   in Loop: Header=BB44_1 Depth=1
+	LOAD	%GR6, 32(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_27
+	JUMP	.LBB44_3
+.LBB44_3 NOP                            ;   in Loop: Header=BB44_1 Depth=1
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 136
+	STORE	%GR6, 24(%FP)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB44_4
+.LBB44_4 NOP                            ;   Parent Loop BB44_1 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_26
+	JUMP	.LBB44_5
+.LBB44_5 NOP                            ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 1
+	SHL	%GR6, %GR1, %GR6
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 36(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_9
+	JUMP	.LBB44_6
+.LBB44_6 NOP                            ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_8
+	JUMP	.LBB44_7
+.LBB44_7 NOP                            ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 20(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 128
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 36(%FP)
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_9
+	JUMP	.LBB44_8
+.LBB44_8 NOP                            ;   in Loop: Header=BB44_4 Depth=2
+	JUMP	.LBB44_25
+.LBB44_9 NOP                            ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 32(%FP)
+	LOAD	%GR1, 20(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 20(%FP)
+	LOAD	%GR1, 32(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR1, %GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_11
+	JUMP	.LBB44_10
+.LBB44_10 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB44_12
+.LBB44_11 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 32(%FP)
+	LOAD	%GR1, 20(%FP)
+	SHLI	%GR1, %GR1, 2
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB44_12
+.LBB44_12 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_14
+	JUMP	.LBB44_13
+.LBB44_13 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	JUMP	.LBB44_25
+.LBB44_14 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_16
+	JUMP	.LBB44_15
+.LBB44_15 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 256
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	AND	%GR6, %GR6, %GR1
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_17
+	JUMP	.LBB44_16
+.LBB44_16 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 12(%FP)
+	CALLR	%GR6
+	JUMP	.LBB44_21
+.LBB44_17 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 260
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	AND	%GR6, %GR6, %GR1
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_19
+	JUMP	.LBB44_18
+.LBB44_18 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 40(%FP)
+	LOAD	%GR2, 24(%FP)
+	LOAD	%GR3, 20(%FP)
+	SHLI	%GR3, %GR3, 2
+	ADD	%GR2, %GR2, %GR3
+	LOAD	%GR2, 0(%GR2)
+	CALLR	%GR6
+	JUMP	.LBB44_20
+.LBB44_19 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 24(%FP)
+	LOAD	%GR2, 20(%FP)
+	SHLI	%GR2, %GR2, 2
+	ADD	%GR1, %GR1, %GR2
+	LOAD	%GR1, 0(%GR1)
+	CALLR	%GR6
+	JUMP	.LBB44_20
+.LBB44_20 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	JUMP	.LBB44_21
+.LBB44_21 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 32(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_23
+	JUMP	.LBB44_22
+.LBB44_22 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 32(%FP)
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB44_24
+	JUMP	.LBB44_23
+.LBB44_23 NOP                           ;   in Loop: Header=BB44_1 Depth=1
+	JUMP	.LBB44_1
+.LBB44_24 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	JUMP	.LBB44_25
+.LBB44_25 NOP                           ;   in Loop: Header=BB44_4 Depth=2
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB44_4
+.LBB44_26 NOP 
+	JUMP	.LBB44_28
+.LBB44_27 NOP                           ; %.loopexit
+	JUMP	.LBB44_28
+.LBB44_28 NOP 
+	LOAD	%GR3, 44(%FP)
+	LOAD	%GR2, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	LOAD	%RA, 56(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 64
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end44 NOP 
+	.size	__call_exitprocs, .Lfunc_end44-__call_exitprocs
+                                        ; -- End function
+	.type	__sfp_lock_acquire,@function ; -- Begin function __sfp_lock_acquire
+__sfp_lock_acquire NOP                  ; @__sfp_lock_acquire
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 4
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end45 NOP 
+	.size	__sfp_lock_acquire, .Lfunc_end45-__sfp_lock_acquire
+                                        ; -- End function
+	.type	__sinit,@function       ; -- Begin function __sinit
+__sinit NOP                             ; @__sinit
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%RA, 8(%FP)
+	STORE	%GR1, 4(%FP)
+	STORE	%GR1, 0(%FP)
+	CALL	__sinit_lock_acquire
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR6, %GR6, 56
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB46_2
+	JUMP	.LBB46_1
+.LBB46_1 NOP 
+	CALL	__sinit_lock_release
+	JUMP	.LBB46_3
+.LBB46_2 NOP 
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR6, %GR6, 60
+	COPYG	%GR1, _cleanup_r
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR6, %GR6, 736
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR6, %GR6, 740
+	COPYI	%GR1, 3
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 748
+	ADDI	%GR6, %GR6, 744
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	CALL	stdin_init
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR1, 0(%GR6)
+	CALL	stdout_init
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR1, 0(%GR6)
+	CALL	stderr_init
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR6, %GR6, 56
+	COPYI	%GR1, 1
+	STORE	%GR1, 0(%GR6)
+	CALL	__sinit_lock_release
+	JUMP	.LBB46_3
+.LBB46_3 NOP 
+	LOAD	%GR1, 4(%FP)
+	LOAD	%RA, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end46 NOP 
+	.size	__sinit, .Lfunc_end46-__sinit
+                                        ; -- End function
+	.type	__sinit_lock_acquire,@function ; -- Begin function __sinit_lock_acquire
+__sinit_lock_acquire NOP                ; @__sinit_lock_acquire
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 4
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end47 NOP 
+	.size	__sinit_lock_acquire, .Lfunc_end47-__sinit_lock_acquire
+                                        ; -- End function
+	.type	__sinit_lock_release,@function ; -- Begin function __sinit_lock_release
+__sinit_lock_release NOP                ; @__sinit_lock_release
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 4
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end48 NOP 
+	.size	__sinit_lock_release, .Lfunc_end48-__sinit_lock_release
+                                        ; -- End function
+	.type	_cleanup_r,@function    ; -- Begin function _cleanup_r
+_cleanup_r NOP                          ; @_cleanup_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR1, 12(%FP)
+	COPYG	%GR6, _fclose_r
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	LOAD	%GR2, 8(%FP)
+	CALL	_fwalk_reent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end49 NOP 
+	.size	_cleanup_r, .Lfunc_end49-_cleanup_r
+                                        ; -- End function
+	.type	stdin_init,@function    ; -- Begin function stdin_init
+stdin_init NOP                          ; @stdin_init
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR1, 8(%FP)
+	COPYI	%GR2, 4
+	COPYI	%GR3, 0
+	CALL	std
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end50 NOP 
+	.size	stdin_init, .Lfunc_end50-stdin_init
+                                        ; -- End function
+	.type	stdout_init,@function   ; -- Begin function stdout_init
+stdout_init NOP                         ; @stdout_init
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR1, 8(%FP)
+	COPYI	%GR2, 9
+	COPYI	%GR3, 1
+	CALL	std
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end51 NOP 
+	.size	stdout_init, .Lfunc_end51-stdout_init
+                                        ; -- End function
+	.type	stderr_init,@function   ; -- Begin function stderr_init
+stderr_init NOP                         ; @stderr_init
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR1, 8(%FP)
+	COPYI	%GR2, 18
+	COPYI	%GR3, 2
+	CALL	std
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end52 NOP 
+	.size	stderr_init, .Lfunc_end52-stderr_init
+                                        ; -- End function
+	.type	std,@function           ; -- Begin function std
+std NOP                                 ; @std
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR1, 8(%FP)
+	STORE	%GR2, 4(%FP)
+	STORE	%GR3, 0(%FP)
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR2, 0
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 12
+	STOREH	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 100
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR6, 0(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 14
+	STOREH	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 16
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 20
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 24
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 92
+	COPYI	%GR3, 8
+	CALL	memset
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 28
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 32
+	COPYG	%GR1, __sread
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 36
+	COPYG	%GR1, __swrite
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 40
+	COPYG	%GR1, __sseek
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 44
+	COPYG	%GR1, __sclose
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end53 NOP 
+	.size	std, .Lfunc_end53-std
+                                        ; -- End function
+	.type	__sfp_lock_release,@function ; -- Begin function __sfp_lock_release
+__sfp_lock_release NOP                  ; @__sfp_lock_release
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 4
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end54 NOP 
+	.size	__sfp_lock_release, .Lfunc_end54-__sfp_lock_release
+                                        ; -- End function
+	.type	_fread_r,@function      ; -- Begin function _fread_r
+_fread_r NOP                            ; @_fread_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 96
+	COPYR	%FP, %SP
+	STORE	%RA, 88(%FP)
+	STORE	%GR1, 84(%FP)
+	STORE	%GR2, 80(%FP)
+	STORE	%GR3, 76(%FP)
+	STORE	%GR1, 68(%FP)
+	STORE	%GR2, 64(%FP)
+	STORE	%GR3, 60(%FP)
+	STORE	%GR4, 56(%FP)
+	STORE	%GR5, 52(%FP)
+	LOAD	%GR6, 56(%FP)
+	LOAD	%GR1, 60(%FP)
+	MUL	%GR6, %GR6, %GR1
+	STORE	%GR6, 48(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_2
+	JUMP	.LBB55_1
+.LBB55_1 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 72(%FP)
+	JUMP	.LBB55_55
+.LBB55_2 NOP 
+	JUMP	.LBB55_3
+.LBB55_3 NOP 
+	LOAD	%GR6, 68(%FP)
+	STORE	%GR6, 32(%FP)
+	LOAD	%GR6, 32(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_6
+	JUMP	.LBB55_4
+.LBB55_4 NOP 
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 56
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_6
+	JUMP	.LBB55_5
+.LBB55_5 NOP 
+	LOAD	%GR1, 32(%FP)
+	CALL	__sinit
+	JUMP	.LBB55_6
+.LBB55_6 NOP 
+	JUMP	.LBB55_7
+.LBB55_7 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB55_12
+	JUMP	.LBB55_8
+.LBB55_8 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_10
+	JUMP	.LBB55_9
+.LBB55_9 NOP 
+	JUMP	.LBB55_11
+.LBB55_10 NOP 
+	JUMP	.LBB55_11
+.LBB55_11 NOP 
+	JUMP	.LBB55_12
+.LBB55_12 NOP 
+	JUMP	.LBB55_13
+.LBB55_13 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8192
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_15
+	JUMP	.LBB55_14
+.LBB55_14 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 8192
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 100
+	LOAD	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, -8193
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB55_15
+.LBB55_15 NOP 
+	JUMP	.LBB55_16
+.LBB55_16 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB55_18
+	JUMP	.LBB55_17
+.LBB55_17 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB55_18
+.LBB55_18 NOP 
+	LOAD	%GR6, 48(%FP)
+	STORE	%GR6, 36(%FP)
+	LOAD	%GR6, 64(%FP)
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 2
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_38
+	JUMP	.LBB55_19
+.LBB55_19 NOP 
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	ULTE	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_21
+	JUMP	.LBB55_20
+.LBB55_20 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	JUMP	.LBB55_22
+.LBB55_21 NOP 
+	LOAD	%GR6, 48(%FP)
+	JUMP	.LBB55_22
+.LBB55_22 NOP 
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR1, 44(%FP)
+	LOAD	%GR6, 52(%FP)
+	LOAD	%GR2, 0(%GR6)
+	LOAD	%GR3, 28(%FP)
+	CALL	memcpy
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 52(%FP)
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR2, 0(%GR1)
+	SUB	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 44(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 48(%FP)
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 48(%FP)
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 48
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_27
+	JUMP	.LBB55_23
+.LBB55_23 NOP 
+	LOAD	%GR6, 48(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_27
+	JUMP	.LBB55_24
+.LBB55_24 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR1, %GR6, 48
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR6, %GR6, 64
+	EQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB55_26
+	JUMP	.LBB55_25
+.LBB55_25 NOP 
+	LOAD	%GR1, 68(%FP)
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 48
+	LOAD	%GR2, 0(%GR6)
+	CALL	_free_r
+	JUMP	.LBB55_26
+.LBB55_26 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 48
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB55_27
+.LBB55_27 NOP 
+	JUMP	.LBB55_28
+.LBB55_28 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 48(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_37
+	JUMP	.LBB55_29
+.LBB55_29 NOP                           ;   in Loop: Header=BB55_28 Depth=1
+	COPYI	%GR3, 0
+	STORE	%GR3, 24(%FP)
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 16
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 52(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 20
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 16
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 20
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR1, 52(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 68(%FP)
+	LOAD	%GR2, 52(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 24(%FP)
+	LOAD	%GR6, 20(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 16
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 20
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 52(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 48(%FP)
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 48(%FP)
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 44(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR3, 0(%GR6)
+	LOAD	%GR6, 24(%FP)
+	EQ	%GR6, %GR6, %GR3
+	BNEQZ	%GR6, .LBB55_36
+	JUMP	.LBB55_30
+.LBB55_30 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB55_35
+	JUMP	.LBB55_31
+.LBB55_31 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_33
+	JUMP	.LBB55_32
+.LBB55_32 NOP 
+	JUMP	.LBB55_34
+.LBB55_33 NOP 
+	JUMP	.LBB55_34
+.LBB55_34 NOP 
+	JUMP	.LBB55_35
+.LBB55_35 NOP 
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR1, 48(%FP)
+	SUB	%GR6, %GR6, %GR1
+	LOAD	%GR1, 60(%FP)
+	UDIV	%GR6, %GR6, %GR1
+	STORE	%GR6, 72(%FP)
+	JUMP	.LBB55_55
+.LBB55_36 NOP                           ;   in Loop: Header=BB55_28 Depth=1
+	JUMP	.LBB55_28
+.LBB55_37 NOP 
+	JUMP	.LBB55_49
+.LBB55_38 NOP 
+	JUMP	.LBB55_39
+.LBB55_39 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	STORE	%GR1, 40(%FP)
+	ULTE	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_48
+	JUMP	.LBB55_40
+.LBB55_40 NOP                           ;   in Loop: Header=BB55_39 Depth=1
+	LOAD	%GR1, 44(%FP)
+	LOAD	%GR6, 52(%FP)
+	LOAD	%GR2, 0(%GR6)
+	LOAD	%GR3, 40(%FP)
+	CALL	memcpy
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR6, 40(%FP)
+	LOAD	%GR1, 52(%FP)
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 40(%FP)
+	LOAD	%GR1, 44(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 40(%FP)
+	LOAD	%GR1, 48(%FP)
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 48(%FP)
+	LOAD	%GR1, 68(%FP)
+	LOAD	%GR2, 52(%FP)
+	CALL	__srefill_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_47
+	JUMP	.LBB55_41
+.LBB55_41 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB55_46
+	JUMP	.LBB55_42
+.LBB55_42 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_44
+	JUMP	.LBB55_43
+.LBB55_43 NOP 
+	JUMP	.LBB55_45
+.LBB55_44 NOP 
+	JUMP	.LBB55_45
+.LBB55_45 NOP 
+	JUMP	.LBB55_46
+.LBB55_46 NOP 
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR1, 48(%FP)
+	SUB	%GR6, %GR6, %GR1
+	LOAD	%GR1, 60(%FP)
+	UDIV	%GR6, %GR6, %GR1
+	STORE	%GR6, 72(%FP)
+	JUMP	.LBB55_55
+.LBB55_47 NOP                           ;   in Loop: Header=BB55_39 Depth=1
+	JUMP	.LBB55_39
+.LBB55_48 NOP 
+	LOAD	%GR1, 44(%FP)
+	LOAD	%GR6, 52(%FP)
+	LOAD	%GR2, 0(%GR6)
+	LOAD	%GR3, 48(%FP)
+	CALL	memcpy
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR2, 0(%GR1)
+	SUB	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB55_49
+.LBB55_49 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB55_54
+	JUMP	.LBB55_50
+.LBB55_50 NOP 
+	LOAD	%GR6, 52(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB55_52
+	JUMP	.LBB55_51
+.LBB55_51 NOP 
+	JUMP	.LBB55_53
+.LBB55_52 NOP 
+	JUMP	.LBB55_53
+.LBB55_53 NOP 
+	JUMP	.LBB55_54
+.LBB55_54 NOP 
+	LOAD	%GR6, 56(%FP)
+	STORE	%GR6, 72(%FP)
+	JUMP	.LBB55_55
+.LBB55_55 NOP 
+	LOAD	%GR6, 72(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 76(%FP)
+	LOAD	%GR2, 80(%FP)
+	LOAD	%GR1, 84(%FP)
+	LOAD	%RA, 88(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 96
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end55 NOP 
+	.size	_fread_r, .Lfunc_end55-_fread_r
+                                        ; -- End function
+	.globl	fread                   ; -- Begin function fread
+	.type	fread,@function
+fread NOP                               ; @fread
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR5, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	STORE	%GR3, 8(%FP)
+	STORE	%GR4, 4(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR4, 8(%FP)
+	LOAD	%GR5, 4(%FP)
+	COPYG	%GR1, impure_data
+	CALL	_fread_r
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 20(%FP)
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end56 NOP 
+	.size	fread, .Lfunc_end56-fread
+                                        ; -- End function
+	.type	_free_r,@function       ; -- Begin function _free_r
+_free_r NOP                             ; @_free_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 64
+	COPYR	%FP, %SP
+	STORE	%RA, 56(%FP)
+	STORE	%GR1, 52(%FP)
+	STORE	%GR2, 48(%FP)
+	STORE	%GR1, 44(%FP)
+	STORE	%GR2, 40(%FP)
+	LOAD	%GR6, 40(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB57_2
+	JUMP	.LBB57_1
+.LBB57_1 NOP 
+	JUMP	.LBB57_51
+.LBB57_2 NOP 
+	LOAD	%GR1, 44(%FP)
+	CALL	__malloc_lock
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, -8
+	STORE	%GR6, 36(%FP)
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 32(%FP)
+	LOAD	%GR6, 32(%FP)
+	ANDI	%GR6, %GR6, -2
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR1, 28(%FP)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 20(%FP)
+	COPYG	%GR1, __malloc_av_+8
+	LOAD	%GR1, 0(%GR1)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB57_8
+	JUMP	.LBB57_3
+.LBB57_3 NOP 
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 28(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 28(%FP)
+	ULOADB	%GR6, 32(%FP)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB57_5
+	JUMP	.LBB57_4
+.LBB57_4 NOP 
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR1, 12(%FP)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 36(%FP)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 28(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB57_5
+.LBB57_5 NOP 
+	LOAD	%GR6, 28(%FP)
+	ORI	%GR6, %GR6, 1
+	LOAD	%GR1, 36(%FP)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 36(%FP)
+	COPYG	%GR1, __malloc_av_+8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 131072
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB57_7
+	JUMP	.LBB57_6
+.LBB57_6 NOP 
+	LOAD	%GR1, 44(%FP)
+	CALL	_malloc_trim_r
+	JUMP	.LBB57_7
+.LBB57_7 NOP 
+	LOAD	%GR1, 44(%FP)
+	CALL	__malloc_unlock
+	JUMP	.LBB57_51
+.LBB57_8 NOP 
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	COPYI	%GR6, 0
+	STORE	%GR6, 0(%FP)
+	ULOADB	%GR6, 32(%FP)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB57_13
+	JUMP	.LBB57_9
+.LBB57_9 NOP 
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR1, 12(%FP)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 36(%FP)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 28(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	COPYG	%GR1, __malloc_av_+8
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB57_11
+	JUMP	.LBB57_10
+.LBB57_10 NOP 
+	COPYI	%GR6, 1
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB57_12
+.LBB57_11 NOP 
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB57_12
+.LBB57_12 NOP 
+	JUMP	.LBB57_13
+.LBB57_13 NOP 
+	LOAD	%GR6, 20(%FP)
+	LOAD	%GR1, 16(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 4
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB57_19
+	JUMP	.LBB57_14
+.LBB57_14 NOP 
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 28(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB57_17
+	JUMP	.LBB57_15
+.LBB57_15 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	COPYG	%GR1, __malloc_av_+8
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB57_17
+	JUMP	.LBB57_16
+.LBB57_16 NOP 
+	COPYI	%GR6, 1
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR6, 36(%FP)
+	COPYG	%GR1, __malloc_av_+20
+	STORE	%GR6, 0(%GR1)
+	COPYG	%GR1, __malloc_av_+16
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 12
+	COPYG	%GR1, __malloc_av_+8
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 36(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB57_18
+.LBB57_17 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB57_18
+.LBB57_18 NOP 
+	JUMP	.LBB57_19
+.LBB57_19 NOP 
+	LOAD	%GR6, 28(%FP)
+	ORI	%GR6, %GR6, 1
+	LOAD	%GR1, 36(%FP)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 36(%FP)
+	ADD	%GR1, %GR1, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB57_50
+	JUMP	.LBB57_20
+.LBB57_20 NOP 
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 511
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB57_22
+	JUMP	.LBB57_21
+.LBB57_21 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 3
+	STORE	%GR6, 24(%FP)
+	LOAD	%GR6, 24(%FP)
+	SRAI	%GR1, %GR6, 31
+	SRLI	%GR1, %GR1, 30
+	ADD	%GR6, %GR6, %GR1
+	SRAI	%GR6, %GR6, 2
+	COPYI	%GR1, 1
+	SHL	%GR6, %GR1, %GR6
+	COPYG	%GR1, __malloc_av_+4
+	LOAD	%GR2, 0(%GR1)
+	OR	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 24(%FP)
+	SHLI	%GR6, %GR6, 3
+	COPYG	%GR1, __malloc_av_
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 36(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR1, 36(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB57_49
+.LBB57_22 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB57_24
+	JUMP	.LBB57_23
+.LBB57_23 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 3
+	JUMP	.LBB57_40
+.LBB57_24 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 4
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB57_26
+	JUMP	.LBB57_25
+.LBB57_25 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 6
+	ADDI	%GR6, %GR6, 56
+	JUMP	.LBB57_39
+.LBB57_26 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 20
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB57_28
+	JUMP	.LBB57_27
+.LBB57_27 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 9
+	ADDI	%GR6, %GR6, 91
+	JUMP	.LBB57_38
+.LBB57_28 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 84
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB57_30
+	JUMP	.LBB57_29
+.LBB57_29 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 12
+	ADDI	%GR6, %GR6, 110
+	JUMP	.LBB57_37
+.LBB57_30 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 340
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB57_32
+	JUMP	.LBB57_31
+.LBB57_31 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 15
+	ADDI	%GR6, %GR6, 119
+	JUMP	.LBB57_36
+.LBB57_32 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 9
+	COPYI	%GR1, 1364
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB57_34
+	JUMP	.LBB57_33
+.LBB57_33 NOP 
+	LOAD	%GR6, 28(%FP)
+	SRLI	%GR6, %GR6, 18
+	ADDI	%GR6, %GR6, 124
+	JUMP	.LBB57_35
+.LBB57_34 NOP 
+	COPYI	%GR6, 126
+	JUMP	.LBB57_35
+.LBB57_35 NOP 
+	JUMP	.LBB57_36
+.LBB57_36 NOP 
+	JUMP	.LBB57_37
+.LBB57_37 NOP 
+	JUMP	.LBB57_38
+.LBB57_38 NOP 
+	JUMP	.LBB57_39
+.LBB57_39 NOP 
+	JUMP	.LBB57_40
+.LBB57_40 NOP 
+	STORE	%GR6, 24(%FP)
+	LOAD	%GR6, 24(%FP)
+	SHLI	%GR6, %GR6, 3
+	COPYG	%GR1, __malloc_av_
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR1, 8(%FP)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB57_42
+	JUMP	.LBB57_41
+.LBB57_41 NOP 
+	LOAD	%GR6, 24(%FP)
+	SRAI	%GR1, %GR6, 31
+	SRLI	%GR1, %GR1, 30
+	ADD	%GR6, %GR6, %GR1
+	SRAI	%GR6, %GR6, 2
+	COPYI	%GR1, 1
+	SHL	%GR6, %GR1, %GR6
+	COPYG	%GR1, __malloc_av_+4
+	LOAD	%GR2, 0(%GR1)
+	OR	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB57_48
+.LBB57_42 NOP 
+	JUMP	.LBB57_43
+.LBB57_43 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR1, 8(%FP)
+	EQ	%GR1, %GR6, %GR1
+	COPYI	%GR6, 0
+	BNEQZ	%GR1, .LBB57_45
+	JUMP	.LBB57_44
+.LBB57_44 NOP                           ;   in Loop: Header=BB57_43 Depth=1
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR1, %GR1, 4
+	LOAD	%GR1, 0(%GR1)
+	ANDI	%GR1, %GR1, -4
+	ULT	%GR6, %GR6, %GR1
+	JUMP	.LBB57_45
+.LBB57_45 NOP                           ;   in Loop: Header=BB57_43 Depth=1
+	ANDI	%GR6, %GR6, 1
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB57_47
+	JUMP	.LBB57_46
+.LBB57_46 NOP                           ;   in Loop: Header=BB57_43 Depth=1
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB57_43
+.LBB57_47 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB57_48
+.LBB57_48 NOP 
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 36(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR1, 36(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB57_49
+.LBB57_49 NOP 
+	JUMP	.LBB57_50
+.LBB57_50 NOP 
+	LOAD	%GR1, 44(%FP)
+	CALL	__malloc_unlock
+	JUMP	.LBB57_51
+.LBB57_51 NOP 
+	LOAD	%GR2, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	LOAD	%RA, 56(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 64
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end57 NOP 
+	.size	_free_r, .Lfunc_end57-_free_r
+                                        ; -- End function
+	.type	_malloc_trim_r,@function ; -- Begin function _malloc_trim_r
+_malloc_trim_r NOP                      ; @_malloc_trim_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR1, 24(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 20(%FP)
+	COPYI	%GR6, 4096
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR1, 24(%FP)
+	CALL	__malloc_lock
+	COPYG	%GR6, __malloc_av_+8
+	LOAD	%GR6, 0(%GR6)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	SUB	%GR6, %GR6, %GR1
+	LOAD	%GR1, 0(%FP)
+	ADD	%GR6, %GR1, %GR6
+	ADDI	%GR6, %GR6, -17
+	UDIV	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, -1
+	MUL	%GR6, %GR6, %GR1
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 0(%FP)
+	LTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB58_2
+	JUMP	.LBB58_1
+.LBB58_1 NOP 
+	LOAD	%GR1, 24(%FP)
+	CALL	__malloc_unlock
+	COPYI	%GR6, 0
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB58_9
+.LBB58_2 NOP 
+	LOAD	%GR1, 24(%FP)
+	COPYI	%GR2, 0
+	CALL	_sbrk_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	COPYG	%GR1, __malloc_av_+8
+	LOAD	%GR1, 0(%GR1)
+	LOAD	%GR2, 16(%FP)
+	ADD	%GR1, %GR1, %GR2
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB58_4
+	JUMP	.LBB58_3
+.LBB58_3 NOP 
+	LOAD	%GR1, 24(%FP)
+	CALL	__malloc_unlock
+	COPYI	%GR6, 0
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB58_9
+.LBB58_4 NOP 
+	LOAD	%GR1, 24(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR2, 0
+	SUB	%GR2, %GR2, %GR6
+	CALL	_sbrk_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB58_8
+	JUMP	.LBB58_5
+.LBB58_5 NOP 
+	LOAD	%GR1, 24(%FP)
+	COPYI	%GR2, 0
+	CALL	_sbrk_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	COPYG	%GR1, __malloc_av_+8
+	LOAD	%GR1, 0(%GR1)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 16
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB58_7
+	JUMP	.LBB58_6
+.LBB58_6 NOP 
+	LOAD	%GR6, 8(%FP)
+	COPYG	%GR1, __malloc_sbrk_base
+	LOAD	%GR1, 0(%GR1)
+	SUB	%GR6, %GR6, %GR1
+	COPYG	%GR1, __malloc_current_mallinfo.0
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 16(%FP)
+	ORI	%GR6, %GR6, 1
+	COPYG	%GR1, __malloc_av_+8
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB58_7
+.LBB58_7 NOP 
+	LOAD	%GR1, 24(%FP)
+	CALL	__malloc_unlock
+	COPYI	%GR6, 0
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB58_9
+.LBB58_8 NOP 
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 12(%FP)
+	SUB	%GR6, %GR6, %GR1
+	ORI	%GR6, %GR6, 1
+	COPYG	%GR1, __malloc_av_+8
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	COPYG	%GR1, __malloc_current_mallinfo.0
+	LOAD	%GR2, 0(%GR1)
+	SUB	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 24(%FP)
+	CALL	__malloc_unlock
+	COPYI	%GR6, 1
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB58_9
+.LBB58_9 NOP 
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end58 NOP 
+	.size	_malloc_trim_r, .Lfunc_end58-_malloc_trim_r
+                                        ; -- End function
+	.type	_fwalk,@function        ; -- Begin function _fwalk
+_fwalk NOP                              ; @_fwalk
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	COPYG	%GR6, impure_data
+	STORE	%GR6, 32(%FP)
+	COPYG	%GR6, lflush
+	STORE	%GR6, 28(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 736
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB59_1
+.LBB59_1 NOP                            ; =>This Loop Header: Depth=1
+                                        ;     Child Loop BB59_3 Depth 2
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB59_12
+	JUMP	.LBB59_2
+.LBB59_2 NOP                            ;   in Loop: Header=BB59_1 Depth=1
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 24(%FP)
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB59_3
+.LBB59_3 NOP                            ;   Parent Loop BB59_1 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 20(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB59_10
+	JUMP	.LBB59_4
+.LBB59_4 NOP                            ;   in Loop: Header=BB59_3 Depth=2
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOADH	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB59_8
+	JUMP	.LBB59_5
+.LBB59_5 NOP                            ;   in Loop: Header=BB59_3 Depth=2
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOADH	%GR6, 0(%GR6)
+	COPYI	%GR1, 1
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB59_8
+	JUMP	.LBB59_6
+.LBB59_6 NOP                            ;   in Loop: Header=BB59_3 Depth=2
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 14
+	LOADH	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB59_8
+	JUMP	.LBB59_7
+.LBB59_7 NOP                            ;   in Loop: Header=BB59_3 Depth=2
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 24(%FP)
+	CALLR	%GR6
+	COPYR	%GR6, %RT0
+	LOAD	%GR1, 16(%FP)
+	OR	%GR6, %GR1, %GR6
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB59_8
+.LBB59_8 NOP                            ;   in Loop: Header=BB59_3 Depth=2
+	JUMP	.LBB59_9
+.LBB59_9 NOP                            ;   in Loop: Header=BB59_3 Depth=2
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 104
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB59_3
+.LBB59_10 NOP                           ;   in Loop: Header=BB59_1 Depth=1
+	JUMP	.LBB59_11
+.LBB59_11 NOP                           ;   in Loop: Header=BB59_1 Depth=1
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB59_1
+.LBB59_12 NOP 
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end59 NOP 
+	.size	_fwalk, .Lfunc_end59-_fwalk
+                                        ; -- End function
+	.type	_fwalk_reent,@function  ; -- Begin function _fwalk_reent
+_fwalk_reent NOP                        ; @_fwalk_reent
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR1, 28(%FP)
+	STORE	%GR2, 24(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 28(%FP)
+	ADDI	%GR6, %GR6, 736
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB60_1
+.LBB60_1 NOP                            ; =>This Loop Header: Depth=1
+                                        ;     Child Loop BB60_3 Depth 2
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB60_12
+	JUMP	.LBB60_2
+.LBB60_2 NOP                            ;   in Loop: Header=BB60_1 Depth=1
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB60_3
+.LBB60_3 NOP                            ;   Parent Loop BB60_1 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB60_10
+	JUMP	.LBB60_4
+.LBB60_4 NOP                            ;   in Loop: Header=BB60_3 Depth=2
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOADH	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB60_8
+	JUMP	.LBB60_5
+.LBB60_5 NOP                            ;   in Loop: Header=BB60_3 Depth=2
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOADH	%GR6, 0(%GR6)
+	COPYI	%GR1, 1
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB60_8
+	JUMP	.LBB60_6
+.LBB60_6 NOP                            ;   in Loop: Header=BB60_3 Depth=2
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 14
+	LOADH	%GR6, 0(%GR6)
+	COPYI	%GR1, -1
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB60_8
+	JUMP	.LBB60_7
+.LBB60_7 NOP                            ;   in Loop: Header=BB60_3 Depth=2
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 28(%FP)
+	LOAD	%GR2, 20(%FP)
+	CALLR	%GR6
+	COPYR	%GR6, %RT0
+	LOAD	%GR1, 12(%FP)
+	OR	%GR6, %GR1, %GR6
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB60_8
+.LBB60_8 NOP                            ;   in Loop: Header=BB60_3 Depth=2
+	JUMP	.LBB60_9
+.LBB60_9 NOP                            ;   in Loop: Header=BB60_3 Depth=2
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 104
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB60_3
+.LBB60_10 NOP                           ;   in Loop: Header=BB60_1 Depth=1
+	JUMP	.LBB60_11
+.LBB60_11 NOP                           ;   in Loop: Header=BB60_1 Depth=1
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB60_1
+.LBB60_12 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end60 NOP 
+	.size	_fwalk_reent, .Lfunc_end60-_fwalk_reent
+                                        ; -- End function
+	.globl	iswspace                ; -- Begin function iswspace
+	.type	iswspace,@function
+iswspace NOP                            ; @iswspace
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR1, 12(%FP)
+	LOAD	%GR1, 12(%FP)
+	COPYI	%GR2, 0
+	CALL	iswspace_l
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end61 NOP 
+	.size	iswspace, .Lfunc_end61-iswspace
+                                        ; -- End function
+	.type	_setlocale_r,@function  ; -- Begin function _setlocale_r
+_setlocale_r NOP                        ; @_setlocale_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR1, 8(%FP)
+	STORE	%GR2, 4(%FP)
+	STORE	%GR3, 0(%FP)
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB62_6
+	JUMP	.LBB62_1
+.LBB62_1 NOP 
+	LOAD	%GR1, 0(%FP)
+	COPYG	%GR2, .L.str.2
+	CALL	strcmp
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB62_5
+	JUMP	.LBB62_2
+.LBB62_2 NOP 
+	LOAD	%GR1, 0(%FP)
+	COPYG	%GR2, .L.str.3
+	CALL	strcmp
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB62_5
+	JUMP	.LBB62_3
+.LBB62_3 NOP 
+	LOAD	%GR1, 0(%FP)
+	COPYG	%GR2, .L.str.67
+	CALL	strcmp
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB62_5
+	JUMP	.LBB62_4
+.LBB62_4 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB62_7
+.LBB62_5 NOP 
+	JUMP	.LBB62_6
+.LBB62_6 NOP 
+	COPYG	%GR6, .L.str.3
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB62_7
+.LBB62_7 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end62 NOP 
+	.size	_setlocale_r, .Lfunc_end62-_setlocale_r
+                                        ; -- End function
+	.type	__locale_mb_cur_max,@function ; -- Begin function __locale_mb_cur_max
+__locale_mb_cur_max NOP                 ; @__locale_mb_cur_max
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%RA, 8(%FP)
+	CALL	__get_current_locale.59
+	COPYG	%GR6, __global_locale+296
+	LOADB	%GR6, 0(%GR6)
+	COPYR	%RT0, %GR6
+	LOAD	%RA, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end63 NOP 
+	.size	__locale_mb_cur_max, .Lfunc_end63-__locale_mb_cur_max
+                                        ; -- End function
+	.type	__get_current_locale.59,@function ; -- Begin function __get_current_locale.59
+__get_current_locale.59 NOP             ; @__get_current_locale.59
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%RA, 8(%FP)
+	CALL	__get_global_locale.60
+	LOAD	%RA, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end64 NOP 
+	.size	__get_current_locale.59, .Lfunc_end64-__get_current_locale.59
+                                        ; -- End function
+	.type	__get_global_locale.60,@function ; -- Begin function __get_global_locale.60
+__get_global_locale.60 NOP              ; @__get_global_locale.60
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 4
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end65 NOP 
+	.size	__get_global_locale.60, .Lfunc_end65-__get_global_locale.60
+                                        ; -- End function
+	.globl	setlocale               ; -- Begin function setlocale
+	.type	setlocale,@function
+setlocale NOP                           ; @setlocale
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR1, 8(%FP)
+	STORE	%GR2, 4(%FP)
+	CALL	__getreent
+	COPYR	%GR1, %RT0
+	LOAD	%GR2, 8(%FP)
+	LOAD	%GR3, 4(%FP)
+	CALL	_setlocale_r
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end66 NOP 
+	.size	setlocale, .Lfunc_end66-setlocale
+                                        ; -- End function
+	.type	_mbrtowc_r,@function    ; -- Begin function _mbrtowc_r
+_mbrtowc_r NOP                          ; @_mbrtowc_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 64
+	COPYR	%FP, %SP
+	STORE	%RA, 56(%FP)
+	STORE	%GR1, 52(%FP)
+	STORE	%GR2, 48(%FP)
+	STORE	%GR3, 44(%FP)
+	STORE	%GR4, 40(%FP)
+	STORE	%GR5, 36(%FP)
+	STORE	%GR1, 28(%FP)
+	STORE	%GR2, 24(%FP)
+	STORE	%GR3, 20(%FP)
+	STORE	%GR4, 16(%FP)
+	STORE	%GR5, 12(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR1, 20(%FP)
+	NEQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB67_2
+	JUMP	.LBB67_1
+.LBB67_1 NOP 
+	CALL	__get_current_locale.66
+	COPYG	%GR6, __global_locale+228
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	LOAD	%GR5, 12(%FP)
+	COPYG	%GR3, .L.str.67
+	COPYI	%GR2, 0
+	COPYI	%GR4, 1
+	CALLR	%GR6
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB67_3
+.LBB67_2 NOP 
+	CALL	__get_current_locale.66
+	COPYG	%GR6, __global_locale+228
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	LOAD	%GR2, 24(%FP)
+	LOAD	%GR3, 20(%FP)
+	LOAD	%GR4, 16(%FP)
+	LOAD	%GR5, 12(%FP)
+	CALLR	%GR6
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB67_3
+.LBB67_3 NOP 
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB67_5
+	JUMP	.LBB67_4
+.LBB67_4 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 138
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, -1
+	STORE	%GR6, 32(%FP)
+	JUMP	.LBB67_6
+.LBB67_5 NOP 
+	LOAD	%GR6, 8(%FP)
+	STORE	%GR6, 32(%FP)
+	JUMP	.LBB67_6
+.LBB67_6 NOP 
+	LOAD	%GR6, 32(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 36(%FP)
+	LOAD	%GR4, 40(%FP)
+	LOAD	%GR3, 44(%FP)
+	LOAD	%GR2, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	LOAD	%RA, 56(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 64
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end67 NOP 
+	.size	_mbrtowc_r, .Lfunc_end67-_mbrtowc_r
+                                        ; -- End function
+	.type	__get_current_locale.66,@function ; -- Begin function __get_current_locale.66
+__get_current_locale.66 NOP             ; @__get_current_locale.66
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%RA, 8(%FP)
+	CALL	__get_global_locale.68
+	LOAD	%RA, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end68 NOP 
+	.size	__get_current_locale.66, .Lfunc_end68-__get_current_locale.66
+                                        ; -- End function
+	.type	__get_global_locale.68,@function ; -- Begin function __get_global_locale.68
+__get_global_locale.68 NOP              ; @__get_global_locale.68
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 4
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end69 NOP 
+	.size	__get_global_locale.68, .Lfunc_end69-__get_global_locale.68
+                                        ; -- End function
+	.globl	mbrtowc                 ; -- Begin function mbrtowc
+	.type	mbrtowc,@function
+mbrtowc NOP                             ; @mbrtowc
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 64
+	COPYR	%FP, %SP
+	STORE	%RA, 56(%FP)
+	STORE	%GR1, 52(%FP)
+	STORE	%GR2, 48(%FP)
+	STORE	%GR3, 44(%FP)
+	STORE	%GR4, 40(%FP)
+	STORE	%GR5, 36(%FP)
+	STORE	%GR1, 28(%FP)
+	STORE	%GR2, 24(%FP)
+	STORE	%GR3, 20(%FP)
+	STORE	%GR4, 16(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 12(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	COPYG	%GR6, impure_data
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 24(%FP)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB70_2
+	JUMP	.LBB70_1
+.LBB70_1 NOP 
+	CALL	__get_current_locale.66
+	COPYG	%GR6, __global_locale+228
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	LOAD	%GR5, 16(%FP)
+	COPYG	%GR3, .L.str.67
+	COPYI	%GR2, 0
+	COPYI	%GR4, 1
+	CALLR	%GR6
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB70_3
+.LBB70_2 NOP 
+	CALL	__get_current_locale.66
+	COPYG	%GR6, __global_locale+228
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	LOAD	%GR2, 28(%FP)
+	LOAD	%GR3, 24(%FP)
+	LOAD	%GR4, 20(%FP)
+	LOAD	%GR5, 16(%FP)
+	CALLR	%GR6
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB70_3
+.LBB70_3 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB70_5
+	JUMP	.LBB70_4
+.LBB70_4 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 138
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, -1
+	STORE	%GR6, 32(%FP)
+	JUMP	.LBB70_6
+.LBB70_5 NOP 
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 32(%FP)
+	JUMP	.LBB70_6
+.LBB70_6 NOP 
+	LOAD	%GR6, 32(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 36(%FP)
+	LOAD	%GR4, 40(%FP)
+	LOAD	%GR3, 44(%FP)
+	LOAD	%GR2, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	LOAD	%RA, 56(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 64
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end70 NOP 
+	.size	mbrtowc, .Lfunc_end70-mbrtowc
+                                        ; -- End function
+	.type	__ascii_mbtowc,@function ; -- Begin function __ascii_mbtowc
+__ascii_mbtowc NOP                      ; @__ascii_mbtowc
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 40
+	COPYR	%FP, %SP
+	STORE	%GR1, 32(%FP)
+	STORE	%GR1, 24(%FP)
+	STORE	%GR2, 20(%FP)
+	STORE	%GR3, 16(%FP)
+	STORE	%GR4, 12(%FP)
+	STORE	%GR5, 8(%FP)
+	LOAD	%GR6, 16(%FP)
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB71_2
+	JUMP	.LBB71_1
+.LBB71_1 NOP 
+	ADDI	%GR6, %FP, 4
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB71_2
+.LBB71_2 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB71_4
+	JUMP	.LBB71_3
+.LBB71_3 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB71_9
+.LBB71_4 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB71_6
+	JUMP	.LBB71_5
+.LBB71_5 NOP 
+	COPYI	%GR6, -2
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB71_9
+.LBB71_6 NOP 
+	LOAD	%GR6, 0(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 20(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 0(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB71_8
+	JUMP	.LBB71_7
+.LBB71_7 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB71_9
+.LBB71_8 NOP 
+	COPYI	%GR6, 1
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB71_9
+.LBB71_9 NOP 
+	LOAD	%GR6, 28(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 32(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 40
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end71 NOP 
+	.size	__ascii_mbtowc, .Lfunc_end71-__ascii_mbtowc
+                                        ; -- End function
+	.type	__srefill_r,@function   ; -- Begin function __srefill_r
+__srefill_r NOP                         ; @__srefill_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR5, 20(%FP)
+	STORE	%GR1, 12(%FP)
+	STORE	%GR2, 8(%FP)
+	JUMP	.LBB72_1
+.LBB72_1 NOP 
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_4
+	JUMP	.LBB72_2
+.LBB72_2 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 56
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_4
+	JUMP	.LBB72_3
+.LBB72_3 NOP 
+	LOAD	%GR1, 4(%FP)
+	CALL	__sinit
+	JUMP	.LBB72_4
+.LBB72_4 NOP 
+	JUMP	.LBB72_5
+.LBB72_5 NOP 
+	JUMP	.LBB72_6
+.LBB72_6 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8192
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_8
+	JUMP	.LBB72_7
+.LBB72_7 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 8192
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 100
+	LOAD	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, -8193
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB72_8
+.LBB72_8 NOP 
+	JUMP	.LBB72_9
+.LBB72_9 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 32
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_11
+	JUMP	.LBB72_10
+.LBB72_10 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB72_38
+.LBB72_11 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_19
+	JUMP	.LBB72_12
+.LBB72_12 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_14
+	JUMP	.LBB72_13
+.LBB72_13 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 9
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 64
+	STOREH	%GR1, 0(%GR6)
+	COPYI	%GR6, -1
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB72_38
+.LBB72_14 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_18
+	JUMP	.LBB72_15
+.LBB72_15 NOP 
+	LOAD	%GR1, 12(%FP)
+	LOAD	%GR2, 8(%FP)
+	CALL	_fflush_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_17
+	JUMP	.LBB72_16
+.LBB72_16 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB72_38
+.LBB72_17 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 65527
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 24
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB72_18
+.LBB72_18 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 4
+	STOREH	%GR1, 0(%GR6)
+	JUMP	.LBB72_26
+.LBB72_19 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 48
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_25
+	JUMP	.LBB72_20
+.LBB72_20 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 48
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR6, %GR6, 64
+	EQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB72_22
+	JUMP	.LBB72_21
+.LBB72_21 NOP 
+	LOAD	%GR1, 12(%FP)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 48
+	LOAD	%GR2, 0(%GR6)
+	CALL	_free_r
+	JUMP	.LBB72_22
+.LBB72_22 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 48
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR2, %GR6, 60
+	LOAD	%GR2, 0(%GR2)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR2, 0(%GR6)
+	EQ	%GR6, %GR2, %GR1
+	BNEQZ	%GR6, .LBB72_24
+	JUMP	.LBB72_23
+.LBB72_23 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 56
+	LOAD	%GR1, 0(%GR1)
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, 0
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB72_38
+.LBB72_24 NOP 
+	JUMP	.LBB72_25
+.LBB72_25 NOP 
+	JUMP	.LBB72_26
+.LBB72_26 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 16
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_28
+	JUMP	.LBB72_27
+.LBB72_27 NOP 
+	LOAD	%GR1, 12(%FP)
+	LOAD	%GR2, 8(%FP)
+	CALL	__smakebuf_r
+	JUMP	.LBB72_28
+.LBB72_28 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 3
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_32
+	JUMP	.LBB72_29
+.LBB72_29 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	STOREH	%GR6, 0(%FP)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	COPYI	%GR1, 1
+	STOREH	%GR1, 0(%GR6)
+	CALL	_fwalk
+	ULOADH	%GR6, 0(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 12
+	STOREH	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 9
+	COPYI	%GR1, 9
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_31
+	JUMP	.LBB72_30
+.LBB72_30 NOP 
+	LOAD	%GR1, 12(%FP)
+	LOAD	%GR2, 8(%FP)
+	CALL	__sflush_r
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB72_31
+.LBB72_31 NOP 
+	JUMP	.LBB72_32
+.LBB72_32 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 16
+	LOAD	%GR1, 0(%GR1)
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 32
+	LOAD	%GR5, 0(%GR1)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR2, %GR6, 28
+	LOAD	%GR2, 0(%GR2)
+	LOAD	%GR3, 0(%GR6)
+	ADDI	%GR6, %GR6, 20
+	LOAD	%GR4, 0(%GR6)
+	CALLR	%GR5
+	COPYR	%GR6, %RT0
+	LOAD	%GR1, 8(%FP)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB72_37
+	JUMP	.LBB72_33
+.LBB72_33 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB72_35
+	JUMP	.LBB72_34
+.LBB72_34 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 32
+	STOREH	%GR1, 0(%GR6)
+	JUMP	.LBB72_36
+.LBB72_35 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 64
+	STOREH	%GR1, 0(%GR6)
+	JUMP	.LBB72_36
+.LBB72_36 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB72_38
+.LBB72_37 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB72_38
+.LBB72_38 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 20(%FP)
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end72 NOP 
+	.size	__srefill_r, .Lfunc_end72-__srefill_r
+                                        ; -- End function
+	.type	lflush,@function        ; -- Begin function lflush
+lflush NOP                              ; @lflush
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR1, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 9
+	COPYI	%GR1, 9
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB73_2
+	JUMP	.LBB73_1
+.LBB73_1 NOP 
+	LOAD	%GR1, 12(%FP)
+	CALL	fflush
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB73_3
+.LBB73_2 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB73_3
+.LBB73_3 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end73 NOP 
+	.size	lflush, .Lfunc_end73-lflush
+                                        ; -- End function
+	.type	__sccl,@function        ; -- Begin function __sccl
+__sccl NOP                              ; @__sccl
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 36
+	COPYR	%FP, %SP
+	STORE	%GR1, 28(%FP)
+	STORE	%GR2, 24(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 12(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 94
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB74_2
+	JUMP	.LBB74_1
+.LBB74_1 NOP 
+	COPYI	%GR6, 1
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 12(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB74_3
+.LBB74_2 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB74_3
+.LBB74_3 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB74_4
+.LBB74_4 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, 255
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB74_7
+	JUMP	.LBB74_5
+.LBB74_5 NOP                            ;   in Loop: Header=BB74_4 Depth=1
+	LOAD	%GR6, 0(%FP)
+	LOAD	%GR1, 16(%FP)
+	LOAD	%GR2, 4(%FP)
+	ADD	%GR1, %GR1, %GR2
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB74_6
+.LBB74_6 NOP                            ;   in Loop: Header=BB74_4 Depth=1
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB74_4
+.LBB74_7 NOP 
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB74_9
+	JUMP	.LBB74_8
+.LBB74_8 NOP 
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB74_25
+.LBB74_9 NOP 
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 1
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB74_10
+.LBB74_10 NOP                           ; =>This Loop Header: Depth=1
+                                        ;     Child Loop BB74_11 Depth 2
+                                        ;       Child Loop BB74_19 Depth 3
+	LOAD	%GR6, 0(%FP)
+	LOAD	%GR1, 16(%FP)
+	LOAD	%GR2, 8(%FP)
+	ADD	%GR1, %GR1, %GR2
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB74_11
+.LBB74_11 NOP                           ;   Parent Loop BB74_10 Depth=1
+                                        ; =>  This Loop Header: Depth=2
+                                        ;       Child Loop BB74_19 Depth 3
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 12(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB74_14
+	JUMP	.LBB74_12
+.LBB74_12 NOP                           ;   in Loop: Header=BB74_11 Depth=2
+	COPYI	%GR1, 45
+	EQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB74_15
+	JUMP	.LBB74_13
+.LBB74_13 NOP                           ;   in Loop: Header=BB74_10 Depth=1
+	COPYI	%GR1, 93
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB74_22
+	JUMP	.LBB74_23
+.LBB74_14 NOP 
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB74_25
+.LBB74_15 NOP                           ;   in Loop: Header=BB74_11 Depth=2
+	LOAD	%GR6, 12(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, 93
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB74_17
+	JUMP	.LBB74_16
+.LBB74_16 NOP                           ;   in Loop: Header=BB74_11 Depth=2
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR1, 8(%FP)
+	LTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB74_18
+	JUMP	.LBB74_17
+.LBB74_17 NOP                           ;   in Loop: Header=BB74_10 Depth=1
+	COPYI	%GR6, 45
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB74_24
+.LBB74_18 NOP                           ;   in Loop: Header=BB74_11 Depth=2
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB74_19
+.LBB74_19 NOP                           ;   Parent Loop BB74_10 Depth=1
+                                        ;     Parent Loop BB74_11 Depth=2
+                                        ; =>    This Inner Loop Header: Depth=3
+	LOAD	%GR6, 0(%FP)
+	LOAD	%GR1, 16(%FP)
+	LOAD	%GR2, 8(%FP)
+	ADDI	%GR2, %GR2, 1
+	STORE	%GR2, 8(%FP)
+	ADD	%GR1, %GR1, %GR2
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB74_20
+.LBB74_20 NOP                           ;   in Loop: Header=BB74_19 Depth=3
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 4(%FP)
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB74_19
+	JUMP	.LBB74_21
+.LBB74_21 NOP                           ;   in Loop: Header=BB74_11 Depth=2
+	JUMP	.LBB74_11
+.LBB74_22 NOP 
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB74_25
+.LBB74_23 NOP                           ;   in Loop: Header=BB74_10 Depth=1
+	LOAD	%GR6, 4(%FP)
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB74_24
+.LBB74_24 NOP                           ;   in Loop: Header=BB74_10 Depth=1
+	JUMP	.LBB74_10
+.LBB74_25 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 24(%FP)
+	LOAD	%GR1, 28(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 36
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end74 NOP 
+	.size	__sccl, .Lfunc_end74-__sccl
+                                        ; -- End function
+	.type	__sread,@function       ; -- Begin function __sread
+__sread NOP                             ; @__sread
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR4, 8(%FP)
+	LOAD	%GR6, 16(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 14
+	LOADH	%GR2, 0(%GR6)
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR4, 8(%FP)
+	CALL	_read_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB75_2
+	JUMP	.LBB75_1
+.LBB75_1 NOP 
+	LOAD	%GR6, 0(%FP)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR1, %GR1, 80
+	LOAD	%GR2, 0(%GR1)
+	ADD	%GR6, %GR2, %GR6
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB75_3
+.LBB75_2 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 61439
+	STOREH	%GR1, 0(%GR6)
+	JUMP	.LBB75_3
+.LBB75_3 NOP 
+	LOAD	%GR6, 0(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end75 NOP 
+	.size	__sread, .Lfunc_end75-__sread
+                                        ; -- End function
+	.type	__swrite,@function      ; -- Begin function __swrite
+__swrite NOP                            ; @__swrite
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR4, 8(%FP)
+	LOAD	%GR6, 16(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 256
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB76_2
+	JUMP	.LBB76_1
+.LBB76_1 NOP 
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 14
+	LOADH	%GR2, 0(%GR6)
+	COPYI	%GR3, 0
+	COPYI	%GR4, 2
+	CALL	_lseek_r
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB76_2
+.LBB76_2 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 61439
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 14
+	LOADH	%GR2, 0(%GR6)
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR4, 8(%FP)
+	CALL	_write_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR6, 0(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end76 NOP 
+	.size	__swrite, .Lfunc_end76-__swrite
+                                        ; -- End function
+	.type	__sseek,@function       ; -- Begin function __sseek
+__sseek NOP                             ; @__sseek
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR4, 8(%FP)
+	LOAD	%GR6, 16(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 14
+	LOADH	%GR2, 0(%GR6)
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR4, 8(%FP)
+	CALL	_lseek_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB77_2
+	JUMP	.LBB77_1
+.LBB77_1 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 61439
+	STOREH	%GR1, 0(%GR6)
+	JUMP	.LBB77_3
+.LBB77_2 NOP 
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 4096
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 0(%FP)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR1, %GR1, 80
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB77_3
+.LBB77_3 NOP 
+	LOAD	%GR6, 0(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end77 NOP 
+	.size	__sseek, .Lfunc_end77-__sseek
+                                        ; -- End function
+	.type	__sclose,@function      ; -- Begin function __sclose
+__sclose NOP                            ; @__sclose
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR1, 12(%FP)
+	STORE	%GR2, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR1, 12(%FP)
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 14
+	LOADH	%GR2, 0(%GR6)
+	CALL	_close_r
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end78 NOP 
+	.size	__sclose, .Lfunc_end78-__sclose
+                                        ; -- End function
+	.globl	strcmp                  ; -- Begin function strcmp
+	.type	strcmp,@function
+strcmp NOP                              ; @strcmp
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 28
+	COPYR	%FP, %SP
+	STORE	%GR1, 20(%FP)
+	STORE	%GR1, 12(%FP)
+	STORE	%GR2, 8(%FP)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 8(%FP)
+	OR	%GR6, %GR6, %GR1
+	ANDI	%GR6, %GR6, 3
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB79_7
+	JUMP	.LBB79_1
+.LBB79_1 NOP 
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB79_2
+.LBB79_2 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 0(%FP)
+	LOAD	%GR1, 0(%GR1)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB79_6
+	JUMP	.LBB79_3
+.LBB79_3 NOP                            ;   in Loop: Header=BB79_2 Depth=1
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ADDI	%GR1, %GR6, -16843009
+	XORI	%GR6, %GR6, -1
+	AND	%GR6, %GR1, %GR6
+	ANDI	%GR6, %GR6, -2139062144
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB79_5
+	JUMP	.LBB79_4
+.LBB79_4 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB79_13
+.LBB79_5 NOP                            ;   in Loop: Header=BB79_2 Depth=1
+	LOAD	%GR6, 4(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR6, %GR6, 4
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB79_2
+.LBB79_6 NOP 
+	LOAD	%GR6, 4(%FP)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 0(%FP)
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB79_7
+.LBB79_7 NOP 
+	JUMP	.LBB79_8
+.LBB79_8 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 12(%FP)
+	LOADB	%GR1, 0(%GR6)
+	COPYI	%GR6, 0
+	EQ	%GR1, %GR1, %GR6
+	BNEQZ	%GR1, .LBB79_10
+	JUMP	.LBB79_9
+.LBB79_9 NOP                            ;   in Loop: Header=BB79_8 Depth=1
+	LOAD	%GR6, 12(%FP)
+	LOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	LOADB	%GR1, 0(%GR1)
+	EQ	%GR6, %GR6, %GR1
+	JUMP	.LBB79_10
+.LBB79_10 NOP                           ;   in Loop: Header=BB79_8 Depth=1
+	ANDI	%GR6, %GR6, 1
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB79_12
+	JUMP	.LBB79_11
+.LBB79_11 NOP                           ;   in Loop: Header=BB79_8 Depth=1
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB79_8
+.LBB79_12 NOP 
+	LOAD	%GR6, 12(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	ULOADB	%GR1, 0(%GR1)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB79_13
+.LBB79_13 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 20(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 28
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end79 NOP 
+	.size	strcmp, .Lfunc_end79-strcmp
+                                        ; -- End function
+	.type	_strtol_r,@function     ; -- Begin function _strtol_r
+_strtol_r NOP                           ; @_strtol_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR5, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	STORE	%GR3, 8(%FP)
+	STORE	%GR4, 4(%FP)
+	LOAD	%GR1, 16(%FP)
+	LOAD	%GR2, 12(%FP)
+	LOAD	%GR3, 8(%FP)
+	LOAD	%GR4, 4(%FP)
+	CALL	__get_current_locale.89
+	COPYG	%GR5, __global_locale
+	CALL	_strtol_l
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 20(%FP)
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end80 NOP 
+	.size	_strtol_r, .Lfunc_end80-_strtol_r
+                                        ; -- End function
+	.type	__get_current_locale.89,@function ; -- Begin function __get_current_locale.89
+__get_current_locale.89 NOP             ; @__get_current_locale.89
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%RA, 8(%FP)
+	CALL	__get_global_locale.90
+	LOAD	%RA, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end81 NOP 
+	.size	__get_current_locale.89, .Lfunc_end81-__get_current_locale.89
+                                        ; -- End function
+	.type	_strtol_l,@function     ; -- Begin function _strtol_l
+_strtol_l NOP                           ; @_strtol_l
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 80
+	COPYR	%FP, %SP
+	STORE	%RA, 72(%FP)
+	STORE	%GR1, 68(%FP)
+	STORE	%GR2, 64(%FP)
+	STORE	%GR3, 60(%FP)
+	STORE	%GR1, 52(%FP)
+	STORE	%GR2, 48(%FP)
+	STORE	%GR3, 44(%FP)
+	STORE	%GR4, 40(%FP)
+	STORE	%GR5, 36(%FP)
+	LOAD	%GR6, 48(%FP)
+	STORE	%GR6, 32(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR1, 40(%FP)
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB82_3
+	JUMP	.LBB82_1
+.LBB82_1 NOP 
+	LOAD	%GR6, 40(%FP)
+	COPYI	%GR1, 1
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_3
+	JUMP	.LBB82_2
+.LBB82_2 NOP 
+	LOAD	%GR6, 40(%FP)
+	COPYI	%GR1, 37
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_4
+	JUMP	.LBB82_3
+.LBB82_3 NOP 
+	CALL	__errno
+	COPYG	%GR6, impure_data
+	COPYI	%GR1, 22
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, 0
+	STORE	%GR6, 56(%FP)
+	JUMP	.LBB82_54
+.LBB82_4 NOP 
+	JUMP	.LBB82_5
+.LBB82_5 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 32(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB82_6
+.LBB82_6 NOP                            ;   in Loop: Header=BB82_5 Depth=1
+	LOAD	%GR6, 24(%FP)
+	COPYG	%GR1, _ctype_+1
+	ADD	%GR6, %GR6, %GR1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_5
+	JUMP	.LBB82_7
+.LBB82_7 NOP 
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 45
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_9
+	JUMP	.LBB82_8
+.LBB82_8 NOP 
+	COPYI	%GR6, 1
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 32(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB82_12
+.LBB82_9 NOP 
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 43
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_11
+	JUMP	.LBB82_10
+.LBB82_10 NOP 
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 32(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB82_11
+.LBB82_11 NOP 
+	JUMP	.LBB82_12
+.LBB82_12 NOP 
+	LOAD	%GR6, 40(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_14
+	JUMP	.LBB82_13
+.LBB82_13 NOP 
+	LOAD	%GR6, 40(%FP)
+	COPYI	%GR1, 16
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_18
+	JUMP	.LBB82_14
+.LBB82_14 NOP 
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 48
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_18
+	JUMP	.LBB82_15
+.LBB82_15 NOP 
+	LOAD	%GR6, 32(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	COPYI	%GR1, 120
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_17
+	JUMP	.LBB82_16
+.LBB82_16 NOP 
+	LOAD	%GR6, 32(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	COPYI	%GR1, 88
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_18
+	JUMP	.LBB82_17
+.LBB82_17 NOP 
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 1
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 24(%FP)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, 2
+	STORE	%GR6, 32(%FP)
+	COPYI	%GR6, 16
+	STORE	%GR6, 40(%FP)
+	JUMP	.LBB82_18
+.LBB82_18 NOP 
+	LOAD	%GR6, 40(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_20
+	JUMP	.LBB82_19
+.LBB82_19 NOP 
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 48
+	EQ	%GR6, %GR6, %GR1
+	COPYI	%GR1, 10
+	COPYI	%GR2, 8
+	CMOV	%GR1, %GR6, %GR2
+	STORE	%GR1, 40(%FP)
+	JUMP	.LBB82_20
+.LBB82_20 NOP 
+	LOAD	%GR1, 16(%FP)
+	COPYI	%GR6, 0
+	NEQ	%GR1, %GR1, %GR6
+	COPYI	%GR2, 2147483647
+	COPYI	%GR3, -2147483648
+	CMOV	%GR2, %GR1, %GR3
+	STORE	%GR2, 20(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR2, 40(%FP)
+	UREM	%GR1, %GR1, %GR2
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR1, 40(%FP)
+	LOAD	%GR2, 20(%FP)
+	UDIV	%GR1, %GR2, %GR1
+	STORE	%GR1, 20(%FP)
+	STORE	%GR6, 28(%FP)
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB82_21
+.LBB82_21 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 48
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_24
+	JUMP	.LBB82_22
+.LBB82_22 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 57
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB82_24
+	JUMP	.LBB82_23
+.LBB82_23 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, -48
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB82_33
+.LBB82_24 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 65
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_27
+	JUMP	.LBB82_25
+.LBB82_25 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 90
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB82_27
+	JUMP	.LBB82_26
+.LBB82_26 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, -55
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB82_32
+.LBB82_27 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 97
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_30
+	JUMP	.LBB82_28
+.LBB82_28 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 122
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB82_30
+	JUMP	.LBB82_29
+.LBB82_29 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, -87
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB82_31
+.LBB82_30 NOP 
+	JUMP	.LBB82_43
+.LBB82_31 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	JUMP	.LBB82_32
+.LBB82_32 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	JUMP	.LBB82_33
+.LBB82_33 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 40(%FP)
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_35
+	JUMP	.LBB82_34
+.LBB82_34 NOP 
+	JUMP	.LBB82_43
+.LBB82_35 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_39
+	JUMP	.LBB82_36
+.LBB82_36 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 20(%FP)
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB82_39
+	JUMP	.LBB82_37
+.LBB82_37 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 20(%FP)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_40
+	JUMP	.LBB82_38
+.LBB82_38 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 8(%FP)
+	LTE	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_40
+	JUMP	.LBB82_39
+.LBB82_39 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	COPYI	%GR6, -1
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB82_41
+.LBB82_40 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	COPYI	%GR6, 1
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 40(%FP)
+	LOAD	%GR1, 28(%FP)
+	MUL	%GR6, %GR1, %GR6
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR6, 24(%FP)
+	LOAD	%GR1, 28(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB82_41
+.LBB82_41 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	JUMP	.LBB82_42
+.LBB82_42 NOP                           ;   in Loop: Header=BB82_21 Depth=1
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 32(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB82_21
+.LBB82_43 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB82_45
+	JUMP	.LBB82_44
+.LBB82_44 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	COPYI	%GR1, 2147483647
+	COPYI	%GR2, -2147483648
+	CMOV	%GR1, %GR6, %GR2
+	STORE	%GR1, 28(%FP)
+	LOAD	%GR6, 52(%FP)
+	COPYI	%GR1, 34
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB82_48
+.LBB82_45 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_47
+	JUMP	.LBB82_46
+.LBB82_46 NOP 
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 0
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB82_47
+.LBB82_47 NOP 
+	JUMP	.LBB82_48
+.LBB82_48 NOP 
+	LOAD	%GR6, 44(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_53
+	JUMP	.LBB82_49
+.LBB82_49 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB82_51
+	JUMP	.LBB82_50
+.LBB82_50 NOP 
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR6, %GR6, -1
+	JUMP	.LBB82_52
+.LBB82_51 NOP 
+	LOAD	%GR6, 48(%FP)
+	JUMP	.LBB82_52
+.LBB82_52 NOP 
+	LOAD	%GR1, 44(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB82_53
+.LBB82_53 NOP 
+	LOAD	%GR6, 28(%FP)
+	STORE	%GR6, 56(%FP)
+	JUMP	.LBB82_54
+.LBB82_54 NOP 
+	LOAD	%GR6, 56(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 60(%FP)
+	LOAD	%GR2, 64(%FP)
+	LOAD	%GR1, 68(%FP)
+	LOAD	%RA, 72(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 80
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end82 NOP 
+	.size	_strtol_l, .Lfunc_end82-_strtol_l
+                                        ; -- End function
+	.type	__get_global_locale.90,@function ; -- Begin function __get_global_locale.90
+__get_global_locale.90 NOP              ; @__get_global_locale.90
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 4
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end83 NOP 
+	.size	__get_global_locale.90, .Lfunc_end83-__get_global_locale.90
+                                        ; -- End function
+	.globl	strtol_l                ; -- Begin function strtol_l
+	.type	strtol_l,@function
+strtol_l NOP                            ; @strtol_l
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR5, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	STORE	%GR3, 8(%FP)
+	STORE	%GR4, 4(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR4, 8(%FP)
+	LOAD	%GR5, 4(%FP)
+	COPYG	%GR1, impure_data
+	CALL	_strtol_l
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 20(%FP)
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end84 NOP 
+	.size	strtol_l, .Lfunc_end84-strtol_l
+                                        ; -- End function
+	.globl	strtol                  ; -- Begin function strtol
+	.type	strtol,@function
+strtol NOP                              ; @strtol
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR5, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	STORE	%GR3, 8(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR4, 8(%FP)
+	CALL	__get_current_locale.89
+	COPYG	%GR1, impure_data
+	COPYG	%GR5, __global_locale
+	CALL	_strtol_l
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 20(%FP)
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end85 NOP 
+	.size	strtol, .Lfunc_end85-strtol
+                                        ; -- End function
+	.type	_strtoul_r,@function    ; -- Begin function _strtoul_r
+_strtoul_r NOP                          ; @_strtoul_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR5, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	STORE	%GR3, 8(%FP)
+	STORE	%GR4, 4(%FP)
+	LOAD	%GR1, 16(%FP)
+	LOAD	%GR2, 12(%FP)
+	LOAD	%GR3, 8(%FP)
+	LOAD	%GR4, 4(%FP)
+	CALL	__get_current_locale.93
+	COPYG	%GR5, __global_locale
+	CALL	_strtoul_l
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 20(%FP)
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end86 NOP 
+	.size	_strtoul_r, .Lfunc_end86-_strtoul_r
+                                        ; -- End function
+	.type	__get_current_locale.93,@function ; -- Begin function __get_current_locale.93
+__get_current_locale.93 NOP             ; @__get_current_locale.93
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%RA, 8(%FP)
+	CALL	__get_global_locale.94
+	LOAD	%RA, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end87 NOP 
+	.size	__get_current_locale.93, .Lfunc_end87-__get_current_locale.93
+                                        ; -- End function
+	.type	_strtoul_l,@function    ; -- Begin function _strtoul_l
+_strtoul_l NOP                          ; @_strtoul_l
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 60
+	COPYR	%FP, %SP
+	STORE	%GR1, 52(%FP)
+	STORE	%GR2, 48(%FP)
+	STORE	%GR1, 44(%FP)
+	STORE	%GR2, 40(%FP)
+	STORE	%GR3, 36(%FP)
+	STORE	%GR4, 32(%FP)
+	STORE	%GR5, 28(%FP)
+	LOAD	%GR6, 40(%FP)
+	STORE	%GR6, 24(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB88_1
+.LBB88_1 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 24(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB88_2
+.LBB88_2 NOP                            ;   in Loop: Header=BB88_1 Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYG	%GR1, _ctype_+1
+	ADD	%GR6, %GR6, %GR1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_1
+	JUMP	.LBB88_3
+.LBB88_3 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 45
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_5
+	JUMP	.LBB88_4
+.LBB88_4 NOP 
+	COPYI	%GR6, 1
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 24(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB88_8
+.LBB88_5 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 43
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_7
+	JUMP	.LBB88_6
+.LBB88_6 NOP 
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 24(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB88_7
+.LBB88_7 NOP 
+	JUMP	.LBB88_8
+.LBB88_8 NOP 
+	LOAD	%GR6, 32(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_10
+	JUMP	.LBB88_9
+.LBB88_9 NOP 
+	LOAD	%GR6, 32(%FP)
+	COPYI	%GR1, 16
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_14
+	JUMP	.LBB88_10
+.LBB88_10 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 48
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_14
+	JUMP	.LBB88_11
+.LBB88_11 NOP 
+	LOAD	%GR6, 24(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	COPYI	%GR1, 120
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_13
+	JUMP	.LBB88_12
+.LBB88_12 NOP 
+	LOAD	%GR6, 24(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	COPYI	%GR1, 88
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_14
+	JUMP	.LBB88_13
+.LBB88_13 NOP 
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 1
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, 2
+	STORE	%GR6, 24(%FP)
+	COPYI	%GR6, 16
+	STORE	%GR6, 32(%FP)
+	JUMP	.LBB88_14
+.LBB88_14 NOP 
+	LOAD	%GR6, 32(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_16
+	JUMP	.LBB88_15
+.LBB88_15 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 48
+	EQ	%GR6, %GR6, %GR1
+	COPYI	%GR1, 10
+	COPYI	%GR2, 8
+	CMOV	%GR1, %GR6, %GR2
+	STORE	%GR1, 32(%FP)
+	JUMP	.LBB88_16
+.LBB88_16 NOP 
+	LOAD	%GR6, 32(%FP)
+	COPYI	%GR1, -1
+	UDIV	%GR6, %GR1, %GR6
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 32(%FP)
+	UREM	%GR6, %GR1, %GR6
+	STORE	%GR6, 0(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 20(%FP)
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB88_17
+.LBB88_17 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 48
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_20
+	JUMP	.LBB88_18
+.LBB88_18 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 57
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB88_20
+	JUMP	.LBB88_19
+.LBB88_19 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, -48
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB88_29
+.LBB88_20 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 65
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_23
+	JUMP	.LBB88_21
+.LBB88_21 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 90
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB88_23
+	JUMP	.LBB88_22
+.LBB88_22 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, -55
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB88_28
+.LBB88_23 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 97
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_26
+	JUMP	.LBB88_24
+.LBB88_24 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 122
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB88_26
+	JUMP	.LBB88_25
+.LBB88_25 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, -87
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB88_27
+.LBB88_26 NOP 
+	JUMP	.LBB88_39
+.LBB88_27 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	JUMP	.LBB88_28
+.LBB88_28 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	JUMP	.LBB88_29
+.LBB88_29 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 32(%FP)
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_31
+	JUMP	.LBB88_30
+.LBB88_30 NOP 
+	JUMP	.LBB88_39
+.LBB88_31 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_35
+	JUMP	.LBB88_32
+.LBB88_32 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 20(%FP)
+	LOAD	%GR1, 12(%FP)
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB88_35
+	JUMP	.LBB88_33
+.LBB88_33 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 20(%FP)
+	LOAD	%GR1, 12(%FP)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_36
+	JUMP	.LBB88_34
+.LBB88_34 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 0(%FP)
+	LTE	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_36
+	JUMP	.LBB88_35
+.LBB88_35 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	COPYI	%GR6, -1
+	STORE	%GR6, 4(%FP)
+	JUMP	.LBB88_37
+.LBB88_36 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	COPYI	%GR6, 1
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 32(%FP)
+	LOAD	%GR1, 20(%FP)
+	MUL	%GR6, %GR1, %GR6
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB88_37
+.LBB88_37 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	JUMP	.LBB88_38
+.LBB88_38 NOP                           ;   in Loop: Header=BB88_17 Depth=1
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 24(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB88_17
+.LBB88_39 NOP 
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB88_41
+	JUMP	.LBB88_40
+.LBB88_40 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 44(%FP)
+	COPYI	%GR1, 34
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB88_44
+.LBB88_41 NOP 
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_43
+	JUMP	.LBB88_42
+.LBB88_42 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, 0
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB88_43
+.LBB88_43 NOP 
+	JUMP	.LBB88_44
+.LBB88_44 NOP 
+	LOAD	%GR6, 36(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_49
+	JUMP	.LBB88_45
+.LBB88_45 NOP 
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB88_47
+	JUMP	.LBB88_46
+.LBB88_46 NOP 
+	LOAD	%GR6, 24(%FP)
+	ADDI	%GR6, %GR6, -1
+	JUMP	.LBB88_48
+.LBB88_47 NOP 
+	LOAD	%GR6, 40(%FP)
+	JUMP	.LBB88_48
+.LBB88_48 NOP 
+	LOAD	%GR1, 36(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB88_49
+.LBB88_49 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 48(%FP)
+	LOAD	%GR1, 52(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 60
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end88 NOP 
+	.size	_strtoul_l, .Lfunc_end88-_strtoul_l
+                                        ; -- End function
+	.type	__get_global_locale.94,@function ; -- Begin function __get_global_locale.94
+__get_global_locale.94 NOP              ; @__get_global_locale.94
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 4
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end89 NOP 
+	.size	__get_global_locale.94, .Lfunc_end89-__get_global_locale.94
+                                        ; -- End function
+	.globl	strtoul_l               ; -- Begin function strtoul_l
+	.type	strtoul_l,@function
+strtoul_l NOP                           ; @strtoul_l
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR5, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	STORE	%GR3, 8(%FP)
+	STORE	%GR4, 4(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR4, 8(%FP)
+	LOAD	%GR5, 4(%FP)
+	COPYG	%GR1, impure_data
+	CALL	_strtoul_l
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 20(%FP)
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end90 NOP 
+	.size	strtoul_l, .Lfunc_end90-strtoul_l
+                                        ; -- End function
+	.globl	strtoul                 ; -- Begin function strtoul
+	.type	strtoul,@function
+strtoul NOP                             ; @strtoul
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR5, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	STORE	%GR3, 8(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR4, 8(%FP)
+	CALL	__get_current_locale.93
+	COPYG	%GR1, impure_data
+	COPYG	%GR5, __global_locale
+	CALL	_strtoul_l
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 20(%FP)
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end91 NOP 
+	.size	strtoul, .Lfunc_end91-strtoul
+                                        ; -- End function
+	.type	__submore,@function     ; -- Begin function __submore
+__submore NOP                           ; @__submore
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, 48
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR6, %GR6, 64
+	NEQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB92_7
+	JUMP	.LBB92_1
+.LBB92_1 NOP 
+	LOAD	%GR1, 20(%FP)
+	COPYI	%GR2, 1024
+	CALL	_malloc_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB92_3
+	JUMP	.LBB92_2
+.LBB92_2 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB92_10
+.LBB92_3 NOP 
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR1, %GR1, 48
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 52
+	COPYI	%GR1, 1024
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 1021
+	STORE	%GR6, 8(%FP)
+	COPYI	%GR6, 3
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB92_4
+.LBB92_4 NOP                            ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB92_6
+	JUMP	.LBB92_5
+.LBB92_5 NOP                            ;   in Loop: Header=BB92_4 Depth=1
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 12(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 64
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR2, 8(%FP)
+	ADD	%GR1, %GR2, %GR1
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB92_4
+.LBB92_6 NOP 
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	COPYI	%GR6, 0
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB92_10
+.LBB92_7 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 52
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 48
+	LOAD	%GR2, 0(%GR6)
+	LOAD	%GR6, 12(%FP)
+	SHLI	%GR3, %GR6, 1
+	CALL	_realloc_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB92_9
+	JUMP	.LBB92_8
+.LBB92_8 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB92_10
+.LBB92_9 NOP 
+	LOAD	%GR2, 8(%FP)
+	LOAD	%GR3, 12(%FP)
+	ADD	%GR1, %GR2, %GR3
+	CALL	memcpy
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR1, %GR1, 48
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	SHLI	%GR6, %GR6, 1
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR1, %GR1, 52
+	STORE	%GR6, 0(%GR1)
+	COPYI	%GR6, 0
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB92_10
+.LBB92_10 NOP 
+	LOAD	%GR6, 24(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end92 NOP 
+	.size	__submore, .Lfunc_end92-__submore
+                                        ; -- End function
+	.type	_ungetc_r,@function     ; -- Begin function _ungetc_r
+_ungetc_r NOP                           ; @_ungetc_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR1, 24(%FP)
+	STORE	%GR2, 20(%FP)
+	STORE	%GR3, 16(%FP)
+	LOAD	%GR6, 20(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_2
+	JUMP	.LBB93_1
+.LBB93_1 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB93_64
+.LBB93_2 NOP 
+	JUMP	.LBB93_3
+.LBB93_3 NOP 
+	LOAD	%GR6, 24(%FP)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_6
+	JUMP	.LBB93_4
+.LBB93_4 NOP 
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 56
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_6
+	JUMP	.LBB93_5
+.LBB93_5 NOP 
+	LOAD	%GR1, 12(%FP)
+	CALL	__sinit
+	JUMP	.LBB93_6
+.LBB93_6 NOP 
+	JUMP	.LBB93_7
+.LBB93_7 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB93_12
+	JUMP	.LBB93_8
+.LBB93_8 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_10
+	JUMP	.LBB93_9
+.LBB93_9 NOP 
+	JUMP	.LBB93_11
+.LBB93_10 NOP 
+	JUMP	.LBB93_11
+.LBB93_11 NOP 
+	JUMP	.LBB93_12
+.LBB93_12 NOP 
+	JUMP	.LBB93_13
+.LBB93_13 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8192
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_15
+	JUMP	.LBB93_14
+.LBB93_14 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 8192
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 100
+	LOAD	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, -8193
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB93_15
+.LBB93_15 NOP 
+	JUMP	.LBB93_16
+.LBB93_16 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 65503
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_34
+	JUMP	.LBB93_17
+.LBB93_17 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 16
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_24
+	JUMP	.LBB93_18
+.LBB93_18 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB93_23
+	JUMP	.LBB93_19
+.LBB93_19 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_21
+	JUMP	.LBB93_20
+.LBB93_20 NOP 
+	JUMP	.LBB93_22
+.LBB93_21 NOP 
+	JUMP	.LBB93_22
+.LBB93_22 NOP 
+	JUMP	.LBB93_23
+.LBB93_23 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB93_64
+.LBB93_24 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_33
+	JUMP	.LBB93_25
+.LBB93_25 NOP 
+	LOAD	%GR1, 24(%FP)
+	LOAD	%GR2, 16(%FP)
+	CALL	_fflush_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_32
+	JUMP	.LBB93_26
+.LBB93_26 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB93_31
+	JUMP	.LBB93_27
+.LBB93_27 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_29
+	JUMP	.LBB93_28
+.LBB93_28 NOP 
+	JUMP	.LBB93_30
+.LBB93_29 NOP 
+	JUMP	.LBB93_30
+.LBB93_30 NOP 
+	JUMP	.LBB93_31
+.LBB93_31 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB93_64
+.LBB93_32 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 65527
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 24
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB93_33
+.LBB93_33 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 4
+	STOREH	%GR1, 0(%GR6)
+	JUMP	.LBB93_34
+.LBB93_34 NOP 
+	ULOADB	%GR6, 20(%FP)
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 48
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_49
+	JUMP	.LBB93_35
+.LBB93_35 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, 4
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR6, %GR6, 52
+	LOAD	%GR6, 0(%GR6)
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB93_43
+	JUMP	.LBB93_36
+.LBB93_36 NOP 
+	LOAD	%GR1, 24(%FP)
+	LOAD	%GR2, 16(%FP)
+	CALL	__submore
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_43
+	JUMP	.LBB93_37
+.LBB93_37 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB93_42
+	JUMP	.LBB93_38
+.LBB93_38 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_40
+	JUMP	.LBB93_39
+.LBB93_39 NOP 
+	JUMP	.LBB93_41
+.LBB93_40 NOP 
+	JUMP	.LBB93_41
+.LBB93_41 NOP 
+	JUMP	.LBB93_42
+.LBB93_42 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB93_64
+.LBB93_43 NOP 
+	LOAD	%GR6, 20(%FP)
+	LOAD	%GR1, 16(%FP)
+	LOAD	%GR2, 0(%GR1)
+	ADDI	%GR2, %GR2, -1
+	STORE	%GR2, 0(%GR1)
+	STOREB	%GR6, 0(%GR2)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB93_48
+	JUMP	.LBB93_44
+.LBB93_44 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_46
+	JUMP	.LBB93_45
+.LBB93_45 NOP 
+	JUMP	.LBB93_47
+.LBB93_46 NOP 
+	JUMP	.LBB93_47
+.LBB93_47 NOP 
+	JUMP	.LBB93_48
+.LBB93_48 NOP 
+	LOAD	%GR6, 20(%FP)
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB93_64
+.LBB93_49 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 16
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_58
+	JUMP	.LBB93_50
+.LBB93_50 NOP 
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR6, %GR6, 16
+	LOAD	%GR6, 0(%GR6)
+	ULTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB93_58
+	JUMP	.LBB93_51
+.LBB93_51 NOP 
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR6, 0(%GR6)
+	ADDI	%GR6, %GR6, -1
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 20(%FP)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_58
+	JUMP	.LBB93_52
+.LBB93_52 NOP 
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB93_57
+	JUMP	.LBB93_53
+.LBB93_53 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_55
+	JUMP	.LBB93_54
+.LBB93_54 NOP 
+	JUMP	.LBB93_56
+.LBB93_55 NOP 
+	JUMP	.LBB93_56
+.LBB93_56 NOP 
+	JUMP	.LBB93_57
+.LBB93_57 NOP 
+	LOAD	%GR6, 20(%FP)
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB93_64
+.LBB93_58 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, 4
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR6, %GR6, 60
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 0(%GR6)
+	ADDI	%GR6, %GR6, 56
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, 64
+	ADDI	%GR6, %GR6, 48
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 52
+	COPYI	%GR1, 3
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 20(%FP)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR1, %GR1, 66
+	STOREB	%GR6, 0(%GR1)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, 66
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 4
+	COPYI	%GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB93_63
+	JUMP	.LBB93_59
+.LBB93_59 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB93_61
+	JUMP	.LBB93_60
+.LBB93_60 NOP 
+	JUMP	.LBB93_62
+.LBB93_61 NOP 
+	JUMP	.LBB93_62
+.LBB93_62 NOP 
+	JUMP	.LBB93_63
+.LBB93_63 NOP 
+	LOAD	%GR6, 20(%FP)
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB93_64
+.LBB93_64 NOP 
+	LOAD	%GR6, 28(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end93 NOP 
+	.size	_ungetc_r, .Lfunc_end93-_ungetc_r
+                                        ; -- End function
+	.globl	ungetc                  ; -- Begin function ungetc
+	.type	ungetc,@function
+ungetc NOP                              ; @ungetc
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR3, 12(%FP)
+	STORE	%GR1, 8(%FP)
+	STORE	%GR2, 4(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR2, 8(%FP)
+	LOAD	%GR3, 4(%FP)
+	COPYG	%GR1, impure_data
+	CALL	_ungetc_r
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 12(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end94 NOP 
+	.size	ungetc, .Lfunc_end94-ungetc
+                                        ; -- End function
+	.type	__ascii_wctomb,@function ; -- Begin function __ascii_wctomb
+__ascii_wctomb NOP                      ; @__ascii_wctomb
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%GR1, 24(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	STORE	%GR3, 8(%FP)
+	STORE	%GR4, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	STORE	%GR6, 0(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB95_2
+	JUMP	.LBB95_1
+.LBB95_1 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB95_5
+.LBB95_2 NOP 
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 256
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB95_4
+	JUMP	.LBB95_3
+.LBB95_3 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 138
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, -1
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB95_5
+.LBB95_4 NOP 
+	LOAD	%GR6, 0(%FP)
+	LOAD	%GR1, 12(%FP)
+	STOREB	%GR6, 0(%GR1)
+	COPYI	%GR6, 1
+	STORE	%GR6, 20(%FP)
+	JUMP	.LBB95_5
+.LBB95_5 NOP 
+	LOAD	%GR6, 20(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end95 NOP 
+	.size	__ascii_wctomb, .Lfunc_end95-__ascii_wctomb
+                                        ; -- End function
+	.type	_write_r,@function      ; -- Begin function _write_r
+_write_r NOP                            ; @_write_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR1, 24(%FP)
+	STORE	%GR2, 20(%FP)
+	STORE	%GR3, 16(%FP)
+	STORE	%GR4, 12(%FP)
+	COPYG	%GR6, errno
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR3, 12(%FP)
+	CALL	_write
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB96_3
+	JUMP	.LBB96_1
+.LBB96_1 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB96_3
+	JUMP	.LBB96_2
+.LBB96_2 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 24(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB96_3
+.LBB96_3 NOP 
+	LOAD	%GR6, 8(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end96 NOP 
+	.size	_write_r, .Lfunc_end96-_write_r
+                                        ; -- End function
+	.type	_close_r,@function      ; -- Begin function _close_r
+_close_r NOP                            ; @_close_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	COPYG	%GR6, errno
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 12(%FP)
+	CALL	_close
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB97_3
+	JUMP	.LBB97_1
+.LBB97_1 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB97_3
+	JUMP	.LBB97_2
+.LBB97_2 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB97_3
+.LBB97_3 NOP 
+	LOAD	%GR6, 8(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end97 NOP 
+	.size	_close_r, .Lfunc_end97-_close_r
+                                        ; -- End function
+	.type	__errno,@function       ; -- Begin function __errno
+__errno NOP                             ; @__errno
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%RA, 8(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%RA, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end98 NOP 
+	.size	__errno, .Lfunc_end98-__errno
+                                        ; -- End function
+	.type	_fclose_r,@function     ; -- Begin function _fclose_r
+_fclose_r NOP                           ; @_fclose_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB99_2
+	JUMP	.LBB99_1
+.LBB99_1 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB99_36
+.LBB99_2 NOP 
+	JUMP	.LBB99_3
+.LBB99_3 NOP 
+	LOAD	%GR6, 20(%FP)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB99_6
+	JUMP	.LBB99_4
+.LBB99_4 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, 56
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB99_6
+	JUMP	.LBB99_5
+.LBB99_5 NOP 
+	LOAD	%GR1, 8(%FP)
+	CALL	__sinit
+	JUMP	.LBB99_6
+.LBB99_6 NOP 
+	JUMP	.LBB99_7
+.LBB99_7 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB99_12
+	JUMP	.LBB99_8
+.LBB99_8 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB99_10
+	JUMP	.LBB99_9
+.LBB99_9 NOP 
+	JUMP	.LBB99_11
+.LBB99_10 NOP 
+	JUMP	.LBB99_11
+.LBB99_11 NOP 
+	JUMP	.LBB99_12
+.LBB99_12 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOADH	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB99_19
+	JUMP	.LBB99_13
+.LBB99_13 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB99_18
+	JUMP	.LBB99_14
+.LBB99_14 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB99_16
+	JUMP	.LBB99_15
+.LBB99_15 NOP 
+	JUMP	.LBB99_17
+.LBB99_16 NOP 
+	JUMP	.LBB99_17
+.LBB99_17 NOP 
+	JUMP	.LBB99_18
+.LBB99_18 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB99_36
+.LBB99_19 NOP 
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR2, 16(%FP)
+	CALL	__sflush_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 44
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB99_22
+	JUMP	.LBB99_20
+.LBB99_20 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, 44
+	LOAD	%GR3, 0(%GR1)
+	LOAD	%GR1, 20(%FP)
+	ADDI	%GR6, %GR6, 28
+	LOAD	%GR2, 0(%GR6)
+	CALLR	%GR3
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB99_22
+	JUMP	.LBB99_21
+.LBB99_21 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB99_22
+.LBB99_22 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 128
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB99_24
+	JUMP	.LBB99_23
+.LBB99_23 NOP 
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 16
+	LOAD	%GR2, 0(%GR6)
+	CALL	_free_r
+	JUMP	.LBB99_24
+.LBB99_24 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 48
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB99_28
+	JUMP	.LBB99_25
+.LBB99_25 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, 48
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR6, %GR6, 64
+	EQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB99_27
+	JUMP	.LBB99_26
+.LBB99_26 NOP 
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 48
+	LOAD	%GR2, 0(%GR6)
+	CALL	_free_r
+	JUMP	.LBB99_27
+.LBB99_27 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 48
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB99_28
+.LBB99_28 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 68
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB99_30
+	JUMP	.LBB99_29
+.LBB99_29 NOP 
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 68
+	LOAD	%GR2, 0(%GR6)
+	CALL	_free_r
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 68
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB99_30
+.LBB99_30 NOP 
+	CALL	__sfp_lock_acquire
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	COPYI	%GR1, 0
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB99_35
+	JUMP	.LBB99_31
+.LBB99_31 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB99_33
+	JUMP	.LBB99_32
+.LBB99_32 NOP 
+	JUMP	.LBB99_34
+.LBB99_33 NOP 
+	JUMP	.LBB99_34
+.LBB99_34 NOP 
+	JUMP	.LBB99_35
+.LBB99_35 NOP 
+	CALL	__sfp_lock_release
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 24(%FP)
+	JUMP	.LBB99_36
+.LBB99_36 NOP 
+	LOAD	%GR6, 24(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end99 NOP 
+	.size	_fclose_r, .Lfunc_end99-_fclose_r
+                                        ; -- End function
+	.globl	fclose                  ; -- Begin function fclose
+	.type	fclose,@function
+fclose NOP                              ; @fclose
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR1, 12(%FP)
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR2, 12(%FP)
+	COPYG	%GR1, impure_data
+	CALL	_fclose_r
+	COPYR	%GR6, %RT0
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end100 NOP 
+	.size	fclose, .Lfunc_end100-fclose
+                                        ; -- End function
+	.type	__sflush_r,@function    ; -- Begin function __sflush_r
+__sflush_r NOP                          ; @__sflush_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 80
+	COPYR	%FP, %SP
+	STORE	%RA, 72(%FP)
+	STORE	%GR1, 68(%FP)
+	STORE	%GR2, 64(%FP)
+	STORE	%GR3, 60(%FP)
+	STORE	%GR4, 56(%FP)
+	STORE	%GR5, 52(%FP)
+	STORE	%GR1, 44(%FP)
+	STORE	%GR2, 40(%FP)
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	STOREH	%GR6, 24(%FP)
+	ULOADH	%GR6, 24(%FP)
+	ANDI	%GR6, %GR6, 8
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_34
+	JUMP	.LBB101_1
+.LBB101_1 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 2048
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB101_3
+	JUMP	.LBB101_2
+.LBB101_2 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 60
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_33
+	JUMP	.LBB101_3
+.LBB101_3 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 40
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_33
+	JUMP	.LBB101_4
+.LBB101_4 NOP 
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 44(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 4096
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_6
+	JUMP	.LBB101_5
+.LBB101_5 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 80
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB101_14
+.LBB101_6 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR1, %GR6, 40
+	LOAD	%GR5, 0(%GR1)
+	LOAD	%GR1, 44(%FP)
+	ADDI	%GR6, %GR6, 28
+	LOAD	%GR2, 0(%GR6)
+	COPYI	%GR3, 0
+	COPYI	%GR4, 1
+	CALLR	%GR5
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_13
+	JUMP	.LBB101_7
+.LBB101_7 NOP 
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_13
+	JUMP	.LBB101_8
+.LBB101_8 NOP 
+	COPYI	%GR6, -1
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 29
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_10
+	JUMP	.LBB101_9
+.LBB101_9 NOP 
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 22
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_11
+	JUMP	.LBB101_10
+.LBB101_10 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 20(%FP)
+	LOAD	%GR1, 44(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB101_12
+.LBB101_11 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 64
+	STOREH	%GR1, 0(%GR6)
+	JUMP	.LBB101_12
+.LBB101_12 NOP 
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB101_45
+.LBB101_13 NOP 
+	JUMP	.LBB101_14
+.LBB101_14 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_18
+	JUMP	.LBB101_15
+.LBB101_15 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 48
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_17
+	JUMP	.LBB101_16
+.LBB101_16 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 60
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB101_17
+.LBB101_17 NOP 
+	JUMP	.LBB101_18
+.LBB101_18 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR1, %GR6, 40
+	LOAD	%GR5, 0(%GR1)
+	LOAD	%GR1, 44(%FP)
+	ADDI	%GR6, %GR6, 28
+	LOAD	%GR2, 0(%GR6)
+	LOAD	%GR3, 16(%FP)
+	COPYI	%GR4, 0
+	CALLR	%GR5
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_22
+	JUMP	.LBB101_19
+.LBB101_19 NOP 
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_22
+	JUMP	.LBB101_20
+.LBB101_20 NOP 
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 29
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_22
+	JUMP	.LBB101_21
+.LBB101_21 NOP 
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 22
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_31
+	JUMP	.LBB101_22
+.LBB101_22 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 63487
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 4
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR2, %GR6, 16
+	LOAD	%GR2, 0(%GR2)
+	STORE	%GR2, 0(%GR6)
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 4096
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_26
+	JUMP	.LBB101_23
+.LBB101_23 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_25
+	JUMP	.LBB101_24
+.LBB101_24 NOP 
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_26
+	JUMP	.LBB101_25
+.LBB101_25 NOP 
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR1, %GR1, 80
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB101_26
+.LBB101_26 NOP 
+	LOAD	%GR6, 20(%FP)
+	LOAD	%GR1, 44(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 48
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_30
+	JUMP	.LBB101_27
+.LBB101_27 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR1, %GR6, 48
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR6, %GR6, 64
+	EQ	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB101_29
+	JUMP	.LBB101_28
+.LBB101_28 NOP 
+	LOAD	%GR1, 44(%FP)
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 48
+	LOAD	%GR2, 0(%GR6)
+	CALL	_free_r
+	JUMP	.LBB101_29
+.LBB101_29 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 48
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB101_30
+.LBB101_30 NOP 
+	JUMP	.LBB101_32
+.LBB101_31 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 64
+	STOREH	%GR1, 0(%GR6)
+	COPYI	%GR6, -1
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB101_45
+.LBB101_32 NOP 
+	JUMP	.LBB101_33
+.LBB101_33 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB101_45
+.LBB101_34 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 16
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 36(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_36
+	JUMP	.LBB101_35
+.LBB101_35 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB101_45
+.LBB101_36 NOP 
+	LOAD	%GR6, 40(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 36(%FP)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 32(%FP)
+	LOAD	%GR6, 36(%FP)
+	LOAD	%GR1, 40(%FP)
+	STORE	%GR6, 0(%GR1)
+	ULOADH	%GR6, 24(%FP)
+	ANDI	%GR6, %GR6, 3
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_38
+	JUMP	.LBB101_37
+.LBB101_37 NOP 
+	COPYI	%GR6, 0
+	JUMP	.LBB101_39
+.LBB101_38 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 20
+	LOAD	%GR6, 0(%GR6)
+	JUMP	.LBB101_39
+.LBB101_39 NOP 
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB101_40
+.LBB101_40 NOP                          ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 32(%FP)
+	COPYI	%GR1, 1
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB101_44
+	JUMP	.LBB101_41
+.LBB101_41 NOP                          ;   in Loop: Header=BB101_40 Depth=1
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR1, %GR6, 36
+	LOAD	%GR5, 0(%GR1)
+	LOAD	%GR1, 44(%FP)
+	ADDI	%GR6, %GR6, 28
+	LOAD	%GR2, 0(%GR6)
+	LOAD	%GR3, 36(%FP)
+	LOAD	%GR4, 32(%FP)
+	CALLR	%GR5
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR6, 28(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB101_43
+	JUMP	.LBB101_42
+.LBB101_42 NOP 
+	LOAD	%GR6, 40(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 64
+	STOREH	%GR1, 0(%GR6)
+	COPYI	%GR6, -1
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB101_45
+.LBB101_43 NOP                          ;   in Loop: Header=BB101_40 Depth=1
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 36(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 36(%FP)
+	LOAD	%GR6, 28(%FP)
+	LOAD	%GR1, 32(%FP)
+	SUB	%GR6, %GR1, %GR6
+	STORE	%GR6, 32(%FP)
+	JUMP	.LBB101_40
+.LBB101_44 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 48(%FP)
+	JUMP	.LBB101_45
+.LBB101_45 NOP 
+	LOAD	%GR6, 48(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR5, 52(%FP)
+	LOAD	%GR4, 56(%FP)
+	LOAD	%GR3, 60(%FP)
+	LOAD	%GR2, 64(%FP)
+	LOAD	%GR1, 68(%FP)
+	LOAD	%RA, 72(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 80
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end101 NOP 
+	.size	__sflush_r, .Lfunc_end101-__sflush_r
+                                        ; -- End function
+	.type	_fflush_r,@function     ; -- Begin function _fflush_r
+_fflush_r NOP                           ; @_fflush_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR1, 24(%FP)
+	STORE	%GR2, 20(%FP)
+	JUMP	.LBB102_1
+.LBB102_1 NOP 
+	LOAD	%GR6, 24(%FP)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB102_4
+	JUMP	.LBB102_2
+.LBB102_2 NOP 
+	LOAD	%GR6, 12(%FP)
+	ADDI	%GR6, %GR6, 56
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB102_4
+	JUMP	.LBB102_3
+.LBB102_3 NOP 
+	LOAD	%GR1, 12(%FP)
+	CALL	__sinit
+	JUMP	.LBB102_4
+.LBB102_4 NOP 
+	JUMP	.LBB102_5
+.LBB102_5 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB102_7
+	JUMP	.LBB102_6
+.LBB102_6 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB102_18
+.LBB102_7 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB102_12
+	JUMP	.LBB102_8
+.LBB102_8 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB102_10
+	JUMP	.LBB102_9
+.LBB102_9 NOP 
+	JUMP	.LBB102_11
+.LBB102_10 NOP 
+	JUMP	.LBB102_11
+.LBB102_11 NOP 
+	JUMP	.LBB102_12
+.LBB102_12 NOP 
+	LOAD	%GR1, 24(%FP)
+	LOAD	%GR2, 20(%FP)
+	CALL	__sflush_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 100
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB102_17
+	JUMP	.LBB102_13
+.LBB102_13 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB102_15
+	JUMP	.LBB102_14
+.LBB102_14 NOP 
+	JUMP	.LBB102_16
+.LBB102_15 NOP 
+	JUMP	.LBB102_16
+.LBB102_16 NOP 
+	JUMP	.LBB102_17
+.LBB102_17 NOP 
+	LOAD	%GR6, 16(%FP)
+	STORE	%GR6, 28(%FP)
+	JUMP	.LBB102_18
+.LBB102_18 NOP 
+	LOAD	%GR6, 28(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end102 NOP 
+	.size	_fflush_r, .Lfunc_end102-_fflush_r
+                                        ; -- End function
+	.globl	fflush                  ; -- Begin function fflush
+	.type	fflush,@function
+fflush NOP                              ; @fflush
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB103_2
+	JUMP	.LBB103_1
+.LBB103_1 NOP 
+	COPYG	%GR1, impure_data
+	COPYG	%GR2, _fflush_r
+	CALL	_fwalk_reent
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB103_3
+.LBB103_2 NOP 
+	CALL	__getreent
+                                        ; kill: def $gr6 killed $rt0
+	LOAD	%GR2, 8(%FP)
+	COPYG	%GR1, impure_data
+	CALL	_fflush_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB103_3
+.LBB103_3 NOP 
+	LOAD	%GR6, 12(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end103 NOP 
+	.size	fflush, .Lfunc_end103-fflush
+                                        ; -- End function
+	.globl	iswspace_l              ; -- Begin function iswspace_l
+	.type	iswspace_l,@function
+iswspace_l NOP                          ; @iswspace_l
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%GR1, 8(%FP)
+	STORE	%GR1, 4(%FP)
+	STORE	%GR2, 0(%FP)
+	LOAD	%GR6, 4(%FP)
+	COPYI	%GR1, 255
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB104_2
+	JUMP	.LBB104_1
+.LBB104_1 NOP 
+	LOAD	%GR6, 4(%FP)
+	COPYG	%GR1, _ctype_+1
+	ADD	%GR6, %GR6, %GR1
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 8
+	JUMP	.LBB104_3
+.LBB104_2 NOP 
+	COPYI	%GR6, 0
+	JUMP	.LBB104_3
+.LBB104_3 NOP 
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end104 NOP 
+	.size	iswspace_l, .Lfunc_end104-iswspace_l
+                                        ; -- End function
+	.type	_lseek_r,@function      ; -- Begin function _lseek_r
+_lseek_r NOP                            ; @_lseek_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR1, 24(%FP)
+	STORE	%GR2, 20(%FP)
+	STORE	%GR3, 16(%FP)
+	STORE	%GR4, 12(%FP)
+	COPYG	%GR6, errno
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR3, 12(%FP)
+	CALL	_lseek
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB105_3
+	JUMP	.LBB105_1
+.LBB105_1 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB105_3
+	JUMP	.LBB105_2
+.LBB105_2 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 24(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB105_3
+.LBB105_3 NOP 
+	LOAD	%GR6, 8(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end105 NOP 
+	.size	_lseek_r, .Lfunc_end105-_lseek_r
+                                        ; -- End function
+	.type	__smakebuf_r,@function  ; -- Begin function __smakebuf_r
+__smakebuf_r NOP                        ; @__smakebuf_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR4, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 2
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB106_2
+	JUMP	.LBB106_1
+.LBB106_1 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, 67
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 16
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 20
+	COPYI	%GR1, 1
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB106_10
+.LBB106_2 NOP 
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR2, 16(%FP)
+	ADDI	%GR3, %FP, 4
+	ADDI	%GR4, %FP, 0
+	CALL	__swhatbuf_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR2, 4(%FP)
+	CALL	_malloc_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 12(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB106_6
+	JUMP	.LBB106_3
+.LBB106_3 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 512
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB106_5
+	JUMP	.LBB106_4
+.LBB106_4 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 65532
+	ORI	%GR1, %GR1, 2
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, 67
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 16
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 20
+	COPYI	%GR1, 1
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB106_5
+.LBB106_5 NOP 
+	JUMP	.LBB106_10
+.LBB106_6 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR6, %GR6, 60
+	COPYG	%GR1, _cleanup_r
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 128
+	STOREH	%GR1, 0(%GR6)
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR1, %GR1, 16
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 4(%FP)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR1, %GR1, 20
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 0(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB106_9
+	JUMP	.LBB106_7
+.LBB106_7 NOP 
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 14
+	LOADH	%GR2, 0(%GR6)
+	CALL	_isatty_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB106_9
+	JUMP	.LBB106_8
+.LBB106_8 NOP 
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 65532
+	ORI	%GR1, %GR1, 1
+	STOREH	%GR1, 0(%GR6)
+	JUMP	.LBB106_9
+.LBB106_9 NOP 
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR1, %GR1, 12
+	ULOADH	%GR2, 0(%GR1)
+	OR	%GR6, %GR2, %GR6
+	STOREH	%GR6, 0(%GR1)
+	JUMP	.LBB106_10
+.LBB106_10 NOP 
+	LOAD	%GR4, 24(%FP)
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end106 NOP 
+	.size	__smakebuf_r, .Lfunc_end106-__smakebuf_r
+                                        ; -- End function
+	.type	__swhatbuf_r,@function  ; -- Begin function __swhatbuf_r
+__swhatbuf_r NOP                        ; @__swhatbuf_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 128
+	COPYR	%FP, %SP
+	STORE	%RA, 120(%FP)
+	STORE	%GR1, 116(%FP)
+	STORE	%GR2, 112(%FP)
+	STORE	%GR3, 108(%FP)
+	STORE	%GR1, 100(%FP)
+	STORE	%GR2, 96(%FP)
+	STORE	%GR3, 92(%FP)
+	STORE	%GR4, 88(%FP)
+	COPYI	%GR6, 2048
+	STORE	%GR6, 84(%FP)
+	LOAD	%GR6, 96(%FP)
+	ADDI	%GR6, %GR6, 14
+	LOADH	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB107_2
+	JUMP	.LBB107_1
+.LBB107_1 NOP 
+	LOAD	%GR1, 100(%FP)
+	LOAD	%GR6, 96(%FP)
+	ADDI	%GR6, %GR6, 14
+	LOADH	%GR2, 0(%GR6)
+	ADDI	%GR3, %FP, 8
+	CALL	_fstat_r
+	COPYR	%GR6, %RT0
+	COPYI	%GR1, -1
+	LT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB107_6
+	JUMP	.LBB107_2
+.LBB107_2 NOP 
+	LOAD	%GR6, 88(%FP)
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 96(%FP)
+	ADDI	%GR6, %GR6, 12
+	ULOADH	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 128
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB107_4
+	JUMP	.LBB107_3
+.LBB107_3 NOP 
+	LOAD	%GR6, 92(%FP)
+	COPYI	%GR1, 64
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB107_5
+.LBB107_4 NOP 
+	LOAD	%GR6, 92(%FP)
+	COPYI	%GR1, 1024
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB107_5
+.LBB107_5 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 104(%FP)
+	JUMP	.LBB107_7
+.LBB107_6 NOP 
+	ADDI	%GR6, %FP, 8
+	ORI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 61440
+	COPYI	%GR1, 8192
+	EQ	%GR6, %GR6, %GR1
+	LOAD	%GR1, 88(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 92(%FP)
+	COPYI	%GR1, 1024
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, 2048
+	STORE	%GR6, 104(%FP)
+	JUMP	.LBB107_7
+.LBB107_7 NOP 
+	LOAD	%GR6, 104(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 108(%FP)
+	LOAD	%GR2, 112(%FP)
+	LOAD	%GR1, 116(%FP)
+	LOAD	%RA, 120(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 128
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end107 NOP 
+	.size	__swhatbuf_r, .Lfunc_end107-__swhatbuf_r
+                                        ; -- End function
+	.type	_read_r,@function       ; -- Begin function _read_r
+_read_r NOP                             ; @_read_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 48
+	COPYR	%FP, %SP
+	STORE	%RA, 40(%FP)
+	STORE	%GR1, 36(%FP)
+	STORE	%GR2, 32(%FP)
+	STORE	%GR3, 28(%FP)
+	STORE	%GR1, 24(%FP)
+	STORE	%GR2, 20(%FP)
+	STORE	%GR3, 16(%FP)
+	STORE	%GR4, 12(%FP)
+	COPYG	%GR6, errno
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR3, 12(%FP)
+	CALL	_read
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB108_3
+	JUMP	.LBB108_1
+.LBB108_1 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB108_3
+	JUMP	.LBB108_2
+.LBB108_2 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 24(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB108_3
+.LBB108_3 NOP 
+	LOAD	%GR6, 8(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 28(%FP)
+	LOAD	%GR2, 32(%FP)
+	LOAD	%GR1, 36(%FP)
+	LOAD	%RA, 40(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 48
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end108 NOP 
+	.size	_read_r, .Lfunc_end108-_read_r
+                                        ; -- End function
+	.type	_realloc_r,@function    ; -- Begin function _realloc_r
+_realloc_r NOP                          ; @_realloc_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 144
+	COPYR	%FP, %SP
+	STORE	%RA, 136(%FP)
+	STORE	%GR1, 132(%FP)
+	STORE	%GR2, 128(%FP)
+	STORE	%GR3, 124(%FP)
+	STORE	%GR1, 116(%FP)
+	STORE	%GR2, 112(%FP)
+	STORE	%GR3, 108(%FP)
+	LOAD	%GR6, 112(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_2
+	JUMP	.LBB109_1
+.LBB109_1 NOP 
+	LOAD	%GR1, 116(%FP)
+	LOAD	%GR2, 108(%FP)
+	CALL	_malloc_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 120(%FP)
+	JUMP	.LBB109_88
+.LBB109_2 NOP 
+	LOAD	%GR1, 116(%FP)
+	CALL	__malloc_lock
+	LOAD	%GR6, 112(%FP)
+	ADDI	%GR6, %GR6, -8
+	STORE	%GR6, 100(%FP)
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR6, 100(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	STORE	%GR6, 96(%FP)
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 108(%FP)
+	ADDI	%GR6, %GR6, 11
+	COPYI	%GR1, 22
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB109_4
+	JUMP	.LBB109_3
+.LBB109_3 NOP 
+	COPYI	%GR6, 16
+	JUMP	.LBB109_5
+.LBB109_4 NOP 
+	LOAD	%GR6, 108(%FP)
+	ADDI	%GR6, %GR6, 11
+	ANDI	%GR6, %GR6, -8
+	JUMP	.LBB109_5
+.LBB109_5 NOP 
+	STORE	%GR6, 104(%FP)
+	LOAD	%GR6, 104(%FP)
+	COPYI	%GR1, 0
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_7
+	JUMP	.LBB109_6
+.LBB109_6 NOP 
+	LOAD	%GR6, 104(%FP)
+	LOAD	%GR1, 108(%FP)
+	ULTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB109_8
+	JUMP	.LBB109_7
+.LBB109_7 NOP 
+	LOAD	%GR6, 116(%FP)
+	COPYI	%GR1, 12
+	STORE	%GR1, 0(%GR6)
+	COPYI	%GR6, 0
+	STORE	%GR6, 120(%FP)
+	JUMP	.LBB109_88
+.LBB109_8 NOP 
+	LOAD	%GR6, 96(%FP)
+	LOAD	%GR1, 104(%FP)
+	LTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB109_83
+	JUMP	.LBB109_9
+.LBB109_9 NOP 
+	LOAD	%GR6, 100(%FP)
+	LOAD	%GR1, 96(%FP)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 80(%FP)
+	LOAD	%GR6, 80(%FP)
+	COPYG	%GR1, __malloc_av_+8
+	LOAD	%GR1, 0(%GR1)
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_11
+	JUMP	.LBB109_10
+.LBB109_10 NOP 
+	LOAD	%GR6, 80(%FP)
+	ADDI	%GR1, %GR6, 4
+	LOAD	%GR1, 0(%GR1)
+	ANDI	%GR1, %GR1, -2
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 4
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB109_19
+	JUMP	.LBB109_11
+.LBB109_11 NOP 
+	LOAD	%GR6, 80(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	STORE	%GR6, 76(%FP)
+	LOAD	%GR6, 80(%FP)
+	COPYG	%GR1, __malloc_av_+8
+	LOAD	%GR1, 0(%GR1)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_15
+	JUMP	.LBB109_12
+.LBB109_12 NOP 
+	LOAD	%GR6, 76(%FP)
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 104(%FP)
+	ADDI	%GR1, %GR1, 16
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_14
+	JUMP	.LBB109_13
+.LBB109_13 NOP 
+	LOAD	%GR6, 76(%FP)
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 100(%FP)
+	LOAD	%GR1, 104(%FP)
+	ADD	%GR6, %GR6, %GR1
+	COPYG	%GR1, __malloc_av_+8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 88(%FP)
+	LOAD	%GR2, 104(%FP)
+	SUB	%GR6, %GR6, %GR2
+	ORI	%GR6, %GR6, 1
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 100(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 1
+	LOAD	%GR2, 104(%FP)
+	OR	%GR1, %GR1, %GR2
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 116(%FP)
+	CALL	__malloc_unlock
+	LOAD	%GR6, 100(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 120(%FP)
+	JUMP	.LBB109_88
+.LBB109_14 NOP 
+	JUMP	.LBB109_18
+.LBB109_15 NOP 
+	LOAD	%GR6, 76(%FP)
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 104(%FP)
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_17
+	JUMP	.LBB109_16
+.LBB109_16 NOP 
+	LOAD	%GR6, 80(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 56(%FP)
+	LOAD	%GR6, 80(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 52(%FP)
+	LOAD	%GR6, 56(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 52(%FP)
+	LOAD	%GR1, 56(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 76(%FP)
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	JUMP	.LBB109_84
+.LBB109_17 NOP 
+	JUMP	.LBB109_18
+.LBB109_18 NOP 
+	JUMP	.LBB109_20
+.LBB109_19 NOP 
+	COPYI	%GR6, 0
+	STORE	%GR6, 80(%FP)
+	STORE	%GR6, 76(%FP)
+	JUMP	.LBB109_20
+.LBB109_20 NOP 
+	LOAD	%GR6, 100(%FP)
+	ADDI	%GR6, %GR6, 4
+	ULOADB	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, 1
+	BNEQZ	%GR6, .LBB109_67
+	JUMP	.LBB109_21
+.LBB109_21 NOP 
+	LOAD	%GR6, 100(%FP)
+	LOAD	%GR1, 0(%GR6)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 72(%FP)
+	LOAD	%GR6, 72(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	STORE	%GR6, 68(%FP)
+	LOAD	%GR6, 80(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_52
+	JUMP	.LBB109_22
+.LBB109_22 NOP 
+	LOAD	%GR6, 80(%FP)
+	COPYG	%GR1, __malloc_av_+8
+	LOAD	%GR1, 0(%GR1)
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_37
+	JUMP	.LBB109_23
+.LBB109_23 NOP 
+	LOAD	%GR6, 76(%FP)
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 104(%FP)
+	ADDI	%GR1, %GR1, 16
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_36
+	JUMP	.LBB109_24
+.LBB109_24 NOP 
+	LOAD	%GR6, 72(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 56(%FP)
+	LOAD	%GR6, 72(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 52(%FP)
+	LOAD	%GR6, 56(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 52(%FP)
+	LOAD	%GR1, 56(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 72(%FP)
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR6, 68(%FP)
+	LOAD	%GR1, 76(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 92(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 84(%FP)
+	JUMP	.LBB109_25
+.LBB109_25 NOP 
+	LOAD	%GR6, 96(%FP)
+	ADDI	%GR6, %GR6, -4
+	STORE	%GR6, 48(%FP)
+	LOAD	%GR6, 48(%FP)
+	COPYI	%GR1, 36
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB109_33
+	JUMP	.LBB109_26
+.LBB109_26 NOP 
+	LOAD	%GR6, 112(%FP)
+	STORE	%GR6, 44(%FP)
+	LOAD	%GR6, 84(%FP)
+	STORE	%GR6, 40(%FP)
+	LOAD	%GR6, 48(%FP)
+	COPYI	%GR1, 20
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_32
+	JUMP	.LBB109_27
+.LBB109_27 NOP 
+	LOAD	%GR6, 44(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 40(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 44(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 40(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 48(%FP)
+	COPYI	%GR1, 28
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_31
+	JUMP	.LBB109_28
+.LBB109_28 NOP 
+	LOAD	%GR6, 44(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 40(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 44(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 40(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 48(%FP)
+	COPYI	%GR1, 36
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_30
+	JUMP	.LBB109_29
+.LBB109_29 NOP 
+	LOAD	%GR6, 44(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 40(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 44(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 40(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB109_30
+.LBB109_30 NOP 
+	JUMP	.LBB109_31
+.LBB109_31 NOP 
+	JUMP	.LBB109_32
+.LBB109_32 NOP 
+	LOAD	%GR6, 44(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 40(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 44(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 40(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 44(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 40(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB109_34
+.LBB109_33 NOP 
+	LOAD	%GR1, 84(%FP)
+	LOAD	%GR2, 112(%FP)
+	LOAD	%GR3, 48(%FP)
+	CALL	memmove
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB109_34
+.LBB109_34 NOP 
+	JUMP	.LBB109_35
+.LBB109_35 NOP 
+	LOAD	%GR6, 92(%FP)
+	LOAD	%GR1, 104(%FP)
+	ADD	%GR6, %GR6, %GR1
+	COPYG	%GR1, __malloc_av_+8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 88(%FP)
+	LOAD	%GR2, 104(%FP)
+	SUB	%GR6, %GR6, %GR2
+	ORI	%GR6, %GR6, 1
+	LOAD	%GR1, 0(%GR1)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 92(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 1
+	LOAD	%GR2, 104(%FP)
+	OR	%GR1, %GR1, %GR2
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 116(%FP)
+	CALL	__malloc_unlock
+	LOAD	%GR6, 84(%FP)
+	STORE	%GR6, 120(%FP)
+	JUMP	.LBB109_88
+.LBB109_36 NOP 
+	JUMP	.LBB109_51
+.LBB109_37 NOP 
+	LOAD	%GR6, 76(%FP)
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 104(%FP)
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_50
+	JUMP	.LBB109_38
+.LBB109_38 NOP 
+	LOAD	%GR6, 80(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 56(%FP)
+	LOAD	%GR6, 80(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 52(%FP)
+	LOAD	%GR6, 56(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 52(%FP)
+	LOAD	%GR1, 56(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 72(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 56(%FP)
+	LOAD	%GR6, 72(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 52(%FP)
+	LOAD	%GR6, 56(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 52(%FP)
+	LOAD	%GR1, 56(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 72(%FP)
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR6, 76(%FP)
+	LOAD	%GR1, 68(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 92(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 84(%FP)
+	JUMP	.LBB109_39
+.LBB109_39 NOP 
+	LOAD	%GR6, 96(%FP)
+	ADDI	%GR6, %GR6, -4
+	STORE	%GR6, 36(%FP)
+	LOAD	%GR6, 36(%FP)
+	COPYI	%GR1, 36
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB109_47
+	JUMP	.LBB109_40
+.LBB109_40 NOP 
+	LOAD	%GR6, 112(%FP)
+	STORE	%GR6, 32(%FP)
+	LOAD	%GR6, 84(%FP)
+	STORE	%GR6, 28(%FP)
+	LOAD	%GR6, 36(%FP)
+	COPYI	%GR1, 20
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_46
+	JUMP	.LBB109_41
+.LBB109_41 NOP 
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 28(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 28(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 36(%FP)
+	COPYI	%GR1, 28
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_45
+	JUMP	.LBB109_42
+.LBB109_42 NOP 
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 28(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 28(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 36(%FP)
+	COPYI	%GR1, 36
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_44
+	JUMP	.LBB109_43
+.LBB109_43 NOP 
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 28(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 28(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB109_44
+.LBB109_44 NOP 
+	JUMP	.LBB109_45
+.LBB109_45 NOP 
+	JUMP	.LBB109_46
+.LBB109_46 NOP 
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 28(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 32(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 28(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 32(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 28(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB109_48
+.LBB109_47 NOP 
+	LOAD	%GR1, 84(%FP)
+	LOAD	%GR2, 112(%FP)
+	LOAD	%GR3, 36(%FP)
+	CALL	memmove
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB109_48
+.LBB109_48 NOP 
+	JUMP	.LBB109_49
+.LBB109_49 NOP 
+	JUMP	.LBB109_84
+.LBB109_50 NOP 
+	JUMP	.LBB109_51
+.LBB109_51 NOP 
+	JUMP	.LBB109_52
+.LBB109_52 NOP 
+	LOAD	%GR6, 72(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_66
+	JUMP	.LBB109_53
+.LBB109_53 NOP 
+	LOAD	%GR6, 68(%FP)
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR6, %GR1
+	LOAD	%GR1, 104(%FP)
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_66
+	JUMP	.LBB109_54
+.LBB109_54 NOP 
+	LOAD	%GR6, 72(%FP)
+	ADDI	%GR6, %GR6, 12
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 56(%FP)
+	LOAD	%GR6, 72(%FP)
+	ADDI	%GR6, %GR6, 8
+	LOAD	%GR6, 0(%GR6)
+	STORE	%GR6, 52(%FP)
+	LOAD	%GR6, 56(%FP)
+	LOAD	%GR1, 52(%FP)
+	ADDI	%GR1, %GR1, 12
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 52(%FP)
+	LOAD	%GR1, 56(%FP)
+	ADDI	%GR1, %GR1, 8
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 72(%FP)
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR6, 68(%FP)
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 92(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 84(%FP)
+	JUMP	.LBB109_55
+.LBB109_55 NOP 
+	LOAD	%GR6, 96(%FP)
+	ADDI	%GR6, %GR6, -4
+	STORE	%GR6, 24(%FP)
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 36
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB109_63
+	JUMP	.LBB109_56
+.LBB109_56 NOP 
+	LOAD	%GR6, 112(%FP)
+	STORE	%GR6, 20(%FP)
+	LOAD	%GR6, 84(%FP)
+	STORE	%GR6, 16(%FP)
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 20
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_62
+	JUMP	.LBB109_57
+.LBB109_57 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 20(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 20(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 28
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_61
+	JUMP	.LBB109_58
+.LBB109_58 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 20(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 20(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 24(%FP)
+	COPYI	%GR1, 36
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_60
+	JUMP	.LBB109_59
+.LBB109_59 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 20(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 20(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB109_60
+.LBB109_60 NOP 
+	JUMP	.LBB109_61
+.LBB109_61 NOP 
+	JUMP	.LBB109_62
+.LBB109_62 NOP 
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 20(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 20(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 20(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 20(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB109_64
+.LBB109_63 NOP 
+	LOAD	%GR1, 84(%FP)
+	LOAD	%GR2, 112(%FP)
+	LOAD	%GR3, 24(%FP)
+	CALL	memmove
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB109_64
+.LBB109_64 NOP 
+	JUMP	.LBB109_65
+.LBB109_65 NOP 
+	JUMP	.LBB109_84
+.LBB109_66 NOP 
+	JUMP	.LBB109_67
+.LBB109_67 NOP 
+	LOAD	%GR1, 116(%FP)
+	LOAD	%GR2, 108(%FP)
+	CALL	_malloc_r
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 84(%FP)
+	LOAD	%GR6, 84(%FP)
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_69
+	JUMP	.LBB109_68
+.LBB109_68 NOP 
+	LOAD	%GR1, 116(%FP)
+	CALL	__malloc_unlock
+	COPYI	%GR6, 0
+	STORE	%GR6, 120(%FP)
+	JUMP	.LBB109_88
+.LBB109_69 NOP 
+	LOAD	%GR6, 84(%FP)
+	ADDI	%GR6, %GR6, -8
+	STORE	%GR6, 92(%FP)
+	LOAD	%GR1, 100(%FP)
+	ADDI	%GR2, %GR1, 4
+	LOAD	%GR2, 0(%GR2)
+	ANDI	%GR2, %GR2, -2
+	ADD	%GR1, %GR1, %GR2
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_71
+	JUMP	.LBB109_70
+.LBB109_70 NOP 
+	LOAD	%GR6, 92(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR6, 0(%GR6)
+	ANDI	%GR6, %GR6, -4
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 88(%FP)
+	LOAD	%GR6, 100(%FP)
+	STORE	%GR6, 92(%FP)
+	JUMP	.LBB109_84
+.LBB109_71 NOP 
+	JUMP	.LBB109_72
+.LBB109_72 NOP 
+	LOAD	%GR6, 96(%FP)
+	ADDI	%GR6, %GR6, -4
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 36
+	ULT	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB109_80
+	JUMP	.LBB109_73
+.LBB109_73 NOP 
+	LOAD	%GR6, 112(%FP)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 84(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 20
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_79
+	JUMP	.LBB109_74
+.LBB109_74 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 28
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_78
+	JUMP	.LBB109_75
+.LBB109_75 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 12(%FP)
+	COPYI	%GR1, 36
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_77
+	JUMP	.LBB109_76
+.LBB109_76 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB109_77
+.LBB109_77 NOP 
+	JUMP	.LBB109_78
+.LBB109_78 NOP 
+	JUMP	.LBB109_79
+.LBB109_79 NOP 
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 8(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB109_81
+.LBB109_80 NOP 
+	LOAD	%GR1, 84(%FP)
+	LOAD	%GR2, 112(%FP)
+	LOAD	%GR3, 12(%FP)
+	CALL	memmove
+                                        ; kill: def $gr6 killed $rt0
+	JUMP	.LBB109_81
+.LBB109_81 NOP 
+	JUMP	.LBB109_82
+.LBB109_82 NOP 
+	LOAD	%GR1, 116(%FP)
+	LOAD	%GR2, 112(%FP)
+	CALL	_free_r
+	LOAD	%GR1, 116(%FP)
+	CALL	__malloc_unlock
+	LOAD	%GR6, 84(%FP)
+	STORE	%GR6, 120(%FP)
+	JUMP	.LBB109_88
+.LBB109_83 NOP 
+	JUMP	.LBB109_84
+.LBB109_84 NOP 
+	LOAD	%GR6, 88(%FP)
+	LOAD	%GR1, 104(%FP)
+	SUB	%GR6, %GR6, %GR1
+	STORE	%GR6, 60(%FP)
+	LOAD	%GR6, 60(%FP)
+	COPYI	%GR1, 16
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB109_86
+	JUMP	.LBB109_85
+.LBB109_85 NOP 
+	LOAD	%GR6, 92(%FP)
+	LOAD	%GR1, 104(%FP)
+	ADD	%GR6, %GR6, %GR1
+	STORE	%GR6, 64(%FP)
+	LOAD	%GR6, 92(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 1
+	LOAD	%GR2, 104(%FP)
+	OR	%GR1, %GR1, %GR2
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 60(%FP)
+	ORI	%GR6, %GR6, 1
+	LOAD	%GR1, 64(%FP)
+	ADDI	%GR1, %GR1, 4
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 64(%FP)
+	LOAD	%GR1, 60(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 116(%FP)
+	LOAD	%GR6, 64(%FP)
+	ADDI	%GR2, %GR6, 8
+	CALL	_free_r
+	JUMP	.LBB109_87
+.LBB109_86 NOP 
+	LOAD	%GR6, 92(%FP)
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ANDI	%GR1, %GR1, 1
+	LOAD	%GR2, 88(%FP)
+	OR	%GR1, %GR1, %GR2
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR6, 92(%FP)
+	LOAD	%GR1, 88(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ADDI	%GR6, %GR6, 4
+	LOAD	%GR1, 0(%GR6)
+	ORI	%GR1, %GR1, 1
+	STORE	%GR1, 0(%GR6)
+	JUMP	.LBB109_87
+.LBB109_87 NOP 
+	LOAD	%GR1, 116(%FP)
+	CALL	__malloc_unlock
+	LOAD	%GR6, 92(%FP)
+	ADDI	%GR6, %GR6, 8
+	STORE	%GR6, 120(%FP)
+	JUMP	.LBB109_88
+.LBB109_88 NOP 
+	LOAD	%GR6, 120(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 124(%FP)
+	LOAD	%GR2, 128(%FP)
+	LOAD	%GR1, 132(%FP)
+	LOAD	%RA, 136(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 144
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end109 NOP 
+	.size	_realloc_r, .Lfunc_end109-_realloc_r
+                                        ; -- End function
+	.type	_fstat_r,@function      ; -- Begin function _fstat_r
+_fstat_r NOP                            ; @_fstat_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR2, 16(%FP)
+	STORE	%GR1, 12(%FP)
+	STORE	%GR2, 8(%FP)
+	STORE	%GR3, 4(%FP)
+	COPYG	%GR6, errno
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 8(%FP)
+	LOAD	%GR2, 4(%FP)
+	CALL	_fstat
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 0(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB110_3
+	JUMP	.LBB110_1
+.LBB110_1 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB110_3
+	JUMP	.LBB110_2
+.LBB110_2 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 12(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB110_3
+.LBB110_3 NOP 
+	LOAD	%GR6, 0(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 16(%FP)
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end110 NOP 
+	.size	_fstat_r, .Lfunc_end110-_fstat_r
+                                        ; -- End function
+	.type	_isatty_r,@function     ; -- Begin function _isatty_r
+_isatty_r NOP                           ; @_isatty_r
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 32
+	COPYR	%FP, %SP
+	STORE	%RA, 24(%FP)
+	STORE	%GR1, 20(%FP)
+	STORE	%GR1, 16(%FP)
+	STORE	%GR2, 12(%FP)
+	COPYG	%GR6, errno
+	COPYI	%GR1, 0
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 12(%FP)
+	CALL	_isatty
+	COPYR	%GR6, %RT0
+	STORE	%GR6, 8(%FP)
+	COPYI	%GR1, -1
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB111_3
+	JUMP	.LBB111_1
+.LBB111_1 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB111_3
+	JUMP	.LBB111_2
+.LBB111_2 NOP 
+	COPYG	%GR6, errno
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 16(%FP)
+	STORE	%GR6, 0(%GR1)
+	JUMP	.LBB111_3
+.LBB111_3 NOP 
+	LOAD	%GR6, 8(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 20(%FP)
+	LOAD	%RA, 24(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 32
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end111 NOP 
+	.size	_isatty_r, .Lfunc_end111-_isatty_r
+                                        ; -- End function
+	.globl	memmove                 ; -- Begin function memmove
+	.type	memmove,@function
+memmove NOP                             ; @memmove
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 40
+	COPYR	%FP, %SP
+	STORE	%GR1, 32(%FP)
+	STORE	%GR2, 28(%FP)
+	STORE	%GR1, 24(%FP)
+	STORE	%GR2, 20(%FP)
+	STORE	%GR3, 16(%FP)
+	LOAD	%GR6, 24(%FP)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 20(%FP)
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	ULTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB112_6
+	JUMP	.LBB112_1
+.LBB112_1 NOP 
+	LOAD	%GR6, 12(%FP)
+	LOAD	%GR1, 8(%FP)
+	LOAD	%GR2, 16(%FP)
+	ADD	%GR1, %GR1, %GR2
+	ULTE	%GR6, %GR1, %GR6
+	BNEQZ	%GR6, .LBB112_6
+	JUMP	.LBB112_2
+.LBB112_2 NOP 
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 8(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 8(%FP)
+	LOAD	%GR6, 16(%FP)
+	LOAD	%GR1, 12(%FP)
+	ADD	%GR6, %GR1, %GR6
+	STORE	%GR6, 12(%FP)
+	JUMP	.LBB112_3
+.LBB112_3 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, -1
+	STORE	%GR1, 16(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB112_5
+	JUMP	.LBB112_4
+.LBB112_4 NOP                           ;   in Loop: Header=BB112_3 Depth=1
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR6, %GR6, -1
+	STORE	%GR6, 8(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR1, %GR1, -1
+	STORE	%GR1, 12(%FP)
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB112_3
+.LBB112_5 NOP 
+	JUMP	.LBB112_19
+.LBB112_6 NOP 
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 16
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB112_15
+	JUMP	.LBB112_7
+.LBB112_7 NOP 
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	OR	%GR6, %GR6, %GR1
+	ANDI	%GR6, %GR6, 3
+	COPYI	%GR1, 0
+	NEQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB112_15
+	JUMP	.LBB112_8
+.LBB112_8 NOP 
+	LOAD	%GR6, 12(%FP)
+	STORE	%GR6, 4(%FP)
+	LOAD	%GR6, 8(%FP)
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB112_9
+.LBB112_9 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 16
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB112_11
+	JUMP	.LBB112_10
+.LBB112_10 NOP                          ;   in Loop: Header=BB112_9 Depth=1
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, -16
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB112_9
+.LBB112_11 NOP 
+	JUMP	.LBB112_12
+.LBB112_12 NOP                          ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	COPYI	%GR1, 4
+	ULT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB112_14
+	JUMP	.LBB112_13
+.LBB112_13 NOP                          ;   in Loop: Header=BB112_12 Depth=1
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR1, %GR6, 4
+	STORE	%GR1, 0(%FP)
+	LOAD	%GR6, 0(%GR6)
+	LOAD	%GR1, 4(%FP)
+	ADDI	%GR2, %GR1, 4
+	STORE	%GR2, 4(%FP)
+	STORE	%GR6, 0(%GR1)
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR6, %GR6, -4
+	STORE	%GR6, 16(%FP)
+	JUMP	.LBB112_12
+.LBB112_14 NOP 
+	LOAD	%GR6, 4(%FP)
+	STORE	%GR6, 12(%FP)
+	LOAD	%GR6, 0(%FP)
+	STORE	%GR6, 8(%FP)
+	JUMP	.LBB112_15
+.LBB112_15 NOP 
+	JUMP	.LBB112_16
+.LBB112_16 NOP                          ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 16(%FP)
+	ADDI	%GR1, %GR6, -1
+	STORE	%GR1, 16(%FP)
+	COPYI	%GR1, 0
+	EQ	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB112_18
+	JUMP	.LBB112_17
+.LBB112_17 NOP                          ;   in Loop: Header=BB112_16 Depth=1
+	LOAD	%GR6, 8(%FP)
+	ADDI	%GR1, %GR6, 1
+	STORE	%GR1, 8(%FP)
+	ULOADB	%GR6, 0(%GR6)
+	LOAD	%GR1, 12(%FP)
+	ADDI	%GR2, %GR1, 1
+	STORE	%GR2, 12(%FP)
+	STOREB	%GR6, 0(%GR1)
+	JUMP	.LBB112_16
+.LBB112_18 NOP 
+	JUMP	.LBB112_19
+.LBB112_19 NOP 
+	LOAD	%GR6, 24(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 28(%FP)
+	LOAD	%GR1, 32(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 40
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end112 NOP 
+	.size	memmove, .Lfunc_end112-memmove
+                                        ; -- End function
+	.type	_read,@function         ; -- Begin function _read
+_read NOP                               ; @_read
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 20
+	COPYR	%FP, %SP
+	STORE	%GR1, 12(%FP)
+	STORE	%GR2, 8(%FP)
+	STORE	%GR3, 4(%FP)
+	STORE	%GR4, 0(%FP)
+	;APP
+	COPYR	%TMP0, %GR1
+	COPYR	%TMP1, %GR2
+	COPYR	%OFF, %GR3
+	VMCALL	1
+              
+	;NO_APP
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	COPYI	%GR1, 1
+	LT	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB113_2
+	JUMP	.LBB113_1
+.LBB113_1 NOP                           ; %.preheader.preheader
+	COPYI	%GR1, 0
+	COPYR	%GR3, %GR6
+	JUMP	.LBB113_3
+.LBB113_3 NOP                           ; %.preheader
+                                        ; =>This Inner Loop Header: Depth=1
+	;APP
+	INPUT	%GR4
+	;NO_APP
+	STOREB	%GR4, 0(%GR2)
+	ADDI	%GR2, %GR2, 1
+	ADDI	%GR3, %GR3, -1
+	EQ	%GR4, %GR3, %GR1
+	BNEQZ	%GR4, .LBB113_2
+	JUMP	.LBB113_3
+.LBB113_2 NOP                           ; %.loopexit
+	COPYR	%RT0, %GR6
+	LOAD	%GR4, 0(%FP)
+	LOAD	%GR3, 4(%FP)
+	LOAD	%GR2, 8(%FP)
+	LOAD	%GR1, 12(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 20
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end113 NOP 
+	.size	_read, .Lfunc_end113-_read
+                                        ; -- End function
+	.type	_lseek,@function        ; -- Begin function _lseek
+_lseek NOP                              ; @_lseek
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 12
+	COPYR	%FP, %SP
+	STORE	%GR1, 4(%FP)
+	STORE	%GR2, 0(%FP)
+	;APP
+	COPYR	%TMP0, %GR1
+	COPYR	%TMP1, %GR2
+	COPYR	%OFF, %GR3
+	VMCALL	16
+              
+	;NO_APP
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	COPYI	%GR1, -1
+	NEQ	%GR1, %GR6, %GR1
+	BNEQZ	%GR1, .LBB114_2
+	JUMP	.LBB114_1
+.LBB114_1 NOP 
+	;APP
+	INPUT	%GR1
+	;NO_APP
+	COPYG	%GR2, errno
+	STORE	%GR1, 0(%GR2)
+.LBB114_2 NOP 
+	COPYR	%RT0, %GR6
+	LOAD	%GR2, 0(%FP)
+	LOAD	%GR1, 4(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 12
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end114 NOP 
+	.size	_lseek, .Lfunc_end114-_lseek
+                                        ; -- End function
+	.type	_write,@function        ; -- Begin function _write
+_write NOP                              ; @_write
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 24
+	COPYR	%FP, %SP
+	STORE	%GR1, 16(%FP)
+	STORE	%GR1, 12(%FP)
+	STORE	%GR2, 8(%FP)
+	STORE	%GR3, 4(%FP)
+	COPYI	%GR6, 0
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB115_1
+.LBB115_1 NOP                           ; =>This Inner Loop Header: Depth=1
+	LOAD	%GR6, 0(%FP)
+	LOAD	%GR1, 4(%FP)
+	LT	%GR6, %GR6, %GR1
+	BNEQZ	%GR6, .LBB115_3
+	JUMP	.LBB115_2
+.LBB115_2 NOP 
+	JUMP	.LBB115_5
+.LBB115_3 NOP                           ;   in Loop: Header=BB115_1 Depth=1
+	LOAD	%GR6, 8(%FP)
+	LOAD	%GR1, 0(%FP)
+	ADD	%GR6, %GR6, %GR1
+	ULOADB	%GR6, 0(%GR6)
+	;APP
+	OUTPUT	%GR6
+	;NO_APP
+	JUMP	.LBB115_4
+.LBB115_4 NOP                           ;   in Loop: Header=BB115_1 Depth=1
+	LOAD	%GR6, 0(%FP)
+	ADDI	%GR6, %GR6, 1
+	STORE	%GR6, 0(%FP)
+	JUMP	.LBB115_1
+.LBB115_5 NOP 
+	LOAD	%GR6, 4(%FP)
+	COPYR	%RT0, %GR6
+	LOAD	%GR1, 16(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 24
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end115 NOP 
+	.size	_write, .Lfunc_end115-_write
+                                        ; -- End function
+	.type	_isatty,@function       ; -- Begin function _isatty
+_isatty NOP                             ; @_isatty
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 12
+	COPYR	%FP, %SP
+	STORE	%GR1, 4(%FP)
+	STORE	%GR2, 0(%FP)
+	;APP
+	COPYR	%TMP0, %GR1
+	VMCALL	15
+              
+	;NO_APP
+	;APP
+	INPUT	%GR1
+	;NO_APP
+	COPYI	%GR6, 0
+	NEQ	%GR2, %GR1, %GR6
+	COPYI	%GR1, 1
+	BNEQZ	%GR2, .LBB116_2
+	JUMP	.LBB116_1
+.LBB116_1 NOP 
+	;APP
+	INPUT	%GR1
+	;NO_APP
+	COPYG	%GR2, errno
+	STORE	%GR1, 0(%GR2)
+	COPYR	%GR1, %GR6
+.LBB116_2 NOP 
+	COPYR	%RT0, %GR1
+	LOAD	%GR2, 0(%FP)
+	LOAD	%GR1, 4(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 12
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end116 NOP 
+	.size	_isatty, .Lfunc_end116-_isatty
+                                        ; -- End function
+	.type	_close,@function        ; -- Begin function _close
+_close NOP                              ; @_close
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%GR1, 8(%FP)
+	STORE	%GR2, 4(%FP)
+	STORE	%GR3, 0(%FP)
+	;APP
+	COPYR	%TMP0, %GR1
+	VMCALL	15
+              
+	;NO_APP
+	;APP
+	INPUT	%GR2
+	;NO_APP
+	COPYI	%GR6, 0
+	NEQ	%GR2, %GR2, %GR6
+	BNEQZ	%GR2, .LBB117_3
+	JUMP	.LBB117_1
+.LBB117_1 NOP 
+	;APP
+	INPUT	%GR3
+	;NO_APP
+	COPYG	%GR2, errno
+	STORE	%GR3, 0(%GR2)
+	;APP
+	COPYR	%TMP0, %GR1
+	VMCALL	14
+              
+	;NO_APP
+	;APP
+	INPUT	%GR3
+	;NO_APP
+	COPYI	%GR1, -1
+	NEQ	%GR3, %GR3, %GR1
+	BNEQZ	%GR3, .LBB117_3
+	JUMP	.LBB117_2
+.LBB117_2 NOP 
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	STORE	%GR6, 0(%GR2)
+	COPYR	%GR6, %GR1
+.LBB117_3 NOP 
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 0(%FP)
+	LOAD	%GR2, 4(%FP)
+	LOAD	%GR1, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end117 NOP 
+	.size	_close, .Lfunc_end117-_close
+                                        ; -- End function
+	.globl	_exit                   ; -- Begin function _exit
+	.type	_exit,@function
+_exit NOP                               ; @_exit
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	;APP
+	COPYR	%RT0, %GR1
+      	OUTPUT	%GR1
+      	HALT	
+	;NO_APP
+.Lfunc_end118 NOP 
+	.size	_exit, .Lfunc_end118-_exit
+                                        ; -- End function
+	.type	_sbrk,@function         ; -- Begin function _sbrk
+_sbrk NOP                               ; @_sbrk
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 4
+	COPYR	%FP, %SP
+	;APP
+	COPYR	%RT1, %HP
+          	ADD	%HP, %HP, %GR1
+	;NO_APP
+	;APP
+	COPYR	%GR6, %RT1
+	;NO_APP
+	COPYR	%RT0, %GR6
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 4
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end119 NOP 
+	.size	_sbrk, .Lfunc_end119-_sbrk
+                                        ; -- End function
+	.type	_fstat,@function        ; -- Begin function _fstat
+_fstat NOP                              ; @_fstat
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 16
+	COPYR	%FP, %SP
+	STORE	%GR1, 8(%FP)
+	STORE	%GR2, 4(%FP)
+	STORE	%GR3, 0(%FP)
+	;APP
+	COPYR	%TMP0, %GR1
+	VMCALL	11
+              
+	;NO_APP
+	;APP
+	INPUT	%GR1
+	;NO_APP
+	COPYI	%GR6, -1
+	NEQ	%GR1, %GR1, %GR6
+	BNEQZ	%GR1, .LBB120_2
+	JUMP	.LBB120_1
+.LBB120_2 NOP 
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR3, %GR2, 48
+	STORE	%GR1, 0(%GR3)
+	ADDI	%GR1, %GR2, 44
+	STORE	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR3, %GR2, 36
+	STORE	%GR1, 0(%GR3)
+	ADDI	%GR1, %GR2, 32
+	STORE	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR3, %GR2, 24
+	STORE	%GR1, 0(%GR3)
+	ADDI	%GR1, %GR2, 20
+	STORE	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR1, %GR2, 60
+	STORE	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR1, %GR2, 56
+	STORE	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR1, %GR2, 16
+	STORE	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR1, %GR2, 14
+	STOREH	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR1, %GR2, 12
+	STOREH	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR1, %GR2, 10
+	STOREH	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR1, %GR2, 8
+	STOREH	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR1, %GR2, 4
+	STORE	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	ADDI	%GR1, %GR2, 2
+	STOREH	%GR6, 0(%GR1)
+	;APP
+	INPUT	%GR6
+	;NO_APP
+	STOREH	%GR6, 0(%GR2)
+	COPYI	%GR6, 0
+.LBB120_3 NOP 
+	COPYR	%RT0, %GR6
+	LOAD	%GR3, 0(%FP)
+	LOAD	%GR2, 4(%FP)
+	LOAD	%GR1, 8(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 16
+	LOAD	%FP, -4(%SP)
+	RET
+.LBB120_1 NOP 
+	;APP
+	INPUT	%GR1
+	;NO_APP
+	COPYG	%GR2, errno
+	STORE	%GR1, 0(%GR2)
+	JUMP	.LBB120_3
+.Lfunc_end120 NOP 
+	.size	_fstat, .Lfunc_end120-_fstat
+                                        ; -- End function
+	.globl	chmod                   ; -- Begin function chmod
+	.type	chmod,@function
+chmod NOP                               ; @chmod
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 12
+	COPYR	%FP, %SP
+	STORE	%GR1, 4(%FP)
+	STORE	%GR2, 0(%FP)
+	;APP
+	COPYR	%TMP0, %GR1
+	COPYR	%TMP1, %GR2
+	VMCALL	13
+              
+	;NO_APP
+	;APP
+	INPUT	%GR1
+	;NO_APP
+	COPYI	%GR6, -1
+	NEQ	%GR2, %GR1, %GR6
+	COPYI	%GR1, 0
+	BNEQZ	%GR2, .LBB121_2
+	JUMP	.LBB121_1
+.LBB121_1 NOP 
+	;APP
+	INPUT	%GR1
+	;NO_APP
+	COPYG	%GR2, errno
+	STORE	%GR1, 0(%GR2)
+	COPYR	%GR1, %GR6
+.LBB121_2 NOP 
+	COPYR	%RT0, %GR1
+	LOAD	%GR2, 0(%FP)
+	LOAD	%GR1, 4(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 12
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end121 NOP 
+	.size	chmod, .Lfunc_end121-chmod
+                                        ; -- End function
+	.type	_kill,@function         ; -- Begin function _kill
+_kill NOP                               ; @_kill
+; %bb.0:
+	STORE	%FP, -4(%SP)
+	SUBI	%SP, %SP, 8
+	COPYR	%FP, %SP
+	STORE	%GR1, 0(%FP)
+	COPYG	%GR6, errno
+	COPYI	%GR1, 22
+	STORE	%GR1, 0(%GR6)
+	LOAD	%GR1, 0(%FP)
+	COPYR	%SP, %FP
+	ADDI	%SP, %SP, 8
+	LOAD	%FP, -4(%SP)
+	RET
+.Lfunc_end122 NOP 
+	.size	_kill, .Lfunc_end122-_kill
+                                        ; -- End function
+	.type	sha256_init.H0,@object  ; @sha256_init.H0
+	.rodata
+	.p2align	2
+sha256_init.H0 NOP 
+	.long	1779033703              ; 0x6a09e667
+	.long	3144134277              ; 0xbb67ae85
+	.long	1013904242              ; 0x3c6ef372
+	.long	2773480762              ; 0xa54ff53a
+	.long	1359893119              ; 0x510e527f
+	.long	2600822924              ; 0x9b05688c
+	.long	528734635               ; 0x1f83d9ab
+	.long	1541459225              ; 0x5be0cd19
+	.size	sha256_init.H0, 32
+
+	.type	K,@object               ; @K
+	.p2align	2
+K NOP 
+	.long	1116352408              ; 0x428a2f98
+	.long	1899447441              ; 0x71374491
+	.long	3049323471              ; 0xb5c0fbcf
+	.long	3921009573              ; 0xe9b5dba5
+	.long	961987163               ; 0x3956c25b
+	.long	1508970993              ; 0x59f111f1
+	.long	2453635748              ; 0x923f82a4
+	.long	2870763221              ; 0xab1c5ed5
+	.long	3624381080              ; 0xd807aa98
+	.long	310598401               ; 0x12835b01
+	.long	607225278               ; 0x243185be
+	.long	1426881987              ; 0x550c7dc3
+	.long	1925078388              ; 0x72be5d74
+	.long	2162078206              ; 0x80deb1fe
+	.long	2614888103              ; 0x9bdc06a7
+	.long	3248222580              ; 0xc19bf174
+	.long	3835390401              ; 0xe49b69c1
+	.long	4022224774              ; 0xefbe4786
+	.long	264347078               ; 0xfc19dc6
+	.long	604807628               ; 0x240ca1cc
+	.long	770255983               ; 0x2de92c6f
+	.long	1249150122              ; 0x4a7484aa
+	.long	1555081692              ; 0x5cb0a9dc
+	.long	1996064986              ; 0x76f988da
+	.long	2554220882              ; 0x983e5152
+	.long	2821834349              ; 0xa831c66d
+	.long	2952996808              ; 0xb00327c8
+	.long	3210313671              ; 0xbf597fc7
+	.long	3336571891              ; 0xc6e00bf3
+	.long	3584528711              ; 0xd5a79147
+	.long	113926993               ; 0x6ca6351
+	.long	338241895               ; 0x14292967
+	.long	666307205               ; 0x27b70a85
+	.long	773529912               ; 0x2e1b2138
+	.long	1294757372              ; 0x4d2c6dfc
+	.long	1396182291              ; 0x53380d13
+	.long	1695183700              ; 0x650a7354
+	.long	1986661051              ; 0x766a0abb
+	.long	2177026350              ; 0x81c2c92e
+	.long	2456956037              ; 0x92722c85
+	.long	2730485921              ; 0xa2bfe8a1
+	.long	2820302411              ; 0xa81a664b
+	.long	3259730800              ; 0xc24b8b70
+	.long	3345764771              ; 0xc76c51a3
+	.long	3516065817              ; 0xd192e819
+	.long	3600352804              ; 0xd6990624
+	.long	4094571909              ; 0xf40e3585
+	.long	275423344               ; 0x106aa070
+	.long	430227734               ; 0x19a4c116
+	.long	506948616               ; 0x1e376c08
+	.long	659060556               ; 0x2748774c
+	.long	883997877               ; 0x34b0bcb5
+	.long	958139571               ; 0x391c0cb3
+	.long	1322822218              ; 0x4ed8aa4a
+	.long	1537002063              ; 0x5b9cca4f
+	.long	1747873779              ; 0x682e6ff3
+	.long	1955562222              ; 0x748f82ee
+	.long	2024104815              ; 0x78a5636f
+	.long	2227730452              ; 0x84c87814
+	.long	2361852424              ; 0x8cc70208
+	.long	2428436474              ; 0x90befffa
+	.long	2756734187              ; 0xa4506ceb
+	.long	3204031479              ; 0xbef9a3f7
+	.long	3329325298              ; 0xc67178f2
+	.size	K, 256
+
+	.type	.L.str,@object          ; @.str
+	.rodata.str1.1
+.L.str NOP 
+	.asciz	"%d"
+	.size	.L.str, 3
+
+	.type	buffer,@object          ; @buffer
+	.local	buffer
+	.comm	buffer,32,1
+	.type	msg,@object             ; @msg
+	.data
+msg NOP 
+	.ascii	"abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq"
+	.size	msg, 56
+
+	.type	expected_hash,@object   ; @expected_hash
+	.rodata.cst32
+expected_hash NOP 
+	.ascii	"$\215ja\322\0068\270\345\300&\223\f>`9\243<\344Yd\377!g\366\354\355\324\031\333\006\301"
+	.size	expected_hash, 32
+
+	.type	impure_data,@object     ; @impure_data
+	.data
+	.p2align	2
+impure_data NOP 
+	.long	0                       ; 0x0
+	.long	impure_data+748
+	.long	impure_data+852
+	.long	impure_data+956
+	.long	0                       ; 0x0
+	.zero	25
+	.zero	3
+	.long	0                       ; 0x0
+	.long	0
+	.long	0                       ; 0x0
+	.long	0
+	.long	0
+	.long	0                       ; 0x0
+	.long	0
+	.long	0
+	.long	0                       ; 0x0
+	.long	0
+	.long	0                       ; 0x0
+	.long	0
+	.zero	26
+	.zero	2
+	.zero	36
+	.long	0                       ; 0x0
+	.quad	1                       ; 0x1
+	.short	13070                   ; 0x330e
+	.short	43981                   ; 0xabcd
+	.short	4660                    ; 0x1234
+	.short	58989                   ; 0xe66d
+	.short	57068                   ; 0xdeec
+	.short	5                       ; 0x5
+	.short	11                      ; 0xb
+	.zero	2
+	.zero	8
+	.zero	8
+	.zero	8
+	.zero	8
+	.zero	24
+	.long	0                       ; 0x0
+	.zero	8
+	.zero	8
+	.zero	8
+	.zero	8
+	.zero	8
+	.long	0                       ; 0x0
+	.zero	36
+	.long	0
+	.zero	400
+	.long	0
+	.zero	12
+	.zero	312
+	.size	impure_data, 1060
+
+	.type	__malloc_av_,@object    ; @__malloc_av_
+	.p2align	2
+__malloc_av_ NOP 
+	.long	0
+	.long	0
+	.long	__malloc_av_
+	.long	__malloc_av_
+	.long	__malloc_av_+8
+	.long	__malloc_av_+8
+	.long	__malloc_av_+16
+	.long	__malloc_av_+16
+	.long	__malloc_av_+24
+	.long	__malloc_av_+24
+	.long	__malloc_av_+32
+	.long	__malloc_av_+32
+	.long	__malloc_av_+40
+	.long	__malloc_av_+40
+	.long	__malloc_av_+48
+	.long	__malloc_av_+48
+	.long	__malloc_av_+56
+	.long	__malloc_av_+56
+	.long	__malloc_av_+64
+	.long	__malloc_av_+64
+	.long	__malloc_av_+72
+	.long	__malloc_av_+72
+	.long	__malloc_av_+80
+	.long	__malloc_av_+80
+	.long	__malloc_av_+88
+	.long	__malloc_av_+88
+	.long	__malloc_av_+96
+	.long	__malloc_av_+96
+	.long	__malloc_av_+104
+	.long	__malloc_av_+104
+	.long	__malloc_av_+112
+	.long	__malloc_av_+112
+	.long	__malloc_av_+120
+	.long	__malloc_av_+120
+	.long	__malloc_av_+128
+	.long	__malloc_av_+128
+	.long	__malloc_av_+136
+	.long	__malloc_av_+136
+	.long	__malloc_av_+144
+	.long	__malloc_av_+144
+	.long	__malloc_av_+152
+	.long	__malloc_av_+152
+	.long	__malloc_av_+160
+	.long	__malloc_av_+160
+	.long	__malloc_av_+168
+	.long	__malloc_av_+168
+	.long	__malloc_av_+176
+	.long	__malloc_av_+176
+	.long	__malloc_av_+184
+	.long	__malloc_av_+184
+	.long	__malloc_av_+192
+	.long	__malloc_av_+192
+	.long	__malloc_av_+200
+	.long	__malloc_av_+200
+	.long	__malloc_av_+208
+	.long	__malloc_av_+208
+	.long	__malloc_av_+216
+	.long	__malloc_av_+216
+	.long	__malloc_av_+224
+	.long	__malloc_av_+224
+	.long	__malloc_av_+232
+	.long	__malloc_av_+232
+	.long	__malloc_av_+240
+	.long	__malloc_av_+240
+	.long	__malloc_av_+248
+	.long	__malloc_av_+248
+	.long	__malloc_av_+256
+	.long	__malloc_av_+256
+	.long	__malloc_av_+264
+	.long	__malloc_av_+264
+	.long	__malloc_av_+272
+	.long	__malloc_av_+272
+	.long	__malloc_av_+280
+	.long	__malloc_av_+280
+	.long	__malloc_av_+288
+	.long	__malloc_av_+288
+	.long	__malloc_av_+296
+	.long	__malloc_av_+296
+	.long	__malloc_av_+304
+	.long	__malloc_av_+304
+	.long	__malloc_av_+312
+	.long	__malloc_av_+312
+	.long	__malloc_av_+320
+	.long	__malloc_av_+320
+	.long	__malloc_av_+328
+	.long	__malloc_av_+328
+	.long	__malloc_av_+336
+	.long	__malloc_av_+336
+	.long	__malloc_av_+344
+	.long	__malloc_av_+344
+	.long	__malloc_av_+352
+	.long	__malloc_av_+352
+	.long	__malloc_av_+360
+	.long	__malloc_av_+360
+	.long	__malloc_av_+368
+	.long	__malloc_av_+368
+	.long	__malloc_av_+376
+	.long	__malloc_av_+376
+	.long	__malloc_av_+384
+	.long	__malloc_av_+384
+	.long	__malloc_av_+392
+	.long	__malloc_av_+392
+	.long	__malloc_av_+400
+	.long	__malloc_av_+400
+	.long	__malloc_av_+408
+	.long	__malloc_av_+408
+	.long	__malloc_av_+416
+	.long	__malloc_av_+416
+	.long	__malloc_av_+424
+	.long	__malloc_av_+424
+	.long	__malloc_av_+432
+	.long	__malloc_av_+432
+	.long	__malloc_av_+440
+	.long	__malloc_av_+440
+	.long	__malloc_av_+448
+	.long	__malloc_av_+448
+	.long	__malloc_av_+456
+	.long	__malloc_av_+456
+	.long	__malloc_av_+464
+	.long	__malloc_av_+464
+	.long	__malloc_av_+472
+	.long	__malloc_av_+472
+	.long	__malloc_av_+480
+	.long	__malloc_av_+480
+	.long	__malloc_av_+488
+	.long	__malloc_av_+488
+	.long	__malloc_av_+496
+	.long	__malloc_av_+496
+	.long	__malloc_av_+504
+	.long	__malloc_av_+504
+	.long	__malloc_av_+512
+	.long	__malloc_av_+512
+	.long	__malloc_av_+520
+	.long	__malloc_av_+520
+	.long	__malloc_av_+528
+	.long	__malloc_av_+528
+	.long	__malloc_av_+536
+	.long	__malloc_av_+536
+	.long	__malloc_av_+544
+	.long	__malloc_av_+544
+	.long	__malloc_av_+552
+	.long	__malloc_av_+552
+	.long	__malloc_av_+560
+	.long	__malloc_av_+560
+	.long	__malloc_av_+568
+	.long	__malloc_av_+568
+	.long	__malloc_av_+576
+	.long	__malloc_av_+576
+	.long	__malloc_av_+584
+	.long	__malloc_av_+584
+	.long	__malloc_av_+592
+	.long	__malloc_av_+592
+	.long	__malloc_av_+600
+	.long	__malloc_av_+600
+	.long	__malloc_av_+608
+	.long	__malloc_av_+608
+	.long	__malloc_av_+616
+	.long	__malloc_av_+616
+	.long	__malloc_av_+624
+	.long	__malloc_av_+624
+	.long	__malloc_av_+632
+	.long	__malloc_av_+632
+	.long	__malloc_av_+640
+	.long	__malloc_av_+640
+	.long	__malloc_av_+648
+	.long	__malloc_av_+648
+	.long	__malloc_av_+656
+	.long	__malloc_av_+656
+	.long	__malloc_av_+664
+	.long	__malloc_av_+664
+	.long	__malloc_av_+672
+	.long	__malloc_av_+672
+	.long	__malloc_av_+680
+	.long	__malloc_av_+680
+	.long	__malloc_av_+688
+	.long	__malloc_av_+688
+	.long	__malloc_av_+696
+	.long	__malloc_av_+696
+	.long	__malloc_av_+704
+	.long	__malloc_av_+704
+	.long	__malloc_av_+712
+	.long	__malloc_av_+712
+	.long	__malloc_av_+720
+	.long	__malloc_av_+720
+	.long	__malloc_av_+728
+	.long	__malloc_av_+728
+	.long	__malloc_av_+736
+	.long	__malloc_av_+736
+	.long	__malloc_av_+744
+	.long	__malloc_av_+744
+	.long	__malloc_av_+752
+	.long	__malloc_av_+752
+	.long	__malloc_av_+760
+	.long	__malloc_av_+760
+	.long	__malloc_av_+768
+	.long	__malloc_av_+768
+	.long	__malloc_av_+776
+	.long	__malloc_av_+776
+	.long	__malloc_av_+784
+	.long	__malloc_av_+784
+	.long	__malloc_av_+792
+	.long	__malloc_av_+792
+	.long	__malloc_av_+800
+	.long	__malloc_av_+800
+	.long	__malloc_av_+808
+	.long	__malloc_av_+808
+	.long	__malloc_av_+816
+	.long	__malloc_av_+816
+	.long	__malloc_av_+824
+	.long	__malloc_av_+824
+	.long	__malloc_av_+832
+	.long	__malloc_av_+832
+	.long	__malloc_av_+840
+	.long	__malloc_av_+840
+	.long	__malloc_av_+848
+	.long	__malloc_av_+848
+	.long	__malloc_av_+856
+	.long	__malloc_av_+856
+	.long	__malloc_av_+864
+	.long	__malloc_av_+864
+	.long	__malloc_av_+872
+	.long	__malloc_av_+872
+	.long	__malloc_av_+880
+	.long	__malloc_av_+880
+	.long	__malloc_av_+888
+	.long	__malloc_av_+888
+	.long	__malloc_av_+896
+	.long	__malloc_av_+896
+	.long	__malloc_av_+904
+	.long	__malloc_av_+904
+	.long	__malloc_av_+912
+	.long	__malloc_av_+912
+	.long	__malloc_av_+920
+	.long	__malloc_av_+920
+	.long	__malloc_av_+928
+	.long	__malloc_av_+928
+	.long	__malloc_av_+936
+	.long	__malloc_av_+936
+	.long	__malloc_av_+944
+	.long	__malloc_av_+944
+	.long	__malloc_av_+952
+	.long	__malloc_av_+952
+	.long	__malloc_av_+960
+	.long	__malloc_av_+960
+	.long	__malloc_av_+968
+	.long	__malloc_av_+968
+	.long	__malloc_av_+976
+	.long	__malloc_av_+976
+	.long	__malloc_av_+984
+	.long	__malloc_av_+984
+	.long	__malloc_av_+992
+	.long	__malloc_av_+992
+	.long	__malloc_av_+1000
+	.long	__malloc_av_+1000
+	.long	__malloc_av_+1008
+	.long	__malloc_av_+1008
+	.long	__malloc_av_+1016
+	.long	__malloc_av_+1016
+	.size	__malloc_av_, 1032
+
+	.type	__malloc_sbrk_base,@object ; @__malloc_sbrk_base
+	.p2align	2
+__malloc_sbrk_base NOP 
+	.long	4294967295
+	.size	__malloc_sbrk_base, 4
+
+	.type	__malloc_max_sbrked_mem,@object ; @__malloc_max_sbrked_mem
+	.local	__malloc_max_sbrked_mem
+	.comm	__malloc_max_sbrked_mem,4,4
+	.type	__malloc_max_total_mem,@object ; @__malloc_max_total_mem
+	.local	__malloc_max_total_mem
+	.comm	__malloc_max_total_mem,4,4
+	.type	__svfscanf_r.basefix,@object ; @__svfscanf_r.basefix
+	.rodata
+	.p2align	1
+__svfscanf_r.basefix NOP 
+	.short	10                      ; 0xa
+	.short	1                       ; 0x1
+	.short	2                       ; 0x2
+	.short	3                       ; 0x3
+	.short	4                       ; 0x4
+	.short	5                       ; 0x5
+	.short	6                       ; 0x6
+	.short	7                       ; 0x7
+	.short	8                       ; 0x8
+	.short	9                       ; 0x9
+	.short	10                      ; 0xa
+	.short	11                      ; 0xb
+	.short	12                      ; 0xc
+	.short	13                      ; 0xd
+	.short	14                      ; 0xe
+	.short	15                      ; 0xf
+	.short	16                      ; 0x10
+	.size	__svfscanf_r.basefix, 34
+
+	.type	_ctype_b,@object        ; @_ctype_b
+_ctype_b NOP 
+	.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000         (((((                  \210\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\004\004\004\004\004\004\004\004\004\004\020\020\020\020\020\020\020AAAAAA\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\020\020\020\020\020\020BBBBBB\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\020\020\020\020 "
+	.zero	128
+	.size	_ctype_b, 384
+
+	.type	_ctype_,@object         ; @_ctype_
+_ctype_ NOP 
+	.ascii	"\000         (((((                  \210\020\020\020\020\020\020\020\020\020\020\020\020\020\020\020\004\004\004\004\004\004\004\004\004\004\020\020\020\020\020\020\020AAAAAA\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\001\020\020\020\020\020\020BBBBBB\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\002\020\020\020\020 "
+	.zero	128
+	.size	_ctype_, 257
+
+	.type	.L.str.2,@object        ; @.str.2
+	.rodata.str1.1
+.L.str.2 NOP 
+	.asciz	"POSIX"
+	.size	.L.str.2, 6
+
+	.type	.L.str.3,@object        ; @.str.3
+.L.str.3 NOP 
+	.asciz	"C"
+	.size	.L.str.3, 2
+
+	.type	__global_locale,@object ; @__global_locale
+	.data
+	.p2align	2
+__global_locale NOP 
+	.asciz	"C\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+	.asciz	"C\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+	.asciz	"C\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+	.asciz	"C\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+	.asciz	"C\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+	.asciz	"C\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+	.asciz	"C\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+	.long	__ascii_wctomb
+	.long	__ascii_mbtowc
+	.long	0                       ; 0x0
+	.long	_ctype_b+127
+	.long	.L.str.63
+	.long	.L.str.67
+	.long	.L.str.67
+	.long	.L.str.67
+	.long	.L.str.67
+	.long	.L.str.67
+	.long	.L.str.67
+	.long	.L.str.67
+	.long	.L.str.67
+	.long	.L.str.67
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.byte	127                     ; 0x7f
+	.zero	2
+	.asciz	"\001"
+	.asciz	"ASCII\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+	.asciz	"ASCII\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
+	.zero	2
+	.size	__global_locale, 364
+
+	.type	.L.str.63,@object       ; @.str.63
+	.rodata.str1.1
+.L.str.63 NOP 
+	.asciz	"."
+	.size	.L.str.63, 2
+
+	.type	.L.str.67,@object       ; @.str.67
+.L.str.67 NOP 
+	.zero	1
+	.size	.L.str.67, 1
+
+	.type	errno,@object           ; @errno
+	.comm	errno,4,4
+	.type	__malloc_current_mallinfo.0,@object ; @__malloc_current_mallinfo.0
+	.local	__malloc_current_mallinfo.0
+	.comm	__malloc_current_mallinfo.0,4,4
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.ident	"Ubuntu clang version 10.0.1-++20211003085942+ef32c611aa21-1~exp1~20211003090334.2"
+	.note.GNU-stack

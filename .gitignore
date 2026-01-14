@@ -1,0 +1,35 @@
+build/
+*.DS_Store
+a.out
+.vscode
+
+# zee-processor (CMake build artefacts)
+zee-processor/CMakeFiles/
+zee-processor/CMakeCache.txt
+zee-processor/cmake_install.cmake
+zee-processor/Makefile
+zee-processor/CMakeConfigureLog.yaml
+
+# zee-processor (local binaries and generated artifacts)
+zee-processor/ZKMachine
+zee-processor/Assembler
+zee-processor/OT
+zee-processor/*.zk
+zee-processor/*.s
+zee-processor/*.hex
+
+# zee-processor runtime data / logs (should not be tracked)
+zee-processor/data/
+zee-processor/check.txt
+zee-processor/prover.txt
+zee-processor/verifier.txt
+
+# zee-cleartext (local build dir inside repo)
+toolchain/zee-cleartext/build/
+
+# Local setup artifacts created by setup.sh
+setup/
+emp-tool/
+emp-ot/
+emp-zk/
+install.py

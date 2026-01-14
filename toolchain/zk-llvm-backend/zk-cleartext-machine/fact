@@ -1,0 +1,9 @@
+0c000000  # 0 INPUT _ _ 0    # n <- input
+81010101  # 1 ADDI 1 1 1     # acc <- 1
+89000002  # 2 EQI 0 0 2      # cond <- n == 0
+8b020700  # 3 BNEQZI 2 7 _   # if cond goto 7
+03000101  # 4 MUL 0 1 1      # acc <- acc * n
+82000100  # 5 SUBI 0 1 0     # n <- n - 1
+8a000200  # 6 JUMP _ 2 _     # goto 2
+0d010000  # 7 OUTPUT 1 _ _   # print acc
+00000000  # 8 HALT           # done

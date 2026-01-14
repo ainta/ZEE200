@@ -1,0 +1,7 @@
+/tmp/sum-71d803.o
+-r=/tmp/sum-71d803.o,main,plx
+-r=/tmp/sum-71d803.o,ZKInput,l
+-r=/tmp/sum-71d803.o,ZKOutput,l
+/tmp/IO-2fed54.o
+-r=/tmp/IO-2fed54.o,ZKInput,pl
+-r=/tmp/IO-2fed54.o,ZKOutput,pl

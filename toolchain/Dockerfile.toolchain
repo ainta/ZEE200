@@ -1,0 +1,31 @@
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update -qq && \
+    apt-get install -y --no-install-recommends \
+      clang-10 \
+      llvm-10 \
+      llvm-10-dev \
+      binutils-gold \
+      build-essential \
+      cmake \
+      python3 \
+      libc6-dev-i386 \
+      ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+
+# Bake a ZEE llc into the image so runtime scripts don't need to
+# rebuild LLVM in every container.
+WORKDIR /tmp
+
+# Copy only the zk-llvm-backend sources needed to build llc.
+COPY toolchain/zk-llvm-backend /tmp/zk-llvm-backend
+
+RUN mkdir -p /opt/zee-llvm/bin && \
+    cd /tmp/zk-llvm-backend/llvm && \
+    rm -rf build && mkdir -p build && cd build && \
+    cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=ZEE .. >/dev/null && \
+    make -j"$(nproc)" llc >/dev/null && \
+    install -Dm755 bin/llc /opt/zee-llvm/bin/llc && \
+    rm -rf /tmp/zk-llvm-backend

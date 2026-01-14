@@ -1,0 +1,11 @@
+add_llvm_library(LLVMZEEDesc
+  ZEEAsmBackend.cpp
+  ZEEELFObjectWriter.cpp
+  ZEEInstPrinter.cpp
+  ZEEMCAsmInfo.cpp
+  ZEEMCCodeEmitter.cpp
+  ZEEMCExpr.cpp
+  ZEEMCTargetDesc.cpp
+  ZEETargetStreamer.cpp
+  ZEEELFStreamer.cpp
+)

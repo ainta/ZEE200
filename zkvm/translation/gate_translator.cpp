@@ -804,14 +804,30 @@ bool GateTranslator::translate_shift(
     GateContext& gate_ctx,
     TranslationContext& trans_ctx
 ) {
-    if (instr.op == "SRLI") {
-        if (instr.ops.size() != 3) {
-            std::cerr << "SRLI requires 3 operands" << std::endl;
+    auto parse_shift_imm = [](const AsmInstr& ins, const char* opname, int64_t& shift_amount) {
+        if (ins.ops.size() != 3) {
+            std::cerr << opname << " requires 3 operands" << std::endl;
             return false;
         }
+        if (ins.ops[2].kind != Operand::IMM) {
+            std::cerr << opname << " requires an immediate shift amount" << std::endl;
+            return false;
+        }
+        shift_amount = ins.ops[2].imm;
+        if (shift_amount < 0 || shift_amount >= 32) {
+            std::cerr << opname << " shift amount must be in [0, 31], got "
+                      << shift_amount << std::endl;
+            return false;
+        }
+        return true;
+    };
+
+    if (instr.op == "SRLI") {
+        int64_t shift_amount = 0;
+        if (!parse_shift_imm(instr, "SRLI", shift_amount)) return false;
         std::size_t src1_wire = get_operand_wire(instr.ops[1], circuit, gate_ctx, trans_ctx);
         BaseOp srli_op(OPTYPE::SRLI, {src1_wire});
-        srli_op.imm = instr.ops[2].imm; // Store shift amount as immediate
+        srli_op.imm = shift_amount;
         circuit.push_back(srli_op);
         std::size_t result_wire = circuit.size() - 1;
 
@@ -845,13 +861,11 @@ bool GateTranslator::translate_shift(
     }
 
     if (instr.op == "SHLI") {
-        if (instr.ops.size() != 3) {
-            std::cerr << "SHLI requires 3 operands" << std::endl;
-            return false;
-        }
+        int64_t shift_amount = 0;
+        if (!parse_shift_imm(instr, "SHLI", shift_amount)) return false;
         // dst, src, imm (imm in [0,31])
         std::size_t src1_wire = get_operand_wire(instr.ops[1], circuit, gate_ctx, trans_ctx);
-        uint32_t k = static_cast<uint32_t>(instr.ops[2].imm); // 0..31
+        uint32_t k = static_cast<uint32_t>(shift_amount);
         std::size_t pow_const = create_immediate_wire(1LL << k, circuit, trans_ctx);
         circuit.push_back(BaseOp(OPTYPE::MUL32, {src1_wire, pow_const}));
         std::size_t result_wire = circuit.size() - 1;
@@ -889,12 +903,9 @@ bool GateTranslator::translate_shift(
     }
 
     if (instr.op == "SRAI") {
-        if (instr.ops.size() != 3) {
-            std::cerr << "SRAI requires 3 operands" << std::endl;
-            return false;
-        }
+        int64_t shift_amount = 0;
+        if (!parse_shift_imm(instr, "SRAI", shift_amount)) return false;
         std::size_t src1_wire = get_operand_wire(instr.ops[1], circuit, gate_ctx, trans_ctx);
-        int64_t shift_amount = (instr.ops[2].kind == Operand::IMM) ? instr.ops[2].imm : 0;
         BaseOp srai_op(OPTYPE::SRAI, {src1_wire});
         srai_op.imm = shift_amount;
         circuit.push_back(srai_op);

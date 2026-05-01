@@ -6,6 +6,7 @@
 #include "context/gate_context.h"
 #include "register_layout.h"
 #include <iostream>
+#include <stdexcept>
 
 /**
  * Instruction builder for tight-zkvm assembly translation
@@ -160,7 +161,7 @@ Instruction InstructionBuilder::build_single_instruction(
     TranslationContext trans_ctx;
     trans_ctx.layout = &layout;
     if (!translate_block_instructions(block, resolver, reg_map, circuit, gate_ctx, data_symbols, trans_ctx, shared_label_to_pc)) {
-        std::cerr << "Error translating instructions in block " << block.block_id << std::endl;
+        throw std::runtime_error("Error translating instructions in block " + std::to_string(block.block_id));
     }
 
     // Before PC update: flush architectural register writes to RAM
@@ -267,7 +268,7 @@ bool InstructionBuilder::translate_block_instructions(
         // Helper: Determine if instruction writes a destination register
         auto writes_dst = [](const AsmInstr& ins) {
             if (BasicBlockParser::is_control_flow_instruction(ins.op)) return false;
-            if (ins.op == "STORE" || ins.op == "STOREB" || ins.op == "NOP") return false;
+            if (ins.op == "STORE" || ins.op == "STOREB" || ins.op == "STOREH" || ins.op == "NOP") return false;
             if (ins.op == "INPUT")  return true;   // produces a value into the dst register
             return !ins.ops.empty() && ins.ops[0].kind == Operand::REG;
         };

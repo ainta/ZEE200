@@ -459,6 +459,15 @@ void common_test_circuit_zk(BoolIO<NetIO> *ios[threads], int party, size_t reg_s
     std::cout << "l, r, o finished" << std::endl;
     cout << "Time: " << init_time+time_from(start) << " us" << std::endl;
 
+    if (qed_memory_addr == 0xFFFFFFFFu) {
+        IntFp final_pc = r.back();
+        IntFp halt_delta = final_pc + IntFp(PR - 0xFFFFFFFEULL, PUBLIC);
+        IntFp qed_delta = final_pc + IntFp(PR - 0xFFFFFFFFULL, PUBLIC);
+        IntFp terminal_check = halt_delta * qed_delta;
+        batch_reveal_check_zero(&terminal_check, 1);
+        std::cout << "[Check]: final PC is HALT or QED" << std::endl;
+    }
+
 
     int block_size = 16;  // batch size for efficiency
     // ZKSET teardown (range checks)
@@ -610,7 +619,7 @@ void common_test_circuit_zk(BoolIO<NetIO> *ios[threads], int party, size_t reg_s
         if ((f61_delta*C1 + C0).val == acc.val) std::cout << "[Check]: p is a 0-1 program" << std::endl;
         else {
             std::cout << "[Cheat]: p is not a 0-1 program" << std::endl;
-            //exit(-1);
+            exit(-1);
         }
     }
     std::cout << "0-1 program finished" << std::endl;

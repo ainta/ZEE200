@@ -155,12 +155,10 @@ public:
         // where result_shifted = result * 2^shift_amount = result_shifted_low + overflow * 2^32
         // and overflow = result >> (32 - shift_amount)
 
-        // For arithmetic shift, the overflow bits should match the sign bit pattern
-        // We'll enforce: overflow = sign_bit * expected_overflow
-        // where expected_overflow = (0xFFFFFFFF >> (32 - shift_amount)) if shift_amount > 0
-
-        uint64_t fill_mask = (shift_amount >= 32) ? 0xFFFFFFFFULL : ((0xFFFFFFFFULL) << (32 - shift_amount));
-        uint64_t expected_overflow_value = fill_mask >> 32;
+        // For an arithmetic right shift, the high bits of result << shift_amount
+        // are all sign bits: 0 for positive inputs, or 2^shift_amount - 1 for
+        // negative inputs.
+        uint64_t expected_overflow_value = (1ULL << shift_amount) - 1;
 
         // Overflow must match sign-extended pattern
         circuit.push_back(BaseOp(OPTYPE::LINEAR, {overflow_id, sign_bit_id},

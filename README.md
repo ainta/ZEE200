@@ -2,6 +2,8 @@
 
 This is the artifact for the paper `ZEE200: Zero Knowledge for Everything and Everyone @ 200 KHz` to be presented on ACM CCS 2026.
 
+eprint link: https://eprint.iacr.org/2026/828.pdf
+
 ## Overview
 
 ZEE200 is an instruction-based zero-knowledge virtual machine built on a tight ZK CPU and VOLE-based ZK. Proof costs scale with the number of executed instructions, not the entire program size, and memory is modeled via a black-box ZK RAM (IZKRAM).

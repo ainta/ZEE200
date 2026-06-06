@@ -120,6 +120,12 @@ If Docker requires `sudo` on your system:
 
 The `scripts/` directory contains small, explicit scripts for each benchmark and backend. All of them are meant to be run from the repo root.
 
+For artifact evaluation, run the prover and verifier in two separate terminals.
+Start the prover first, then start the matching verifier. A successful run
+prints `tight zk cpu test passed` on both sides. For benchmarks that read stdin
+(`fib_stdin` and `sha256`), enter the inputs manually in the prover terminal;
+do not pipe stdin into the prover.
+
 Each benchmark has:
 - A top-level `run_*_prover.sh` and `run_*_verifier.sh` that select the backend (`zee200` or `zee`) and print any relevant input instructions.
 - Backend-specific implementations under:
@@ -191,6 +197,13 @@ Other benchmarks follow the same naming pattern:
   - ZEE:        `./scripts/run_empty_ram_sweep_zee.sh`
 
 These scripts set up temporary working directories, copy only the necessary binaries and inputs, and log results under `benchmarks/*/` so the raw data is easy to inspect.
+
+## Citation and License
+
+ZEE200 project code is released under the MIT license. Vendored third-party
+components retain their own licenses; see `THIRD_PARTY_NOTICES.md`.
+
+Citation metadata for this artifact is provided in `CITATION.cff`.
 
 ## Project Structure
 

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the CCS 2026 ZEE200 paper."
+title: "ZEE200: Zero Knowledge for Everything and Everyone @ 200 KHz"
+type: software
+authors:
+  - family-names: Jo
+    given-names: Sunghyeon
+  - family-names: Kolesnikov
+    given-names: Vladimir
+  - family-names: Yang
+    given-names: Yibin
+repository-code: "https://github.com/ainta/ZEE200"
+url: "https://eprint.iacr.org/2026/828.pdf"
+license: MIT
+version: "ccs2026-ae"
+date-released: "2026-06-06"

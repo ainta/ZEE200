@@ -34,7 +34,7 @@ On a fresh Ubuntu-like system, run:
 ./setup.sh
 ```
 
-This installs the EMP toolkit and other libraries used by the ZEE baseline and by some development tooling. It requires `sudo` for the final `apt` step.
+This installs pinned EMP toolkit dependencies and other libraries used by the ZEE baseline and by some development tooling. It uses `sudo` to install system packages and EMP libraries.
 
 ### Build the ZEE200 backend
 

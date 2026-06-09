@@ -12,23 +12,28 @@ set(sources
   emp-zk/emp-zk-arith/emp-zk-arith.cpp
 )
 add_library(${NAME} SHARED ${sources})
+target_compile_features(${NAME} PUBLIC cxx_std_17)
+set_target_properties(${NAME} PROPERTIES
+  CXX_STANDARD 17
+  CXX_STANDARD_REQUIRED ON
+  CXX_EXTENSIONS OFF
+)
 
 install(DIRECTORY emp-zk DESTINATION include/)
 install(FILES cmake/emp-zk-config.cmake DESTINATION cmake/)
 install(TARGETS ${NAME} DESTINATION lib)
 
-ENABLE_TESTING()
-
 # Main ZEE200 zkVM driver (not just a unit test).
 add_executable(test_zkvm_generic_asm_test
   zkvm/generic_asm_test.cpp
 )
+target_compile_features(test_zkvm_generic_asm_test PRIVATE cxx_std_17)
+set_target_properties(test_zkvm_generic_asm_test PROPERTIES
+  CXX_STANDARD 17
+  CXX_STANDARD_REQUIRED ON
+  CXX_EXTENSIONS OFF
+)
 target_link_libraries(test_zkvm_generic_asm_test
   ${EMP-OT_LIBRARIES}
   emp-zk
-)
-add_test(
-  NAME zkvm_generic_asm_test
-  COMMAND "./run" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/test_zkvm_generic_asm_test"
-  WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/"
 )

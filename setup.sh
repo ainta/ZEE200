@@ -69,7 +69,7 @@ install_emp_repo() {
   cmake -S "${dir}" -B "${dir}/build" \
     -DCMAKE_BUILD_TYPE=Release \
     "${cmake_extra_args[@]}"
-  cmake --build "${dir}/build" -j"${JOBS}"
+  cmake --build "${dir}/build" --target "${repo}" -j"${JOBS}"
   sudo cmake --install "${dir}/build"
 }
 

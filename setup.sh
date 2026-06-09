@@ -56,6 +56,7 @@ fi
 install_emp_repo() {
   local repo="$1"
   local commit="$2"
+  local build_target="${3:-}"
   local url="https://github.com/emp-toolkit/${repo}.git"
   local dir="${SETUP_DIR}/${repo}"
 
@@ -69,12 +70,14 @@ install_emp_repo() {
   cmake -S "${dir}" -B "${dir}/build" \
     -DCMAKE_BUILD_TYPE=Release \
     "${cmake_extra_args[@]}"
-  cmake --build "${dir}/build" --target "${repo}" -j"${JOBS}"
+  if [[ -n "${build_target}" ]]; then
+    cmake --build "${dir}/build" --target "${build_target}" -j"${JOBS}"
+  fi
   sudo cmake --install "${dir}/build"
 }
 
 install_system_deps
 
 mkdir -p "${SETUP_DIR}"
-install_emp_repo emp-tool "${EMP_TOOL_COMMIT}"
+install_emp_repo emp-tool "${EMP_TOOL_COMMIT}" emp-tool
 install_emp_repo emp-ot "${EMP_OT_COMMIT}"

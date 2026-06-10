@@ -1,0 +1,2 @@
+[target.riscv32im-succinct-zkvm-elf]
+rustflags = ["-C", "link-arg=--image-base=0x00200800", "-C", "panic=abort"]

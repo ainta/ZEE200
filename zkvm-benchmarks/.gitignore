@@ -1,0 +1,7 @@
+/jolt/work/
+/jolt/logs/
+/sp1/logs/
+**/target/
+**/.cargo-lock
+**/dory_srs_*.srs
+**/proof-with-pis.bin

@@ -1,0 +1,19 @@
+system	proof	benchmark	input	paper_time_s	raw_riscv	virtual	total_cycles_or_instructions	expected_output
+sp1	stark	fibonacci	n=20	141			155523	fib(20) = 6765
+sp1	stark	fibonacci	n=23	251			642315	fib(23) = 28657
+sp1	stark	mergesort	n=500	145			203961	n = 500, ok = 1
+sp1	stark	mergesort	n=5000	808			2393902	n = 5000, ok = 1
+sp1	stark	sha256	iterations=10	115			108252	iterations = 10, ok = 1
+sp1	stark	sha256	iterations=200	926			2070002	iterations = 200, ok = 1
+sp1	groth16	fibonacci	n=20	2220			155523	fib(20) = 6765
+sp1	groth16	fibonacci	n=23	2501			642315	fib(23) = 28657
+sp1	groth16	mergesort	n=500	2212			203961	n = 500, ok = 1
+sp1	groth16	mergesort	n=5000	3821			2393902	n = 5000, ok = 1
+sp1	groth16	sha256	iterations=10	2193			108252	iterations = 10, ok = 1
+sp1	groth16	sha256	iterations=200	3531			2070002	iterations = 200, ok = 1
+jolt	default	fibonacci	n=20	13	150497	17855	168352	fib(20) = 6765
+jolt	default	fibonacci	n=23	37	637300	75214	712514	fib(23) = 28657
+jolt	default	mergesort	n=500	27	156352	215561	371913	valid: true
+jolt	default	mergesort	n=5000	238	1964350	2919617	4883967	valid: true
+jolt	default	sha256	iterations=10	26	103780	97177	200957	valid: true
+jolt	default	sha256	iterations=200	195	2074085	1942654	4016739	valid: true

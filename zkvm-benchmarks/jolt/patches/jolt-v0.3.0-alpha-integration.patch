@@ -1,0 +1,26 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index 272cbf73..abaa5636 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -64,6 +64,8 @@ members = [
+     "examples/overflow",
+     "examples/overflow/guest",
+     "examples/memory-ops",
++    "examples/mergesort",
++    "examples/mergesort/guest",
+     "examples/memory-ops/guest",
+     "examples/recursion",
+     "examples/recursion/guest",
+diff --git a/jolt-core/src/host/program.rs b/jolt-core/src/host/program.rs
+index a4280812..0a485eee 100644
+--- a/jolt-core/src/host/program.rs
++++ b/jolt-core/src/host/program.rs
+@@ -108,7 +108,7 @@ impl Program {
+ 
+             rust_flags.extend_from_slice(&[
+                 "-C".to_string(),
+-                "opt-level=z".to_string(),
++                "opt-level=3".to_string(),
+                 "--cfg".to_string(),
+                 "getrandom_backend=\"custom\"".to_string(),
+             ]);

@@ -1,0 +1,8 @@
+[package]
+version = "0.1.0"
+name = "mergesort-program"
+edition = "2021"
+
+[dependencies]
+sp1-zkvm = { git = "https://github.com/succinctlabs/sp1", tag = "v5.2.4" }
+fibonacci-lib = { path = "../lib" }

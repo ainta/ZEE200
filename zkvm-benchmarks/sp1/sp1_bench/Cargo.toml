@@ -1,0 +1,9 @@
+[workspace]
+members = [
+    "lib",
+    "mergesort",
+    "fibonacci",
+    "sha256",
+    "script",
+]
+resolver = "2"

@@ -1,0 +1,7 @@
+[package]
+name = "sha256-program"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sp1-zkvm = { git = "https://github.com/succinctlabs/sp1", tag = "v5.2.4" }

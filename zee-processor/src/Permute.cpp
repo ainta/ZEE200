@@ -1,4 +1,5 @@
 #include <Permute.h>
+#include <algorithm>
 #include <numeric> // std::iota
 
 #include <iostream>

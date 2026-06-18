@@ -18,6 +18,7 @@ This repository contains:
 
 The original paper describes the design and evaluation.
 Example workloads and scripts live under `benchmarks/` and `scripts/`.
+The CCS artifact appendix source is available at `docs/artifact_appendix.tex`.
 
 ## Getting Started
 
@@ -49,7 +50,7 @@ make -j
 
 This builds `test_zkvm_generic_asm_test` under `build/bin/`.
 
-### Build the ZEE baseline (optional)
+### Build the ZEE baseline (for E2/E3 comparisons)
 
 To build the ZEE reference prover/verifier (`ZKMachine`) used by the ZEE scripts:
 

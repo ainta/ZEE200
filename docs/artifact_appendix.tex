@@ -16,8 +16,8 @@
 \sloppy
 
 \newcommand{\artifactdoi}{\url{https://doi.org/10.5281/zenodo.20575394}}
-\newcommand{\artifacttag}{\texttt{ccs2026-ae-v1}}
-\newcommand{\artifactcommit}{{\footnotesize\texttt{3c662f3b3cd739a6366d8026a63aa8f82d9a38fc}}}
+\newcommand{\artifacttag}{\texttt{ccs2026-ae-v2}}
+\newcommand{\artifactcommit}{{\footnotesize\texttt{aad79a488a3ff3707c9f322a552f11640d22aedc}}}
 \newcommand{\passmsg}{\texttt{tight zk cpu test passed}}
 \newcommand{\zkvmbin}{\texttt{test\_zkvm\_generic\_asm\_test}}
 
@@ -47,7 +47,9 @@ running the prover \P and verifier \V. This appendix explains how to build
 the artifact, run the toy test, map the paper's tables to concrete
 commands, and interpret the outputs. Successful \oursystem proof runs print
 \passmsg. Performance logs report end-to-end time, communication, and
-peak resident set size when available. The \oursystem project code is released under the MIT License. Vendored third-party components remain subject to their respective licenses.
+peak resident set size when available. The \oursystem project code is
+released under the MIT License. Vendored third-party components remain
+subject to their respective licenses.
 
 \subsection{Description \& Requirements}
 
@@ -57,9 +59,11 @@ The artifact does not require private credentials and does not
 intentionally perform destructive actions. It starts local prover and
 verifier processes and opens local network connections. The optional
 \texttt{set\_net.sh} script configures Linux traffic control
-(\texttt{tc}) and therefore needs administrator privileges. Docker is
-only needed for regenerating frontend artifacts from {\tt C} source and
-should be run with the usual host-security precautions.
+(\texttt{tc}) and therefore needs administrator privileges. For the main
+\oursystem artifact, Docker is needed only for regenerating frontend
+artifacts from {\tt C} source. The external SP1 Groth16 reproduction
+also invokes Docker through SP1's wrapping toolchain. Docker should be
+run with the usual host-security precautions.
 
 \subsubsection{How to access}
 
@@ -88,11 +92,15 @@ uses an AWS \texttt{r6i.8xlarge} instance with 256 GB RAM.
 
 The backend requires CMake 3.10 or newer, \texttt{make}, a {\tt C++17}
 compiler, and EMP toolkit dependencies. On an Ubuntu-like system,
-\texttt{./setup.sh} installs the expected dependencies. Linux is
-recommended for the network experiments because they use \texttt{tc}.
-Docker is needed only to regenerate the frontend assembly outputs from the {\tt C} source files. 
-The benchmark assembly files used in our experiments are already included in the submitted artifact, so one can reproduce the benchmark results without regenerating these assembly files inside Docker.
-
+\texttt{./setup.sh} installs the expected dependencies, including the
+pinned \texttt{emp-tool} and \texttt{emp-ot} dependencies used by the
+\zee baseline. Linux is recommended for network experiments because
+they use \texttt{tc}. Docker is needed to regenerate frontend assembly
+and \texttt{.zk} outputs from the {\tt C} source files. The benchmark
+\texttt{.s} and \texttt{.zk} files used in the \oursystem and \zee
+experiments are already included in the artifact, so these benchmark
+runs do not require the Docker frontend. The external SP1 Groth16
+reproduction requires Docker access for the wrapping step.
 
 \subsubsection{Benchmarks}
 
@@ -115,14 +123,18 @@ the \oursystem backend:
 \end{verbatim}
 
 The release build produces the \oursystem executable under
-\texttt{build/bin/}. To build the optional \zee baseline used by the
-comparison scripts:
+\texttt{build/bin/}. To build the \zee baseline used by the comparison
+scripts:
 \begin{verbatim}
 cd zee-processor
 cmake .
 make -j
 cd ..
 \end{verbatim}
+
+This produces \texttt{zee-processor/ZKMachine}. The \zee scripts use
+the checked-in \texttt{.zk} programs under \texttt{benchmarks/}; Docker
+is not part of the normal \zee benchmark run path.
 
 \subsubsection{Basic toy test}
 
@@ -157,8 +169,8 @@ entry points:
 \texttt{PARTY=2} is the verifier and uses the prover address, e.g.,
 \texttt{127.0.0.1}.
 
-\item \texttt{zee-processor/ZKMachine}: the optional \zee baseline
-binary used by scripts under \texttt{scripts/zee/}.
+\item \texttt{zee-processor/ZKMachine}: the \zee baseline binary used
+by scripts under \texttt{scripts/zee/}.
 
 \item Top-level wrappers
 \texttt{scripts/run\_*\_\{prover,verifier\}.sh}. Each accepts
@@ -167,11 +179,14 @@ binary used by scripts under \texttt{scripts/zee/}.
 \item Backend-specific wrappers under \texttt{scripts/zkvm/} and
 \texttt{scripts/zee/}. These expose fixed benchmark variants such as
 \texttt{run\_zkvm\_fib23\_prover.sh} and
-\texttt{run\_zee\_sha200\_verifier.sh}.
+\texttt{run\_zee\_sha200\_verifier.sh}. The top-level
+\texttt{run\_fib\_*} and \texttt{run\_sha\_*} wrappers are the preferred
+evaluator-facing commands; the prover terminal input selects the
+Fibonacci index or SHA iteration count.
 
 \item Frontend helper scripts under \texttt{toolchain/}. These rebuild
 \texttt{.s} and \texttt{.zk} files from {\tt C} source through Docker. They
-are not needed for running the submitted benchmark assembly files.
+are not needed for running the submitted benchmark files.
 \end{enumerate}
 
 \subsection{Evaluation Workflow}
@@ -183,6 +198,45 @@ matching verifier command on \V second. In the single-machine setting,
 \texttt{fib} and \texttt{sha256}, enter the input values manually in
 the prover terminal; do \emph{not} pipe stdin into the prover.
 
+\subsubsection{Reading terminal output}
+
+For \oursystem runs, both parties should print \passmsg. The prover
+terminal also prints:
+\begin{compactitem}
+\item \texttt{[Cleartext] Execution completed: N instructions executed}.
+This is the executed extended-\zee instruction count for that benchmark.
+\item A final timing line of the form \texttt{T us 1}. Here
+\texttt{T} is the prover's end-to-end time in microseconds and may be
+printed in scientific notation, e.g., \texttt{1.54163e+06 us 1}.
+\item One or more \texttt{communication (B): X} lines. The paper's
+communication column reports the protocol communication counter in
+bytes converted to MB; use the counter convention used by the artifact
+scripts and do not double-count symmetric debug counters if two equal
+lines are printed.
+\item A peak resident set size line, e.g.,
+\texttt{[Linux]Peak resident set size: K}, where \texttt{K} is in KiB
+on Linux.
+\end{compactitem}
+
+The KHz rate is computed from the raw log values, not from rounded table
+entries:
+\[
+\mathrm{KHz} =
+  \frac{N}{T/1{,}000{,}000} \cdot \frac{1}{1000}.
+\]
+For example, if the prover log reports \texttt{124236 instructions
+executed} and \texttt{1.54163e+06 us 1}, the run rate is
+$124236 / 1.54163 / 1000 = 80.587$ KHz. Paper table entries are rounded
+and averaged over multiple runs, so recomputing from the displayed
+seconds and KHz columns will only approximately recover \texttt{N}.
+
+For \zee runs, the verifier prints \texttt{I am convinced!} on success.
+The prover log prints \texttt{Num Cycles: C} and \texttt{Num Insts: I}.
+Each party then prints a bare seconds value. The \zee baseline does not
+print peak RSS itself; wrap prover and verifier commands with
+\texttt{/usr/bin/time -v} and parse \texttt{Maximum resident set size
+(kbytes): K} when reproducing memory-footprint results.
+
 \subsubsection{Major Claims}
 Our artifact makes the following claims.
 
@@ -190,33 +244,33 @@ Our artifact makes the following claims.
 the verifier accepts successful executions. This is supported by the
 benchmark scripts and Table 1.
 
-\textbf{(C2):} \oursystem is substantially faster than \zee on comparable workloads,
-with roughly $20$--$40\times$ speedups on the main examples and about 200 KHz
-steady-state CPU speed on larger workloads. This is supported by
-Table 1 and the larger AWS comparison in Table 5.
+\textbf{(C2):} \oursystem is substantially faster than \zee on
+comparable workloads, with roughly $20$--$40\times$ speedups on the main
+examples and about 200 KHz steady-state CPU speed on larger workloads.
+This is supported by Table 1 and the larger AWS comparison in Table 5.
 
-\textbf{(C3):} \oursystem has better physical-memory scaling with configured ZK RAM
-size than \zee. This is supported by Table 2.
+\textbf{(C3):} \oursystem has better physical-memory scaling with
+configured ZK RAM size than \zee. This is supported by Table 2.
 
-\textbf{(C4):} \oursystem's end-to-end time changes predictably with bandwidth and
-latency under the paper's simulated LAN settings. This is supported by
-Table 4.
+\textbf{(C4):} \oursystem's end-to-end time changes predictably with
+bandwidth and latency under the paper's simulated LAN settings. This is
+supported by Table 4.
 
-\textbf{(C5):} \oursystem is faster than representative zkVM baselines on the
-selected benchmark kernels. This is supported by Table 3. The submitted
-artifact directly supports the \oursystem measurements. SP1 and Jolt are
-external systems; optional reproduction material for their Table 3 rows is
-provided in the repository under \texttt{zkvm-benchmarks/}.
+\textbf{(C5):} \oursystem is faster than representative zkVM baselines
+on the selected benchmark kernels. This is supported by Table 3. The
+submitted artifact directly supports the \oursystem measurements. The
+repository also includes pinned reproduction material for the SP1 and
+Jolt Table 3 rows under \texttt{zkvm-benchmarks/}.
 
 \subsubsection{Experiments}
-We explain how to repeat the experiments that support each of our major claims.
+We explain how to repeat the experiments that support each claim.
 
-\textbf{(E1):} [Table 1] [10--30 human-minutes + minutes to several compute
-hours, depending on selected benchmarks].
+\textbf{(E1):} [Table 1] [10--30 human-minutes + minutes to several
+compute hours, depending on selected benchmarks].
 
 \noindent
-\underline{Preparation}: build the \oursystem backend. For the paper's default LAN
-setting on Linux, configure loopback as:
+\underline{Preparation}: build the \oursystem backend. For the paper's
+default LAN setting on Linux, configure loopback as:
 \begin{verbatim}
 IF=lo ./set_net.sh 1000 1
 \end{verbatim}
@@ -228,89 +282,306 @@ sudo tc qdisc del dev lo root
 
 \noindent
 \underline{Execution}: run the following prover/verifier pairs.
+
 \begin{compactitem}
-\item \texttt{sed}: 
+\item \texttt{sed}
 
-\P runs
+\P runs:
 \begin{verbatim}
-./scripts/run\_sed\_prover.sh zee200
+./scripts/run_sed_prover.sh zee200
 \end{verbatim}
-
-\V runs
+\V runs:
 \begin{verbatim}
-./scripts/run\_sed\_verifier.sh zee200
+./scripts/run_sed_verifier.sh zee200
 \end{verbatim}
+Paper value: 1.5 s, 82.3 KHz, 53 MB communication.
 
-Paper value:
-1.5 s, 82.3 KHz, 53 MB communication.
+\item \texttt{fib}, $n=20$
 
-\item \texttt{fib}, $n=20$: \P runs
-\texttt{./scripts/zkvm/run\_zkvm\_fib20\_prover.sh}; \V runs
-\texttt{./scripts/zkvm/run\_zkvm\_fib20\_verifier.sh}. Enter
-\texttt{12345} and then \texttt{20} in \P. Paper value:
-2.7 s, 172.5 KHz, 136 MB.
+\P runs:
+\begin{verbatim}
+./scripts/run_fib_prover.sh zee200
+\end{verbatim}
+When prompted in the \P terminal, enter:
+\begin{verbatim}
+12345
+20
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_fib_verifier.sh zee200
+\end{verbatim}
+Paper value: 2.7 s, 172.5 KHz, 136 MB.
 
-\item \texttt{fib}, $n=23$: use the \texttt{fib23} scripts and enter
-\texttt{12345} and then \texttt{23} in \P. Paper value:
-8.9 s, 226.3 KHz, 532 MB.
+\item \texttt{fib}, $n=23$
 
-\item \texttt{mergesort}, $n=500$: use
-\texttt{run\_mergesort500\_\{prover,verifier\}.sh zee200}. Paper
-value: 2.6 s, 142.7 KHz, 123 MB.
+\P runs:
+\begin{verbatim}
+./scripts/run_fib_prover.sh zee200
+\end{verbatim}
+When prompted in the \P terminal, enter:
+\begin{verbatim}
+12345
+23
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_fib_verifier.sh zee200
+\end{verbatim}
+Paper value: 8.9 s, 226.3 KHz, 532 MB.
 
-\item \texttt{mergesort}, $n=5000$: use
-\texttt{run\_mergesort5000\_\{prover,verifier\}.sh zee200}. Paper
-value: 24.5 s, 199.8 KHz, 1.4 GB.
+\item \texttt{mergesort}, $n=500$
 
-\item \texttt{gzip} bug trigger: use
-\texttt{run\_gzip\_bug\_\{prover,verifier\}.sh zee200}. Paper value:
-1.1 s, 16.8 KHz, 21 MB.
+\P runs:
+\begin{verbatim}
+./scripts/run_mergesort500_prover.sh zee200
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_mergesort500_verifier.sh zee200
+\end{verbatim}
+Paper value: 2.6 s, 142.7 KHz, 123 MB.
 
-\item \texttt{gzip} decompression: use
-\texttt{run\_gzip\_decompress\_\{prover,verifier\}.sh zee200}. Paper
-value: 17.3 s, 182.1 KHz, 1.0 GB.
+\item \texttt{mergesort}, $n=5000$
 
-\item \texttt{sha256}, 10 blocks: use the \texttt{sha10} scripts and
-enter \texttt{12345} and then \texttt{10} in \P. Paper value:
-1.6 s, 91.3 KHz, 68 MB.
+\P runs:
+\begin{verbatim}
+./scripts/run_mergesort5000_prover.sh zee200
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_mergesort5000_verifier.sh zee200
+\end{verbatim}
+Paper value: 24.5 s, 199.8 KHz, 1.4 GB.
 
-\item \texttt{sha256}, 200 blocks: use the \texttt{sha200} scripts and
-enter \texttt{12345} and then \texttt{200} in \P. Paper value:
-19.7 s, 148.7 KHz, 1.1 GB.
+\item \texttt{gzip} bug trigger
+
+\P runs:
+\begin{verbatim}
+./scripts/run_gzip_bug_prover.sh zee200
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_gzip_bug_verifier.sh zee200
+\end{verbatim}
+Paper value: 1.1 s, 16.8 KHz, 21 MB.
+
+\item \texttt{gzip} decompression
+
+\P runs:
+\begin{verbatim}
+./scripts/run_gzip_decompress_prover.sh zee200
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_gzip_decompress_verifier.sh zee200
+\end{verbatim}
+Paper value: 17.3 s, 182.1 KHz, 1.0 GB.
+
+\item \texttt{sha256}, 10 iterations
+
+\P runs:
+\begin{verbatim}
+./scripts/run_sha_prover.sh zee200
+\end{verbatim}
+When prompted in the \P terminal, enter:
+\begin{verbatim}
+12345
+10
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_sha_verifier.sh zee200
+\end{verbatim}
+Paper value: 1.6 s, 91.3 KHz, 68 MB.
+
+\item \texttt{sha256}, 200 iterations
+
+\P runs:
+\begin{verbatim}
+./scripts/run_sha_prover.sh zee200
+\end{verbatim}
+When prompted in the \P terminal, enter:
+\begin{verbatim}
+12345
+200
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_sha_verifier.sh zee200
+\end{verbatim}
+Paper value: 19.7 s, 148.7 KHz, 1.1 GB.
 \end{compactitem}
 
 \noindent
-\underline{Results}: both parties should print \passmsg. The terminal logs report
-time and communication. Absolute times depend on machine load, CPU,
-memory pressure, and network shaping. The paper reports averages over
-8 runs after discarding the fastest and slowest of 10 total runs.
+\underline{Results}: both parties should print \passmsg. The terminal
+logs report time and communication. Absolute times depend on machine
+load, CPU, memory pressure, and network shaping. The paper reports
+averages over 8 runs after discarding the fastest and slowest of 10
+total runs.
 
-\textbf{(E2):} [Table 1 and Table 5] [10--30 human-minutes + minutes to several
-compute-hours; large cases may require 256 GB RAM].
+\textbf{(E2):} [Table 1 and Table 5] [10--30 human-minutes + minutes to
+several compute-hours; large cases may require 256 GB RAM].
 
 \noindent
 \underline{Preparation}: build \texttt{zee-processor/ZKMachine}.
 
 \noindent
-\underline{Execution}: replace
-\texttt{zee200} by \texttt{zee} in the top-level scripts where
-available. For fixed variants, use scripts under \texttt{scripts/zee/},
-e.g., \texttt{run\_zee\_fib23\_prover.sh} and
-\texttt{run\_zee\_fib23\_verifier.sh}.
+\underline{Execution}: run the same benchmark families with the
+\texttt{zee} backend. The \texttt{fib} and \texttt{sha256} prover
+commands require manual terminal inputs; enter them in the \P terminal
+and do not pipe stdin.
+
+\begin{compactitem}
+\item \texttt{sed}
+
+\P runs:
+\begin{verbatim}
+./scripts/run_sed_prover.sh zee
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_sed_verifier.sh zee
+\end{verbatim}
+Paper values: Table 1 ZEE 30.1 s; Table 5 AWS ZEE 52.6 s.
+
+\item \texttt{fib}, $n=20$
+
+\P runs:
+\begin{verbatim}
+./scripts/run_fib_prover.sh zee
+\end{verbatim}
+When prompted in the \P terminal, enter:
+\begin{verbatim}
+12345
+20
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_fib_verifier.sh zee
+\end{verbatim}
+Paper values: Table 1 ZEE 44.5 s; Table 5 AWS ZEE 77.8 s.
+
+\item \texttt{fib}, $n=23$
+
+\P runs:
+\begin{verbatim}
+./scripts/run_fib_prover.sh zee
+\end{verbatim}
+When prompted in the \P terminal, enter:
+\begin{verbatim}
+12345
+23
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_fib_verifier.sh zee
+\end{verbatim}
+Paper value: Table 5 AWS ZEE 324.6 s.
+
+\item \texttt{mergesort}, $n=500$
+
+\P runs:
+\begin{verbatim}
+./scripts/run_mergesort500_prover.sh zee
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_mergesort500_verifier.sh zee
+\end{verbatim}
+Paper values: Table 1 ZEE 43.9 s; Table 5 AWS ZEE 77.3 s.
+
+\item \texttt{mergesort}, $n=5000$
+
+\P runs:
+\begin{verbatim}
+./scripts/run_mergesort5000_prover.sh zee
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_mergesort5000_verifier.sh zee
+\end{verbatim}
+Paper value: Table 5 AWS ZEE 1003.1 s.
+
+\item \texttt{gzip} bug trigger
+
+\P runs:
+\begin{verbatim}
+./scripts/run_gzip_bug_prover.sh zee
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_gzip_bug_verifier.sh zee
+\end{verbatim}
+Paper values: Table 1 ZEE 5.2 s; Table 5 AWS ZEE 9.15 s.
+
+\item \texttt{gzip} decompression
+
+\P runs:
+\begin{verbatim}
+./scripts/run_gzip_decompress_prover.sh zee
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_gzip_decompress_verifier.sh zee
+\end{verbatim}
+Paper value: Table 5 AWS ZEE 1262.1 s.
+
+\item \texttt{sha256}, 10 iterations
+
+\P runs:
+\begin{verbatim}
+./scripts/run_sha_prover.sh zee
+\end{verbatim}
+When prompted in the \P terminal, enter:
+\begin{verbatim}
+12345
+10
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_sha_verifier.sh zee
+\end{verbatim}
+Paper values: Table 1 ZEE 36.1 s; Table 5 AWS ZEE 62.8 s.
+
+\item \texttt{sha256}, 200 iterations
+
+\P runs:
+\begin{verbatim}
+./scripts/run_sha_prover.sh zee
+\end{verbatim}
+When prompted in the \P terminal, enter:
+\begin{verbatim}
+12345
+200
+\end{verbatim}
+\V runs:
+\begin{verbatim}
+./scripts/run_sha_verifier.sh zee
+\end{verbatim}
+Paper value: Table 5 AWS ZEE 1210.4 s.
+\end{compactitem}
+
+The rows that are dashed in Table 1 are memory intensive on the
+16 GB ThinkPad. The paper uses an AWS \texttt{r6i.8xlarge} instance
+with 256 GB RAM for the complete Table 5 \zee comparison.
 
 \noindent
-\underline{Results}: the comparable small benchmarks reproduce the \zee baseline
-columns in Table 1: \texttt{sed} 30.1 s, \texttt{fib} $n=20$ 44.5 s,
-\texttt{mergesort} $n=500$ 43.9 s, \texttt{gzip} bug trigger 5.2 s,
-and \texttt{sha256} 10 blocks 36.1 s. Larger \zee cases marked by
-dashes in Table 1 are rerun on AWS \texttt{r6i.8xlarge} in Table 5.
+\underline{Results}: the comparable Table 1 benchmarks reproduce the
+\zee baseline columns: \texttt{sed} 30.1 s, \texttt{fib}
+$n=20$ 44.5 s, \texttt{mergesort} $n=500$ 43.9 s, \texttt{gzip} bug
+trigger 5.2 s, and \texttt{sha256} 10 iterations 36.1 s. A successful
+\zee verifier log contains \texttt{I am convinced!}; a process exit code
+alone is not sufficient, because some \zee paths return 0 after printing
+\texttt{I am not convinced!}.
 
 \textbf{(E3):} [Table 2] [10--30 human-minutes + minutes to several
 compute-hours].
 
 \noindent
-\underline{Preparation}: build \oursystem and, if comparing against \zee, build
-\texttt{ZKMachine}. 
+\underline{Preparation}: build \oursystem and, if comparing against
+\zee, build \texttt{ZKMachine}. For \zee memory measurements, use GNU
+\texttt{/usr/bin/time -v} so both parties record peak RSS.
 
 \noindent
 \underline{Execution}:
@@ -320,103 +591,127 @@ compute-hours].
 \end{verbatim}
 
 \noindent
-\underline{Results}: logs are written under \texttt{benchmarks/empty/}. Table 2
-reports total physical RAM across both parties for ZK RAM sizes
-$2^{19}$ through $2^{27}$. \oursystem reaches $2^{27}$ on the 16 GB
-machine, while \zee is killed by memory pressure after $2^{24}$.
+\underline{Parsing}: logs are written under \texttt{benchmarks/empty/}.
+For \oursystem, parse each RAM section header of the form
+\texttt{RAM=BYTES (2\string^e)} in the prover and verifier logs. For
+each matching $e$, parse peak RSS from either
+\texttt{[Linux]Peak resident set size: K} or GNU time's
+\texttt{Maximum resident set size (kbytes): K}. For \zee, parse headers
+of the form \texttt{t=T | RAM=2\string^(T+2)} or
+\texttt{RAM=2\string^e}; the configured RAM size in Table 2 is
+$2^e$ bytes. Parse prover and verifier RSS from GNU time's
+\texttt{Maximum resident set size (kbytes): K}.
+
+Table 2 reports total physical memory across both parties:
+\[
+\mathrm{GiB} =
+  \frac{K_{\P} + K_{\V}}{1024^2}.
+\]
+Treat a row as failing when either party exits nonzero, the success
+marker is absent, or the process is killed by memory pressure. In the
+paper, \oursystem reaches $2^{27}$ on the 16 GB machine, while \zee is
+killed by memory pressure after $2^{24}$.
 
 \textbf{(E4):} [Table 4] [10--30 human-minutes + about 1 compute-hour].
 
 \noindent
-\underline{Preparation}: configure Linux loopback for each bandwidth and one-way
-delay. For the Table 4 RTT columns, use one-way delays 1 ms, 25 ms,
-and 50 ms:
+\underline{Preparation}: configure Linux loopback for each bandwidth
+and one-way delay. For the Table 4 RTT columns, use one-way delays 1 ms,
+25 ms, and 50 ms:
 \begin{verbatim}
 IF=lo ./set_net.sh 100 1
 IF=lo ./set_net.sh 500 25
 IF=lo ./set_net.sh 1000 50
 \end{verbatim}
 Change the bandwidth and delay to cover all nine combinations in
-Table 4.
+Table 4. Clear one setting before installing the next if needed:
+\begin{verbatim}
+sudo tc qdisc del dev lo root
+\end{verbatim}
 
 \noindent
-\underline{Execution}: for each setting, run \texttt{mergesort} $n=500$:
+\underline{Execution}: for each setting, run \texttt{mergesort}
+$n=500$:
+\P runs:
 \begin{verbatim}
 ./scripts/run_mergesort500_prover.sh zee200
+\end{verbatim}
+\V runs:
+\begin{verbatim}
 ./scripts/run_mergesort500_verifier.sh zee200
 \end{verbatim}
 
 \noindent
-\underline{Results}: Table 4 reports end-to-end times of 11.3, 13.5, and 16.2 s
-at 100 Mbps; 3.5, 5.8, and 9.6 s at 500 Mbps; and 2.6, 5.5, and
-9.5 s at 1 Gbps for RTTs 2, 50, and 100 ms respectively.
+\underline{Results}: Table 4 reports end-to-end times of 11.3, 13.5,
+and 16.2 s at 100 Mbps; 3.5, 5.8, and 9.6 s at 500 Mbps; and 2.6,
+5.5, and 9.5 s at 1 Gbps for RTTs 2, 50, and 100 ms respectively.
 
-\textbf{(E5):} [Table 3] [external systems; optional; 10--30 human-minutes +
+\textbf{(E5):} [Table 3] [external systems; 10--30 human-minutes +
 several compute-hours].
 
 \noindent
-\underline{Preparation}:
-The main artifact does not require SP1 or Jolt. For an optional check of the
-Table 3 zkVM-baseline rows, the repository provides a source-focused
-reproduction package under \texttt{zkvm-benchmarks/}. It records benchmark
-sources, version pins, run scripts, paper prover times, and deterministic
-instruction/cycle counts.
+\underline{Preparation}: the repository provides pinned reproduction
+packages under \texttt{zkvm-benchmarks/}. These are not needed to build
+or run \oursystem, but they reproduce the SP1 and Jolt Table 3 baseline
+rows. For a clean reproduction, remove stale toolchains or use an empty
+\texttt{HOME}, \texttt{CARGO\_HOME}, and \texttt{RUSTUP\_HOME}.
 
-\noindent
-\underline{Prerequisites}:
-SP1 and Jolt are optional external zkVM-baseline reproductions. They are
-not required for building or running the main \oursystem artifact.
-
-For SP1, install the SP1 toolchain for \texttt{v5.2.4}. The scripts expect
-the Rust toolchains used by SP1 to be available, including the
-\texttt{succinct} toolchain. Before running the SP1 commands, check:
+On Ubuntu, install common prerequisites:
 \begin{verbatim}
-cargo +succinct --version
+sudo apt-get update
+sudo apt-get install -y curl ca-certificates git clang \
+  build-essential pkg-config libssl-dev protobuf-compiler \
+  gcc-riscv64-unknown-elf
 \end{verbatim}
-If this command is not available, install SP1 with the official
-\texttt{sp1up} flow for SP1 \texttt{v5.2.4}, then rerun the check.
-
-For Jolt, use the Rust toolchain selected by Jolt's
-\texttt{rust-toolchain.toml}. The Jolt scripts also require:
-\begin{verbatim}
-riscv64-unknown-elf-gcc --version
-\end{verbatim}
-to succeed. 
-
-
-\noindent
-\underline{Execution}:
 
 \noindent
 \underline{SP1}: the package uses \texttt{succinctlabs/sp1} tag
 \texttt{v5.2.4}, locked to commit
-\texttt{2a51f3dd370e4c5f74d04dfd89359a13a7e93f99}. To build the guest
-ELFs and run every SP1 benchmark case:
+\texttt{2a51f3dd370e4c5f74d04dfd89359a13a7e93f99}. Install the SP1
+tooling and verify the toolchain:
+\begin{verbatim}
+# Clean existing SP1 state first if SP1 was already installed:
+rm -rf "$HOME/.sp1"
+rustup toolchain remove succinct || true
+
+curl -L https://sp1up.succinct.xyz | bash
+export PATH="$HOME/.sp1/bin:$PATH"
+sp1up -v 5.2.4
+cargo +succinct --version
+cargo prove --version
+docker info
+\end{verbatim}
+
+Build the guest ELFs and run the Table 3 proof modes:
 \begin{verbatim}
 cd zkvm-benchmarks/sp1
-./scripts/run-all.sh
-\end{verbatim}
-This runs STARK and Groth16 proofs for fibonacci $n=20,23$, mergesort
-$n=500,5000$, and SHA-256 with 10 and 200 iterations. To run proof modes
-separately:
-\begin{verbatim}
+unset CARGO_TARGET_DIR
 ./scripts/build-guests.sh
 ./scripts/run-stark.sh
 ./scripts/run-groth16.sh
 \end{verbatim}
+\texttt{run-stark.sh} runs the core/STARK proof path reported in the
+SP1 STARK row; this mode does not provide zero knowledge.
+\texttt{run-groth16.sh} runs the Groth16-wrapped proof path reported in
+the SP1 Groth16 row and requires Docker. The guest-build script scopes
+SP1 guest ELF compiler flags to guest compilation only; do not export
+those flags before running the host proof scripts.
 
 \noindent
 \underline{Jolt}: the package prepares \texttt{a16z/jolt} tag
 \texttt{v0.3.0-alpha}, commit
 \texttt{5101ad2143039de6f279613810414c3d071d1f8f}, applies the included
-integration patch, and then runs every Jolt benchmark case:
+integration patch, and then runs the benchmark cases:
 \begin{verbatim}
 cd zkvm-benchmarks/jolt
 ./scripts/prepare-jolt.sh
 ./scripts/run-all.sh
 \end{verbatim}
-This runs fibonacci $n=20,23$, mergesort $n=500,5000$, and SHA-256 with
-10 and 200 iterations.
+The first run downloads/registers Jolt's guest toolchain and may
+generate a Dory SRS before proving. The included Jolt examples run
+Jolt's prove-and-verify path and log \texttt{valid: true} on success;
+this default Jolt mode is succinct but does not provide zero knowledge,
+and this package does not expose a Groth16 wrapper mode for Jolt.
 
 The expected paper runtimes and deterministic counts are listed in
 \texttt{zkvm-benchmarks/expected-results.tsv}.
@@ -426,15 +721,16 @@ cat expected-results.tsv
 \end{verbatim}
 
 \noindent
-\underline{Results}: Table 3 reports SP1 and Jolt prover computation times in
-seconds. For SP1 STARK, the reported times are 141, 251, 145, 808, 115, and
-926 s for fibonacci $n=20$, fibonacci $n=23$, mergesort $n=500$, mergesort
-$n=5000$, SHA-256 with 10 iterations, and SHA-256 with 200 iterations
-respectively. For SP1 Groth16, the corresponding times are 2220, 2501, 2212,
-3821, 2193, and 3531 s. For Jolt, the corresponding times are 13, 37, 27,
-238, 26, and 195 s. Absolute timing varies with the machine, but the
-instruction/cycle counts and public outputs in \texttt{expected-results.tsv}
-identify matching benchmark programs and inputs.
+\underline{Results}: Table 3 reports SP1 and Jolt prover computation
+times in seconds. For SP1 STARK, the reported times are 141, 251, 145,
+808, 115, and 926 s for fibonacci $n=20$, fibonacci $n=23$,
+mergesort $n=500$, mergesort $n=5000$, SHA-256 with 10 iterations, and
+SHA-256 with 200 iterations respectively. For SP1 Groth16, the
+corresponding times are 2220, 2501, 2212, 3821, 2193, and 3531 s. For
+Jolt, the corresponding times are 13, 37, 27, 238, 26, and 195 s.
+Absolute timing varies with the machine, but the instruction/cycle
+counts and public outputs in \texttt{expected-results.tsv} identify
+matching benchmark programs and inputs.
 
 \subsection{Interpreting Deviations}
 
@@ -442,13 +738,35 @@ All benchmark timings are sensitive to CPU frequency scaling, thermal
 state, background load, memory pressure, and the exact \texttt{tc}
 network configuration. Important checks for AE are:
 \begin{compactitem}
-\item functional success: both parties print \passmsg;
+\item functional success: \oursystem parties print \passmsg, \zee
+verifier prints \texttt{I am convinced!}, SP1 logs verification success,
+and Jolt logs \texttt{valid: true};
 \item consistency: the same benchmark scripts and inputs correspond to
 the paper's benchmark rows;
 \item performance trend: longer workloads approach the reported
-steady-state speed, \oursystem is substantially faster than \zee on shared
-workloads, \oursystem scales to larger RAM settings than \zee, and lower
-bandwidth or higher RTT increases runtime.
+steady-state speed, \oursystem is substantially faster than \zee on
+shared workloads, \oursystem scales to larger RAM settings than \zee,
+and lower bandwidth or higher RTT increases runtime.
+\end{compactitem}
+
+Known build and run issues are:
+\begin{compactitem}
+\item The \zee baseline builds as written on a clean Ubuntu
+22.04/24.04 environment with the distribution Boost packages. If the
+build fails in Boost.Asio code around \texttt{io\_service} or socket
+acceptance, check whether a custom Boost installation under
+\texttt{/usr/local/include} is shadowing the Ubuntu package.
+\item SP1 \texttt{v5.2.4} requires its guest ELF compiler flags for
+the RISC-V guest builds, and the provided \texttt{build-guests.sh}
+applies them only to guest compilation. If host proof commands fail
+with \texttt{OUT\_DIR does not have parent called "target"}, unset
+\texttt{CARGO\_TARGET\_DIR} and rerun the SP1 commands.
+\item SP1 and Jolt require their pinned external toolchains. If the
+corresponding installer or toolchain check fails, rerun the installation
+commands in E5 before starting the benchmark scripts.
+\item SP1 Groth16 wrapping requires Docker access. If
+\texttt{run-groth16.sh} fails with \texttt{Failed to run docker info},
+start Docker or fix Docker permissions, then rerun the Groth16 script.
 \end{compactitem}
 
 \subsection{Version}

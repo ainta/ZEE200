@@ -1,0 +1,460 @@
+\documentclass[nonacm,sigconf]{acmart}
+
+\usepackage{paralist}
+\usepackage{xurl}
+\usepackage{xspace}
+
+\newcommand{\oursystem}{$\mathsf{ZEE}\tt{200}$\xspace}
+\newcommand{\zee}[0]{\ensuremath{\mathsf{ZEE}}\xspace}
+\let\P\undefined
+\newcommand{\P}{\ensuremath{\mathcal{P}}\xspace}
+\newcommand{\V}{\ensuremath{\mathcal{V}}\xspace}
+
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\setlength{\emergencystretch}{3em}
+\sloppy
+
+\newcommand{\artifactdoi}{\url{https://doi.org/10.5281/zenodo.20575394}}
+\newcommand{\artifacttag}{\texttt{ccs2026-ae-v1}}
+\newcommand{\artifactcommit}{{\footnotesize\texttt{3c662f3b3cd739a6366d8026a63aa8f82d9a38fc}}}
+\newcommand{\passmsg}{\texttt{tight zk cpu test passed}}
+\newcommand{\zkvmbin}{\texttt{test\_zkvm\_generic\_asm\_test}}
+
+\begin{document}
+
+\title{ACM CCS '26 Artifact Appendix:\\ \oursystem}
+\subtitle{Zero Knowledge for Everything and Everyone @ 200 KHz}
+
+\author{Sunghyeon Jo}
+\author{Vladimir Kolesnikov}
+\author{Yibin Yang}
+\renewcommand{\shortauthors}{Jo et al.}
+
+\maketitle
+
+\appendix
+
+\section{Artifact Appendix}
+
+\subsection{Abstract}
+
+The artifact includes the code and scripts used to reproduce the
+evaluation of \oursystem. It contains the \oursystem backend, the reused \zee
+baseline, the Docker-based frontend toolchain for compiling {\tt C} programs
+to \zee assembly and ZK programs, benchmark inputs, and scripts for
+running the prover \P and verifier \V. This appendix explains how to build
+the artifact, run the toy test, map the paper's tables to concrete
+commands, and interpret the outputs. Successful \oursystem proof runs print
+\passmsg. Performance logs report end-to-end time, communication, and
+peak resident set size when available. The \oursystem project code is released under the MIT License. Vendored third-party components remain subject to their respective licenses.
+
+\subsection{Description \& Requirements}
+
+\subsubsection{Security, privacy, and ethical concerns}
+
+The artifact does not require private credentials and does not
+intentionally perform destructive actions. It starts local prover and
+verifier processes and opens local network connections. The optional
+\texttt{set\_net.sh} script configures Linux traffic control
+(\texttt{tc}) and therefore needs administrator privileges. Docker is
+only needed for regenerating frontend artifacts from {\tt C} source and
+should be run with the usual host-security precautions.
+
+\subsubsection{How to access}
+
+The archived artifact submitted for evaluation is:
+\begin{compactitem}
+\item Zenodo DOI: \artifactdoi
+\item GitHub release tag: \artifacttag
+\item Git commit: \artifactcommit
+\item Repository: \url{https://github.com/ainta/ZEE200}
+\end{compactitem}
+
+The DOI above is the permanent artifact location. The GitHub
+repository is the maintained development location.
+
+\subsubsection{Hardware dependencies}
+
+The artifact can run on a single machine by running prover and verifier
+over localhost. No special hardware is required. The paper's main
+measurements use a 2021 ThinkPad X1 Carbon Gen 9 with an Intel Core
+i7-1165G7 CPU and 16 GB physical RAM. A comparable Linux machine is
+recommended for checking absolute timings. Large \zee baseline
+comparisons may need substantially more memory; Table 5 in the paper
+uses an AWS \texttt{r6i.8xlarge} instance with 256 GB RAM.
+
+\subsubsection{Software dependencies}
+
+The backend requires CMake 3.10 or newer, \texttt{make}, a {\tt C++17}
+compiler, and EMP toolkit dependencies. On an Ubuntu-like system,
+\texttt{./setup.sh} installs the expected dependencies. Linux is
+recommended for the network experiments because they use \texttt{tc}.
+Docker is needed only to regenerate the frontend assembly outputs from the {\tt C} source files. 
+The benchmark assembly files used in our experiments are already included in the submitted artifact, so one can reproduce the benchmark results without regenerating these assembly files inside Docker.
+
+
+\subsubsection{Benchmarks}
+
+The artifact includes the workloads reported in the paper:
+\texttt{sed} vulnerability payload, Fibonacci with $n=20$ and $n=23$,
+\texttt{mergesort} with $n=500$ and $n=5000$, \texttt{gzip} bug
+trigger, \texttt{gzip} decompression of a 22 KB compressed image,
+\texttt{sha256} with 10 and 200 blocks, and empty-program ZK RAM
+sweeps.
+
+\subsection{Set-Up}
+
+\subsubsection{Installation}
+
+Download and unpack the Zenodo archive. From the artifact root, build
+the \oursystem backend:
+\begin{verbatim}
+./setup.sh
+./scripts/build_release.sh
+\end{verbatim}
+
+The release build produces the \oursystem executable under
+\texttt{build/bin/}. To build the optional \zee baseline used by the
+comparison scripts:
+\begin{verbatim}
+cd zee-processor
+cmake .
+make -j
+cd ..
+\end{verbatim}
+
+\subsubsection{Basic toy test}
+
+Run the prover and verifier in two terminals from the artifact root.
+Start the prover first.
+\begin{verbatim}
+# P terminal
+./scripts/run_sed_prover.sh zee200
+
+# V terminal
+./scripts/run_sed_verifier.sh zee200
+\end{verbatim}
+
+If the build and local networking are correct, both terminals should
+print \passmsg. This test exercises assembly parsing, RAM
+initialization, prover/verifier networking, the \oursystem proof harness,
+and proof verification.
+
+\subsubsection{Expected executable files and scripts}
+
+After installation, the following files are the main evaluator-facing
+entry points:
+\begin{enumerate}
+\item \zkvmbin: the \oursystem \P/\V executable, located in
+\texttt{build/bin/}. Direct usage is:
+\begin{verbatim}
+./build/bin/test_zkvm_generic_asm_test \
+  --party PARTY --port 12345 --address ADDR \
+  --asm PROGRAM.s --ram-size RAM_BYTES
+\end{verbatim}
+\texttt{PARTY=1} is the prover and uses \texttt{ADDR=0};
+\texttt{PARTY=2} is the verifier and uses the prover address, e.g.,
+\texttt{127.0.0.1}.
+
+\item \texttt{zee-processor/ZKMachine}: the optional \zee baseline
+binary used by scripts under \texttt{scripts/zee/}.
+
+\item Top-level wrappers
+\texttt{scripts/run\_*\_\{prover,verifier\}.sh}. Each accepts
+\texttt{zee200} or \texttt{zee} where the \zee baseline is available.
+
+\item Backend-specific wrappers under \texttt{scripts/zkvm/} and
+\texttt{scripts/zee/}. These expose fixed benchmark variants such as
+\texttt{run\_zkvm\_fib23\_prover.sh} and
+\texttt{run\_zee\_sha200\_verifier.sh}.
+
+\item Frontend helper scripts under \texttt{toolchain/}. These rebuild
+\texttt{.s} and \texttt{.zk} files from {\tt C} source through Docker. They
+are not needed for running the submitted benchmark assembly files.
+\end{enumerate}
+
+\subsection{Evaluation Workflow}
+
+Please run all commands from the artifact root unless otherwise noted.
+For a two-party run, execute the prover command on \P first and the
+matching verifier command on \V second. In the single-machine setting,
+\P listens on localhost and \V connects to \texttt{127.0.0.1}. For
+\texttt{fib} and \texttt{sha256}, enter the input values manually in
+the prover terminal; do \emph{not} pipe stdin into the prover.
+
+\subsubsection{Major Claims}
+Our artifact makes the following claims.
+
+\textbf{(C1):} \oursystem executes the paper's benchmark suite in ZK and
+the verifier accepts successful executions. This is supported by the
+benchmark scripts and Table 1.
+
+\textbf{(C2):} \oursystem is substantially faster than \zee on comparable workloads,
+with roughly $20$--$40\times$ speedups on the main examples and about 200 KHz
+steady-state CPU speed on larger workloads. This is supported by
+Table 1 and the larger AWS comparison in Table 5.
+
+\textbf{(C3):} \oursystem has better physical-memory scaling with configured ZK RAM
+size than \zee. This is supported by Table 2.
+
+\textbf{(C4):} \oursystem's end-to-end time changes predictably with bandwidth and
+latency under the paper's simulated LAN settings. This is supported by
+Table 4.
+
+\textbf{(C5):} \oursystem is faster than representative zkVM baselines on the
+selected benchmark kernels. This is supported by Table 3. The submitted
+artifact directly supports the \oursystem measurements. SP1 and Jolt are
+external systems; optional reproduction material for their Table 3 rows is
+provided in the repository under \texttt{zkvm-benchmarks/}.
+
+\subsubsection{Experiments}
+We explain how to repeat the experiments that support each of our major claims.
+
+\textbf{(E1):} [Table 1] [10--30 human-minutes + minutes to several compute
+hours, depending on selected benchmarks].
+
+\noindent
+\underline{Preparation}: build the \oursystem backend. For the paper's default LAN
+setting on Linux, configure loopback as:
+\begin{verbatim}
+IF=lo ./set_net.sh 1000 1
+\end{verbatim}
+The second argument is one-way delay in milliseconds, so this
+approximates 1 Gbps bandwidth and 2 ms RTT. To clear the setting:
+\begin{verbatim}
+sudo tc qdisc del dev lo root
+\end{verbatim}
+
+\noindent
+\underline{Execution}: run the following prover/verifier pairs.
+\begin{compactitem}
+\item \texttt{sed}: 
+
+\P runs
+\begin{verbatim}
+./scripts/run\_sed\_prover.sh zee200
+\end{verbatim}
+
+\V runs
+\begin{verbatim}
+./scripts/run\_sed\_verifier.sh zee200
+\end{verbatim}
+
+Paper value:
+1.5 s, 82.3 KHz, 53 MB communication.
+
+\item \texttt{fib}, $n=20$: \P runs
+\texttt{./scripts/zkvm/run\_zkvm\_fib20\_prover.sh}; \V runs
+\texttt{./scripts/zkvm/run\_zkvm\_fib20\_verifier.sh}. Enter
+\texttt{12345} and then \texttt{20} in \P. Paper value:
+2.7 s, 172.5 KHz, 136 MB.
+
+\item \texttt{fib}, $n=23$: use the \texttt{fib23} scripts and enter
+\texttt{12345} and then \texttt{23} in \P. Paper value:
+8.9 s, 226.3 KHz, 532 MB.
+
+\item \texttt{mergesort}, $n=500$: use
+\texttt{run\_mergesort500\_\{prover,verifier\}.sh zee200}. Paper
+value: 2.6 s, 142.7 KHz, 123 MB.
+
+\item \texttt{mergesort}, $n=5000$: use
+\texttt{run\_mergesort5000\_\{prover,verifier\}.sh zee200}. Paper
+value: 24.5 s, 199.8 KHz, 1.4 GB.
+
+\item \texttt{gzip} bug trigger: use
+\texttt{run\_gzip\_bug\_\{prover,verifier\}.sh zee200}. Paper value:
+1.1 s, 16.8 KHz, 21 MB.
+
+\item \texttt{gzip} decompression: use
+\texttt{run\_gzip\_decompress\_\{prover,verifier\}.sh zee200}. Paper
+value: 17.3 s, 182.1 KHz, 1.0 GB.
+
+\item \texttt{sha256}, 10 blocks: use the \texttt{sha10} scripts and
+enter \texttt{12345} and then \texttt{10} in \P. Paper value:
+1.6 s, 91.3 KHz, 68 MB.
+
+\item \texttt{sha256}, 200 blocks: use the \texttt{sha200} scripts and
+enter \texttt{12345} and then \texttt{200} in \P. Paper value:
+19.7 s, 148.7 KHz, 1.1 GB.
+\end{compactitem}
+
+\noindent
+\underline{Results}: both parties should print \passmsg. The terminal logs report
+time and communication. Absolute times depend on machine load, CPU,
+memory pressure, and network shaping. The paper reports averages over
+8 runs after discarding the fastest and slowest of 10 total runs.
+
+\textbf{(E2):} [Table 1 and Table 5] [10--30 human-minutes + minutes to several
+compute-hours; large cases may require 256 GB RAM].
+
+\noindent
+\underline{Preparation}: build \texttt{zee-processor/ZKMachine}.
+
+\noindent
+\underline{Execution}: replace
+\texttt{zee200} by \texttt{zee} in the top-level scripts where
+available. For fixed variants, use scripts under \texttt{scripts/zee/},
+e.g., \texttt{run\_zee\_fib23\_prover.sh} and
+\texttt{run\_zee\_fib23\_verifier.sh}.
+
+\noindent
+\underline{Results}: the comparable small benchmarks reproduce the \zee baseline
+columns in Table 1: \texttt{sed} 30.1 s, \texttt{fib} $n=20$ 44.5 s,
+\texttt{mergesort} $n=500$ 43.9 s, \texttt{gzip} bug trigger 5.2 s,
+and \texttt{sha256} 10 blocks 36.1 s. Larger \zee cases marked by
+dashes in Table 1 are rerun on AWS \texttt{r6i.8xlarge} in Table 5.
+
+\textbf{(E3):} [Table 2] [10--30 human-minutes + minutes to several
+compute-hours].
+
+\noindent
+\underline{Preparation}: build \oursystem and, if comparing against \zee, build
+\texttt{ZKMachine}. 
+
+\noindent
+\underline{Execution}:
+\begin{verbatim}
+./scripts/run_empty_ram_sweep_zee200.sh
+./scripts/run_empty_ram_sweep_zee.sh
+\end{verbatim}
+
+\noindent
+\underline{Results}: logs are written under \texttt{benchmarks/empty/}. Table 2
+reports total physical RAM across both parties for ZK RAM sizes
+$2^{19}$ through $2^{27}$. \oursystem reaches $2^{27}$ on the 16 GB
+machine, while \zee is killed by memory pressure after $2^{24}$.
+
+\textbf{(E4):} [Table 4] [10--30 human-minutes + about 1 compute-hour].
+
+\noindent
+\underline{Preparation}: configure Linux loopback for each bandwidth and one-way
+delay. For the Table 4 RTT columns, use one-way delays 1 ms, 25 ms,
+and 50 ms:
+\begin{verbatim}
+IF=lo ./set_net.sh 100 1
+IF=lo ./set_net.sh 500 25
+IF=lo ./set_net.sh 1000 50
+\end{verbatim}
+Change the bandwidth and delay to cover all nine combinations in
+Table 4.
+
+\noindent
+\underline{Execution}: for each setting, run \texttt{mergesort} $n=500$:
+\begin{verbatim}
+./scripts/run_mergesort500_prover.sh zee200
+./scripts/run_mergesort500_verifier.sh zee200
+\end{verbatim}
+
+\noindent
+\underline{Results}: Table 4 reports end-to-end times of 11.3, 13.5, and 16.2 s
+at 100 Mbps; 3.5, 5.8, and 9.6 s at 500 Mbps; and 2.6, 5.5, and
+9.5 s at 1 Gbps for RTTs 2, 50, and 100 ms respectively.
+
+\textbf{(E5):} [Table 3] [external systems; optional; 10--30 human-minutes +
+several compute-hours].
+
+\noindent
+\underline{Preparation}:
+The main artifact does not require SP1 or Jolt. For an optional check of the
+Table 3 zkVM-baseline rows, the repository provides a source-focused
+reproduction package under \texttt{zkvm-benchmarks/}. It records benchmark
+sources, version pins, run scripts, paper prover times, and deterministic
+instruction/cycle counts.
+
+\noindent
+\underline{Prerequisites}:
+SP1 and Jolt are optional external zkVM-baseline reproductions. They are
+not required for building or running the main \oursystem artifact.
+
+For SP1, install the SP1 toolchain for \texttt{v5.2.4}. The scripts expect
+the Rust toolchains used by SP1 to be available, including the
+\texttt{succinct} toolchain. Before running the SP1 commands, check:
+\begin{verbatim}
+cargo +succinct --version
+\end{verbatim}
+If this command is not available, install SP1 with the official
+\texttt{sp1up} flow for SP1 \texttt{v5.2.4}, then rerun the check.
+
+For Jolt, use the Rust toolchain selected by Jolt's
+\texttt{rust-toolchain.toml}. The Jolt scripts also require:
+\begin{verbatim}
+riscv64-unknown-elf-gcc --version
+\end{verbatim}
+to succeed. 
+
+
+\noindent
+\underline{Execution}:
+
+\noindent
+\underline{SP1}: the package uses \texttt{succinctlabs/sp1} tag
+\texttt{v5.2.4}, locked to commit
+\texttt{2a51f3dd370e4c5f74d04dfd89359a13a7e93f99}. To build the guest
+ELFs and run every SP1 benchmark case:
+\begin{verbatim}
+cd zkvm-benchmarks/sp1
+./scripts/run-all.sh
+\end{verbatim}
+This runs STARK and Groth16 proofs for fibonacci $n=20,23$, mergesort
+$n=500,5000$, and SHA-256 with 10 and 200 iterations. To run proof modes
+separately:
+\begin{verbatim}
+./scripts/build-guests.sh
+./scripts/run-stark.sh
+./scripts/run-groth16.sh
+\end{verbatim}
+
+\noindent
+\underline{Jolt}: the package prepares \texttt{a16z/jolt} tag
+\texttt{v0.3.0-alpha}, commit
+\texttt{5101ad2143039de6f279613810414c3d071d1f8f}, applies the included
+integration patch, and then runs every Jolt benchmark case:
+\begin{verbatim}
+cd zkvm-benchmarks/jolt
+./scripts/prepare-jolt.sh
+./scripts/run-all.sh
+\end{verbatim}
+This runs fibonacci $n=20,23$, mergesort $n=500,5000$, and SHA-256 with
+10 and 200 iterations.
+
+The expected paper runtimes and deterministic counts are listed in
+\texttt{zkvm-benchmarks/expected-results.tsv}.
+\begin{verbatim}
+cd zkvm-benchmarks
+cat expected-results.tsv
+\end{verbatim}
+
+\noindent
+\underline{Results}: Table 3 reports SP1 and Jolt prover computation times in
+seconds. For SP1 STARK, the reported times are 141, 251, 145, 808, 115, and
+926 s for fibonacci $n=20$, fibonacci $n=23$, mergesort $n=500$, mergesort
+$n=5000$, SHA-256 with 10 iterations, and SHA-256 with 200 iterations
+respectively. For SP1 Groth16, the corresponding times are 2220, 2501, 2212,
+3821, 2193, and 3531 s. For Jolt, the corresponding times are 13, 37, 27,
+238, 26, and 195 s. Absolute timing varies with the machine, but the
+instruction/cycle counts and public outputs in \texttt{expected-results.tsv}
+identify matching benchmark programs and inputs.
+
+\subsection{Interpreting Deviations}
+
+All benchmark timings are sensitive to CPU frequency scaling, thermal
+state, background load, memory pressure, and the exact \texttt{tc}
+network configuration. Important checks for AE are:
+\begin{compactitem}
+\item functional success: both parties print \passmsg;
+\item consistency: the same benchmark scripts and inputs correspond to
+the paper's benchmark rows;
+\item performance trend: longer workloads approach the reported
+steady-state speed, \oursystem is substantially faster than \zee on shared
+workloads, \oursystem scales to larger RAM settings than \zee, and lower
+bandwidth or higher RTT increases runtime.
+\end{compactitem}
+
+\subsection{Version}
+
+This appendix follows the operational style of the ACM CCS '24
+\textit{Tight ZK CPU} artifact appendix while using the ACM CCS 2026
+artifact appendix section structure.
+
+\end{document}

@@ -39,16 +39,23 @@ VERIFIER_LOG="ram_zee_verifier.log"
 echo "[empty RAM sweep zee] Using ZKMachine: $ZKM_BIN"
 echo "[empty RAM sweep zee] Logs: $EMPTY_DIR/$PROVER_LOG (prover), $EMPTY_DIR/$VERIFIER_LOG (verifier)"
 
+TIME_CMD=()
+if /usr/bin/time -v true >/dev/null 2>&1; then
+  TIME_CMD=(/usr/bin/time -v)
+else
+  echo "[empty RAM sweep zee] Warning: GNU /usr/bin/time -v not available; peak RSS will not be logged." | tee -a "$PROVER_LOG" "$VERIFIER_LOG"
+fi
+
 for t in $(seq 8 23); do
   echo "===== $(date -Is) | t=$t | RAM=2^($t+2) =====" | tee -a "$PROVER_LOG"
   echo "===== $(date -Is) | t=$t | RAM=2^($t+2) =====" >>"$VERIFIER_LOG"
 
-  "$ZKM_BIN" P 44444 "$t" "$EMPTY_ZK" >>"$PROVER_LOG" 2>&1 &
+  "${TIME_CMD[@]}" "$ZKM_BIN" P 44444 "$t" "$EMPTY_ZK" >>"$PROVER_LOG" 2>&1 &
   PROVER_PID=$!
 
   sleep 1
 
-  "$ZKM_BIN" V 44444 "$t" "$EMPTY_ZK" >>"$VERIFIER_LOG" 2>&1
+  "${TIME_CMD[@]}" "$ZKM_BIN" V 44444 "$t" "$EMPTY_ZK" >>"$VERIFIER_LOG" 2>&1
 
   wait "$PROVER_PID"
 done

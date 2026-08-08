@@ -71,7 +71,7 @@ main NOP                                ; @main
 	COPYR	%GR6, %RT0
 	STORE	%GR6, 8(%FP)
 	LOAD	%GR6, 8(%FP)
-	COPYI	%GR1, 6765
+	COPYI	%GR1, 28657
 	NEQ	%GR6, %GR6, %GR1
 	BNEQZ	%GR6, .LBB1_2
 	JUMP	.LBB1_1

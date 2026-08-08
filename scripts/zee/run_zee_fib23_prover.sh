@@ -10,24 +10,24 @@ if [[ ! -x "$ZKM_BIN" ]]; then
   exit 1
 fi
 
-if [[ ! -f "$REPO_ROOT/benchmarks/fib_stdin/fib_stdin.zk" ]]; then
-  if [[ ! -f "$REPO_ROOT/benchmarks/fib_stdin/fib_stdin.s" ]]; then
+if [[ ! -f "$REPO_ROOT/benchmarks/fib_stdin/fib23_stdin.zk" ]]; then
+  if [[ ! -f "$REPO_ROOT/benchmarks/fib_stdin/fib23_stdin.s" ]]; then
     (cd "$REPO_ROOT" && ./toolchain/compile_c_docker.sh \
-      benchmarks/fib_stdin/fib_stdin.c \
-      benchmarks/fib_stdin/fib_stdin.s)
+      benchmarks/fib_stdin/fib23_stdin.c \
+      benchmarks/fib_stdin/fib23_stdin.s)
   fi
   (cd "$REPO_ROOT" && ./toolchain/s_to_zk_docker.sh \
-    benchmarks/fib_stdin/fib_stdin.s \
-    benchmarks/fib_stdin/fib_stdin.zk)
+    benchmarks/fib_stdin/fib23_stdin.s \
+    benchmarks/fib_stdin/fib23_stdin.zk)
 fi
 
 WORKDIR="$(mktemp -d /tmp/zee_fib23_prover_XXXXXX)"
 echo "[zee fib23 prover] WORKDIR=$WORKDIR"
 
 cp "$ZKM_BIN" "$WORKDIR/ZKMachine"
-cp "$REPO_ROOT/benchmarks/fib_stdin/fib_stdin.zk" "$WORKDIR/"
+cp "$REPO_ROOT/benchmarks/fib_stdin/fib23_stdin.zk" "$WORKDIR/"
 mkdir -p "$WORKDIR/data"
 
 cd "$WORKDIR"
 
-./ZKMachine P 44444 $((13-2)) fib_stdin.zk
+./ZKMachine P 44444 $((13-2)) fib23_stdin.zk

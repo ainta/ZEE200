@@ -9,7 +9,7 @@ int main() {
   //fscanf(fp, "%d", &in);
   scanf("%d", &in);
   int out = fib(in);
-  if (out == 6765) {
+  if (out == 28657) {
     asm("CALL Proof"); // proof success
   } else {
     asm("CALL Cheat"); // proof failed

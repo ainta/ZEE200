@@ -111,9 +111,10 @@ The artifact includes the workloads reported in the paper:
 trigger, \texttt{gzip} decompression of a 22 KB compressed image,
 \texttt{sha256} with 10 and 200 blocks, and empty-program ZK RAM
 sweeps.
-The Fibonacci program signals proof success only when the result matches
-$\operatorname{fib}(20)=6765$ or $\operatorname{fib}(23)=28657$ for the
-corresponding input; other indices do not signal proof success.
+Fibonacci $n=20$ and $n=23$ use separate, instruction-count-matched programs.
+Their ZEE assembly differs only in the expected-result immediate:
+$\operatorname{fib}(20)=6765$ versus $\operatorname{fib}(23)=28657$.
+The runner selects the corresponding checked-in artifact from the variant argument.
 
 \subsection{Set-Up}
 
@@ -304,7 +305,7 @@ Paper value: 1.5 s, 82.3 KHz, 53 MB communication.
 
 \P runs:
 \begin{verbatim}
-./scripts/run_fib_prover.sh zee200
+./scripts/run_fib_prover.sh zee200 20
 \end{verbatim}
 When prompted in the \P terminal, enter:
 \begin{verbatim}
@@ -313,7 +314,7 @@ When prompted in the \P terminal, enter:
 \end{verbatim}
 \V runs:
 \begin{verbatim}
-./scripts/run_fib_verifier.sh zee200
+./scripts/run_fib_verifier.sh zee200 20
 \end{verbatim}
 Paper value: 2.7 s, 172.5 KHz, 136 MB.
 
@@ -321,7 +322,7 @@ Paper value: 2.7 s, 172.5 KHz, 136 MB.
 
 \P runs:
 \begin{verbatim}
-./scripts/run_fib_prover.sh zee200
+./scripts/run_fib_prover.sh zee200 23
 \end{verbatim}
 When prompted in the \P terminal, enter:
 \begin{verbatim}
@@ -330,7 +331,7 @@ When prompted in the \P terminal, enter:
 \end{verbatim}
 \V runs:
 \begin{verbatim}
-./scripts/run_fib_verifier.sh zee200
+./scripts/run_fib_verifier.sh zee200 23
 \end{verbatim}
 Paper value: 8.9 s, 226.3 KHz, 532 MB.
 
@@ -453,7 +454,7 @@ Paper values: Table 1 ZEE 30.1 s; Table 5 AWS ZEE 52.6 s.
 
 \P runs:
 \begin{verbatim}
-./scripts/run_fib_prover.sh zee
+./scripts/run_fib_prover.sh zee 20
 \end{verbatim}
 When prompted in the \P terminal, enter:
 \begin{verbatim}
@@ -462,7 +463,7 @@ When prompted in the \P terminal, enter:
 \end{verbatim}
 \V runs:
 \begin{verbatim}
-./scripts/run_fib_verifier.sh zee
+./scripts/run_fib_verifier.sh zee 20
 \end{verbatim}
 Paper values: Table 1 ZEE 44.5 s; Table 5 AWS ZEE 77.8 s.
 
@@ -470,7 +471,7 @@ Paper values: Table 1 ZEE 44.5 s; Table 5 AWS ZEE 77.8 s.
 
 \P runs:
 \begin{verbatim}
-./scripts/run_fib_prover.sh zee
+./scripts/run_fib_prover.sh zee 23
 \end{verbatim}
 When prompted in the \P terminal, enter:
 \begin{verbatim}
@@ -479,7 +480,7 @@ When prompted in the \P terminal, enter:
 \end{verbatim}
 \V runs:
 \begin{verbatim}
-./scripts/run_fib_verifier.sh zee
+./scripts/run_fib_verifier.sh zee 23
 \end{verbatim}
 Paper value: Table 5 AWS ZEE 324.6 s.
 

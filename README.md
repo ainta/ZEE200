@@ -94,6 +94,9 @@ From the repo root:
   benchmarks/fib_stdin/fib_stdin.s \
   benchmarks/fib_stdin/fib_stdin.zk
 ```
+The checked-in `fib_stdin.*` artifacts are the `n=20` variant. The `n=23`
+variant uses `fib23_stdin.c`, `fib23_stdin.s`, and `fib23_stdin.zk`; use the
+same commands with those filenames to regenerate it.
 
 You can reuse these commands for other C benchmarks under `benchmarks/` by adjusting the input and output paths. The first build of the `zee-toolchain:20.04` image can consume a significant amount of disk space (on the order of ~16 GB for the image and build artefacts), so make sure you have enough free space.
 
@@ -152,14 +155,19 @@ Examples:
 These use the `benchmarks/fib_stdin/` program, which reads from stdin.
 
 ```bash
-# Prover (ZEE200)
-./scripts/run_fib_prover.sh zee200
+# n=20 prover (ZEE200)
+./scripts/run_fib_prover.sh zee200 20
 # Input pattern in prover terminal:
 #   1) Dummy integer (e.g., 12345)
-#   2) Fibonacci index n (e.g., 20 or 23)
+#   2) Fibonacci index 20
 
-# Verifier (ZEE200)
-./scripts/run_fib_verifier.sh zee200
+# n=20 verifier (ZEE200)
+./scripts/run_fib_verifier.sh zee200 20
+
+# n=23 uses the instruction-count-matched fib23 variant
+./scripts/run_fib_prover.sh zee200 23
+# Enter the same dummy integer pattern, followed by Fibonacci index 23
+./scripts/run_fib_verifier.sh zee200 23
 ```
 
 Swap `zee200` → `zee` to run the ZEE baseline instead.

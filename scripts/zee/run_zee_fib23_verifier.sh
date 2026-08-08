@@ -10,8 +10,8 @@ if [[ ! -x "$ZKM_BIN" ]]; then
   exit 1
 fi
 
-if [[ ! -f "$REPO_ROOT/benchmarks/fib_stdin/fib_stdin.zk" ]]; then
-  echo "Error: benchmarks/fib_stdin/fib_stdin.zk not found (run run_zee_fib23_prover.sh once first)" >&2
+if [[ ! -f "$REPO_ROOT/benchmarks/fib_stdin/fib23_stdin.zk" ]]; then
+  echo "Error: benchmarks/fib_stdin/fib23_stdin.zk not found (run run_zee_fib23_prover.sh once first)" >&2
   exit 1
 fi
 
@@ -19,9 +19,9 @@ WORKDIR="$(mktemp -d /tmp/zee_fib23_verifier_XXXXXX)"
 echo "[zee fib23 verifier] WORKDIR=$WORKDIR"
 
 cp "$ZKM_BIN" "$WORKDIR/ZKMachine"
-cp "$REPO_ROOT/benchmarks/fib_stdin/fib_stdin.zk" "$WORKDIR/"
+cp "$REPO_ROOT/benchmarks/fib_stdin/fib23_stdin.zk" "$WORKDIR/"
 mkdir -p "$WORKDIR/data"
 
 cd "$WORKDIR"
 
-./ZKMachine V 44444 $((13-2)) fib_stdin.zk
+./ZKMachine V 44444 $((13-2)) fib23_stdin.zk

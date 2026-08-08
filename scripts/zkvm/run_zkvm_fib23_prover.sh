@@ -13,17 +13,17 @@ else
   exit 1
 fi
 
-if [[ ! -f "$REPO_ROOT/benchmarks/fib_stdin/fib_stdin.s" ]]; then
+if [[ ! -f "$REPO_ROOT/benchmarks/fib_stdin/fib23_stdin.s" ]]; then
   (cd "$REPO_ROOT" && ./toolchain/compile_c_docker.sh \
-    benchmarks/fib_stdin/fib_stdin.c \
-    benchmarks/fib_stdin/fib_stdin.s)
+    benchmarks/fib_stdin/fib23_stdin.c \
+    benchmarks/fib_stdin/fib23_stdin.s)
 fi
 
 WORKDIR="$(mktemp -d /tmp/zkvm_fib23_prover_XXXXXX)"
 echo "[zee200 fib23 prover] WORKDIR=$WORKDIR"
 
 cp "$ZKVM_BIN" "$WORKDIR/test_zkvm_generic_asm_test"
-cp "$REPO_ROOT/benchmarks/fib_stdin/fib_stdin.s" "$WORKDIR/"
+cp "$REPO_ROOT/benchmarks/fib_stdin/fib23_stdin.s" "$WORKDIR/"
 
 cd "$WORKDIR"
 
@@ -31,5 +31,5 @@ cd "$WORKDIR"
   --party 1 \
   --port 12345 \
   --address 0 \
-  --asm fib_stdin.s \
+  --asm fib23_stdin.s \
   --ram-size $((1<<13))

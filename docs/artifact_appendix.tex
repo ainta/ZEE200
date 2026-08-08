@@ -16,7 +16,7 @@
 \sloppy
 
 \newcommand{\artifactdoi}{\url{https://doi.org/10.5281/zenodo.20575393}}
-\newcommand{\artifacttag}{\texttt{ccs2026-ae-v3}}
+\newcommand{\artifacttag}{\texttt{ccs2026-ae-v4}}
 \newcommand{\artifactcommit}{the commit resolved by \artifacttag}
 \newcommand{\passmsg}{\texttt{tight zk cpu test passed}}
 \newcommand{\zkvmbin}{\texttt{test\_zkvm\_generic\_asm\_test}}
@@ -111,6 +111,9 @@ The artifact includes the workloads reported in the paper:
 trigger, \texttt{gzip} decompression of a 22 KB compressed image,
 \texttt{sha256} with 10 and 200 blocks, and empty-program ZK RAM
 sweeps.
+The Fibonacci program signals proof success only when the result matches
+$\operatorname{fib}(20)=6765$ or $\operatorname{fib}(23)=28657$ for the
+corresponding input; other indices do not signal proof success.
 
 \subsection{Set-Up}
 
